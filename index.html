@@ -1203,6 +1203,34 @@ header#siteHeader .btn-quote, header.main-site-header .btn-quote-main {
 }
 </style>
 
+
+<style id="hero-clipping-fix">
+/* 1. Hero Heading Descender Clipping Bug Fix */
+h1.hero-title, .hero-title, .htec-hero h1, .page-hero h1 {
+  line-height: 1.25 !important;
+  padding-bottom: 14px !important;
+  overflow: visible !important;
+}
+h1.hero-title span, .hero-title span {
+  overflow: visible !important;
+  display: block !important;
+}
+h1.hero-title span em, .hero-title span em {
+  display: inline-block !important;
+  padding-bottom: 8px !important;
+  line-height: 1.25 !important;
+  overflow: visible !important;
+}
+
+/* 3. Card 04 Product Image Crop Fix */
+.cat-grid .cat-card:nth-child(4) .cat-thumb img,
+.products-grid .product-card:nth-child(4) .pc-icon img,
+.cat-card-img img {
+  object-fit: contain !important;
+  padding: 10px !important;
+}
+</style>
+
 </head>
 <body>
 

@@ -255,6 +255,42 @@ header.main-site-header {
 }
 </style>
 
+
+<style id="slim-header-override">
+/* Ultra Compact & Higher Slim Header Override */
+header#siteHeader, header.main-site-header {
+  padding: 6px 0 !important;
+  top: 0 !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+header#siteHeader.scrolled, header.main-site-header.scrolled {
+  padding: 5px 0 !important;
+}
+
+header#siteHeader .logo img, header.main-site-header .logo img {
+  height: 28px !important;
+  width: auto !important;
+}
+
+header#siteHeader nav.main-nav a, header.main-site-header nav.main-nav a {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: .02em !important;
+}
+
+header#siteHeader .btn-quote, header.main-site-header .btn-quote-main {
+  padding: 7px 18px !important;
+  font-size: 12.5px !important;
+}
+
+/* Pull Hero Sections Higher Up Directly Below Slim Header */
+.hero-content, .page-hero, .aint-hero-home {
+  padding-top: 50px !important;
+}
+</style>
+
 </head>
 <body>
 

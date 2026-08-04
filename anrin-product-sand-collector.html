@@ -194,30 +194,49 @@ footer.main-site-footer a:hover {
 }
 </style>
 
+
+<style id="remove-duplicate-bars">
+/* Remove duplicate top black bars & scraped headers */
+div[style*="background:#000000;color:#ffffff;padding:10px 24px"],
+div[style*="background:#000;color:#fff;padding:12px 24px"],
+.notify-top-bar, nav.navbar, header#siteHeader:not(.main-site-header),
+header.header, header.site-header {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+header.main-site-header {
+  display: block !important;
+}
+</style>
+
 </head>
 <body>
 
-<div style="background:#000000;color:#ffffff;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;font-family:'Plus Jakarta Sans',sans-serif;font-size:13.5px;font-weight:700;position:sticky;top:0;z-index:10000;">
-  <a href="anrin-int-channels.html" style="color:#ffffff;text-decoration:underline;">← Back to Channel Systems</a>
-  <span>ANRIN Official Product Page</span>
-</div>
-
-<header class="main-site-header">
-  <div class="wrap">
-    <a href="index.html" class="logo"><img src="https://anrin.se/wp-content/uploads/2022/11/ANRIN_Logo_schwarz_2.svg" alt="ANRIN Nordic" style="height:34px;width:auto;"></a>
-    <nav class="main-nav">
-      <a href="produkter.html">Products</a>
-      <a href="projekt.html">Projects</a>
-      <a href="om-oss.html">About us</a>
-      <a href="nedladdningar.html">Downloads</a>
-      <a href="kontakt.html">Contact</a>
+<header class="main-site-header" style="position:sticky;top:0;z-index:99999;background:#ffffff;border-bottom:1px solid #e5e5e5;padding:14px 0;box-shadow:0 4px 16px rgba(0,0,0,0.06);">
+  <div class="wrap" style="max-width:1320px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;">
+    <a href="/index.html" class="logo" style="display:flex;align-items:center;"><img src="https://anrin.se/wp-content/uploads/2022/11/ANRIN_Logo_schwarz_2.svg" alt="ANRIN Nordic" style="height:34px;width:auto;"></a>
+    <nav class="main-nav" style="display:flex;gap:28px;align-items:center;">
+      <a href="/produkter.html" style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#111111;text-transform:uppercase;text-decoration:none;">Products</a>
+      <a href="/projekt.html" style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#111111;text-transform:uppercase;text-decoration:none;">Projects</a>
+      <a href="/om-oss.html" style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#111111;text-transform:uppercase;text-decoration:none;">About us</a>
+      <a href="/nedladdningar.html" style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#111111;text-transform:uppercase;text-decoration:none;">Downloads</a>
+      <a href="/kontakt.html" style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#111111;text-transform:uppercase;text-decoration:none;">Contact</a>
     </nav>
     <div class="header-right" style="display:flex;align-items:center;gap:16px;">
-      <div style="font-weight:700;font-size:14px;color:#111111;">🌐 EN</div>
-      <a href="kontakt.html" class="btn-quote-main">Request a quote</a>
+      <a href="/kontakt.html" style="color:#111;display:flex;align-items:center;" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </a>
+      <div style="font-weight:700;font-size:14px;color:#111111;border:1px solid #ccc;border-radius:100px;padding:4px 12px;">EN ▾</div>
+      <a href="/kontakt.html" class="btn-quote-main" style="background:#000000;color:#ffffff;padding:10px 22px;border-radius:999px;font-size:13.5px;font-weight:700;text-decoration:none;display:inline-block;">Request a quote</a>
     </div>
   </div>
 </header>
+
+
+
 
 
 

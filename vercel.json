@@ -1,0 +1,50 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/produkter",
+      "destination": "/produkter.html"
+    },
+    {
+      "source": "/products",
+      "destination": "/produkter.html"
+    },
+    {
+      "source": "/om-oss",
+      "destination": "/om-oss.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/om-oss.html"
+    },
+    {
+      "source": "/projekt",
+      "destination": "/projekt.html"
+    },
+    {
+      "source": "/projects",
+      "destination": "/projekt.html"
+    },
+    {
+      "source": "/nedladdningar",
+      "destination": "/nedladdningar.html"
+    },
+    {
+      "source": "/downloads",
+      "destination": "/nedladdningar.html"
+    },
+    {
+      "source": "/kontakt",
+      "destination": "/kontakt.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/kontakt.html"
+    },
+    {
+      "source": "/stainless-team",
+      "destination": "/stainless-team.html"
+    }
+  ]
+}

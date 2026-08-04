@@ -1,0 +1,56 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 4 0 R >> >> /MediaBox [0 0 612 792] /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 414 >>
+stream
+
+BT
+/F1 24 Tf
+50 730 Td
+(ANRIN KE-100) Tj
+/F1 14 Tf
+0 -30 Td
+(Technical Data Sheet) Tj
+/F1 11 Tf
+0 -40 Td
+(Document Reference: ANRIN-NORDIC-2026) Tj
+0 -20 Td
+(Date: 2026-08-03) Tj
+0 -30 Td
+(PRODUCT SPECIFICATIONS & TECHNICAL DETAILS:) Tj
+0 -18 Td
+(Material: Polymer Concrete) Tj
+0 -18 Td
+(Load Class: C250) Tj
+0 -18 Td
+(Width: 100mm) Tj
+
+0 -40 Td
+(Official Product Document - ANRIN Nordic AB - www.anrin.se) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+775
+%%EOF

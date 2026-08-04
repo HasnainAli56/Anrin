@@ -305,516 +305,7 @@ body.mobile-menu-open{overflow:hidden;}
 #backToTop{position:fixed;right:28px;bottom:28px;width:54px;height:54px;border-radius:50%;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 32px rgba(0,0,0,.28);z-index:520;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(16px);transition:opacity .4s var(--ease),visibility .4s,transform .4s var(--ease),background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease);}
 #backToTop:hover{background:var(--white);color:var(--black);border:1px solid var(--gray-300);}
 #backToTop.show{opacity:1;visibility:visible;transform:translateY(0);}
-@media(max-width:640px){#backToTop{right:18px;bottom:18px;width:48px;height:48px;}}/* Header Header contrast patch */
-
-header#siteHeader {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 400;
-  padding: 16px 0;
-  transition: all .4s cubic-bezier(.16,.8,.24,1);
-  background: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
-}
-header#siteHeader.scrolled {
-  padding: 12px 0 !important;
-  background: rgba(255, 255, 255, 0.98) !important;
-}
-nav.main-nav a {
-  color: #111111 !important;
-  font-weight: 600 !important;
-}
-.header-right .btn-quote {
-  color: #111111 !important;
-  border-color: #111111 !important;
-  font-weight: 600 !important;
-}
-.header-right .btn-quote:hover {
-  background: #111111 !important;
-  color: #ffffff !important;
-}
-.header-right .icon-btn svg {
-  stroke: #111111 !important;
-}
-.lang-current {
-  color: #111111 !important;
-  border-color: rgba(0, 0, 0, 0.25) !important;
-  font-weight: 600 !important;
-}
-.burger span {
-  background: #111111 !important;
-}
-.logo img {
-  filter: none !important;
-}
-
-
-/* Section Head & Faint Text High-Contrast Visibility Fix */
-.section-head p, .eyebrow, .intro-copy, .cred-card p, .prod-meta, .accessory-note {
-  color: #555555 !important;
-}
-#categories .section-head p, #categories .cat-body p, #categories .cat-index {
-  color: #d8d8d8 !important;
-}
-
-
-/* ANRIN & HYDROTEC Hero Fit & No-Overflow Padding Fix — Exact Screen Fit */
-.hero, .htec-hero, .page-hero, .aint-hero-home {
-  position: relative !important;
-  margin-top: 0 !important;
-  padding-top: 92px !important;
-  padding-bottom: 36px !important;
-  min-height: auto !important;
-}
-
-.hero-brand-wordmark {
-  font-family: var(--display, sans-serif) !important;
-  font-size: 26px !important;
-  font-weight: 800 !important;
-  color: #ffffff !important;
-  text-transform: uppercase !important;
-  letter-spacing: .04em !important;
-  margin-bottom: 12px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  text-align: left !important;
-  line-height: 1 !important;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
-}
-
-.hero-brand-wordmark small {
-  font-family: var(--body, sans-serif) !important;
-  font-size: 10.5px !important;
-  font-weight: 700 !important;
-  letter-spacing: .18em !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  margin-top: 3px !important;
-}
-
-.hero-title, .htec-hero h1, .page-hero h1 {
-  margin-top: 8px !important;
-  margin-bottom: 12px !important;
-}
-
-.hero-sub, .htec-hero p.lead, .page-hero p.lead {
-  margin-top: 10px !important;
-  margin-bottom: 24px !important;
-  max-width: 780px !important;
-  font-size: 15.5px !important;
-  line-height: 1.5 !important;
-}
-
-.htec-hero-nav, .aint-hero-nav {
-  display: grid !important;
-  gap: 10px !important;
-  margin-top: 24px !important;
-  width: 100% !important;
-}
-
-.htec-hero-nav {
-  grid-template-columns: repeat(6, 1fr) !important;
-}
-
-.aint-hero-nav {
-  grid-template-columns: repeat(7, 1fr) !important;
-}
-
-.htec-hero-nav a, .aint-hero-nav a {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-  padding: 12px 6px !important;
-  border-radius: 999px !important;
-  background: #ffffff !important;
-  color: #111111 !important;
-  font-family: var(--body, sans-serif) !important;
-  font-weight: 600 !important;
-  font-size: 13.5px !important;
-  letter-spacing: .01em !important;
-  border: none !important;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.18) !important;
-  transition: background .25s var(--ease), color .25s var(--ease), transform .25s var(--ease) !important;
-  text-decoration: none !important;
-  white-space: nowrap !important;
-}
-
-@media(max-width:1100px) {
-  .htec-hero-nav {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-  .aint-hero-nav {
-    grid-template-columns: repeat(4, 1fr) !important;
-  }
-}
-
-@media(max-width:640px) {
-  .hero, .htec-hero, .page-hero, .aint-hero-home {
-    padding-top: 80px !important;
-    padding-bottom: 24px !important;
-  }
-  .htec-hero-nav {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  .aint-hero-nav {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  .htec-hero-nav a, .aint-hero-nav a {
-    padding: 10px 4px !important;
-    font-size: 12px !important;
-  }
-}
-
-/* Strictly Hide Duplicate Subnav Headers */
-header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  max-height: 0 !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  overflow: hidden !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-}
-
-
-/* Perfect On-Screen Hero Fit (Zero Cut-Off / Zero Overflow) */
-header#siteHeader {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 500 !important;
-  background: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
-  padding: 14px 0 !important;
-}
-
-header#siteHeader.scrolled {
-  padding: 10px 0 !important;
-  background: rgba(255, 255, 255, 0.98) !important;
-}
-
-.hero, .htec-hero, .page-hero, .aint-hero-home {
-  position: relative !important;
-  min-height: auto !important;
-  height: auto !important;
-  padding-top: 86px !important;
-  padding-bottom: 28px !important;
-  margin-top: 0 !important;
-  display: block !important;
-}
-
-.hero-brand-wordmark {
-  font-family: var(--display, 'Manrope', sans-serif) !important;
-  font-size: 26px !important;
-  font-weight: 800 !important;
-  color: #ffffff !important;
-  text-transform: uppercase !important;
-  letter-spacing: .04em !important;
-  margin-bottom: 14px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  text-align: left !important;
-  line-height: 1 !important;
-}
-
-.hero-brand-wordmark small {
-  font-family: var(--body, 'Plus Jakarta Sans', sans-serif) !important;
-  font-size: 10.5px !important;
-  font-weight: 700 !important;
-  letter-spacing: .18em !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  margin-top: 3px !important;
-}
-
-.eyebrow {
-  font-size: 11.5px !important;
-  letter-spacing: .12em !important;
-  text-transform: uppercase !important;
-  color: #D8D8D8 !important;
-  margin-bottom: 8px !important;
-}
-
-.hero-title, .htec-hero h1, .page-hero h1 {
-  font-family: var(--display, 'Manrope', sans-serif) !important;
-  font-size: clamp(32px, 4.5vw, 56px) !important;
-  font-weight: 700 !important;
-  line-height: 1.05 !important;
-  color: #ffffff !important;
-  max-width: 850px !important;
-  margin-top: 4px !important;
-  margin-bottom: 10px !important;
-}
-
-.hero-sub, .htec-hero p.lead, .page-hero p.lead {
-  max-width: 680px !important;
-  margin-top: 8px !important;
-  margin-bottom: 20px !important;
-  font-size: 15px !important;
-  line-height: 1.5 !important;
-  color: #D8D8D8 !important;
-}
-
-.aint-hero-nav {
-  display: grid !important;
-  grid-template-columns: repeat(7, 1fr) !important;
-  gap: 10px !important;
-  margin-top: 20px !important;
-  width: 100% !important;
-}
-
-.htec-hero-nav {
-  display: grid !important;
-  grid-template-columns: repeat(6, 1fr) !important;
-  gap: 10px !important;
-  margin-top: 20px !important;
-  width: 100% !important;
-}
-
-.aint-hero-nav a, .htec-hero-nav a {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-  padding: 12px 6px !important;
-  border-radius: 999px !important;
-  background: #ffffff !important;
-  color: #111111 !important;
-  font-family: var(--body, 'Plus Jakarta Sans', sans-serif) !important;
-  font-weight: 600 !important;
-  font-size: 13.5px !important;
-  letter-spacing: .01em !important;
-  border: none !important;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.18) !important;
-  transition: background .25s var(--ease), color .25s var(--ease), transform .25s var(--ease) !important;
-  text-decoration: none !important;
-  white-space: nowrap !important;
-}
-
-.aint-hero-nav a:hover, .htec-hero-nav a:hover {
-  background: #f0f0f0 !important;
-  color: #000000 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25) !important;
-}
-
-@media(max-width:1100px) {
-  .aint-hero-nav {
-    grid-template-columns: repeat(4, 1fr) !important;
-  }
-  .htec-hero-nav {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-}
-
-@media(max-width:640px) {
-  .hero, .htec-hero, .page-hero, .aint-hero-home {
-    padding-top: 76px !important;
-    padding-bottom: 20px !important;
-  }
-  .aint-hero-nav, .htec-hero-nav {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  .aint-hero-nav a, .htec-hero-nav a {
-    padding: 10px 4px !important;
-    font-size: 12px !important;
-  }
-}
-</style>
-
-
-
-
-<style id="slim-header-override">
-/* Ultra Compact & Higher Slim Header Override */
-header#siteHeader, header.main-site-header {
-  padding: 6px 0 !important;
-  top: 0 !important;
-  background: rgba(255, 255, 255, 0.98) !important;
-  backdrop-filter: blur(12px) !important;
-}
-
-header#siteHeader.scrolled, header.main-site-header.scrolled {
-  padding: 5px 0 !important;
-}
-
-header#siteHeader .logo img, header.main-site-header .logo img {
-  height: 28px !important;
-  width: auto !important;
-}
-
-header#siteHeader nav.main-nav a, header.main-site-header nav.main-nav a {
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  letter-spacing: .02em !important;
-}
-
-header#siteHeader .btn-quote, header.main-site-header .btn-quote-main {
-  padding: 7px 18px !important;
-  font-size: 12.5px !important;
-}
-
-/* Pull Hero Sections Higher Up Directly Below Slim Header */
-.hero-content, .page-hero, .aint-hero-home {
-  padding-top: 50px !important;
-}
-</style>
-
-
-
-
-
-<style id="lang-switch-dropdown-fix">
-.lang-switch.open .lang-menu {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-.lang-menu button:hover {
-  background: #f0f0f0 !important;
-}
-</style>
-
-
-
-
-
-<style id="hero-font-size-wordmark-override">
-/* Increase Hero Heading & Paragraph Text Size */
-.hero-title, .htec-hero h1, .page-hero h1, h1.hero-title {
-  font-size: clamp(44px, 5.8vw, 78px) !important;
-  font-weight: 800 !important;
-  line-height: 1.06 !important;
-  letter-spacing: -0.02em !important;
-}
-
-.hero-sub, .htec-hero p.lead, .page-hero p.lead, p.hero-sub {
-  font-size: 18px !important;
-  line-height: 1.65 !important;
-  max-width: 740px !important;
-}
-
-.hero-brand-wordmark {
-  font-family: 'Manrope', sans-serif !important;
-  font-size: 28px !important;
-  font-weight: 800 !important;
-  color: #ffffff !important;
-  text-transform: uppercase !important;
-  letter-spacing: .04em !important;
-  margin-bottom: 8px !important;
-}
-
-.hero-brand-wordmark small {
-  font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  letter-spacing: .18em !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  margin-top: 3px !important;
-  display: block !important;
-}
-</style>
-
-
-
-
-
-<style id="perfect-hero-fit-override">
-/* Pull Hero Wordmark Higher Up & Make It Larger */
-.hero-brand-wordmark {
-  font-family: 'Manrope', sans-serif !important;
-  font-size: 34px !important;
-  font-weight: 900 !important;
-  color: #ffffff !important;
-  text-transform: uppercase !important;
-  letter-spacing: .04em !important;
-  margin-top: 0 !important;
-  margin-bottom: 4px !important;
-  line-height: 0.95 !important;
-}
-
-.hero-brand-wordmark small {
-  font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-size: 13px !important;
-  font-weight: 800 !important;
-  letter-spacing: .22em !important;
-  color: rgba(255, 255, 255, 0.9) !important;
-  margin-top: 4px !important;
-  display: block !important;
-}
-
-.eyebrow {
-  margin-top: 6px !important;
-  margin-bottom: 8px !important;
-  font-size: 12px !important;
-}
-
-/* Hero Section Tight Padding to Eliminate Cut-Off */
-.hero-content, .page-hero, .aint-hero-home, .htec-hero {
-  padding-top: 24px !important;
-  padding-bottom: 20px !important;
-}
-
-.hero-title, .htec-hero h1, .page-hero h1, h1.hero-title {
-  margin-top: 4px !important;
-  margin-bottom: 8px !important;
-  font-size: clamp(38px, 5.2vw, 68px) !important;
-  line-height: 1.05 !important;
-}
-
-.hero-sub, .htec-hero p.lead, .page-hero p.lead, p.hero-sub {
-  margin-top: 6px !important;
-  margin-bottom: 14px !important;
-  font-size: 16.5px !important;
-  line-height: 1.55 !important;
-  max-width: 720px !important;
-}
-
-.hero-actions {
-  margin-top: 14px !important;
-  margin-bottom: 12px !important;
-}
-
-.aint-hero-nav, .htec-hero-nav {
-  margin-top: 14px !important;
-  margin-bottom: 12px !important;
-}
-
-/* Prevent Statistics Row Cut-Off Below Pill Buttons (Pic 2 Fix) */
-.hero-meta, .brand-meta-row, .hero-stats {
-  margin-top: 14px !important;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-  position: relative !important;
-  z-index: 10 !important;
-}
-
-.hero-meta div b, .brand-meta-row div b, .hero-stats div b {
-  font-size: 16px !important;
-  line-height: 1.2 !important;
-}
-
-.hero-meta div span, .brand-meta-row div span, .hero-stats div span {
-  font-size: 10.5px !important;
-  line-height: 1.3 !important;
-  margin-top: 2px !important;
-}
-</style>
-
-
-
-
+@media(max-width:640px){#backToTop{right:18px;bottom:18px;width:48px;height:48px;}}</style>
 
 <style id="hero-typography-expand-override">
 /* Align Hero Content Left Edge with Navbar Logo & Pull Higher Up */
@@ -918,46 +409,6 @@ header#siteHeader .btn-quote, header.main-site-header .btn-quote-main {
 </head>
 <body>
 
-<header class="main-site-header" style="position:sticky;top:0;z-index:99999;background:#ffffff;border-bottom:1px solid #e5e5e5;padding:6px 0;box-shadow:0 4px 16px rgba(0,0,0,0.06);">
-  <div class="wrap" style="max-width:1320px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;">
-    <a href="/index.html" class="logo" style="display:flex;align-items:center;"><img src="https://anrin.se/wp-content/uploads/2022/11/ANRIN_Logo_schwarz_2.svg" alt="ANRIN Nordic" style="height:28px;width:auto;"></a>
-    <nav class="main-nav" style="display:flex;gap:28px;align-items:center;">
-      <a href="/produkter.html" style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#111111;text-transform:uppercase;text-decoration:none;">Products</a>
-      <a href="/projekt.html" style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#111111;text-transform:uppercase;text-decoration:none;">Projects</a>
-      <a href="/om-oss.html" style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#111111;text-transform:uppercase;text-decoration:none;">About us</a>
-      <a href="/nedladdningar.html" style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#111111;text-transform:uppercase;text-decoration:none;">Downloads</a>
-      <a href="/kontakt.html" style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#111111;text-transform:uppercase;text-decoration:none;">Contact</a>
-    </nav>
-    <div class="header-right" style="display:flex;align-items:center;gap:16px;">
-      <a href="/kontakt.html" style="color:#111;display:flex;align-items:center;" aria-label="Search">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      </a>
-      
-      <div class="lang-switch notranslate" translate="no" style="position:relative;">
-        <button class="lang-current" style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;padding:5px 12px;border:1px solid #ccc;border-radius:100px;background:#fff;color:#111;cursor:pointer;">
-          <span class="lang-label">EN</span>
-          <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="lang-menu" style="position:absolute;top:calc(100% + 6px);right:0;background:#ffffff;border:1px solid #e5e5e5;border-radius:12px;box-shadow:0 12px 32px rgba(0,0,0,0.15);min-width:140px;padding:6px;z-index:99999;display:none;">
-          <button data-lang="sv" style="width:100%;text-align:left;padding:8px 12px;border:none;background:none;font-size:13px;font-weight:600;color:#111;cursor:pointer;border-radius:6px;">Svenska</button>
-          <button data-lang="en" style="width:100%;text-align:left;padding:8px 12px;border:none;background:none;font-size:13px;font-weight:600;color:#111;cursor:pointer;border-radius:6px;">English</button>
-          <button data-lang="fi" style="width:100%;text-align:left;padding:8px 12px;border:none;background:none;font-size:13px;font-weight:600;color:#111;cursor:pointer;border-radius:6px;">Suomi</button>
-          <button data-lang="da" style="width:100%;text-align:left;padding:8px 12px;border:none;background:none;font-size:13px;font-weight:600;color:#111;cursor:pointer;border-radius:6px;">Dansk</button>
-          <button data-lang="no" style="width:100%;text-align:left;padding:8px 12px;border:none;background:none;font-size:13px;font-weight:600;color:#111;cursor:pointer;border-radius:6px;">Norsk</button>
-          <button data-lang="is" style="width:100%;text-align:left;padding:8px 12px;border:none;background:none;font-size:13px;font-weight:600;color:#111;cursor:pointer;border-radius:6px;">Íslenska</button>
-          <button data-lang="de" style="width:100%;text-align:left;padding:8px 12px;border:none;background:none;font-size:13px;font-weight:600;color:#111;cursor:pointer;border-radius:6px;">Deutsch</button>
-        </div>
-      </div>
-
-      <a href="/kontakt.html" class="btn-quote-main" style="background:#000000;color:#ffffff;padding:7px 18px;border-radius:999px;font-size:12.5px;font-weight:700;text-decoration:none;display:inline-block;">Request a quote</a>
-    </div>
-  </div>
-</header>
-
-
-
-
-
 <header id="siteHeader" class="scrolled">
   <div class="wrap">
     <a href="index.html" class="logo"><img src="https://anrin.se/wp-content/uploads/2022/11/ANRIN_Logo_schwarz_2.svg" alt="ANRIN Nordic"></a>
@@ -970,7 +421,7 @@ header#siteHeader .btn-quote, header.main-site-header .btn-quote-main {
     </nav>
     <div class="header-right">
       <button class="icon-btn" id="searchTrigger" aria-label="Sök"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
-      <div class="lang-switch notranslate" translate="no">
+      <div class="lang-switch">
         <button class="lang-current"><span class="lang-label">SV</span><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
         <div class="lang-menu">
           <button data-lang="sv">Svenska</button>
@@ -1051,7 +502,7 @@ header#siteHeader .btn-quote, header.main-site-header .btn-quote-main {
   <a href="om-oss.html" data-i18n="nav_omoss">Om oss</a>
   <a href="nedladdningar.html" data-i18n="nav_nedladdningar">Nedladdningar</a>
   <a href="kontakt.html" data-i18n="nav_kontakt">Kontakt</a>
-  <div class="mm-langs notranslate" translate="no"><button data-lang="sv">SV</button><button data-lang="en">EN</button><button data-lang="fi">FI</button><button data-lang="da">DA</button><button data-lang="no">NO</button><button data-lang="is">IS</button><button data-lang="de">DE</button></div>
+  <div class="mm-langs"><button data-lang="sv">SV</button><button data-lang="en">EN</button><button data-lang="fi">FI</button><button data-lang="da">DA</button><button data-lang="no">NO</button><button data-lang="is">IS</button><button data-lang="de">DE</button></div>
   <div class="mm-foot"><span>info@anrin.se</span><span>+46 (0)10-209 9 209</span></div>
 </div>
 
@@ -1254,7 +705,342 @@ header#siteHeader .btn-quote, header.main-site-header .btn-quote-main {
 </footer>
 
 <script>
-/* ===================== ANRIN main header (integrated) ===================== */;
+/* ===================== ANRIN main header (integrated) ===================== */
+const I18N = {
+  sv: { nav_produkter:"Produktområde", nav_projekt:"Projekt", nav_omoss:"Om oss", nav_nedladdningar:"Nedladdningar", nav_kontakt:"Kontakt", btn_quote:"Begär offert",
+    ss_hero_tag:"Stainless Team · Sedan 2017 i samarbete med Stainless Team Finland OY",
+    ss_hero_title:"Golvbrunnar och <em>golvrännor</em> i rostfritt stål.",
+    ss_hero_sub:"Stainless Team tillverkar högkvalitativa produkter i rostfritt- och syrafast stål — golvbrunnar och golvrännor för alla golvtyper. Hög kundnöjdhet, bred kompetens och 40 års finsk kvalité, tillverkat för den svenska marknaden.",
+    ss_cta_products:"Våra produkter", ss_cta_documents:"Hitta dokument",
+    ss_nav_products:"Produkter", ss_nav_areas:"Användningsområden", ss_nav_documents:"Dokument", ss_nav_about:"Om oss", ss_nav_contact:"Kontakt",
+    ss_stat1_v:"40+", ss_stat1_l:"Års erfarenhet", ss_stat2_v:"23", ss_stat2_l:"År hos finska försvaret", ss_stat3_v:"ISO 9002", ss_stat3_l:"Kvalitetssystem", ss_stat4_v:"Finland", ss_stat4_l:"Egen fabrik & produktion",
+    ss_intro_eyebrow:"Finsk kvalité", ss_intro_title:"Tillverkat för den svenska marknaden.",
+    ss_intro_p1:"Stainless Team Sverige är ett samarbete mellan <strong>ANRIN Nordic</strong> och <strong>Stainless Team Finland OY</strong>. Vi har gjort oss kända för hög kundnöjdhet, god service, bred kompetens och mycket hög kvalité — inom bland annat bygg-, livsmedels- och varvsindustrin.",
+    ss_intro_p2:"Från idé till färdig produkt: med hjälp av vår tekniska backoffice tar vi fram 3D-ritningar på era produkter. Hittar du inte det du söker i vårt sortiment nedan kan vi med största sannolikhet specialtillverka det.",
+    ss_cred1_num:"01 — Erfarenhet", ss_cred1_title:"40 års erfarenhet", ss_cred1_desc:"Stainless Team har över 40 års erfarenhet av rostfria och syrafasta produkter, med egen fabrik i Finland och en stålproduktion i världsklass.",
+    ss_cred2_num:"02 — Kompetens", ss_cred2_title:"Kvalité & kompetens", ss_cred2_desc:"Beprövad erfarenhet och spetskompetens inom djupdragning, laserskärning, rörberedningar och bussningar genererar tillförlitlighet och hög kvalité.",
+    ss_cred3_num:"03 — Förtroende", ss_cred3_title:"Finska försvarsmakten", ss_cred3_desc:"Stolt leverantör till det finska försvaret i 23 år — golvbrunnar, golvrännor och specialprodukten Carry-Hot.",
+    ss_cat_title:"Ett komplett sortiment i rostfritt & syrafast stål.", ss_cat_desc:"Klicka på en produktgrupp för att se alla underkategorier, produkter, artikelnummer och teknikskisser.",
+  },
+  en: { nav_produkter:"Products", nav_projekt:"Projects", nav_omoss:"About", nav_nedladdningar:"Downloads", nav_kontakt:"Contact", btn_quote:"Request a quote",
+    ss_hero_tag:"Stainless Team · In partnership with Stainless Team Finland OY since 2017",
+    ss_hero_title:"Floor drains and <em>floor channels</em> in stainless steel.",
+    ss_hero_sub:"Stainless Team manufactures high-quality products in stainless and acid-resistant steel — floor drains and floor channels for all floor types. High customer satisfaction, broad expertise and 40 years of Finnish quality, manufactured for the Swedish market.",
+    ss_cta_products:"Our products", ss_cta_documents:"Find documents",
+    ss_nav_products:"Products", ss_nav_areas:"Areas of use", ss_nav_documents:"Documents", ss_nav_about:"About us", ss_nav_contact:"Contact",
+    ss_stat1_v:"40+", ss_stat1_l:"Years of experience", ss_stat2_v:"23", ss_stat2_l:"Years with Finnish Defence", ss_stat3_v:"ISO 9002", ss_stat3_l:"Quality system", ss_stat4_v:"Finland", ss_stat4_l:"Own factory & production",
+    ss_intro_eyebrow:"Finnish quality", ss_intro_title:"Manufactured for the Swedish market.",
+    ss_intro_p1:"Stainless Team Sweden is a partnership between <strong>ANRIN Nordic</strong> and <strong>Stainless Team Finland OY</strong>. We are known for high customer satisfaction, good service, broad expertise and very high quality — in construction, food and shipbuilding industries.",
+    ss_intro_p2:"From idea to finished product: with our technical backoffice we create 3D drawings of your products. If you don't find what you're looking for in our range below, we can most likely manufacture it to order.",
+    ss_cred1_num:"01 — Experience", ss_cred1_title:"40 years of experience", ss_cred1_desc:"Stainless Team has over 40 years of experience in stainless and acid-resistant products, with its own factory in Finland and world-class steel production.",
+    ss_cred2_num:"02 — Expertise", ss_cred2_title:"Quality & expertise", ss_cred2_desc:"Proven experience and specialist expertise in deep drawing, laser cutting, pipe processing and bushings generate reliability and high quality.",
+    ss_cred3_num:"03 — Trust", ss_cred3_title:"Finnish Defence Forces", ss_cred3_desc:"Proud supplier to the Finnish Defence Forces for 23 years — floor drains, floor channels and the special product Carry-Hot.",
+    ss_cat_title:"A complete range in stainless & acid-resistant steel.", ss_cat_desc:"Click on a product group to see all subcategories, products, article numbers and technical drawings.",
+  },
+  de: { nav_produkter:"Produkte", nav_projekt:"Projekte", nav_omoss:"Über uns", nav_nedladdningar:"Downloads", nav_kontakt:"Kontakt", btn_quote:"Angebot anfragen" },
+  fi: { nav_produkter:"Tuotteet", nav_projekt:"Projektit", nav_omoss:"Meistä", nav_nedladdningar:"Ladattavat", nav_kontakt:"Yhteystiedot", btn_quote:"Pyydä tarjous" },
+  da: { nav_produkter:"Produkter", nav_projekt:"Projekter", nav_omoss:"Om os", nav_nedladdningar:"Downloads", nav_kontakt:"Kontakt", btn_quote:"Anmod om tilbud" },
+  no: { nav_produkter:"Produkter", nav_projekt:"Prosjekter", nav_omoss:"Om oss", nav_nedladdningar:"Nedlastinger", nav_kontakt:"Kontakt", btn_quote:"Be om tilbud" },
+  is: { nav_produkter:"Vörur", nav_projekt:"Verkefni", nav_omoss:"Um okkur", nav_nedladdningar:"Niðurhal", nav_kontakt:"Hafðu samband", btn_quote:"Óska eftir tilboði" }
+};
+const COUNTRY_LANG = {SE:"sv", NO:"no", FI:"fi", DK:"da", IS:"is", DE:"de"};
+const BRAND_VISIBILITY = {
+  sv: {hydrotec:true, stainless:true},
+  en: {hydrotec:true, stainless:true},
+  fi: {hydrotec:true, stainless:false},
+  da: {hydrotec:false, stainless:true},
+  no: {hydrotec:true, stainless:true},
+  is: {hydrotec:true, stainless:true},
+  de: {hydrotec:false, stainless:false}
+};
+function applyBrandVisibility(lang){
+  const rules = BRAND_VISIBILITY[lang] || BRAND_VISIBILITY.en;
+  document.querySelectorAll('[data-brand="hydrotec"]').forEach(el=> el.classList.toggle('brand-hidden', !rules.hydrotec));
+  document.querySelectorAll('[data-brand="stainless"]').forEach(el=> el.classList.toggle('brand-hidden', !rules.stainless));
+}
+function applyLanguage(lang){
+  const dict = I18N[lang] || I18N.sv;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(dict[key] !== undefined) el.textContent = dict[key];
+  });
+  document.querySelectorAll('.lang-menu button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  document.querySelectorAll('.lang-label').forEach(el=> el.textContent = lang.toUpperCase());
+  document.documentElement.setAttribute('lang', lang);
+  applyBrandVisibility(lang);
+  try{ localStorage.setItem('anrin_lang', lang); }catch(e){}
+}
+function detectCountryLanguage(){
+  let manual = null;
+  try{ manual = localStorage.getItem('anrin_lang'); }catch(e){}
+  if(manual) { applyLanguage(manual); return; }
+  applyLanguage('en');
+  fetch('https://ipapi.co/json/', {cache:'no-store'})
+    .then(r=> r.ok ? r.json() : null)
+    .then(data=>{
+      if(!data || !data.country_code) return;
+      let already = null;
+      try{ already = localStorage.getItem('anrin_lang_auto_done'); }catch(e){}
+      if(already) return;
+      const lang = COUNTRY_LANG[data.country_code] || 'en';
+      applyLanguage(lang);
+      try{ localStorage.setItem('anrin_lang_auto_done', '1'); }catch(e){}
+    })
+    .catch(()=>{});
+}
+function initLangSwitcher(){
+  detectCountryLanguage();
+  document.querySelectorAll('.lang-switch').forEach(sw=>{
+    const current = sw.querySelector('.lang-current');
+    current.addEventListener('click', (e)=>{ e.stopPropagation(); sw.classList.toggle('open'); });
+    sw.querySelectorAll('.lang-menu button').forEach(btn=>{
+      btn.addEventListener('click', ()=>{ applyLanguage(btn.dataset.lang); sw.classList.remove('open'); });
+    });
+  });
+  document.addEventListener('click', ()=> document.querySelectorAll('.lang-switch.open').forEach(s=>s.classList.remove('open')));
+  document.querySelectorAll('.mm-langs button').forEach(btn=>{
+    btn.addEventListener('click', ()=> applyLanguage(btn.dataset.lang));
+  });
+}
+function initScrollFx(){
+  const header = document.getElementById('siteHeader');
+  function onScroll(){
+    const y = window.scrollY;
+    if(header) header.classList.toggle('scrolled', y > 40);
+  }
+  document.addEventListener('scroll', onScroll);
+  onScroll();
+}
+function initMobileMenu(){
+  const burger = document.getElementById('burgerBtn');
+  const mmenu = document.getElementById('mobile-menu');
+  if(!burger || !mmenu) return;
+  burger.addEventListener('click', ()=>{ mmenu.classList.add('open'); document.body.classList.add('mobile-menu-open'); });
+  const closeBtn = document.getElementById('closeMenu');
+  function closeMobileMenu(){ mmenu.classList.remove('open'); document.body.classList.remove('mobile-menu-open'); }
+  if(closeBtn) closeBtn.addEventListener('click', closeMobileMenu);
+  document.querySelectorAll('#mobile-menu a').forEach(a=> a.addEventListener('click', closeMobileMenu));
+}
+function initMegaMenu(){
+  const trigger = document.getElementById('productsMegaTrigger');
+  const panel = document.getElementById('megaPanel');
+  const overlay = document.getElementById('megaOverlay');
+  if(!trigger || !panel) return;
+  function open(){ panel.classList.add('open'); overlay.classList.add('open'); }
+  function close(){ panel.classList.remove('open'); overlay.classList.remove('open'); }
+  trigger.addEventListener('mouseenter', open);
+  trigger.addEventListener('click', (e)=>{ e.preventDefault(); panel.classList.contains('open') ? close() : open(); });
+  panel.addEventListener('mouseleave', close);
+  overlay.addEventListener('click', close);
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
+}
+const SEARCH_INDEX = [
+  {title:"Linjeavvattning — ANRIN", cat:"ANRIN", url:"produkter.html#anrin", brand:"anrin"},
+  {title:"KE-serien kantförstärkt ränna", cat:"ANRIN", url:"produkter.html#anrin", brand:"anrin"},
+  {title:"SF-serien tung trafik", cat:"ANRIN", url:"produkter.html#anrin", brand:"anrin"},
+  {title:"ANRIN SPORT dräneringssystem", cat:"ANRIN", url:"produkter.html#anrin", brand:"anrin"},
+  {title:"HYDROTEC Betäckningar", cat:"HYDROTEC", url:"produkter.html#hydrotec", brand:"hydrotec"},
+  {title:"HYDROblock rännsystem", cat:"HYDROTEC", url:"produkter.html#hydrotec", brand:"hydrotec"},
+  {title:"HYDROTEC Stadsinredning", cat:"HYDROTEC", url:"produkter.html#hydrotec", brand:"hydrotec"},
+  {title:"Stainless Team golvbrunnar", cat:"Stainless Team", url:"produkter.html#stainless", brand:"stainless"},
+  {title:"Stainless Team golvrännor", cat:"Stainless Team", url:"produkter.html#stainless", brand:"stainless"},
+  {title:"ENVIROguard oljeavskiljare", cat:"ENVIROguard", url:"produkter.html#enviroguard", brand:""},
+  {title:"ENVIROguard fettavskiljare", cat:"ENVIROguard", url:"produkter.html#enviroguard", brand:""},
+  {title:"Projekt & referenser", cat:"Sidor", url:"projekt.html", brand:""},
+  {title:"Nedladdningar & dokument", cat:"Sidor", url:"nedladdningar.html", brand:""},
+  {title:"Kontakt", cat:"Sidor", url:"kontakt.html", brand:""}
+];
+function initSiteSearch(){
+  const trigger = document.getElementById('searchTrigger');
+  const panel = document.getElementById('searchPanel');
+  if(!trigger || !panel) return;
+  const input = panel.querySelector('input');
+  const results = document.getElementById('searchResults');
+  function open(){ panel.classList.add('open'); setTimeout(()=>input.focus(),350); }
+  function close(){ panel.classList.remove('open'); }
+  trigger.addEventListener('click', open);
+  panel.querySelector('.search-close').addEventListener('click', close);
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
+  function render(items){
+    if(!items.length){ results.innerHTML = '<p class="search-empty">Inga träffar.</p>'; return; }
+    results.innerHTML = items.map(i=>{
+      const rules = BRAND_VISIBILITY[document.documentElement.getAttribute('lang')||'sv'] || BRAND_VISIBILITY.en;
+      if(i.brand==='hydrotec' && !rules.hydrotec) return '';
+      if(i.brand==='stainless' && !rules.stainless) return '';
+      return '<a class="search-hit" href="'+i.url+'"><div style="flex:1"><div class="sh-cat">'+i.cat+'</div><div class="sh-title">'+i.title+'</div></div></a>';
+    }).join('');
+  }
+  render(SEARCH_INDEX);
+  input.addEventListener('input', ()=>{
+    const q = input.value.toLowerCase();
+    render(q ? SEARCH_INDEX.filter(i=>i.title.toLowerCase().includes(q)) : SEARCH_INDEX);
+  });
+}
+document.addEventListener('DOMContentLoaded', ()=>{
+  initLangSwitcher();
+  initScrollFx();
+  initMobileMenu();
+  initMegaMenu();
+  initSiteSearch();
+});
+</script>
+
+<script>
+/* ================= DATA ================= */
+const IMG = "https://stainlessteam.se/wp-content/uploads/2024/01/";
+const IMG25 = "https://stainlessteam.se/wp-content/uploads/2025/02/";
+
+// Shared accessories used across all golvbrunnar floor-type tabs
+const golvbrunnAccessories = [
+  {name:"Sil till 150 & 220 golvbrunn", img:IMG+"Standardsil-1.png", meta:["Universal — passar 150 & 220 serien"]},
+  {name:"Klinkerram", img:IMG+"Klinkerram-220-1.png", meta:["150 (200×200mm) — 3316421","220 (250×250mm) — 3316422"]},
+  {name:"Expanderande klämring", img:IMG+"RingOfFire-768x576-1.png", meta:["Rostfritt stål/110 B LVL — 3319812"]},
+  {name:"Förhöjningsring i rostfritt stål", img:IMG+"KOROKE_DU130_100mm.png", meta:["150 H=50mm — 3305231","150 H=100mm — 3305232","220 H=50mm — 3305233","220 H=100mm — 3319831"]},
+  {name:"Massaring", img:IMG+"Massaring-220.png", meta:["150 — 3305235","220 — 3305236"]},
+  {name:"Vattentätningsring", img:IMG+"Vesieristyslevy_DU-130.png", meta:["150 — 3319822","220 — 3319821"]},
+  {name:"Extra utlopp", img:IMG+"DU-130_BETONI_vaaka-75_KVL_50SVL.png", meta:["150 — 3319801","220 — 3319802"]},
+  {name:"Klämring för vinyl/altro golv", img:IMG+"Ring-for-tjock-plastmatta-150.png", meta:["150 — 3305205","220 — 3305207"]},
+];
+
+function gb(name, img, artnr, pdf){ return {name, img:IMG+img, artnr, pdf: pdf? IMG+pdf : null, klass:"EN 1.4404"}; }
+
+const golvbrunnarTabs = {
+  betong: {
+    label:"Betong", heroImg:IMG+"DU-150_BETONG_botten-75-300x225-1.png",
+    groups:[
+      {label:"Bottenutlopp — löstagbart vattenlås", items:[
+        gb("G-ST 150/75 B LVL","DU-150_BETONG_botten-75-300x225-1.png","3305216","3305216.pdf"),
+        gb("G-ST 220/75 B LVL","DU-220_betong_botten-75.png","3305213","3305213.pdf"),
+        gb("G-ST 220/110 B LVL","DU-220_betong_botten-110.png","3305214","3305214.pdf"),
+      ]},
+      {label:"Sidoutlopp — löstagbart vattenlås", items:[
+        gb("G-ST 150/75 S LVL","DU-150_BETONG_sido-75.png","3305206","3305206.pdf"),
+        gb("G-ST 220/75 S LVL","DU-220_betong_sido-75.png","3305203","3305203min.pdf"),
+        gb("G-ST 220/110 S LVL","DU-220_betong_sido-110.png","3305204","3305204min.pdf"),
+      ]},
+      {label:"Bottenutlopp — fast vattenlås (ej storkök)", items:[
+        gb("G-ST 150/75 B FVL","DU-150_BETONG_botten-75-300x225-1.png","3316465","3316465.pdf"),
+        gb("G-ST 220/75 B FVL","DU-220_betong_botten-75.png","3316461","3316461.pdf"),
+        gb("G-ST 220/110 B FVL","DU-220_betong_botten-110.png","3316466","3316466.pdf"),
+      ]},
+      {label:"Sidoutlopp — fast vattenlås (ej storkök)", items:[
+        gb("G-ST 150/75 S FVL","DU-150_BETONG_sido-75.png","3316464","3316464.pdf"),
+        gb("G-ST 220/75 S FVL","DU-220_betong_sido-75.png","3316462","3316462.pdf"),
+        gb("G-ST 220/110 S FVL","DU-220_betong_sido-110.png","3316463","3316463.pdf"),
+      ]},
+      {label:"Golvbrunn MAXI — bottenutlopp", items:[
+        gb("MAXI 270/75","Golvbrunn-MAXI-280-75-bottenutlopp-for-betonggolv.png","3303213","3303213.pdf"),
+        gb("MAXI 270/110","Golvbrunn-MAXI-280-110-bottenutlopp-for-betonggolv.png","3303214","3303214.pdf"),
+      ]},
+      {label:"Golvbrunn MAXI — sidoutlopp", items:[
+        gb("MAXI 270/75","Golvbrunn-MAXI-280-75-sidoutlopp-for-betonggolv.png","3303203","3303203.pdf"),
+        gb("MAXI 270/110","Golvbrunn-MAXI-280-110-sidoutlopp-for-betonggolv.png","3303204","3303204.pdf"),
+      ]},
+    ]
+  },
+  klinker: {
+    label:"Klinker", heroImg:IMG+"DU-150_Klinker_botten-75-768x576-1.png",
+    groups:[
+      {label:"Bottenutlopp — löstagbart vattenlås", items:[
+        gb("G-ST 150/75 B LVL","DU-150_Klinker_botten-75-768x576-1.png","3316432","3316432.pdf"),
+        gb("G-ST 220/75 B LVL","DU-220_klinker_botten-75.png","3316448","3316448.pdf"),
+        gb("G-ST 220/110 B LVL","DU-220_klinker_botten-110.png","3316448","3316456.pdf"),
+      ]},
+      {label:"Sidoutlopp — löstagbart vattenlås", items:[
+        gb("G-ST 150/75 S LVL","DU-150_klinker_sido-75.png","3316436","3316436.pdf"),
+        gb("G-ST 220/75 S LVL","DU-220_klinker_sido-75.png","3316452","3316452.pdf"),
+        gb("G-ST 220/110 S LVL","DU-220_klinker_sido-110.png","3316460","3316460.pdf"),
+      ]},
+      {label:"Bottenutlopp — fast vattenlås (ej storkök)", items:[
+        gb("G-ST 150/75 B FVL","DU-150_Klinker_botten-75-768x576-1.png","3316440","3316440.pdf"),
+        gb("G-ST 220/75 B FVL","DU-220_klinker_botten-75.png","3316470","3316470.pdf"),
+        gb("G-ST 220/110 B FVL","DU-220_klinker_botten-110.png","3316478","3316478.pdf"),
+      ]},
+      {label:"Sidoutlopp — fast vattenlås (ej storkök)", items:[
+        gb("G-ST 150/75 S FVL","DU-150_klinker_sido-75.png","3316444","3316444.pdf"),
+        gb("G-ST 220/75 S FVL","DU-220_klinker_sido-75.png","3316474","3316474.pdf"),
+        gb("G-ST 220/110 S FVL","DU-220_klinker_sido-110.png","3316482","3316482.pdf"),
+      ]},
+      {label:"Golvbrunn MAXI — bottenutlopp", items:[
+        gb("MAXI 270/75","Golvbrunn-MAXI-280-75-bottenutlopp-for-klinkergolv.png","3303217","3303217.pdf"),
+        gb("MAXI 270/110","Golvbrunn-MAXI-280-110-bottenutlopp-for-klinkergolv.png","3303225","3303225.pdf"),
+      ]},
+      {label:"Golvbrunn MAXI — sidoutlopp", items:[
+        gb("MAXI 270/75","Golvbrunn-280-75-sidoutlopp-for-klinkergolv.png","3303221","3303221.pdf"),
+        gb("MAXI 270/110","Golvbrunn-280-110-sidouitlopp-for-klinkergolv.png","3303229","3303229.pdf"),
+      ]},
+    ]
+  },
+  massagolv: {
+    label:"Massagolv", heroImg:IMG+"DU-150_Massa_botten-75-300x225-1.png",
+    groups:[
+      {label:"Bottenutlopp — löstagbart vattenlås", items:[
+        gb("G-ST 150/75 B LVL","DU-150_Massa_botten-75-300x225-1.png","3316431","3316431.pdf"),
+        gb("G-ST 220/75 B LVL","DU-220_Massa_botten-75.png","3316447","3316447.pdf"),
+        gb("G-ST 220/110 B LVL","DU-220_Massa_botten-110.png","3316455","3316455.pdf"),
+      ]},
+      {label:"Sidoutlopp — löstagbart vattenlås", items:[
+        gb("G-ST 150/75 S LVL","DU-150_Massa_sido-75.png","3316435","3316435.pdf"),
+        gb("G-ST 220/75 S LVL","DU-220_Massa_sido-75.png","3316451","3316451.pdf"),
+        gb("G-ST 220/110 S LVL","DU-220_Massa_sido-110.png","3316459","3316459.pdf"),
+      ]},
+      {label:"Bottenutlopp — fast vattenlås (ej storkök)", items:[
+        gb("G-ST 150/75 B FVL","DU-150_Massa_botten-75-300x225-1.png","3316439","3316439.pdf"),
+        gb("G-ST 220/75 B FVL","DU-220_Massa_botten-75.png","3316469","3316469.pdf"),
+        gb("G-ST 220/110 B FVL","DU-220_Massa_botten-110.png","3316477","3316477.pdf"),
+      ]},
+      {label:"Sidoutlopp — fast vattenlås (ej storkök)", items:[
+        gb("G-ST 150/75 S FVL","DU-150_Massa_sido-75.png","3316443","3316443.pdf"),
+        gb("G-ST 220/75 S FVL","DU-220_Massa_sido-75.png","3316473","3316473.pdf"),
+        gb("G-ST 220/110 S FVL","DU-220_Massa_sido-110.png","3316481","3316481.pdf"),
+      ]},
+      {label:"Golvbrunn MAXI — bottenutlopp", items:[
+        gb("MAXI 270/75","Golvbrunn-MAXI-280-75-bottenutlopp-for-massagolv.png","3303216","3303216.pdf"),
+        gb("MAXI 270/110","Golvbrunn-MAXI-280-110-bottenutlopp-for-betong.png","3303224","3303224.pdf"),
+      ]},
+      {label:"Golvbrunn MAXI — sidoutlopp", items:[
+        gb("MAXI 270/75","Golvbrunn-Maxi-280-75-sidoutlopp-for-massagolv.png","3303220","3303220.pdf"),
+        gb("MAXI 270/110","Golvbrunn-MAXI-280-110-sidoutlopp-for-massagolv.png","3303228","3303228.pdf"),
+      ]},
+    ]
+  },
+  plastmatta: {
+    label:"Plastmatta", heroImg:IMG+"DU-220_Tjockplastmatta_sido-110-300x225-1.png",
+    installPdf: IMG+"Installation-Tjock-plastmatta.pdf",
+    groups:[
+      {label:"Bottenutlopp — löstagbart vattenlås", items:[
+        gb("G-ST 150/75 B LVL","DU-150_Tjockplastmatta_botten-75.png","3316433","3316433.pdf"),
+        gb("G-ST 220/75 B LVL","DU-220_Tjockplastmatta_botten-75.png","3316449","3316449.pdf"),
+        gb("G-ST 220/110 B LVL","DU-220_Tjockplastmatta_botten-110.png","3316457","3316457.pdf"),
+      ]},
+      {label:"Sidoutlopp — löstagbart vattenlås", items:[
+        gb("G-ST 150/75 S LVL","DU-150_Tjockplastmatta_sida-75.png","3316437","3316437.pdf"),
+        gb("G-ST 220/75 S LVL","DU-220_Tjockplastmatta_sido-75.png","3316453","3316453.pdf"),
+        gb("G-ST 220/110 S LVL","DU-220_Tjockplastmatta_sido-110-300x225-1.png","3316467","3316467.pdf"),
+      ]},
+      {label:"Bottenutlopp — fast vattenlås (ej storkök)", items:[
+        gb("G-ST 150/75 B FVL","DU-150_Tjockplastmatta_botten-75.png","3316441","3316441.pdf"),
+        gb("G-ST 220/75 B FVL","DU-220_Tjockplastmatta_botten-75.png","3316471","3316471.pdf"),
+        gb("G-ST 220/110 B FVL","DU-220_Tjockplastmatta_botten-110.png","3316479","3316479.pdf"),
+      ]},
+      {label:"Sidoutlopp — fast vattenlås (ej storkök)", items:[
+        gb("G-ST 150/75 S FVL","DU-150_Tjockplastmatta_sida-75.png","3316445","3316445.pdf"),
+        gb("G-ST 220/75 S FVL","DU-220_Tjockplastmatta_sido-75.png","3316475","3316475.pdf"),
+        gb("G-ST 220/110 S FVL","DU-220_Tjockplastmatta_sido-110-300x225-1.png","3316483","3316483.pdf"),
+      ]},
+      {label:"Golvbrunn MAXI — bottenutlopp", items:[
+        gb("MAXI 270/75","Golvbrunn-MAXI-280-75-bottenutlopp-for-tjock-plastmatta.png","3303218","3303218.pdf"),
+        gb("MAXI 270/110","POK_ALTRO_110-pysty_kokoonpano-768x576-1.png","3303226","3303226.pdf"),
+      ]},
+      {label:"Golvbrunn MAXI — sidoutlopp", items:[
+        gb("MAXI 270/75","Golvbrunn-MAXI-280-75-sidoutlopp-for-tjockplastmatta.png","3303222","3303222.pdf"),
+        gb("MAXI 270/110","Golvbrunn-MAXI-280-110-sidoutlopp-for-tjock-plastmatta.png","3303230","3303230.pdf"),
+      ]},
+    ]
+  }
+};
 
 const CATALOG = [
   {
@@ -1323,20 +1109,20 @@ const CATALOG = [
     hasTabs:true,
     tabs:{
       betong:{label:"Betonggolv", groups:[{label:"SA-ST 360×300", items:[
-        {name:"75 S FVL",img:IMG+"Sandfang-75-sida-betonggolv.png",artnr:"3303253",pdf:"pdfs/3303253.pdf",klass:"EN 1.4301/1.4404"},
-        {name:"75 B FVL",img:IMG+"Sandfang-75-botten-betonggolv.png",artnr:"3303263",pdf:"pdfs/3303263.pdf",klass:"EN 1.4301/1.4404"},
-        {name:"110 S FVL",img:IMG+"Sandfang-110-sida-betonggolv.png",artnr:"3303254",pdf:"pdfs/3303254.pdf",klass:"EN 1.4301/1.4404"},
-        {name:"110 B FVL",img:IMG+"Sandfang-75-botten-betonggolv.png",artnr:"3303264",pdf:"pdfs/3303264.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"75 S FVL",img:IMG+"Sandfang-75-sida-betonggolv.png",artnr:"3303253",pdf:IMG+"3303253.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"75 B FVL",img:IMG+"Sandfang-75-botten-betonggolv.png",artnr:"3303263",pdf:IMG+"3303263.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"110 S FVL",img:IMG+"Sandfang-110-sida-betonggolv.png",artnr:"3303254",pdf:IMG+"3303254.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"110 B FVL",img:IMG+"Sandfang-75-botten-betonggolv.png",artnr:"3303264",pdf:IMG+"3303264.pdf",klass:"EN 1.4301/1.4404"},
       ]}]},
       massaklinker:{label:"Massa & klinker", groups:[{label:"SA-ST 360×300", items:[
-        {name:"75 S FVL",img:IMG+"Sandfang-75-sida-massagolv.png",artnr:"3303235",pdf:"pdfs/3303235.pdf",klass:"EN 1.4301/1.4404"},
-        {name:"75 B FVL",img:IMG+"Sandfang-75-botten-massagolv.png",artnr:"3303232",pdf:"pdfs/3303232.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"75 S FVL",img:IMG+"Sandfang-75-sida-massagolv.png",artnr:"3303235",pdf:IMG+"3303235.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"75 B FVL",img:IMG+"Sandfang-75-botten-massagolv.png",artnr:"3303232",pdf:IMG+"3303232.pdf",klass:"EN 1.4301/1.4404"},
       ]}]},
       plastmatta:{label:"Plastmatta", groups:[{label:"SA-ST 360×300", items:[
-        {name:"75 S FVL",img:IMG+"Sandfang-75-sida-plastmatta.png",artnr:"3303236",pdf:"pdfs/3303236.pdf",klass:"EN 1.4301/1.4404"},
-        {name:"75 B FVL",img:IMG+"Sandfang-75-botten-plastmatta.png",artnr:"3303233",pdf:"pdfs/3303233.pdf",klass:"EN 1.4301/1.4404"},
-        {name:"110 S FVL",img:IMG+"Sandfang-110-sida-plastmatta.png",artnr:"3303242",pdf:"pdfs/3303242.pdf",klass:"EN 1.4301/1.4404"},
-        {name:"75 B FVL (alt.)",img:IMG+"Sandfang-75-botten-plastmatta.png",artnr:"3303239",pdf:"pdfs/3303239.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"75 S FVL",img:IMG+"Sandfang-75-sida-plastmatta.png",artnr:"3303236",pdf:IMG+"3303236.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"75 B FVL",img:IMG+"Sandfang-75-botten-plastmatta.png",artnr:"3303233",pdf:IMG+"3303233.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"110 S FVL",img:IMG+"Sandfang-110-sida-plastmatta.png",artnr:"3303242",pdf:IMG+"3303242.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"75 B FVL (alt.)",img:IMG+"Sandfang-75-botten-plastmatta.png",artnr:"3303239",pdf:IMG+"3303239.pdf",klass:"EN 1.4301/1.4404"},
       ]}]},
     }
   },
@@ -1354,9 +1140,9 @@ const CATALOG = [
       {name:"Kuravex® 800×500 — betong, alu/gummigaller",img:IMG+"KURAVEX_BETONI_ALUMIINIKUMIRITILA-1-300x225-1.png",artnr:"3314604",klass:"Rostfritt stål"},
     ],
     extraDocs:[
-      {label:"Ritning PDF",href:"pdfs/Kuravex.pdf"},
-      {label:"Installationsanvisningar PDF",href:"pdfs/Installation-Kuravex.pdf"},
-      {label:"Teknikskiss PDF",href:"pdfs/KuravexVask_ritning.pdf"},
+      {label:"Ritning PDF",href:IMG+"Kuravex.pdf"},
+      {label:"Installationsanvisningar PDF",href:IMG+"Installation-Kuravex.pdf"},
+      {label:"Teknikskiss PDF",href:IMG+"KuravexVask_ritning.pdf"},
     ]
   },
   {
@@ -1370,8 +1156,8 @@ const CATALOG = [
       {name:"Luftningsbrunn 610×550×450mm",img:IMG+"luftningsbrunn.png",artnr:"3941000",klass:"1,5mm rostfritt stål (EN 1.4301)"},
     ],
     extraDocs:[
-      {label:"Produktblad PDF",href:"pdfs/Produktbland_Luftningsbrunn.pdf"},
-      {label:"Teknikskiss PDF",href:"pdfs/Luftningsbrunn.pdf"},
+      {label:"Produktblad PDF",href:IMG+"Produktbland_Luftningsbrunn.pdf"},
+      {label:"Teknikskiss PDF",href:IMG+"Luftningsbrunn.pdf"},
     ]
   },
   {
@@ -1382,9 +1168,9 @@ const CATALOG = [
     spec:["Klisterfläns eller klämfläns","200×200 eller Ø150mm överdel","Justerbar höjd","Standardutlopp 110mm"],
     hasTabs:false,
     products:[
-      {name:"200×200 — perforerad klisterfläns, galler & sandfång",img:IMG+"Takbrunn_200x200.png",artnr:"3951000",klass:"Rostfritt / syrafast stål",pdf:"pdfs/Terrassbrunn-med-perforerad-klisterflans.pdf"},
-      {name:"200×200 — klämfläns, galler & sandfång",img:IMG+"Terrassbrunn_200X200_Klamflans.png",artnr:"3951001",klass:"Rostfritt / syrafast stål",pdf:"pdfs/Terrassbrunn-med-klamflans.pdf"},
-      {name:"Stort sandfång till terrassbrunn",img:IMG+"Sandfang-Terrassbrunn.png",artnr:"3951010",klass:"EN 1.4301",pdf:"pdfs/Terrassbrunn-Stort-sandfang.pdf"},
+      {name:"200×200 — perforerad klisterfläns, galler & sandfång",img:IMG+"Takbrunn_200x200.png",artnr:"3951000",klass:"Rostfritt / syrafast stål",pdf:IMG+"Terrassbrunn-med-perforerad-klisterflans.pdf"},
+      {name:"200×200 — klämfläns, galler & sandfång",img:IMG+"Terrassbrunn_200X200_Klamflans.png",artnr:"3951001",klass:"Rostfritt / syrafast stål",pdf:IMG+"Terrassbrunn-med-klamflans.pdf"},
+      {name:"Stort sandfång till terrassbrunn",img:IMG+"Sandfang-Terrassbrunn.png",artnr:"3951010",klass:"EN 1.4301",pdf:IMG+"Terrassbrunn-Stort-sandfang.pdf"},
     ]
   },
   {
@@ -1410,47 +1196,47 @@ const AREAS = [
 
 const DOCUMENTS = [
   {group:"Stainless Teams produktutbud", docs:[
-    {label:"Produktpresentation", href:"pdfs/Rostfria_golvraennor_golvbrunnar_for-2.pdf"},
+    {label:"Produktpresentation", href:IMG+"Rostfria_golvraennor_golvbrunnar_for-2.pdf"},
   ]},
   {group:"Golvrännor", docs:[
-    {label:"Spärränna med galler", href:"pdfs/Produktblad_Sparranna-1.pdf"},
-    {label:"Golvränna RST 300/310", href:"pdfs/Produktblad_Stor_Industrieranna-1.pdf"},
-    {label:"Stor industriränna", href:"pdfs/Produktblad_Stor_Industrieranna-2.pdf"},
-    {label:"Kuravex", href:"pdfs/Kuravex_fotskrapa-1.pdf"},
-    {label:"Carry Hot", href:"pdfs/Produktblad_Carry_Hot.pdf"},
-    {label:"Gipsavskiljare", href:"pdfs/Produktblad_Gipsavskiljare-2.pdf"},
+    {label:"Spärränna med galler", href:IMG+"Produktblad_Sparranna-1.pdf"},
+    {label:"Golvränna RST 300/310", href:IMG+"Produktblad_Stor_Industrieranna-1.pdf"},
+    {label:"Stor industriränna", href:IMG+"Produktblad_Stor_Industrieranna-2.pdf"},
+    {label:"Kuravex", href:IMG+"Kuravex_fotskrapa-1.pdf"},
+    {label:"Carry Hot", href:IMG+"Produktblad_Carry_Hot.pdf"},
+    {label:"Gipsavskiljare", href:IMG+"Produktblad_Gipsavskiljare-2.pdf"},
   ]},
   {group:"Golvbrunnar", docs:[
-    {label:"Golvbrunnar G-ST 150/220", href:"pdfs/Produktblad_G-ST150-220-2.pdf"},
-    {label:"Golvbrunn MAXI", href:"pdfs/Produktblad_Stor_Golvbrunn-2.pdf"},
-    {label:"Luftningsbrunn", href:"pdfs/Produktblad_Luftningsbrunn-2.pdf"},
-    {label:"Golvbrunnar G-ST 200/300", href:"pdfs/Produktblad_G-ST200-300-2.pdf"},
-    {label:"Terrassbrunn", href:"pdfs/Produktblad_Terrassbrunn-2.pdf"},
+    {label:"Golvbrunnar G-ST 150/220", href:IMG+"Produktblad_G-ST150-220-2.pdf"},
+    {label:"Golvbrunn MAXI", href:IMG+"Produktblad_Stor_Golvbrunn-2.pdf"},
+    {label:"Luftningsbrunn", href:IMG+"Produktblad_Luftningsbrunn-2.pdf"},
+    {label:"Golvbrunnar G-ST 200/300", href:IMG+"Produktblad_G-ST200-300-2.pdf"},
+    {label:"Terrassbrunn", href:IMG+"Produktblad_Terrassbrunn-2.pdf"},
   ]},
   {group:"Produktinformation", docs:[
-    {label:"Produktblad Svanhals", href:"pdfs/Produktblad_Svanhals-1.pdf"},
+    {label:"Produktblad Svanhals", href:IMG25+"Produktblad_Svanhals-1.pdf"},
   ]},
   {group:"Installationsanvisningar", docs:[
-    {label:"Golvbrunn — Betonggolv", href:"pdfs/Installation_Betonggolv-1.pdf"},
-    {label:"Golvbrunn — Massagolv", href:"pdfs/Installation_Massagolv-1.pdf"},
-    {label:"Golvbrunn — Klinkergolv", href:"pdfs/Installation_Klinkergolv-1.pdf"},
-    {label:"Golvbrunn — Plastmatta", href:"pdfs/Installation_Tjock_Plastmatta-1.pdf"},
-    {label:"Kuravex", href:"pdfs/Installation_Kuravex-1.pdf"},
-    {label:"Kanalränna", href:"pdfs/Installation_Kanalranna-3.pdf"},
-    {label:"Installation klämring", href:"pdfs/Installation_klamring-2.pdf"},
-    {label:"Terrassbrunn med klisterfläns", href:"pdfs/Installation_Terrassbrunn-2.pdf"},
+    {label:"Golvbrunn — Betonggolv", href:"https://stainlessteam.se/wp-content/uploads/2024/02/Installation_Betonggolv-1.pdf"},
+    {label:"Golvbrunn — Massagolv", href:"https://stainlessteam.se/wp-content/uploads/2024/02/Installation_Massagolv-1.pdf"},
+    {label:"Golvbrunn — Klinkergolv", href:"https://stainlessteam.se/wp-content/uploads/2024/02/Installation_Klinkergolv-1.pdf"},
+    {label:"Golvbrunn — Plastmatta", href:"https://stainlessteam.se/wp-content/uploads/2024/02/Installation_Tjock_Plastmatta-1.pdf"},
+    {label:"Kuravex", href:IMG+"Installation_Kuravex-1.pdf"},
+    {label:"Kanalränna", href:IMG+"Installation_Kanalranna-3.pdf"},
+    {label:"Installation klämring", href:IMG+"Installation_klamring-2.pdf"},
+    {label:"Terrassbrunn med klisterfläns", href:IMG+"Installation_Terrassbrunn-2.pdf"},
   ]},
   {group:"Drift & skötselråd", docs:[
-    {label:"Golvbrunnar", href:"pdfs/Drift_och_skotselanvisning-2.pdf"},
-    {label:"Golvrännor", href:"pdfs/Drift_och_skotselanvisning_golvrannor-2.pdf"},
-    {label:"Terrassbrunn", href:"pdfs/Drift_och_skotselanvisning_Terrassbrunn-2.pdf"},
-    {label:"Gipsavskiljare", href:"pdfs/Drift_och_skotselanvisning_Gipsavskiljare-2.pdf"},
+    {label:"Golvbrunnar", href:IMG+"Drift_och_skotselanvisning-2.pdf"},
+    {label:"Golvrännor", href:IMG+"Drift_och_skotselanvisning_golvrannor-2.pdf"},
+    {label:"Terrassbrunn", href:IMG+"Drift_och_skotselanvisning_Terrassbrunn-2.pdf"},
+    {label:"Gipsavskiljare", href:IMG+"Drift_och_skotselanvisning_Gipsavskiljare-2.pdf"},
   ]},
   {group:"Typgodkännande", docs:[
-    {label:"Golvbrunnar utlopp 75/110", href:"pdfs/RTH-06074-08-EN.pdf"},
-    {label:"Sandavskiljare", href:"pdfs/RTH-06076-08-EN.pdf"},
-    {label:"Golvbrunnar MAXI", href:"pdfs/RTH-06075-08-EN.pdf"},
-    {label:"3-D ritning", href:"pdfs/300X300-220_110_SIDO-3D-1.pdf"},
+    {label:"Golvbrunnar utlopp 75/110", href:IMG+"RTH-06074-08-EN.pdf"},
+    {label:"Sandavskiljare", href:IMG+"RTH-06076-08-EN.pdf"},
+    {label:"Golvbrunnar MAXI", href:IMG+"RTH-06075-08-EN.pdf"},
+    {label:"3-D ritning", href:IMG+"300X300-220_110_SIDO-3D-1.pdf"},
   ]},
 ];
 
@@ -1460,10 +1246,8 @@ const plusSVG = `<svg width="13" height="13" viewBox="0 0 13 13" fill="none"><pa
 
 function renderCatGrid(){
   const grid = document.getElementById('catGrid');
-  if (!grid) return;
-  grid.classList.add('in');
   grid.innerHTML = CATALOG.map(c => `
-    <div class="cat-card in" onclick="location.hash='#cat-${c.id}'; document.getElementById('cat-${c.id}').scrollIntoView({behavior:'smooth'});">
+    <div class="cat-card" onclick="location.hash='#cat-${c.id}'; document.getElementById('cat-${c.id}').scrollIntoView({behavior:'smooth'});">
       <div class="cat-thumb"><img src="${c.cardImg}" alt="${c.title}" loading="lazy"></div>
       <div class="cat-body">
         <div class="cat-index">${c.index}</div>
@@ -1475,8 +1259,7 @@ function renderCatGrid(){
   `).join('');
 
   // footer quick links
-  const footLinks = document.getElementById('footProductLinks');
-  if (footLinks) footLinks.innerHTML = CATALOG.map(c=>`<li><a href="#cat-${c.id}">${c.title}</a></li>`).join('');
+  document.getElementById('footProductLinks').innerHTML = CATALOG.map(c=>`<li><a href="#cat-${c.id}">${c.title}</a></li>`).join('');
 }
 
 function prodCard(p){
@@ -1485,14 +1268,13 @@ function prodCard(p){
   if(p.artnr) metaLines.push("Art.nr " + p.artnr);
   if(p.meta) metaLines.push(...p.meta);
   if(p.meta_extra) metaLines.push(p.meta_extra);
-  const pdfUrl = p.pdf ? (p.pdf.startsWith('http') || p.pdf.startsWith('pdfs/') ? p.pdf : 'pdfs/' + p.pdf) : '';
   return `
-    <div class="prod-card in">
+    <div class="prod-card">
       <div class="prod-img"><img src="${p.img}" alt="${p.name}" loading="lazy"></div>
       <div class="prod-body">
         <h4>${p.name}</h4>
         <div class="prod-meta">${metaLines.map(m=>`<div>${m}</div>`).join('')}</div>
-        ${pdfUrl ? `<div class="prod-links"><a href="${pdfUrl}" download>Teknikskiss ↓</a></div>` : ''}
+        ${p.pdf ? `<div class="prod-links"><a href="${p.pdf}" target="_blank" rel="noopener">Teknikskiss ↓</a></div>` : ''}
         ${p.note ? `<div class="prod-meta" style="margin-top:8px;color:var(--gray-500);font-size:12.5px;">${p.note}</div>` : ''}
       </div>
     </div>`;
@@ -1508,16 +1290,13 @@ function renderTabPanel(cat, tabKey){
     html += `<div class="group-label">${g.label}</div><div class="prod-grid">${g.items.map(prodCard).join('')}</div>`;
   });
   if(tab.installPdf){
-    const pdfUrl = tab.installPdf.startsWith('http') || tab.installPdf.startsWith('pdfs/') ? tab.installPdf : 'pdfs/' + tab.installPdf;
-    html += `<div class="accessory-note">Installationsanvisning: <a href="${pdfUrl}" download style="color:var(--black);">ladda ner PDF ↓</a></div>`;
+    html += `<div class="accessory-note">Installationsanvisning: <a href="${tab.installPdf}" target="_blank" rel="noopener" style="color:var(--black);">ladda ner PDF ↓</a></div>`;
   }
   return html;
 }
 
 function renderCatalog(){
   const wrap = document.getElementById('catalog');
-  if (!wrap) return;
-  wrap.classList.add('in');
   wrap.innerHTML = CATALOG.map(cat => {
     let body;
     if(cat.hasTabs){
@@ -1532,19 +1311,16 @@ function renderCatalog(){
     } else {
       body = `<div class="prod-grid">${(cat.products||[]).map(prodCard).join('')}</div>`;
       if(cat.extraDocs){
-        body += `<div class="accessory-note">Ytterligare dokument: ${cat.extraDocs.map(d=>{
-          const pdfUrl = d.href.startsWith('http') || d.href.startsWith('pdfs/') ? d.href : 'pdfs/' + d.href;
-          return `<a href="${pdfUrl}" download style="color:var(--black);margin-right:16px;">${d.label} ↓</a>`;
-        }).join('')}</div>`;
+        body += `<div class="accessory-note">Ytterligare dokument: ${cat.extraDocs.map(d=>`<a href="${d.href}" target="_blank" rel="noopener" style="color:var(--black);margin-right:16px;">${d.label} ↓</a>`).join('')}</div>`;
       }
     }
     if(cat.accessories){
       body += `<div class="group-label" style="margin-top:52px;">Tillbehör</div><div class="prod-grid">${cat.accessories.map(a=>prodCard({name:a.name, img:a.img, meta:a.meta})).join('')}</div>`;
     }
     return `
-      <div class="cat-section in" id="cat-${cat.id}">
+      <div class="cat-section" id="cat-${cat.id}">
         <div class="container">
-          <div class="cat-hero reveal in">
+          <div class="cat-hero reveal">
             <div class="cat-hero-frame">
               <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
               <img src="${cat.heroImg}" alt="${cat.title}">
@@ -1575,10 +1351,8 @@ function renderCatalog(){
 
 function renderAreas(){
   const grid = document.getElementById('areasGrid');
-  if (!grid) return;
-  grid.classList.add('in');
   grid.innerHTML = AREAS.map((a,i)=>`
-    <div class="area-card in" id="area-${i}">
+    <div class="area-card" id="area-${i}">
       <div class="area-img"><img src="${a.img}" alt="${a.title}" loading="lazy"></div>
       <div class="area-body">
         <h3>${a.title}</h3>
@@ -1592,18 +1366,14 @@ function renderAreas(){
 
 function renderDocs(){
   const cols = document.getElementById('docCols');
-  if (!cols) return;
-  cols.classList.add('in');
+  // distribute groups into 3 columns round-robin
   const colBuckets = [[],[],[]];
   DOCUMENTS.forEach((g,i)=> colBuckets[i%3].push(g));
   cols.innerHTML = colBuckets.map(bucket => `<div>${
     bucket.map(g=>`
-      <div class="doc-group in">
+      <div class="doc-group">
         <h4>${g.group}</h4>
-        <ul class="doc-list">${g.docs.map(d=>{
-          const pdfUrl = d.href.startsWith('http') || d.href.startsWith('pdfs/') ? d.href : 'pdfs/' + d.href;
-          return `<li><a href="${pdfUrl}" download>${d.label} ↓</a></li>`;
-        }).join('')}</ul>
+        <ul class="doc-list">${g.docs.map(d=>`<li><a href="${d.href}" target="_blank" rel="noopener">${d.label}</a></li>`).join('')}</ul>
       </div>
     `).join('')
   }</div>`).join('');
@@ -1614,28 +1384,14 @@ renderCatalog();
 renderAreas();
 renderDocs();
 
-/* ---- reveal all sections immediately ---- */
-document.querySelectorAll('.reveal').forEach(el=> el.classList.add('in'));
-
+/* ---- reveal on scroll ---- */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 <button id="backToTop" type="button" aria-label="Till toppen" title="Till toppen"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></button>
 <script>
 (function(){var b=document.getElementById('backToTop');if(!b)return;var t=null;function onScroll(){if(t)return;t=setTimeout(function(){b.classList.toggle('show',window.scrollY>300);t=null;},80);}window.addEventListener('scroll',onScroll,{passive:true});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});onScroll();})();
-</script><script src="i18n.js"></script>
-
-<script>
-function initReveal(){
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {threshold:.15});
-  document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
-}
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initReveal);
-} else {
-  initReveal();
-}
-</script>
-
-</body>
+</script></body>
 </html>

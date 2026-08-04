@@ -161,12 +161,66 @@ header.main-site-header nav a:hover {
 }
 </style>
 
+
+<style id="main-site-design-system">
+/* Import Google Fonts - Manrope & Plus Jakarta Sans */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  color: #111111 !important;
+  background-color: #ffffff !important;
+  line-height: 1.6 !important;
+}
+
+h1, h2, h3, h4, h5, h6, .section-title, .specs-title {
+  font-family: 'Manrope', sans-serif !important;
+  color: #111111 !important;
+  font-weight: 700 !important;
+}
+
+/* Hide Old Scraped Footers & Floating Bars */
+footer:not(.main-site-footer), .footer, #footer, .notify-top-bar, .rl-sidebar, .floating-actions, .cookie-modal-btn {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Main Site Footer Styling */
+footer.main-site-footer {
+  display: block !important;
+  background: #f8f9fa !important;
+  border-top: 1px solid #e5e5e5 !important;
+  padding: 60px 0 30px !important;
+  margin-top: 80px !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+footer.main-site-footer .wrap {
+  max-width: 1320px !important;
+  margin: 0 auto !important;
+  padding: 0 24px !important;
+}
+
+footer.main-site-footer a {
+  color: #444444 !important;
+  text-decoration: none !important;
+  transition: color .2s ease !important;
+}
+
+footer.main-site-footer a:hover {
+  color: #000000 !important;
+  text-decoration: underline !important;
+}
+</style>
+
 </head>
   <body>
 
-<div style="background:#000000;color:#ffffff;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;font-family:sans-serif;font-size:13.5px;font-weight:700;position:sticky;top:0;z-index:10000;">
+<div style="background:#000000;color:#ffffff;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;font-family:'Plus Jakarta Sans',sans-serif;font-size:13.5px;font-weight:700;position:sticky;top:0;z-index:10000;">
   <a href="anrin-int-channels.html" style="color:#ffffff;text-decoration:underline;">← Back to Channel Systems</a>
-  <span>ANRIN Product Detail Page</span>
+  <span>ANRIN Official Product Page</span>
 </div>
 
 <header class="main-site-header">
@@ -185,6 +239,9 @@ header.main-site-header nav a:hover {
     </div>
   </div>
 </header>
+
+
+
 
 <div style="background:#000;color:#fff;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;font-family:sans-serif;font-size:14px;font-weight:700;position:sticky;top:0;z-index:9999;"><a href="anrin-int-channels.html" style="color:#fff;text-decoration:underline;">← Back to Channel Systems</a><span>ANRIN Official Product Page</span></div>
     
@@ -1738,5 +1795,51 @@ DA / OD 160/200 NBR seal rings</p></p>
     
     
     
-  </body>
+  
+<footer class="main-site-footer">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;font-size:14px;color:#444;">
+      <div>
+        <div style="margin-bottom:16px;"><img src="https://anrin.se/wp-content/uploads/2022/11/ANRIN_Logo_schwarz_2.svg" alt="ANRIN Nordic" style="height:32px;width:auto;"></div>
+        <p style="color:#666;">Leading Water — Complete systems for surface water management.</p>
+      </div>
+      <div>
+        <h5 style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#111;margin-bottom:16px;font-weight:700;font-family:'Manrope',sans-serif;">Products</h5>
+        <ul style="list-style:none;padding:0;margin:0;line-height:2.2;">
+          <li><a href="produkter.html#anrin">ANRIN Channel Systems</a></li>
+          <li><a href="produkter.html#hydrotec">HYDROTEC Covers</a></li>
+          <li><a href="stainless-team.html">Stainless Team Drains</a></li>
+          <li><a href="produkter.html#enviroguard">ENVIROguard Separators</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#111;margin-bottom:16px;font-weight:700;font-family:'Manrope',sans-serif;">The Company</h5>
+        <ul style="list-style:none;padding:0;margin:0;line-height:2.2;">
+          <li><a href="om-oss.html">About us</a></li>
+          <li><a href="projekt.html">Projects</a></li>
+          <li><a href="nedladdningar.html">Downloads</a></li>
+          <li><a href="kontakt.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#111;margin-bottom:16px;font-weight:700;font-family:'Manrope',sans-serif;">Contact</h5>
+        <ul style="list-style:none;padding:0;margin:0;line-height:2.2;">
+          <li>Mysingsvägen 1, SE-14941 Nynäshamn</li>
+          <li><a href="tel:+46102099209">+46 (0)10-209 9 209</a></li>
+          <li><a href="mailto:info@anrin.se">info@anrin.se</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="border-top:1px solid #e5e5e5;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;color:#666;">
+      <div>© 2026 ANRIN Nordic — All rights reserved.</div>
+      <div style="display:flex;gap:18px;">
+        <a href="kontakt.html">Terms</a>
+        <a href="kontakt.html">Privacy Policy</a>
+        <a href="kontakt.html">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
 </html>

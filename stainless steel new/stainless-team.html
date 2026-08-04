@@ -904,7 +904,7 @@ const golvbrunnAccessories = [
   {name:"Klämring för vinyl/altro golv", img:IMG+"Ring-for-tjock-plastmatta-150.png", meta:["150 — 3305205","220 — 3305207"]},
 ];
 
-function gb(name, img, artnr, pdf){ return {name, img:IMG+img, artnr, pdf: pdf? IMG+pdf : null, klass:"EN 1.4404"}; }
+function gb(name, img, artnr, pdf){ return {name, img:IMG+img, artnr, pdf: pdf? "pdfs/" + pdf : null, klass:"EN 1.4404"}; }
 
 const golvbrunnarTabs = {
   betong: {
@@ -1008,7 +1008,7 @@ const golvbrunnarTabs = {
   },
   plastmatta: {
     label:"Plastmatta", heroImg:IMG+"DU-220_Tjockplastmatta_sido-110-300x225-1.png",
-    installPdf: IMG+"Installation-Tjock-plastmatta.pdf",
+    installPdf: "pdfs/Installation-Tjock-plastmatta.pdf",
     groups:[
       {label:"Bottenutlopp — löstagbart vattenlås", items:[
         gb("G-ST 150/75 B LVL","DU-150_Tjockplastmatta_botten-75.png","3316433","3316433.pdf"),
@@ -1109,20 +1109,20 @@ const CATALOG = [
     hasTabs:true,
     tabs:{
       betong:{label:"Betonggolv", groups:[{label:"SA-ST 360×300", items:[
-        {name:"75 S FVL",img:IMG+"Sandfang-75-sida-betonggolv.png",artnr:"3303253",pdf:IMG+"3303253.pdf",klass:"EN 1.4301/1.4404"},
-        {name:"75 B FVL",img:IMG+"Sandfang-75-botten-betonggolv.png",artnr:"3303263",pdf:IMG+"3303263.pdf",klass:"EN 1.4301/1.4404"},
-        {name:"110 S FVL",img:IMG+"Sandfang-110-sida-betonggolv.png",artnr:"3303254",pdf:IMG+"3303254.pdf",klass:"EN 1.4301/1.4404"},
-        {name:"110 B FVL",img:IMG+"Sandfang-75-botten-betonggolv.png",artnr:"3303264",pdf:IMG+"3303264.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"75 S FVL",img:IMG+"Sandfang-75-sida-betonggolv.png",artnr:"3303253",pdf:"pdfs/3303253.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"75 B FVL",img:IMG+"Sandfang-75-botten-betonggolv.png",artnr:"3303263",pdf:"pdfs/3303263.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"110 S FVL",img:IMG+"Sandfang-110-sida-betonggolv.png",artnr:"3303254",pdf:"pdfs/3303254.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"110 B FVL",img:IMG+"Sandfang-75-botten-betonggolv.png",artnr:"3303264",pdf:"pdfs/3303264.pdf",klass:"EN 1.4301/1.4404"},
       ]}]},
       massaklinker:{label:"Massa & klinker", groups:[{label:"SA-ST 360×300", items:[
-        {name:"75 S FVL",img:IMG+"Sandfang-75-sida-massagolv.png",artnr:"3303235",pdf:IMG+"3303235.pdf",klass:"EN 1.4301/1.4404"},
-        {name:"75 B FVL",img:IMG+"Sandfang-75-botten-massagolv.png",artnr:"3303232",pdf:IMG+"3303232.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"75 S FVL",img:IMG+"Sandfang-75-sida-massagolv.png",artnr:"3303235",pdf:"pdfs/3303235.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"75 B FVL",img:IMG+"Sandfang-75-botten-massagolv.png",artnr:"3303232",pdf:"pdfs/3303232.pdf",klass:"EN 1.4301/1.4404"},
       ]}]},
       plastmatta:{label:"Plastmatta", groups:[{label:"SA-ST 360×300", items:[
-        {name:"75 S FVL",img:IMG+"Sandfang-75-sida-plastmatta.png",artnr:"3303236",pdf:IMG+"3303236.pdf",klass:"EN 1.4301/1.4404"},
-        {name:"75 B FVL",img:IMG+"Sandfang-75-botten-plastmatta.png",artnr:"3303233",pdf:IMG+"3303233.pdf",klass:"EN 1.4301/1.4404"},
-        {name:"110 S FVL",img:IMG+"Sandfang-110-sida-plastmatta.png",artnr:"3303242",pdf:IMG+"3303242.pdf",klass:"EN 1.4301/1.4404"},
-        {name:"75 B FVL (alt.)",img:IMG+"Sandfang-75-botten-plastmatta.png",artnr:"3303239",pdf:IMG+"3303239.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"75 S FVL",img:IMG+"Sandfang-75-sida-plastmatta.png",artnr:"3303236",pdf:"pdfs/3303236.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"75 B FVL",img:IMG+"Sandfang-75-botten-plastmatta.png",artnr:"3303233",pdf:"pdfs/3303233.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"110 S FVL",img:IMG+"Sandfang-110-sida-plastmatta.png",artnr:"3303242",pdf:"pdfs/3303242.pdf",klass:"EN 1.4301/1.4404"},
+        {name:"75 B FVL (alt.)",img:IMG+"Sandfang-75-botten-plastmatta.png",artnr:"3303239",pdf:"pdfs/3303239.pdf",klass:"EN 1.4301/1.4404"},
       ]}]},
     }
   },
@@ -1140,9 +1140,9 @@ const CATALOG = [
       {name:"Kuravex® 800×500 — betong, alu/gummigaller",img:IMG+"KURAVEX_BETONI_ALUMIINIKUMIRITILA-1-300x225-1.png",artnr:"3314604",klass:"Rostfritt stål"},
     ],
     extraDocs:[
-      {label:"Ritning PDF",href:IMG+"Kuravex.pdf"},
-      {label:"Installationsanvisningar PDF",href:IMG+"Installation-Kuravex.pdf"},
-      {label:"Teknikskiss PDF",href:IMG+"KuravexVask_ritning.pdf"},
+      {label:"Ritning PDF",href:"pdfs/Kuravex.pdf"},
+      {label:"Installationsanvisningar PDF",href:"pdfs/Installation-Kuravex.pdf"},
+      {label:"Teknikskiss PDF",href:"pdfs/KuravexVask_ritning.pdf"},
     ]
   },
   {
@@ -1156,8 +1156,8 @@ const CATALOG = [
       {name:"Luftningsbrunn 610×550×450mm",img:IMG+"luftningsbrunn.png",artnr:"3941000",klass:"1,5mm rostfritt stål (EN 1.4301)"},
     ],
     extraDocs:[
-      {label:"Produktblad PDF",href:IMG+"Produktbland_Luftningsbrunn.pdf"},
-      {label:"Teknikskiss PDF",href:IMG+"Luftningsbrunn.pdf"},
+      {label:"Produktblad PDF",href:"pdfs/Produktbland_Luftningsbrunn.pdf"},
+      {label:"Teknikskiss PDF",href:"pdfs/Luftningsbrunn.pdf"},
     ]
   },
   {
@@ -1168,9 +1168,9 @@ const CATALOG = [
     spec:["Klisterfläns eller klämfläns","200×200 eller Ø150mm överdel","Justerbar höjd","Standardutlopp 110mm"],
     hasTabs:false,
     products:[
-      {name:"200×200 — perforerad klisterfläns, galler & sandfång",img:IMG+"Takbrunn_200x200.png",artnr:"3951000",klass:"Rostfritt / syrafast stål",pdf:IMG+"Terrassbrunn-med-perforerad-klisterflans.pdf"},
-      {name:"200×200 — klämfläns, galler & sandfång",img:IMG+"Terrassbrunn_200X200_Klamflans.png",artnr:"3951001",klass:"Rostfritt / syrafast stål",pdf:IMG+"Terrassbrunn-med-klamflans.pdf"},
-      {name:"Stort sandfång till terrassbrunn",img:IMG+"Sandfang-Terrassbrunn.png",artnr:"3951010",klass:"EN 1.4301",pdf:IMG+"Terrassbrunn-Stort-sandfang.pdf"},
+      {name:"200×200 — perforerad klisterfläns, galler & sandfång",img:IMG+"Takbrunn_200x200.png",artnr:"3951000",klass:"Rostfritt / syrafast stål",pdf:"pdfs/Terrassbrunn-med-perforerad-klisterflans.pdf"},
+      {name:"200×200 — klämfläns, galler & sandfång",img:IMG+"Terrassbrunn_200X200_Klamflans.png",artnr:"3951001",klass:"Rostfritt / syrafast stål",pdf:"pdfs/Terrassbrunn-med-klamflans.pdf"},
+      {name:"Stort sandfång till terrassbrunn",img:IMG+"Sandfang-Terrassbrunn.png",artnr:"3951010",klass:"EN 1.4301",pdf:"pdfs/Terrassbrunn-Stort-sandfang.pdf"},
     ]
   },
   {
@@ -1196,47 +1196,47 @@ const AREAS = [
 
 const DOCUMENTS = [
   {group:"Stainless Teams produktutbud", docs:[
-    {label:"Produktpresentation", href:IMG+"Rostfria_golvraennor_golvbrunnar_for-2.pdf"},
+    {label:"Produktpresentation", href:"pdfs/Rostfria_golvraennor_golvbrunnar_for-2.pdf"},
   ]},
   {group:"Golvrännor", docs:[
-    {label:"Spärränna med galler", href:IMG+"Produktblad_Sparranna-1.pdf"},
-    {label:"Golvränna RST 300/310", href:IMG+"Produktblad_Stor_Industrieranna-1.pdf"},
-    {label:"Stor industriränna", href:IMG+"Produktblad_Stor_Industrieranna-2.pdf"},
-    {label:"Kuravex", href:IMG+"Kuravex_fotskrapa-1.pdf"},
-    {label:"Carry Hot", href:IMG+"Produktblad_Carry_Hot.pdf"},
-    {label:"Gipsavskiljare", href:IMG+"Produktblad_Gipsavskiljare-2.pdf"},
+    {label:"Spärränna med galler", href:"pdfs/Produktblad_Sparranna-1.pdf"},
+    {label:"Golvränna RST 300/310", href:"pdfs/Produktblad_Stor_Industrieranna-1.pdf"},
+    {label:"Stor industriränna", href:"pdfs/Produktblad_Stor_Industrieranna-2.pdf"},
+    {label:"Kuravex", href:"pdfs/Kuravex_fotskrapa-1.pdf"},
+    {label:"Carry Hot", href:"pdfs/Produktblad_Carry_Hot.pdf"},
+    {label:"Gipsavskiljare", href:"pdfs/Produktblad_Gipsavskiljare-2.pdf"},
   ]},
   {group:"Golvbrunnar", docs:[
-    {label:"Golvbrunnar G-ST 150/220", href:IMG+"Produktblad_G-ST150-220-2.pdf"},
-    {label:"Golvbrunn MAXI", href:IMG+"Produktblad_Stor_Golvbrunn-2.pdf"},
-    {label:"Luftningsbrunn", href:IMG+"Produktblad_Luftningsbrunn-2.pdf"},
-    {label:"Golvbrunnar G-ST 200/300", href:IMG+"Produktblad_G-ST200-300-2.pdf"},
-    {label:"Terrassbrunn", href:IMG+"Produktblad_Terrassbrunn-2.pdf"},
+    {label:"Golvbrunnar G-ST 150/220", href:"pdfs/Produktblad_G-ST150-220-2.pdf"},
+    {label:"Golvbrunn MAXI", href:"pdfs/Produktblad_Stor_Golvbrunn-2.pdf"},
+    {label:"Luftningsbrunn", href:"pdfs/Produktblad_Luftningsbrunn-2.pdf"},
+    {label:"Golvbrunnar G-ST 200/300", href:"pdfs/Produktblad_G-ST200-300-2.pdf"},
+    {label:"Terrassbrunn", href:"pdfs/Produktblad_Terrassbrunn-2.pdf"},
   ]},
   {group:"Produktinformation", docs:[
-    {label:"Produktblad Svanhals", href:IMG25+"Produktblad_Svanhals-1.pdf"},
+    {label:"Produktblad Svanhals", href:"pdfs/Produktblad_Svanhals-1.pdf"},
   ]},
   {group:"Installationsanvisningar", docs:[
     {label:"Golvbrunn — Betonggolv", href:"pdfs/Installation_Betonggolv-1.pdf"},
     {label:"Golvbrunn — Massagolv", href:"pdfs/Installation_Massagolv-1.pdf"},
     {label:"Golvbrunn — Klinkergolv", href:"pdfs/Installation_Klinkergolv-1.pdf"},
     {label:"Golvbrunn — Plastmatta", href:"pdfs/Installation_Tjock_Plastmatta-1.pdf"},
-    {label:"Kuravex", href:IMG+"Installation_Kuravex-1.pdf"},
-    {label:"Kanalränna", href:IMG+"Installation_Kanalranna-3.pdf"},
-    {label:"Installation klämring", href:IMG+"Installation_klamring-2.pdf"},
-    {label:"Terrassbrunn med klisterfläns", href:IMG+"Installation_Terrassbrunn-2.pdf"},
+    {label:"Kuravex", href:"pdfs/Installation_Kuravex-1.pdf"},
+    {label:"Kanalränna", href:"pdfs/Installation_Kanalranna-3.pdf"},
+    {label:"Installation klämring", href:"pdfs/Installation_klamring-2.pdf"},
+    {label:"Terrassbrunn med klisterfläns", href:"pdfs/Installation_Terrassbrunn-2.pdf"},
   ]},
   {group:"Drift & skötselråd", docs:[
-    {label:"Golvbrunnar", href:IMG+"Drift_och_skotselanvisning-2.pdf"},
-    {label:"Golvrännor", href:IMG+"Drift_och_skotselanvisning_golvrannor-2.pdf"},
-    {label:"Terrassbrunn", href:IMG+"Drift_och_skotselanvisning_Terrassbrunn-2.pdf"},
-    {label:"Gipsavskiljare", href:IMG+"Drift_och_skotselanvisning_Gipsavskiljare-2.pdf"},
+    {label:"Golvbrunnar", href:"pdfs/Drift_och_skotselanvisning-2.pdf"},
+    {label:"Golvrännor", href:"pdfs/Drift_och_skotselanvisning_golvrannor-2.pdf"},
+    {label:"Terrassbrunn", href:"pdfs/Drift_och_skotselanvisning_Terrassbrunn-2.pdf"},
+    {label:"Gipsavskiljare", href:"pdfs/Drift_och_skotselanvisning_Gipsavskiljare-2.pdf"},
   ]},
   {group:"Typgodkännande", docs:[
-    {label:"Golvbrunnar utlopp 75/110", href:IMG+"RTH-06074-08-EN.pdf"},
-    {label:"Sandavskiljare", href:IMG+"RTH-06076-08-EN.pdf"},
-    {label:"Golvbrunnar MAXI", href:IMG+"RTH-06075-08-EN.pdf"},
-    {label:"3-D ritning", href:IMG+"300X300-220_110_SIDO-3D-1.pdf"},
+    {label:"Golvbrunnar utlopp 75/110", href:"pdfs/RTH-06074-08-EN.pdf"},
+    {label:"Sandavskiljare", href:"pdfs/RTH-06076-08-EN.pdf"},
+    {label:"Golvbrunnar MAXI", href:"pdfs/RTH-06075-08-EN.pdf"},
+    {label:"3-D ritning", href:"pdfs/300X300-220_110_SIDO-3D-1.pdf"},
   ]},
 ];
 

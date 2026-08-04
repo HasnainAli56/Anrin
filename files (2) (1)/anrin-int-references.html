@@ -1277,6 +1277,22 @@ header#siteHeader .btn-quote, header.main-site-header .btn-quote-main {
 }
 </style>
 
+
+<style id="hide-all-breadcrumbs-globally">
+/* Hide Breadcrumb Routes (.crumb) Site-wide Across All Pages */
+.crumb, div.crumb, p.crumb, nav.crumb, [class*="crumb"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+</style>
+
 </head>
 <body>
 
@@ -1447,7 +1463,7 @@ header#siteHeader .btn-quote, header.main-site-header .btn-quote-main {
   <div class="hero-lines"><svg viewBox="0 0 1400 800" preserveAspectRatio="none"><path d="M-50,650 C 250,650 250,500 550,500 C 850,500 850,650 1150,650 C 1300,650 1350,650 1450,650"/></svg></div>
   <div class="wrap">
     <div class="hero-brand-wordmark">ANRIN<small>Leading Water</small></div>
-    <div class="crumb"><a href="anrin-int.html">ANRIN</a> / Referenser</div>
+    
     <h1>Verifierade projekt i Europa och USA.</h1>
     <p class="lead">Klicka på valfritt projekt för fullständiga detaljer — plats, kanalsystem, galler och belastningsklass. Filtrera för att hitta projekt som liknar ditt eget.</p>
   </div>

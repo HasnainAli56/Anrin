@@ -1269,6 +1269,22 @@ h1.hero-title span em, .hero-title span em {
 }
 </style>
 
+
+<style id="hide-all-breadcrumbs-globally">
+/* Hide Breadcrumb Routes (.crumb) Site-wide Across All Pages */
+.crumb, div.crumb, p.crumb, nav.crumb, [class*="crumb"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+</style>
+
 </head>
 <body>
 
@@ -1425,7 +1441,7 @@ h1.hero-title span em, .hero-title span em {
   <div class="hero-lines"><svg viewBox="0 0 1400 800" preserveAspectRatio="none"><path d="M-50,650 C 250,650 250,500 550,500 C 850,500 850,650 1150,650 C 1300,650 1350,650 1450,650"/></svg></div>
   <div class="wrap">
     <div class="hero-brand-wordmark">ANRIN <small>LEADING WATER</small></div>
-    <div class="crumb"><a href="index.html">Home</a> / <span data-i18n="nav_omoss">About us</span></div>
+    
     <h1 data-i18n="title_omoss">Built on fast responses and technical depth.</h1>
     <p class="lead" data-i18n="about_p1">ANRIN Nordic was founded in 2017 and today has distributors in all Nordic countries.</p>
   </div>

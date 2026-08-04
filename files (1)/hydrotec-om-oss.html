@@ -1176,6 +1176,22 @@ header#siteHeader .btn-quote, header.main-site-header .btn-quote-main {
 }
 </style>
 
+
+<style id="hide-all-breadcrumbs-globally">
+/* Hide Breadcrumb Routes (.crumb) Site-wide Across All Pages */
+.crumb, div.crumb, p.crumb, nav.crumb, [class*="crumb"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+</style>
+
 </head>
 <body>
 
@@ -1343,7 +1359,7 @@ header#siteHeader .btn-quote, header.main-site-header .btn-quote-main {
   <div class="hero-photo"><img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/da/1e/da1ea649-7085-41e3-9de3-1577ff8a3e47/anwendungsgebiet2.jpg__1000x0_q90_subsampling-2.jpg" alt="ANRIN Nordic and HYDROTEC"></div>
   <div class="hero-lines"><svg viewBox="0 0 1400 800" preserveAspectRatio="none"><path d="M-50,650 C 250,650 250,500 550,500 C 850,500 850,650 1150,650 C 1300,650 1350,650 1450,650"/></svg></div>
   <div class="wrap">
-    <div class="crumb"><a href="hydrotec.html">HYDROTEC</a> / About us</div>
+    
     <h1>ANRIN Nordic AB and HYDROTEC Technologies AG — a partnership on the Swedish market.</h1>
   </div>
 </section>

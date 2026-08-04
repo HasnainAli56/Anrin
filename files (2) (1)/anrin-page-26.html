@@ -492,6 +492,22 @@ header#siteHeader .btn-quote, header.main-site-header .btn-quote-main {
 }
 </style>
 
+
+<style id="hide-all-breadcrumbs-globally">
+/* Hide Breadcrumb Routes (.crumb) Site-wide Across All Pages */
+.crumb, div.crumb, p.crumb, nav.crumb, [class*="crumb"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+</style>
+
 </head>
   <body>
 

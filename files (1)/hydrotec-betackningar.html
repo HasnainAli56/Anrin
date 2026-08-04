@@ -1176,6 +1176,22 @@ header#siteHeader .btn-quote, header.main-site-header .btn-quote-main {
 }
 </style>
 
+
+<style id="hide-all-breadcrumbs-globally">
+/* Hide Breadcrumb Routes (.crumb) Site-wide Across All Pages */
+.crumb, div.crumb, p.crumb, nav.crumb, [class*="crumb"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+</style>
+
 </head>
 <body>
 
@@ -1343,7 +1359,7 @@ header#siteHeader .btn-quote, header.main-site-header .btn-quote-main {
   <div class="hero-photo"><img src="https://hydrotec.se/wp-content/uploads/2022/07/schachtabdeckung-scandic-titelbild-4305b8b4.webp" alt="Covers HYDROTEC"></div>
   <div class="hero-lines"><svg viewBox="0 0 1400 800" preserveAspectRatio="none"><path d="M-50,650 C 250,650 250,500 550,500 C 850,500 850,650 1150,650 C 1300,650 1350,650 1450,650"/></svg></div>
   <div class="wrap">
-    <div class="crumb"><a href="hydrotec.html">HYDROTEC</a> / Covers</div>
+    
     <h1>SCANDIC cast-iron covers for plastic manholes.</h1>
     <p class="lead">Optimal for plastic manholes, with self-levelling frame and spring-lock system. Four families, 13 product variants, load class A15 to D400, according to DIN EN 124.</p>
     <div class="cat-pills">

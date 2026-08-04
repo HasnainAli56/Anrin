@@ -111,8 +111,8 @@ body.mobile-menu-open{overflow:hidden;}
 .hero-content{position:relative;z-index:2;padding-bottom:110px;padding-top:220px;}
 .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-300);display:flex;align-items:center;gap:12px;margin-bottom:28px;opacity:0;transform:translateY(14px);animation:rise .9s var(--ease) .2s forwards;}
 .eyebrow::before{content:'';width:36px;height:1px;background:var(--gray-300);}
-h1.hero-title{font-family:var(--display);font-weight:700;font-size:clamp(40px,7vw,104px);line-height:.98;letter-spacing:-.02em;max-width:1180px;}
-h1.hero-title span{display:block;overflow:hidden;}
+h1.hero-title{font-family:var(--display);font-weight:700;font-size:clamp(40px,7vw,104px);line-height:1.22;letter-spacing:-.02em;max-width:1180px;padding-bottom:10px;overflow:visible;}
+h1.hero-title span{display:block;overflow:visible;}
 h1.hero-title span em{font-style:normal;display:block;transform:translateY(100%);animation:rise .9s var(--ease) forwards;}
 h1.hero-title span:nth-child(1) em{animation-delay:.05s;}
 h1.hero-title span:nth-child(2) em{animation-delay:.18s;color:var(--gray-500);}
@@ -1561,7 +1561,7 @@ h1.hero-title span em, .hero-title span em {
       <img src="https://anrin.se/wp-content/uploads/2025/09/Byggvarubedomningen-logotype_2.avif" alt="Byggvarubedömningen">
       <img src="https://anrin.se/wp-content/uploads/2025/08/1737572881-epdintl_primary_color_300ppi_inverted-1024x285.png" alt="EPD International" style="filter:grayscale(1) invert(1) brightness(.3);">
       <img src="https://hydrotec.se/wp-content/uploads/2022/07/logo.svg" alt="HYDROTEC" data-brand="hydrotec">
-      <img src="https://stainlessteam.se/wp-content/uploads/2024/01/anrin_stainless_team_logo_black_wo_spacing.svg" alt="Stainless Team" data-brand="stainless">
+      <img src="https://anrin.se/wp-content/uploads/2022/11/ANRIN_Logo_schwarz_2.svg" alt="ANRIN Leading Water" style="opacity:.7;">
     </div>
   </section>
 
@@ -1600,10 +1600,15 @@ h1.hero-title span em, .hero-title span em {
       </div>
       <div>
         <h5 data-i18n="footer_kontakt">Contact</h5>
-        <ul>
-          <li>Mysingsvägen 1</li><li>SE-14941 Nynäshamn</li>
+        <ul class="sweden-branch">
+          <li>Mysingsvägen 1</li><li>SE-14941 NYNÄSHAMN</li>
           <li><a href="tel:+46102099209">+46 (0)10-209 9 209</a></li>
           <li><a href="mailto:info@anrin.se">info@anrin.se</a></li>
+        </ul>
+        <ul class="finland-branch" style="display:none;">
+          <li>Öglan 7B 10</li><li>FI-02700 GRANKULLA</li><li>FINLAND</li>
+          <li><a href="tel:+358451855020">+358 45 185 5020</a></li>
+          <li><a href="mailto:info@anrin.fi">info@anrin.fi</a></li>
         </ul>
       </div>
     </div>

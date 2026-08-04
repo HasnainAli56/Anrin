@@ -325,6 +325,16 @@ function triggerGoogleTranslate(lang) {
 }
 
 function applyLanguage(lang){
+
+  // Locale-conditional Finnish vs Swedish contact address
+  if (lang === 'fi') {
+    document.querySelectorAll('.sweden-branch, .sw-contact-info').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.finland-branch, .fi-contact-info').forEach(el => el.style.display = 'block');
+  } else {
+    document.querySelectorAll('.sweden-branch, .sw-contact-info').forEach(el => el.style.display = 'block');
+    document.querySelectorAll('.finland-branch, .fi-contact-info').forEach(el => el.style.display = 'none');
+  }
+
   if (!LANG_NAMES[lang]) lang = 'sv';
   
   const dict = I18N[lang] || I18N.sv;

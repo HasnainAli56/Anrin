@@ -1334,9 +1334,9 @@ header#siteHeader .btn-quote, header.main-site-header .btn-quote-main {
           <p data-i18n="about_p2">Since its inception, we have carefully selected and established unique agreements with several manufacturers to offer the Swedish market a complete range in surface water management — linear drainage in polymer concrete, covers in cast iron, stainless steel and separators.</p>
           <p data-i18n="about_p3">Our head office is in Stockholm and the central warehouse in Trelleborg, where we stock over 100 different products for fast and secure deliveries throughout Sweden and the Nordics. Our sales organisation stretches from Malmö in the south to Östersund in the north.</p>
           <div class="stat-row">
-            <div><b><span class="count" data-count="2017">0</span></b><span data-i18n="stat_1_l">Founded</span></div>
-            <div><b><span class="count" data-count="100" data-suffix="+">0</span></b><span>Stocked products</span></div>
-            <div><b><span class="count" data-count="24" data-suffix="h">0</span></b><span data-i18n="stat_3_l">Quote turnaround</span></div>
+            <div><b><span class="count" data-count="2017" data-count="2017">2017</span></b><span data-i18n="stat_1_l">Founded</span></div>
+            <div><b><span class="count" data-count="100" data-suffix="+" data-count="2017">2017</span></b><span>Stocked products</span></div>
+            <div><b><span class="count" data-count="24" data-suffix="h" data-count="2017">2017</span></b><span data-i18n="stat_3_l">Quote turnaround</span></div>
           </div>
         </div>
       </div>
@@ -1454,5 +1454,42 @@ header#siteHeader .btn-quote, header.main-site-header .btn-quote-main {
 <button id="backToTop" type="button" aria-label="Till toppen" title="Till toppen"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></button>
 <script>
 (function(){var b=document.getElementById('backToTop');if(!b)return;var t=null;function onScroll(){if(t)return;t=setTimeout(function(){b.classList.toggle('show',window.scrollY>300);t=null;},80);}window.addEventListener('scroll',onScroll,{passive:true});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});onScroll();})();
-</script></body>
+</script>
+<script id="counter-fix-script">
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.count, [data-count]');
+  const animateCounter = (el) => {
+    if (el.dataset.animated) return;
+    el.dataset.animated = "true";
+    const target = parseInt(el.getAttribute('data-count') || el.innerText) || 0;
+    const suffix = el.getAttribute('data-suffix') || '';
+    if (target === 0) return;
+    let start = 0;
+    const duration = 1500;
+    const stepTime = 20;
+    const steps = duration / stepTime;
+    const increment = target / steps;
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        el.innerText = target + suffix;
+        clearInterval(timer);
+      } else {
+        el.innerText = Math.floor(start) + suffix;
+      }
+    }, stepTime);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) animateCounter(entry.target);
+    });
+  }, { threshold: 0.1 });
+
+  counters.forEach(c => observer.observe(c));
+  setTimeout(() => counters.forEach(c => animateCounter(c)), 800);
+});
+</script>
+
+</body>
 </html>

@@ -1018,7 +1018,7 @@ header#siteHeader .btn-quote, header.main-site-header .btn-quote-main {
       </ul>
     </div>
     <div class="mega-col" data-brand="stainless">
-      <a href="stainless-team.html" class="mega-brand">
+      <a href="/stainless steel new/stainless-team.html" class="mega-brand">
         <div class="mega-photo"><img src="https://stainlessteam.se/wp-content/uploads/2024/01/golvranna-storkok-1-edited-1024x1022-1.jpg" alt="Stainless Team"></div>
         <h4>Stainless Team</h4>
       </a>
@@ -1492,7 +1492,7 @@ function prodCard(p){
       <div class="prod-body">
         <h4>${p.name}</h4>
         <div class="prod-meta">${metaLines.map(m=>`<div>${m}</div>`).join('')}</div>
-        ${pdfUrl ? `<div class="prod-links"><a href="${pdfUrl}" download>Teknikskiss ↓</a></div>` : ''}
+        ${pdfUrl ? `<div class="prod-links"><a href="${pdfUrl}" target="_blank">Teknikskiss ↓</a></div>` : ''}
         ${p.note ? `<div class="prod-meta" style="margin-top:8px;color:var(--gray-500);font-size:12.5px;">${p.note}</div>` : ''}
       </div>
     </div>`;
@@ -1602,7 +1602,7 @@ function renderDocs(){
         <h4>${g.group}</h4>
         <ul class="doc-list">${g.docs.map(d=>{
           const pdfUrl = d.href.startsWith('http') || d.href.startsWith('pdfs/') ? d.href : 'pdfs/' + d.href;
-          return `<li><a href="${pdfUrl}" download>${d.label} ↓</a></li>`;
+          return `<li><a href="${pdfUrl}" target="_blank">${d.label} ↓</a></li>`;
         }).join('')}</ul>
       </div>
     `).join('')

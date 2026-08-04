@@ -67,8 +67,101 @@ ANRIN Zur Einfassung von klassisch verlegtem Kunstrasen  | ANRIN</title>
 <script src="https://www.anrin.com/static/js/tiny-slider.js" defer></script>
 <script src="https://www.anrin.com/static/js/product-detail.min.js" defer></script>
 
-  </head>
+  
+<style id="clean-layout-override">
+/* Strictly Hide Left Cookie Button & Right Side Floating Action Bars */
+.floating-actions, .cookie-modal-btn, #usercentrics-root, .uc-embed, #cookie-consent,
+.rl-sidebar, .side-nav, aside.side-buttons, div[class*="cookie"], div[id*="cookie"],
+div[class*="sidebar"], div[class*="floating-action"], button[title*="Cookie"],
+div[style*="position: fixed"][style*="right"], div[style*="position: fixed"][style*="bottom"],
+button[aria-label*="cookie"], button[aria-label*="Cookie"], .cookiebot, #cookiebot,
+div[class*="usercentrics"], div[id*="usercentrics"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Strictly Hide Old Scraped Navbar Headers */
+nav.navbar, header#siteHeader:not(.main-site-header), header.header, header.site-header, .notify-top-bar {
+  display: none !important;
+}
+
+/* Make Main Site Header Sticky and Clean */
+header.main-site-header {
+  display: block !important;
+  position: sticky !important;
+  top: 40px !important;
+  z-index: 9999 !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid #e5e5e5 !important;
+  padding: 14px 0 !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06) !important;
+}
+
+header.main-site-header .wrap {
+  max-width: 1320px !important;
+  margin: 0 auto !important;
+  padding: 0 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+header.main-site-header nav a {
+  font-family: sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #111111 !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  margin: 0 14px !important;
+}
+
+header.main-site-header nav a:hover {
+  color: #555555 !important;
+}
+
+.btn-quote-main {
+  background: #000000 !important;
+  color: #ffffff !important;
+  padding: 10px 22px !important;
+  border-radius: 999px !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+}
+.btn-quote-main:hover {
+  background: #333333 !important;
+}
+</style>
+
+</head>
   <body>
+
+<div style="background:#000000;color:#ffffff;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;font-family:sans-serif;font-size:13.5px;font-weight:700;position:sticky;top:0;z-index:10000;">
+  <a href="anrin-int-channels.html" style="color:#ffffff;text-decoration:underline;">← Back to Channel Systems</a>
+  <span>ANRIN Product Detail Page</span>
+</div>
+
+<header class="main-site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo"><img src="https://anrin.se/wp-content/uploads/2022/11/ANRIN_Logo_schwarz_2.svg" alt="ANRIN Nordic" style="height:34px;width:auto;"></a>
+    <nav class="main-nav">
+      <a href="produkter.html">Products</a>
+      <a href="projekt.html">Projects</a>
+      <a href="om-oss.html">About us</a>
+      <a href="nedladdningar.html">Downloads</a>
+      <a href="kontakt.html">Contact</a>
+    </nav>
+    <div class="header-right" style="display:flex;align-items:center;gap:16px;">
+      <div style="font-weight:700;font-size:14px;color:#111111;">🌐 EN</div>
+      <a href="kontakt.html" class="btn-quote-main">Request a quote</a>
+    </div>
+  </div>
+</header>
+
 <div style="background:#000;color:#fff;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;font-family:sans-serif;font-size:14px;font-weight:700;position:sticky;top:0;z-index:9999;"><a href="anrin-int-channels.html" style="color:#fff;text-decoration:underline;">← Back to Channel Systems</a><span>ANRIN Official Product Page</span></div>
     
     

@@ -9,6 +9,28 @@
  * - German (de)
  * =============================================================== */
 
+/* Fail-safe Immediate Preloader Dismissal */
+(function autoDismissPreloader() {
+  function hide() {
+    const p = document.getElementById('preloader');
+    if (p) {
+      p.classList.add('done');
+      p.style.opacity = '0';
+      p.style.visibility = 'hidden';
+      p.style.pointerEvents = 'none';
+      p.style.display = 'none';
+    }
+  }
+  if (document.readyState !== 'loading') {
+    hide();
+  } else {
+    document.addEventListener('DOMContentLoaded', hide);
+  }
+  window.addEventListener('load', hide);
+  setTimeout(hide, 200);
+  setTimeout(hide, 500);
+})();
+
 const LANG_NAMES = {
   sv: "Svenska",
   en: "English",
@@ -289,17 +311,17 @@ const I18N = {
 const BRAND_VISIBILITY = {
   sv: {hydrotec:true, stainless:true},
   en: {hydrotec:true, stainless:true},
-  fi: {hydrotec:true, stainless:false},
-  da: {hydrotec:false, stainless:true},
+  fi: {hydrotec:true, stainless:true},
+  da: {hydrotec:true, stainless:true},
   no: {hydrotec:true, stainless:true},
   is: {hydrotec:true, stainless:true},
-  de: {hydrotec:false, stainless:false}
+  de: {hydrotec:true, stainless:true}
 };
 
 function applyBrandVisibility(lang){
-  const rules = BRAND_VISIBILITY[lang] || BRAND_VISIBILITY.sv;
-  document.querySelectorAll('[data-brand="hydrotec"]').forEach(el=> el.classList.toggle('brand-hidden', !rules.hydrotec));
-  document.querySelectorAll('[data-brand="stainless"]').forEach(el=> el.classList.toggle('brand-hidden', !rules.stainless));
+  const rules = BRAND_VISIBILITY[lang] || BRAND_VISIBILITY.en;
+  document.querySelectorAll('[data-brand="hydrotec"]').forEach(el=> el.classList.remove('brand-hidden'));
+  document.querySelectorAll('[data-brand="stainless"]').forEach(el=> el.classList.remove('brand-hidden'));
 }
 
 function setCookie(name, value, days) {
@@ -335,9 +357,9 @@ function applyLanguage(lang){
     document.querySelectorAll('.finland-branch, .fi-contact-info').forEach(el => el.style.display = 'none');
   }
 
-  if (!LANG_NAMES[lang]) lang = 'sv';
+  if (!LANG_NAMES[lang]) lang = 'en';
   
-  const dict = I18N[lang] || I18N.sv;
+  const dict = I18N[lang] || I18N.en;
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const key = el.getAttribute('data-i18n');
     if(dict[key] !== undefined) {
@@ -349,9 +371,8 @@ function applyLanguage(lang){
     }
   });
 
-  document.querySelectorAll('.lang-menu button').forEach(b=>{
-    b.classList.toggle('active', b.dataset.lang === lang);
-  });
+  renderLangMenus(lang);
+
   document.querySelectorAll('.mm-langs button').forEach(b=>{
     b.classList.toggle('active', b.dataset.lang === lang);
   });
@@ -369,69 +390,190 @@ function getInitialLanguage() {
   let saved = null;
   try { saved = localStorage.getItem('anrin_lang'); } catch(e){}
   if (saved && LANG_NAMES[saved]) return saved;
-  return 'sv'; // Default to Swedish (sv)
+  return 'en'; // Default to English (en)
 }
 
-const LOCKED_LANG_LABELS = {
-  sv: { flag: "🇸🇪", label: "Swedish (sv)" },
-  en: { flag: "🇬🇧", label: "English (en)" },
-  fi: { flag: "🇫🇮", label: "Finnish (fi)" },
-  da: { flag: "🇩🇰", label: "Danish (da)" },
-  no: { flag: "🇳🇴", label: "Norwegian (no)" },
-  is: { flag: "🇮🇸", label: "Icelandic (is)" },
-  de: { flag: "🇩🇪", label: "German (de)" }
-};
+const LANG_ITEMS = [
+  { code: 'sv', country: 'SE', label: 'Swedish (sv)' },
+  { code: 'en', country: 'GB', label: 'English (en)' },
+  { code: 'fi', country: 'FI', label: 'Finnish (fi)' },
+  { code: 'da', country: 'DK', label: 'Danish (da)' },
+  { code: 'no', country: 'NO', label: 'Norwegian (no)' },
+  { code: 'is', country: 'IS', label: 'Icelandic (is)' },
+  { code: 'de', country: 'DE', label: 'German (de)' }
+];
 
-let isRestoringDropdown = false;
+function buildLangMenuHTML(activeLang) {
+  return LANG_ITEMS.map(item => {
+    const isActive = item.code === activeLang ? ' active' : '';
+    return `<button data-lang="${item.code}" class="notranslate${isActive}" translate="no"><span class="lang-code notranslate" translate="no">${item.country}</span><span class="lang-name notranslate" translate="no">${item.label}</span></button>`;
+  }).join('');
+}
 
-function enforceLockedDropdownLabels() {
-  if (isRestoringDropdown) return;
-  isRestoringDropdown = true;
-
-  document.querySelectorAll('.lang-menu button, .mm-langs button').forEach(btn => {
-    const lang = btn.dataset.lang;
-    if (lang && LOCKED_LANG_LABELS[lang]) {
-      const item = LOCKED_LANG_LABELS[lang];
-      btn.classList.add('notranslate');
-      btn.setAttribute('translate', 'no');
-      
-      const expectedHTML = `<span class="lang-flag notranslate" translate="no">${item.flag}</span> ${item.label}`;
-      if (btn.innerHTML !== expectedHTML) {
-        btn.innerHTML = expectedHTML;
-      }
-    }
+function renderLangMenus(activeLang) {
+  const html = buildLangMenuHTML(activeLang);
+  document.querySelectorAll('.lang-menu').forEach(menu => {
+    menu.classList.add('notranslate');
+    menu.setAttribute('translate', 'no');
+    menu.innerHTML = html;
   });
+}
 
-  document.querySelectorAll('.lang-switch, .lang-menu, .mm-langs').forEach(el => {
+/* Inject Mandatory Universal CSS for Language Dropdown Switcher */
+(function injectLangSwitchStyles() {
+  const style = document.createElement('style');
+  style.id = 'lang-switch-universal-style';
+  style.innerHTML = `
+    .lang-switch {
+      position: relative !important;
+      display: inline-block !important;
+    }
+    .lang-switch .lang-menu {
+      display: none !important;
+      position: absolute !important;
+      top: calc(100% + 8px) !important;
+      right: 0 !important;
+      background: #ffffff !important;
+      border: 1px solid rgba(0,0,0,0.08) !important;
+      border-radius: 18px !important;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.14) !important;
+      min-width: 185px !important;
+      padding: 10px 8px !important;
+      z-index: 999999 !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transition: opacity 0.2s ease, visibility 0.2s ease !important;
+    }
+    .lang-switch.open .lang-menu {
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+    }
+    .lang-menu button {
+      display: flex !important;
+      align-items: center !important;
+      gap: 16px !important;
+      width: 100% !important;
+      text-align: left !important;
+      padding: 8px 12px !important;
+      border: none !important;
+      background: transparent !important;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      font-size: 14px !important;
+      font-weight: 400 !important;
+      color: #222222 !important;
+      cursor: pointer !important;
+      border-radius: 8px !important;
+      transition: background 0.15s ease !important;
+    }
+    .lang-menu button .lang-code {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      font-size: 11px !important;
+      font-weight: 800 !important;
+      color: #111111 !important;
+      width: 24px !important;
+      text-align: center !important;
+      letter-spacing: 0.02em !important;
+    }
+    .lang-menu button:hover {
+      background: #f4f4f5 !important;
+    }
+    .lang-menu button.active {
+      background: transparent !important;
+    }
+    .lang-menu button.active .lang-name {
+      font-weight: 700 !important;
+      color: #000000 !important;
+    }
+    .lang-menu button.active .lang-code {
+      font-weight: 900 !important;
+      color: #000000 !important;
+    }
+  `;
+  if (document.head) document.head.appendChild(style);
+  else document.addEventListener('DOMContentLoaded', () => document.head.appendChild(style));
+})();
+
+function protectLangElements() {
+  document.querySelectorAll('.lang-switch, .lang-menu, .mm-langs, .lang-current').forEach(el => {
     el.classList.add('notranslate');
     el.setAttribute('translate', 'no');
   });
-
-  isRestoringDropdown = false;
 }
 
-function attachDropdownMutationObserver() {
-  enforceLockedDropdownLabels();
+function initGlobalMegaMenu(){
+  const trigger = document.getElementById('productsMegaTrigger') || document.querySelector('.has-mega');
+  const panel = document.getElementById('megaPanel');
+  const overlay = document.getElementById('megaOverlay');
+  if(!trigger || !panel) return;
 
-  const targetElements = document.querySelectorAll('.lang-menu, .mm-langs, .lang-switch');
-  targetElements.forEach(target => {
-    const observer = new MutationObserver(() => {
-      if (!isRestoringDropdown) {
-        enforceLockedDropdownLabels();
+  // Enforce 4-column grid layout and make all columns visible
+  document.querySelectorAll('#megaPanel .mega-grid').forEach(g => {
+    g.style.display = 'grid';
+    g.style.gridTemplateColumns = 'repeat(4, 1fr)';
+    g.style.gap = '32px';
+  });
+  document.querySelectorAll('#megaPanel .mega-col').forEach(col => {
+    col.style.display = 'block';
+    col.classList.remove('brand-hidden');
+  });
+
+  let timer = null;
+
+  function openMenu(){
+    if(timer) { clearTimeout(timer); timer = null; }
+    panel.classList.add('open');
+    if(overlay) overlay.classList.add('open');
+  }
+
+  function closeMenu(){
+    if(timer) clearTimeout(timer);
+    timer = setTimeout(()=>{
+      panel.classList.remove('open');
+      if(overlay) overlay.classList.remove('open');
+    }, 180);
+  }
+
+  trigger.addEventListener('mouseenter', openMenu);
+  trigger.addEventListener('mouseleave', closeMenu);
+
+  panel.addEventListener('mouseenter', openMenu);
+  panel.addEventListener('mouseleave', closeMenu);
+
+  const link = trigger.querySelector('a');
+  if(link){
+    link.addEventListener('click', (e)=>{
+      if(!panel.classList.contains('open')){
+        e.preventDefault();
+        openMenu();
       }
     });
-    observer.observe(target, { childList: true, subtree: true, characterData: true });
+  }
+
+  if(overlay){
+    overlay.addEventListener('click', ()=>{
+      if(timer) clearTimeout(timer);
+      panel.classList.remove('open');
+      overlay.classList.remove('open');
+    });
+  }
+
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape'){
+      if(timer) clearTimeout(timer);
+      panel.classList.remove('open');
+      if(overlay) overlay.classList.remove('open');
+    }
   });
 }
 
 function initLangSwitcher(){
   const currentLang = getInitialLanguage();
   applyLanguage(currentLang);
-  enforceLockedDropdownLabels();
-  attachDropdownMutationObserver();
+  protectLangElements();
+  initGlobalMegaMenu();
 }
-
-
 
 // Global Event Delegation for 100% Click Reliability across all pages & dynamically loaded elements
 document.addEventListener('click', (e) => {
@@ -476,11 +618,32 @@ document.addEventListener('click', (e) => {
   document.querySelectorAll('.lang-switch.open').forEach(s => s.classList.remove('open'));
 });
 
+/* Fail-safe Preloader Dismissal (Prevents black screen freezing) */
+function dismissPreloader() {
+  const p = document.getElementById('preloader');
+  if (p) {
+    p.classList.add('done');
+    p.style.opacity = '0';
+    p.style.visibility = 'hidden';
+    p.style.pointerEvents = 'none';
+    setTimeout(() => { p.style.display = 'none'; }, 400);
+  }
+}
+window.addEventListener('load', dismissPreloader);
+document.addEventListener('DOMContentLoaded', () => setTimeout(dismissPreloader, 400));
+setTimeout(dismissPreloader, 800);
+
 // Run immediately if DOM is ready, otherwise on DOMContentLoaded
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initLangSwitcher);
+  document.addEventListener('DOMContentLoaded', () => {
+    initLangSwitcher();
+    initGlobalMegaMenu();
+    dismissPreloader();
+  });
 } else {
   initLangSwitcher();
+  initGlobalMegaMenu();
+  dismissPreloader();
 }
 
 /* Background Google Translate Engine initialization for full page translation */
@@ -572,10 +735,14 @@ if (document.readyState === 'loading') {
 
 /* Preloader fail-safe dismiss */
 function autoDismissPreloader() {
-  const p = document.getElementById('preloader');
-  if (p && !p.classList.contains('done')) {
+  const els = document.querySelectorAll('#preloader');
+  els.forEach(p => {
     p.classList.add('done');
-  }
+    p.style.display = 'none';
+    p.style.opacity = '0';
+    p.style.visibility = 'hidden';
+    p.style.pointerEvents = 'none';
+  });
 }
 
 /* Scroll reveal fail-safe so all content is 100% visible */
@@ -585,18 +752,109 @@ function autoRevealElements() {
   });
 }
 
-if (document.readyState === 'complete' || document.readyState === 'interactive') {
-  setTimeout(autoDismissPreloader, 400);
-  setTimeout(autoRevealElements, 300);
-} else {
-  window.addEventListener('load', () => {
-    setTimeout(autoDismissPreloader, 400);
-    setTimeout(autoRevealElements, 300);
+/* Global 100% Edge-to-Edge Full Bleed Hero & Header Clear Fix */
+(function injectGlobalHeroFix() {
+  const style = document.createElement('style');
+  style.id = 'global-full-bleed-breakout-fix';
+  style.textContent = `
+    html, body {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow-x: hidden !important;
+    }
+    .hero, .page-hero, .htec-hero, .aint-hero-home, #hero, section.hero {
+      position: relative !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      padding-top: 140px !important;
+      padding-bottom: 90px !important;
+      min-height: 520px !important;
+      background: #000000 !important;
+      color: #ffffff !important;
+      box-sizing: border-box !important;
+    }
+    .hero .wrap, .page-hero .wrap, .htec-hero .wrap, .hero-content, #hero .hero-inner {
+      max-width: 1360px !important;
+      margin: 0 auto !important;
+      padding-left: 48px !important;
+      padding-right: 48px !important;
+      position: relative !important;
+      z-index: 2 !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .hero-brand-wordmark {
+      display: none !important;
+    }
+    .crumb, .eyebrow {
+      margin-top: 0 !important;
+      margin-bottom: 18px !important;
+      font-size: 12px !important;
+      letter-spacing: 0.08em !important;
+      text-transform: uppercase !important;
+      color: rgba(255, 255, 255, 0.75) !important;
+    }
+  `;
+  if (document.head) {
+    document.head.appendChild(style);
+  } else {
+    document.addEventListener('DOMContentLoaded', () => document.head.appendChild(style));
+  }
+})();
+
+/* Automatic Broken Image Fallback & Local File Link Repair */
+function fixBrokenImagesAndLinks() {
+  const isSubFolder = window.location.pathname.includes('/files');
+  const pathPrefix = isSubFolder ? '../' : '';
+  const fallbackImg = pathPrefix + 'images/stainless_kitchen_drain.jpg';
+
+  document.querySelectorAll('img').forEach(img => {
+    img.onerror = function() {
+      this.onerror = null;
+      this.src = fallbackImg;
+    };
+    if (img.src && (img.src.includes('stainlessteam.se') || img.src.includes('unsplash.com'))) {
+      img.src = fallbackImg;
+    }
   });
-  document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(autoDismissPreloader, 600);
-    setTimeout(autoRevealElements, 400);
+
+  document.querySelectorAll('a[href]').forEach(a => {
+    let href = a.getAttribute('href');
+    if (!href) return;
+
+    if (href.includes('stainless-team.html')) {
+      a.setAttribute('href', pathPrefix + 'stainless-team.html');
+    } else if (href.startsWith('/') && !href.startsWith('//')) {
+      // Remove leading slash so file:/// relative resolution works
+      let cleanHref = href.replace(/^\/+/, '');
+      a.setAttribute('href', pathPrefix + cleanHref);
+    }
   });
 }
+
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  autoDismissPreloader();
+  autoRevealElements();
+  fixBrokenImagesAndLinks();
+} else {
+  window.addEventListener('load', () => {
+    autoDismissPreloader();
+    autoRevealElements();
+    fixBrokenImagesAndLinks();
+  });
+  document.addEventListener('DOMContentLoaded', () => {
+    autoDismissPreloader();
+    autoRevealElements();
+    fixBrokenImagesAndLinks();
+  });
+}
+setTimeout(autoDismissPreloader, 200);
+setTimeout(autoDismissPreloader, 500);
+
 
 

@@ -31,11 +31,11 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 ::selection{background:var(--black);color:var(--white);}
 
 /* Preloader */
-#preloader{position:fixed;inset:0;background:var(--black);z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity .8s var(--ease),visibility .8s var(--ease);}
+#preloader{position:fixed;inset:0;background:var(--black);z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity .6s var(--ease),visibility .6s var(--ease);}
 #preloader svg{width:180px;overflow:visible;}
-#preloader path{fill:none;stroke:var(--white);stroke-width:1.4;stroke-dasharray:400;stroke-dashoffset:400;animation:draw 1.6s var(--ease) forwards;}
+#preloader path{fill:none;stroke:var(--white);stroke-width:1.4;stroke-dasharray:400;stroke-dashoffset:400;animation:draw 1.4s var(--ease) forwards;}
 @keyframes draw{to{stroke-dashoffset:0;}}
-#preloader.done{opacity:0;visibility:hidden;}
+#preloader.done{opacity:0 !important;visibility:hidden !important;pointer-events:none !important;}
 
 /* Flow progress line */
 #flowline{position:fixed;left:0;top:0;width:3px;height:100vh;z-index:500;background:var(--gray-150);}
@@ -373,24 +373,43 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 .has-mega{position:relative;}
 .mega-panel{
   position:fixed;top:0;left:0;right:0;background:var(--white);border-bottom:1px solid var(--gray-150);
-  box-shadow:0 30px 60px rgba(0,0,0,.08);padding:130px 0 48px;
-  opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .35s var(--ease),transform .35s var(--ease),visibility .35s;
+  box-shadow:0 30px 60px rgba(0,0,0,.12);padding:100px 0 44px;
+  opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s;
   z-index:390;
 }
-.mega-panel.open{opacity:1;visibility:visible;transform:translateY(0);}
+header:has(#productsMegaTrigger:hover) ~ #megaPanel,
+header:has(a[href*="produkter"]:hover) ~ #megaPanel,
+#productsMegaTrigger:hover ~ #megaPanel,
+#megaPanel:hover,
+.mega-panel.open {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+}
+
+header:has(#productsMegaTrigger:hover) ~ #megaOverlay,
+header:has(a[href*="produkter"]:hover) ~ #megaOverlay,
+#megaPanel:hover ~ #megaOverlay,
+.mega-close-overlay.open {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
 .mega-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;}
 @media(max-width:900px){.mega-grid{grid-template-columns:repeat(2,1fr);}}
 .mega-col a.mega-brand{display:block;margin-bottom:16px;}
-.mega-col .mega-photo{width:100%;aspect-ratio:4/3;overflow:hidden;margin-bottom:14px;background:var(--gray-50);}
-.mega-col .mega-photo img{width:100%;height:100%;object-fit:cover;}
-.mega-col h4{font-family:var(--display);font-size:17px;font-weight:700;margin-bottom:6px;}
+.mega-col .mega-photo{width:100%;aspect-ratio:4/3;overflow:hidden;margin-bottom:14px;background:var(--gray-50);border-radius:4px;}
+.mega-col .mega-photo img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;}
+.mega-col:hover .mega-photo img{transform:scale(1.05);}
+.mega-col h4{font-family:var(--display);font-size:17px;font-weight:700;margin-bottom:6px;color:#111;}
 .mega-col p{font-size:13.5px;color:var(--gray-500);line-height:1.5;margin-bottom:10px;}
 .mega-col ul{margin-top:8px;}
 .mega-col ul li{margin-bottom:7px;font-size:14px;}
 .mega-col ul li a{color:var(--gray-700);}
 .mega-col ul li a:hover{color:var(--black);text-decoration:underline;}
-.mega-close-overlay{position:fixed;inset:0;background:rgba(0,0,0,.25);z-index:380;opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s;}
-.mega-close-overlay.open{opacity:1;visibility:visible;}
+.mega-close-overlay{position:fixed;inset:0;background:rgba(0,0,0,.25);z-index:380;opacity:0;visibility:hidden;transition:opacity .3s var(--ease),visibility .3s;}
 
 /* ===================== Global product search ===================== */
 .site-search{position:relative;}
@@ -534,21 +553,18 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 #backToTop.show{opacity:1;visibility:visible;transform:translateY(0);}
 @media(max-width:640px){#backToTop{right:18px;bottom:18px;width:48px;height:48px;}}/* Header Header contrast patch */
 
-header#siteHeader {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 400;
-  padding: 16px 0;
-  transition: all .4s cubic-bezier(.16,.8,.24,1);
-  background: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+header#siteHeader, header {
+  position: fixed !important;
+  top: 0 !important; left: 0 !important; right: 0 !important;
+  z-index: 400 !important;
+  padding: 16px 0 !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid #EFEFEF !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
 }
 header#siteHeader.scrolled {
-  padding: 12px 0 !important;
-  background: rgba(255, 255, 255, 0.98) !important;
+  padding: 14px 0 !important;
+  background: #ffffff !important;
 }
 nav.main-nav a {
   color: #111111 !important;
@@ -578,61 +594,168 @@ nav.main-nav a {
   filter: none !important;
 }
 
+.hero-brand-wordmark {
+  display: none !important;
+}
 
-/* Section Head & Faint Text High-Contrast Visibility Fix */
-.section-head p, .eyebrow, .intro-copy, .cred-card p, .prod-meta, .accessory-note {
+/* Center-aligned responsive Hero Section — Fill 100vh on all zoom levels */
+.hero {
+  position: relative !important;
+  min-height: 100vh !important;
+  height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  overflow: hidden !important;
+  background: var(--black) !important;
+  box-sizing: border-box !important;
+}
+
+.hero-photo {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0 !important;
+}
+
+.hero-photo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  filter: brightness(0.65) saturate(1.05) !important;
+}
+
+.hero-content {
+  position: relative !important;
+  z-index: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  padding-top: 110px !important;
+  padding-bottom: 24px !important;
+  box-sizing: border-box !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+}
+
+.hero .eyebrow {
+  font-size: 13px !important;
+  letter-spacing: .14em !important;
+  text-transform: uppercase !important;
+  color: #d8d8d8 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  margin-top: 10px !important;
+  margin-bottom: 16px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+h1.hero-title {
+  font-family: var(--display) !important;
+  font-weight: 700 !important;
+  font-size: clamp(36px, 5.8vw, 86px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.02em !important;
+  max-width: 1100px !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-bottom: 6px !important;
+}
+
+h1.hero-title span {
+  display: block !important;
+  text-align: center !important;
+}
+
+.hero-sub {
+  max-width: 760px !important;
+  margin-top: 16px !important;
+  margin-bottom: 24px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  font-size: 17.5px !important;
+  line-height: 1.6 !important;
+  color: #d8d8d8 !important;
+  text-align: center !important;
+}
+
+.hero-actions {
+  display: flex !important;
+  gap: 20px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  flex-wrap: wrap !important;
+}
+
+.hero-meta {
+  border-top: 1px solid rgba(255, 255, 255, 0.18) !important;
+  margin-top: auto !important;
+  padding-top: 18px !important;
+  padding-bottom: 8px !important;
+  display: flex !important;
+  justify-content: space-around !important;
+  width: 100% !important;
+  max-width: 1100px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+.hero-meta div {
+  text-align: center !important;
+}
+
+/* Left scroll flowline bar + circle drop */
+#flowline {
+  position: fixed !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 4px !important;
+  height: 100vh !important;
+  z-index: 99999 !important;
+  background: rgba(0, 0, 0, 0.15) !important;
+  pointer-events: none !important;
+}
+#flowline .fill {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  background: #000000 !important;
+  transition: height 0.05s linear !important;
+}
+#flowline .drop {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  background: #000000 !important;
+  box-shadow: 0 0 0 3px #ffffff, 0 2px 8px rgba(0,0,0,0.4) !important;
+  transition: top 0.05s linear !important;
+  z-index: 100000 !important;
+}
+
+/* Section Head Visibility */
+.section-head p, .intro-copy, .cred-card p, .prod-meta, .accessory-note {
   color: #555555 !important;
 }
 #categories .section-head p, #categories .cat-body p, #categories .cat-index {
   color: #d8d8d8 !important;
-}
-
-
-/* ANRIN & HYDROTEC Hero Fit & No-Overflow Padding Fix — Exact Screen Fit */
-.hero, .htec-hero, .page-hero, .aint-hero-home {
-  position: relative !important;
-  margin-top: 0 !important;
-  padding-top: 92px !important;
-  padding-bottom: 36px !important;
-  min-height: auto !important;
-}
-
-.hero-brand-wordmark {
-  font-family: var(--display, sans-serif) !important;
-  font-size: 26px !important;
-  font-weight: 800 !important;
-  color: #ffffff !important;
-  text-transform: uppercase !important;
-  letter-spacing: .04em !important;
-  margin-bottom: 12px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  text-align: left !important;
-  line-height: 1 !important;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
-}
-
-.hero-brand-wordmark small {
-  font-family: var(--body, sans-serif) !important;
-  font-size: 10.5px !important;
-  font-weight: 700 !important;
-  letter-spacing: .18em !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  margin-top: 3px !important;
-}
-
-.hero-title, .htec-hero h1, .page-hero h1 {
-  margin-top: 8px !important;
-  margin-bottom: 12px !important;
-}
-
-.hero-sub, .htec-hero p.lead, .page-hero p.lead {
-  margin-top: 10px !important;
-  margin-bottom: 24px !important;
-  max-width: 780px !important;
-  font-size: 15.5px !important;
-  line-height: 1.5 !important;
 }
 
 .htec-hero-nav, .aint-hero-nav {
@@ -1462,60 +1585,38 @@ h1.hero-title span em, .hero-title span em {
 </head>
 <body>
 
-<header class="main-site-header" style="position:sticky;top:0;z-index:99999;background:#ffffff;border-bottom:1px solid #e5e5e5;padding:6px 0;box-shadow:0 4px 16px rgba(0,0,0,0.06);">
-  <div class="wrap" style="max-width:1320px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;">
-    <a href="/index.html" class="logo" style="display:flex;align-items:center;"><img src="https://anrin.se/wp-content/uploads/2022/11/ANRIN_Logo_schwarz_2.svg" alt="ANRIN Nordic" style="height:28px;width:auto;"></a>
-    <nav class="main-nav" style="display:flex;gap:28px;align-items:center;">
-      <a href="/produkter.html" style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#111111;text-transform:uppercase;text-decoration:none;">Products</a>
-      <a href="/projekt.html" style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#111111;text-transform:uppercase;text-decoration:none;">Projects</a>
-      <a href="/om-oss.html" style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#111111;text-transform:uppercase;text-decoration:none;">About us</a>
-      <a href="/nedladdningar.html" style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#111111;text-transform:uppercase;text-decoration:none;">Downloads</a>
-      <a href="/kontakt.html" style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#111111;text-transform:uppercase;text-decoration:none;">Contact</a>
-    </nav>
-    <div class="header-right" style="display:flex;align-items:center;gap:16px;">
-      <a href="/kontakt.html" style="color:#111;display:flex;align-items:center;" aria-label="Search">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      </a>
-      
-      <div class="lang-switch notranslate" translate="no" style="position:relative;">
-        <button class="lang-current" style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;padding:5px 12px;border:1px solid #ccc;border-radius:100px;background:#fff;color:#111;cursor:pointer;">
-          <span class="lang-label">EN</span>
-          <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="lang-menu" style="position:absolute;top:calc(100% + 6px);right:0;background:#ffffff;border:1px solid #e5e5e5;border-radius:12px;box-shadow:0 12px 32px rgba(0,0,0,0.15);min-width:140px;padding:6px;z-index:99999;display:none;">
-          <button data-lang="sv" style="width:100%;text-align:left;padding:8px 12px;border:none;background:none;font-size:13px;font-weight:600;color:#111;cursor:pointer;border-radius:6px;">Svenska</button>
-          <button data-lang="en" style="width:100%;text-align:left;padding:8px 12px;border:none;background:none;font-size:13px;font-weight:600;color:#111;cursor:pointer;border-radius:6px;">English</button>
-          <button data-lang="fi" style="width:100%;text-align:left;padding:8px 12px;border:none;background:none;font-size:13px;font-weight:600;color:#111;cursor:pointer;border-radius:6px;">Suomi</button>
-          <button data-lang="da" style="width:100%;text-align:left;padding:8px 12px;border:none;background:none;font-size:13px;font-weight:600;color:#111;cursor:pointer;border-radius:6px;">Dansk</button>
-          <button data-lang="no" style="width:100%;text-align:left;padding:8px 12px;border:none;background:none;font-size:13px;font-weight:600;color:#111;cursor:pointer;border-radius:6px;">Norsk</button>
-          <button data-lang="is" style="width:100%;text-align:left;padding:8px 12px;border:none;background:none;font-size:13px;font-weight:600;color:#111;cursor:pointer;border-radius:6px;">Íslenska</button>
-          <button data-lang="de" style="width:100%;text-align:left;padding:8px 12px;border:none;background:none;font-size:13px;font-weight:600;color:#111;cursor:pointer;border-radius:6px;">Deutsch</button>
-        </div>
-      </div>
-
-      <a href="/kontakt.html" class="btn-quote-main" style="background:#000000;color:#ffffff;padding:7px 18px;border-radius:999px;font-size:12.5px;font-weight:700;text-decoration:none;display:inline-block;">Request a quote</a>
-    </div>
-  </div>
-</header>
-
 
 <div id="preloader"><svg viewBox="0 0 200 60"><path d="M0,45 C 40,45 40,15 80,15 C 120,15 120,45 160,45 C 180,45 190,45 200,45"/></svg></div>
+<script>
+  (function(){
+    function hidePreloader(){
+      var p = document.getElementById('preloader');
+      if(p && !p.classList.contains('done')){
+        p.classList.add('done');
+        setTimeout(function(){ p.style.display = 'none'; }, 600);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', function(){ setTimeout(hidePreloader, 400); });
+    window.addEventListener('load', hidePreloader);
+    setTimeout(hidePreloader, 700);
+  })();
+</script>
 <div id="flowline"><div class="fill"></div><div class="drop"></div></div>
 
 <header id="siteHeader" class="scrolled">
   <div class="wrap">
     <a href="index.html" class="logo"><img src="https://anrin.se/wp-content/uploads/2022/11/ANRIN_Logo_schwarz_2.svg" alt="ANRIN Nordic"></a>
     <nav class="main-nav">
-      <span class="has-mega" id="productsMegaTrigger"><a href="produkter.html" data-i18n="nav_produkter">Produkter</a></span>
-      <a href="projekt.html" data-i18n="nav_projekt">Projekt</a>
-      <a href="om-oss.html" data-i18n="nav_omoss">Om oss</a>
-      <a href="nedladdningar.html" data-i18n="nav_nedladdningar">Nedladdningar</a>
-      <a href="kontakt.html" data-i18n="nav_kontakt">Kontakt</a>
+      <span class="has-mega" id="productsMegaTrigger"><a href="produkter.html" data-i18n="nav_produkter">Products</a></span>
+      <a href="projekt.html" data-i18n="nav_projekt">Projects</a>
+      <a href="om-oss.html" data-i18n="nav_omoss">About us</a>
+      <a href="nedladdningar.html" data-i18n="nav_nedladdningar">Downloads</a>
+      <a href="kontakt.html" data-i18n="nav_kontakt">Contact</a>
     </nav>
     <div class="header-right">
-      <button class="icon-btn" id="searchTrigger" aria-label="Sök"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+      <button class="icon-btn" id="searchTrigger" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
       <div class="lang-switch notranslate" translate="no">
-        <button class="lang-current"><span class="lang-label">SV</span><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <button class="lang-current"><span class="lang-label">EN</span><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
         <div class="lang-menu">
           <button data-lang="sv">Svenska</button>
           <button data-lang="en">English</button>
@@ -1614,7 +1715,6 @@ h1.hero-title span em, .hero-title span em {
       <path d="M-50,720 C 300,720 300,600 600,600 C 900,600 900,720 1200,720 C 1350,720 1400,720 1450,720"/>
     </svg></div>
     <div class="wrap hero-content">
-    <div class="hero-brand-wordmark">ANRIN <small>LEADING WATER</small></div>
       <div class="eyebrow" data-i18n="hero_eyebrow">ANRIN Nordic — Since 2017</div>
       <h1 class="hero-title">
         <span><em data-i18n="hero_title_1">We shape the path</em></span>
@@ -1872,20 +1972,25 @@ window.addEventListener('load', ()=>{
 /* ===================== Header scroll + flowline ===================== */
 function initScrollFx(){
   const header = document.getElementById('siteHeader');
-  const hero = document.querySelector('.hero, .page-hero');
-  function onScroll(){
-    const y = window.scrollY;
-    if(header) header.classList.toggle('scrolled', y > 40);
-    const doc = document.documentElement;
-    const total = doc.scrollHeight - doc.clientHeight;
-    const pct = total > 0 ? (y/total)*100 : 0;
-    const fill = document.querySelector('#flowline .fill');
-    const drop = document.querySelector('#flowline .drop');
+  const fill = document.querySelector('#flowline .fill');
+  const drop = document.querySelector('#flowline .drop');
+  
+  function updateScroll(){
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const scrollHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+    const clientHeight = window.innerHeight || document.documentElement.clientHeight;
+    const maxScroll = scrollHeight - clientHeight;
+    const pct = maxScroll > 0 ? Math.min(100, Math.max(0, (scrollTop / maxScroll) * 100)) : 0;
+    
+    if(header) header.classList.toggle('scrolled', scrollTop > 40);
     if(fill) fill.style.height = pct + '%';
-    if(drop) drop.style.top = 'calc(' + pct + '% - 4px)';
+    if(drop) drop.style.top = 'calc(' + pct + '% - 6px)';
   }
-  document.addEventListener('scroll', onScroll);
-  onScroll();
+  
+  window.addEventListener('scroll', updateScroll, {passive: true});
+  document.addEventListener('scroll', updateScroll, {passive: true});
+  window.addEventListener('resize', updateScroll, {passive: true});
+  updateScroll();
 }
 
 /* ===================== Mobile menu ===================== */
@@ -2034,6 +2139,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   initDownloadsFilter();
   initLightbox();
   initLegalModal();
+  initMegaMenu();
 });
 
 /* ===================== Legal Modal ===================== */
@@ -2284,15 +2390,54 @@ function initMegaMenu(){
   const panel = document.getElementById('megaPanel');
   const overlay = document.getElementById('megaOverlay');
   if(!trigger || !panel) return;
+  
+  let timer = null;
+
+  function openMenu(){
+    if(timer) { clearTimeout(timer); timer = null; }
+    panel.classList.add('open');
+    if(overlay) overlay.classList.add('open');
+  }
+
+  function closeMenu(){
+    if(timer) clearTimeout(timer);
+    timer = setTimeout(()=>{
+      panel.classList.remove('open');
+      if(overlay) overlay.classList.remove('open');
+    }, 180);
+  }
+
+  trigger.addEventListener('mouseenter', openMenu);
+  trigger.addEventListener('mouseleave', closeMenu);
+
+  panel.addEventListener('mouseenter', openMenu);
+  panel.addEventListener('mouseleave', closeMenu);
+
   const link = trigger.querySelector('a');
-  function open(){ panel.classList.add('open'); overlay.classList.add('open'); }
-  function close(){ panel.classList.remove('open'); overlay.classList.remove('open'); }
-  trigger.addEventListener('mouseenter', open);
-  if(link) link.addEventListener('click', (e)=>{ if(panel.classList.contains('open')) return; e.preventDefault(); open(); });
-  trigger.addEventListener('click', (e)=>{ if(e.target.tagName!=='A'){ e.preventDefault(); panel.classList.contains('open') ? close() : open(); } });
-  panel.addEventListener('mouseleave', close);
-  overlay.addEventListener('click', close);
-  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
+  if(link){
+    link.addEventListener('click', (e)=>{
+      if(!panel.classList.contains('open')){
+        e.preventDefault();
+        openMenu();
+      }
+    });
+  }
+
+  if(overlay){
+    overlay.addEventListener('click', ()=>{
+      if(timer) clearTimeout(timer);
+      panel.classList.remove('open');
+      overlay.classList.remove('open');
+    });
+  }
+
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape'){
+      if(timer) clearTimeout(timer);
+      panel.classList.remove('open');
+      if(overlay) overlay.classList.remove('open');
+    }
+  });
 }
 
 /* ===================== Global site search ===================== */

@@ -844,9 +844,9 @@ function autoRevealElements() {
       color: rgba(255, 255, 255, 0.75) !important;
     }
 
-    /* 100% PURE TRANSPARENT HEADER SITE-WIDE */
-    header, #siteHeader, .main-site-header, header.scrolled, #siteHeader.scrolled, .main-site-header.scrolled {
-      position: absolute !important;
+    /* STATE 1: TOP OF PAGE (100% TRANSPARENT + PROMINENT BOLD WHITE TEXT & WHITE LOGO) */
+    header:not(.scrolled), #siteHeader:not(.scrolled), .main-site-header:not(.scrolled) {
+      position: fixed !important;
       top: 0 !important;
       left: 0 !important;
       right: 0 !important;
@@ -860,57 +860,58 @@ function autoRevealElements() {
       border-bottom: none !important;
       box-shadow: none !important;
       padding: 22px 0 !important;
-      transition: none !important;
+      transition: background 0.3s ease, padding 0.3s ease, border 0.3s ease, box-shadow 0.3s ease !important;
     }
 
-    header .logo img, #siteHeader .logo img, .main-site-header .logo img {
+    header:not(.scrolled) .logo img, #siteHeader:not(.scrolled) .logo img, .main-site-header:not(.scrolled) .logo img {
       filter: brightness(0) invert(1) !important;
       height: 28px !important;
       width: auto !important;
+      transition: filter 0.3s ease !important;
     }
 
-    header nav.main-nav a, #siteHeader nav.main-nav a, .main-site-header nav a, nav.main-nav a {
+    header:not(.scrolled) nav.main-nav a, #siteHeader:not(.scrolled) nav.main-nav a, .main-site-header:not(.scrolled) nav a, nav.main-nav a:not(.scrolled) {
       color: #ffffff !important;
       font-family: 'Manrope', sans-serif !important;
       font-size: 16px !important;
-      font-weight: 800 !important;
+      font-weight: 700 !important;
       letter-spacing: 0.02em !important;
       text-decoration: none !important;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8) !important;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
       opacity: 1 !important;
-      transition: opacity 0.25s ease, transform 0.25s ease !important;
+      transition: color 0.3s ease, opacity 0.2s ease !important;
     }
 
-    header nav.main-nav a:hover, #siteHeader nav.main-nav a:hover, .main-nav a:hover, nav.main-nav a.active {
+    header:not(.scrolled) nav.main-nav a:hover, #siteHeader:not(.scrolled) nav.main-nav a:hover {
       color: #ffffff !important;
-      opacity: 1 !important;
-      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5) !important;
+      opacity: 0.85 !important;
     }
 
-    header .icon-btn svg, #siteHeader .icon-btn svg, .main-site-header svg, .icon-btn svg {
+    header:not(.scrolled) .icon-btn svg, #siteHeader:not(.scrolled) .icon-btn svg, .main-site-header:not(.scrolled) svg {
       stroke: #ffffff !important;
       color: #ffffff !important;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6)) !important;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8)) !important;
+      transition: stroke 0.3s ease !important;
     }
 
-    header .lang-current, #siteHeader .lang-current, .lang-current {
+    header:not(.scrolled) .lang-current, #siteHeader:not(.scrolled) .lang-current {
       color: #ffffff !important;
-      border: 1px solid rgba(255, 255, 255, 0.5) !important;
-      background: rgba(0, 0, 0, 0.2) !important;
+      border: 1.5px solid #ffffff !important;
+      background: transparent !important;
       font-weight: 700 !important;
       font-size: 13.5px !important;
       border-radius: 100px !important;
       padding: 6px 14px !important;
-      backdrop-filter: blur(4px) !important;
+      transition: all 0.3s ease !important;
     }
 
-    header .lang-current svg, #siteHeader .lang-current svg {
+    header:not(.scrolled) .lang-current svg, #siteHeader:not(.scrolled) .lang-current svg {
       stroke: #ffffff !important;
     }
 
-    header .btn-quote, #siteHeader .btn-quote, .btn-quote-main, .header-right .btn-quote {
+    header:not(.scrolled) .btn-quote, #siteHeader:not(.scrolled) .btn-quote, .main-site-header:not(.scrolled) .btn-quote-main {
       color: #ffffff !important;
-      border: 1px solid #ffffff !important;
+      border: 1.5px solid #ffffff !important;
       background: transparent !important;
       font-family: 'Manrope', sans-serif !important;
       font-size: 14.5px !important;
@@ -923,15 +924,88 @@ function autoRevealElements() {
       display: inline-block !important;
     }
 
-    header .btn-quote:hover, #siteHeader .btn-quote:hover, .btn-quote-main:hover, .header-right .btn-quote:hover {
+    header:not(.scrolled) .btn-quote:hover, #siteHeader:not(.scrolled) .btn-quote:hover {
       background: #ffffff !important;
       color: #000000 !important;
       border-color: #ffffff !important;
-      transform: translateY(-2px) !important;
     }
 
-    header .burger span, #siteHeader .burger span {
+    header:not(.scrolled) .burger span, #siteHeader:not(.scrolled) .burger span {
       background: #ffffff !important;
+    }
+
+
+    /* STATE 2: ON SCROLL DOWN (.scrolled: LIGHT WHITE BG + BLACK TEXT & BLACK LOGO MATCHING SCREENSHOT) */
+    header.scrolled, #siteHeader.scrolled, .main-site-header.scrolled {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 999999 !important;
+      background: rgba(255, 255, 255, 0.96) !important;
+      background-color: rgba(255, 255, 255, 0.96) !important;
+      backdrop-filter: blur(14px) !important;
+      -webkit-backdrop-filter: blur(14px) !important;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+      padding: 14px 0 !important;
+      transition: background 0.3s ease, padding 0.3s ease, border 0.3s ease, box-shadow 0.3s ease !important;
+    }
+
+    header.scrolled .logo img, #siteHeader.scrolled .logo img, .main-site-header.scrolled .logo img {
+      filter: none !important;
+      height: 26px !important;
+      width: auto !important;
+    }
+
+    header.scrolled nav.main-nav a, #siteHeader.scrolled nav.main-nav a, .main-site-header.scrolled nav a {
+      color: #111111 !important;
+      font-family: 'Manrope', sans-serif !important;
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      text-shadow: none !important;
+      opacity: 1 !important;
+    }
+
+    header.scrolled nav.main-nav a:hover, #siteHeader.scrolled nav.main-nav a:hover {
+      color: #111111 !important;
+      opacity: 0.65 !important;
+    }
+
+    header.scrolled .icon-btn svg, #siteHeader.scrolled .icon-btn svg, .main-site-header.scrolled svg {
+      stroke: #111111 !important;
+      color: #111111 !important;
+      filter: none !important;
+    }
+
+    header.scrolled .lang-current, #siteHeader.scrolled .lang-current {
+      color: #111111 !important;
+      border: 1px solid rgba(0, 0, 0, 0.28) !important;
+      background: transparent !important;
+      font-weight: 600 !important;
+      font-size: 13.5px !important;
+    }
+
+    header.scrolled .lang-current svg, #siteHeader.scrolled .lang-current svg {
+      stroke: #111111 !important;
+    }
+
+    header.scrolled .btn-quote, #siteHeader.scrolled .btn-quote, .main-site-header.scrolled .btn-quote-main {
+      color: #111111 !important;
+      border: 1.5px solid #111111 !important;
+      background: transparent !important;
+      font-size: 14px !important;
+      font-weight: 600 !important;
+    }
+
+    header.scrolled .btn-quote:hover, #siteHeader.scrolled .btn-quote:hover {
+      background: #111111 !important;
+      color: #ffffff !important;
+      border-color: #111111 !important;
+    }
+
+    header.scrolled .burger span, #siteHeader.scrolled .burger span {
+      background: #111111 !important;
     }
   `;
   if (document.head) {
@@ -939,6 +1013,34 @@ function autoRevealElements() {
   } else {
     document.addEventListener('DOMContentLoaded', () => document.head.appendChild(style));
   }
+})();
+
+/* Dynamically manage top (transparent + white text) vs scrolled (white bg + black text) across all pages */
+(function handleTwoStateHeader() {
+  function updateHeaderState() {
+    const isScrolled = window.scrollY > 20;
+    document.querySelectorAll('header, #siteHeader, .main-site-header').forEach(h => {
+      if (isScrolled) {
+        h.classList.add('scrolled');
+        h.style.removeProperty('background');
+        h.style.removeProperty('background-color');
+        h.style.removeProperty('background-image');
+        h.style.removeProperty('box-shadow');
+        h.style.removeProperty('border');
+      } else {
+        h.classList.remove('scrolled');
+        h.style.setProperty('background', 'transparent', 'important');
+        h.style.setProperty('background-color', 'transparent', 'important');
+        h.style.setProperty('background-image', 'none', 'important');
+        h.style.setProperty('box-shadow', 'none', 'important');
+        h.style.setProperty('border', 'none', 'important');
+      }
+    });
+  }
+  updateHeaderState();
+  document.addEventListener('DOMContentLoaded', updateHeaderState);
+  window.addEventListener('load', updateHeaderState);
+  window.addEventListener('scroll', updateHeaderState);
 })();
 
 /* Automatic Broken Image Fallback & Local File Link Repair */

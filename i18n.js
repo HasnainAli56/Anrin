@@ -788,6 +788,50 @@ function autoRevealElements() {
       width: 100% !important;
       box-sizing: border-box !important;
     }
+    /* Center Home Hero Content for Main Landing Page */
+    .hero:not(.page-hero):not(.htec-hero) .hero-content,
+    #hero:not(.page-hero) .hero-content,
+    section.hero:not(.page-hero) .hero-content {
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin: 0 auto !important;
+    }
+    .hero:not(.page-hero):not(.htec-hero) .eyebrow,
+    #hero:not(.page-hero) .eyebrow {
+      margin-left: auto !important;
+      margin-right: auto !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 8px !important;
+    }
+    .hero:not(.page-hero):not(.htec-hero) .eyebrow::before,
+    #hero:not(.page-hero) .eyebrow::before {
+      content: '' !important;
+      width: 7px !important;
+      height: 7px !important;
+      background: #10b981 !important;
+      border-radius: 50% !important;
+      display: inline-block !important;
+    }
+    .hero:not(.page-hero):not(.htec-hero) h1.hero-title,
+    .hero:not(.page-hero):not(.htec-hero) .hero-sub,
+    .hero:not(.page-hero):not(.htec-hero) .hero-actions,
+    .hero:not(.page-hero):not(.htec-hero) .hero-meta {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    .hero:not(.page-hero):not(.htec-hero) .hero-actions {
+      display: flex !important;
+      justify-content: center !important;
+      gap: 16px !important;
+    }
     .hero-brand-wordmark {
       display: none !important;
     }

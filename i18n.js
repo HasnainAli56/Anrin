@@ -844,9 +844,24 @@ function autoRevealElements() {
       color: rgba(255, 255, 255, 0.75) !important;
     }
 
+    /* HIDE DUPLICATE SECOND HEADER TO ELIMINATE DOUBLE OVERLAPPING TEXT SITE-WIDE */
+    header.main-site-header,
+    .main-site-header,
+    header:not(#siteHeader) {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      height: 0 !important;
+      overflow: hidden !important;
+    }
+
     /* STATE 1: TOP OF PAGE (100% TRANSPARENT + PROMINENT BOLD WHITE TEXT & WHITE LOGO) */
-    header:not(.scrolled), #siteHeader:not(.scrolled), .main-site-header:not(.scrolled) {
+    #siteHeader:not(.scrolled) {
       position: fixed !important;
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
       top: 0 !important;
       left: 0 !important;
       right: 0 !important;
@@ -1007,6 +1022,72 @@ function autoRevealElements() {
     header.scrolled .burger span, #siteHeader.scrolled .burger span {
       background: #111111 !important;
     }
+
+    /* STATE 3: WHEN HOVERING OVER PRODUCTS / MEGA MENU (BLACK TEXT & BLACK LOGO + LIGHT BACKDROP) */
+    header.mega-hover, #siteHeader.mega-hover, .main-site-header.mega-hover {
+      background: rgba(255, 255, 255, 0.98) !important;
+      background-color: rgba(255, 255, 255, 0.98) !important;
+      backdrop-filter: blur(14px) !important;
+      -webkit-backdrop-filter: blur(14px) !important;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+    }
+
+    header.mega-hover .logo img, #siteHeader.mega-hover .logo img, .main-site-header.mega-hover .logo img {
+      filter: none !important;
+      height: 26px !important;
+      width: auto !important;
+    }
+
+    header.mega-hover nav.main-nav a, #siteHeader.mega-hover nav.main-nav a, .main-site-header.mega-hover nav a {
+      color: #111111 !important;
+      font-family: 'Manrope', sans-serif !important;
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      text-shadow: none !important;
+      opacity: 1 !important;
+    }
+
+    header.mega-hover nav.main-nav a:hover, #siteHeader.mega-hover nav.main-nav a:hover {
+      color: #111111 !important;
+      opacity: 0.65 !important;
+    }
+
+    header.mega-hover .icon-btn svg, #siteHeader.mega-hover .icon-btn svg, .main-site-header.mega-hover svg {
+      stroke: #111111 !important;
+      color: #111111 !important;
+      filter: none !important;
+    }
+
+    header.mega-hover .lang-current, #siteHeader.mega-hover .lang-current {
+      color: #111111 !important;
+      border: 1px solid rgba(0, 0, 0, 0.28) !important;
+      background: transparent !important;
+      font-weight: 600 !important;
+      font-size: 13.5px !important;
+    }
+
+    header.mega-hover .lang-current svg, #siteHeader.mega-hover .lang-current svg {
+      stroke: #111111 !important;
+    }
+
+    header.mega-hover .btn-quote, #siteHeader.mega-hover .btn-quote, .main-site-header.mega-hover .btn-quote-main {
+      color: #111111 !important;
+      border: 1.5px solid #111111 !important;
+      background: transparent !important;
+      font-size: 14px !important;
+      font-weight: 600 !important;
+    }
+
+    header.mega-hover .btn-quote:hover, #siteHeader.mega-hover .btn-quote:hover {
+      background: #111111 !important;
+      color: #ffffff !important;
+      border-color: #111111 !important;
+    }
+
+    header.mega-hover .burger span, #siteHeader.mega-hover .burger span {
+      background: #111111 !important;
+    }
   `;
   if (document.head) {
     document.head.appendChild(style);
@@ -1015,12 +1096,27 @@ function autoRevealElements() {
   }
 })();
 
+/* Dynamically purge duplicate second header elements across all pages to fix overlapping text */
+(function purgeDuplicateHeaders() {
+  function removeDuplicates() {
+    const mainHeader = document.getElementById('siteHeader');
+    document.querySelectorAll('header.main-site-header, .main-site-header, header:not(#siteHeader)').forEach(el => {
+      if (el !== mainHeader) {
+        el.remove();
+      }
+    });
+  }
+  removeDuplicates();
+  document.addEventListener('DOMContentLoaded', removeDuplicates);
+  window.addEventListener('load', removeDuplicates);
+})();
+
 /* Dynamically manage top (transparent + white text) vs scrolled (white bg + black text) across all pages */
 (function handleTwoStateHeader() {
   function updateHeaderState() {
     const isScrolled = window.scrollY > 20;
     document.querySelectorAll('header, #siteHeader, .main-site-header').forEach(h => {
-      if (isScrolled) {
+      if (isScrolled || h.classList.contains('mega-hover')) {
         h.classList.add('scrolled');
         h.style.removeProperty('background');
         h.style.removeProperty('background-color');
@@ -1041,6 +1137,34 @@ function autoRevealElements() {
   document.addEventListener('DOMContentLoaded', updateHeaderState);
   window.addEventListener('load', updateHeaderState);
   window.addEventListener('scroll', updateHeaderState);
+})();
+
+/* Dynamically handle Products / Mega Menu Hover State */
+(function handleMegaHover() {
+  function attachMegaListeners() {
+    const headers = document.querySelectorAll('header, #siteHeader, .main-site-header');
+    const megaTriggers = document.querySelectorAll('.has-mega, #productsMegaTrigger, #productsMegaPanel, .mega-menu, .mega-panel, .mega-grid');
+    
+    megaTriggers.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        headers.forEach(h => {
+          h.classList.add('mega-hover');
+          h.classList.add('scrolled');
+        });
+      });
+      el.addEventListener('mouseleave', () => {
+        headers.forEach(h => {
+          h.classList.remove('mega-hover');
+          if (window.scrollY <= 20) {
+            h.classList.remove('scrolled');
+          }
+        });
+      });
+    });
+  }
+  attachMegaListeners();
+  document.addEventListener('DOMContentLoaded', attachMegaListeners);
+  window.addEventListener('load', attachMegaListeners);
 })();
 
 /* Automatic Broken Image Fallback & Local File Link Repair */

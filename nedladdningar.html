@@ -513,51 +513,7 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 #backToTop{position:fixed;right:28px;bottom:28px;width:54px;height:54px;border-radius:50%;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 32px rgba(0,0,0,.28);z-index:520;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(16px);transition:opacity .4s var(--ease),visibility .4s,transform .4s var(--ease),background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease);}
 #backToTop:hover{background:var(--white);color:var(--black);border:1px solid var(--gray-300);}
 #backToTop.show{opacity:1;visibility:visible;transform:translateY(0);}
-@media(max-width:640px){#backToTop{right:18px;bottom:18px;width:48px;height:48px;}}/* Header Header contrast patch */
-
-header#siteHeader {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 400;
-  padding: 16px 0;
-  transition: all .4s cubic-bezier(.16,.8,.24,1);
-  background: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
-}
-header#siteHeader.scrolled {
-  padding: 12px 0 !important;
-  background: rgba(255, 255, 255, 0.98) !important;
-}
-nav.main-nav a {
-  color: #111111 !important;
-  font-weight: 600 !important;
-}
-.header-right .btn-quote {
-  color: #111111 !important;
-  border-color: #111111 !important;
-  font-weight: 600 !important;
-}
-.header-right .btn-quote:hover {
-  background: #111111 !important;
-  color: #ffffff !important;
-}
-.header-right .icon-btn svg {
-  stroke: #111111 !important;
-}
-.lang-current {
-  color: #111111 !important;
-  border-color: rgba(0, 0, 0, 0.25) !important;
-  font-weight: 600 !important;
-}
-.burger span {
-  background: #111111 !important;
-}
-.logo img {
-  filter: none !important;
-}
+@media(max-width:640px){#backToTop{right:18px;bottom:18px;width:48px;height:48px;}}
 
 
 /* Section Head & Faint Text High-Contrast Visibility Fix */

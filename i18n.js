@@ -950,19 +950,17 @@ function autoRevealElements() {
     }
 
 
-    /* STATE 2: ON SCROLL DOWN (.scrolled: LIGHT WHITE BG + BLACK TEXT & BLACK LOGO MATCHING SCREENSHOT) */
+    /* STATE 2: ON SCROLL DOWN (.scrolled: SOLID WHITE BG + BLACK TEXT & BLACK LOGO MATCHING SCREENSHOT) */
     header.scrolled, #siteHeader.scrolled, .main-site-header.scrolled {
       position: fixed !important;
       top: 0 !important;
       left: 0 !important;
       right: 0 !important;
       z-index: 999999 !important;
-      background: rgba(255, 255, 255, 0.96) !important;
-      background-color: rgba(255, 255, 255, 0.96) !important;
-      backdrop-filter: blur(14px) !important;
-      -webkit-backdrop-filter: blur(14px) !important;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+      border-bottom: 1px solid #e5e5e5 !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
       padding: 14px 0 !important;
       transition: background 0.3s ease, padding 0.3s ease, border 0.3s ease, box-shadow 0.3s ease !important;
     }
@@ -1137,6 +1135,7 @@ function autoRevealElements() {
   document.addEventListener('DOMContentLoaded', updateHeaderState);
   window.addEventListener('load', updateHeaderState);
   window.addEventListener('scroll', updateHeaderState);
+  setInterval(updateHeaderState, 250);
 })();
 
 /* Dynamically handle Products / Mega Menu Hover State */
@@ -1187,7 +1186,9 @@ function fixBrokenImagesAndLinks() {
     let href = a.getAttribute('href');
     if (!href) return;
 
-    if (href.includes('stainless-team.html')) {
+    if (href.includes('index.html#enviroguard') || href.endsWith('#enviroguard')) {
+      a.setAttribute('href', pathPrefix + 'produkter.html#enviroguard');
+    } else if (href.includes('stainless-team.html')) {
       a.setAttribute('href', pathPrefix + 'stainless-team.html');
     } else if (href.startsWith('/') && !href.startsWith('//')) {
       // Remove leading slash so file:/// relative resolution works

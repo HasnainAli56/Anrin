@@ -1585,23 +1585,6 @@ h1.hero-title span em, .hero-title span em {
       Thank you for your message! Your request has been logged and we will get back to you within 24 hours.
     </div>
   </form>
-
-  <div id="zammad-inline-form-container" style="margin-top:20px;"></div>
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script id="zammad_form_script" src="https://anrin.zammad.com/assets/form/form.js"></script>
-  <script>
-  $(function() {
-    if ($.fn.ZammadForm) {
-      $('#zammad-inline-form-container').ZammadForm({
-        messageTitle: 'ANRIN Ärendesystem',
-        messageSubmit: 'Skicka ärende',
-        messageThankYou: 'Tack! Ditt ärende (#%s) har tagits emot.',
-        modal: false
-      });
-    }
-  });
-  </script>
 </div>
 
     </div>

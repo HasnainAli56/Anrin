@@ -1565,77 +1565,44 @@ h1.hero-title span em, .hero-title span em {
 
             <div class="reveal">
       
-<div class="contact-hero-form" style="padding:48px 40px;background:#ffffff;border:1px solid #e5e5e5;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.06);">
+<div class="contact-hero-form notranslate" translate="no" style="padding:48px 40px;background:#ffffff;border:1px solid #eef0f2;border-radius:24px;box-shadow:0 20px 40px rgba(0,0,0,.04);">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
-    <div style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#777;">ANRIN SUPPORT & OFFERTFÖRFRÅGAN</div>
-    <span style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#10b981;background:rgba(16,185,129,.1);padding:4px 12px;border-radius:100px;display:inline-flex;align-items:center;gap:6px;">
-      <span style="width:7px;height:7px;background:#10b981;border-radius:50%;display:inline-block;"></span>
-      Aktiv kundtjänst
+    <div style="font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#888;">ANRIN SUPPORT & QUOTE REQUEST</div>
+    <span style="font-size:12px;font-weight:700;letter-spacing:.04em;color:#00a86b;background:#e6f7f0;padding:6px 14px;border-radius:100px;display:inline-flex;align-items:center;gap:6px;">
+      <span style="width:7px;height:7px;background:#00a86b;border-radius:50%;display:inline-block;"></span>
+      Active customer service
     </span>
   </div>
 
-  <h3 style="font-family:'Manrope',sans-serif;font-size:28px;font-weight:800;letter-spacing:-.01em;margin-bottom:8px;color:#111;">Skicka ett meddelande</h3>
-  <p style="font-size:15px;line-height:1.6;color:#555;margin-bottom:32px;">Fyll i formuläret nedan för att begära offert, ställa tekniska frågor eller starta ett ärende. Vårt team besvarar din förfrågan senast nästa arbetsdag.</p>
+  <h3 style="font-family:'Manrope',sans-serif;font-size:32px;font-weight:800;letter-spacing:-.01em;margin-bottom:10px;color:#111;">Submit request</h3>
+  <p style="font-size:14.5px;line-height:1.6;color:#666;margin-bottom:32px;">Fill out the form below to request a quote or ask technical questions. Our team will respond to your request no later than the next business day.</p>
 
-  <form id="inline-contact-form" onsubmit="event.preventDefault(); document.getElementById('contact-form-success').style.display='block'; this.reset();" style="display:flex;flex-direction:column;gap:20px;">
+  <form id="inline-contact-form" onsubmit="event.preventDefault(); document.getElementById('contact-form-success').style.display='block'; this.reset();" style="display:flex;flex-direction:column;gap:22px;">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
       <div>
-        <label style="display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#333;margin-bottom:8px;">Ditt Namn *</label>
-        <input type="text" required placeholder="För- och efternamn" style="width:100%;padding:14px 16px;border:1px solid #ccc;border-radius:10px;font-size:15px;background:#fff;color:#111;outline:none;">
+        <label style="display:block;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#222;margin-bottom:8px;">YOUR NAME *</label>
+        <input type="text" required placeholder="First and last name" style="width:100%;padding:14px 18px;border:1px solid #e2e8f0;border-radius:12px;font-size:14.5px;background:#fff;color:#111;outline:none;">
       </div>
       <div>
-        <label style="display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#333;margin-bottom:8px;">E-postadress *</label>
-        <input type="email" required placeholder="namn@foretag.se" style="width:100%;padding:14px 16px;border:1px solid #ccc;border-radius:10px;font-size:15px;background:#fff;color:#111;outline:none;">
-      </div>
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-      <div>
-        <label style="display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#333;margin-bottom:8px;">Telefonnummer</label>
-        <input type="tel" placeholder="+46 (0)10-000 000" style="width:100%;padding:14px 16px;border:1px solid #ccc;border-radius:10px;font-size:15px;background:#fff;color:#111;outline:none;">
-      </div>
-      <div>
-        <label style="display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#333;margin-bottom:8px;">Ärende / Kategori</label>
-        <select style="width:100%;padding:14px 16px;border:1px solid #ccc;border-radius:10px;font-size:15px;background:#fff;color:#111;outline:none;cursor:pointer;">
-          <option value="offert">Begära offert</option>
-          <option value="teknik">Teknisk support & ritningar</option>
-          <option value="order">Order & Leverans</option>
-          <option value="ovrigt">Övrigt</option>
-        </select>
+        <label style="display:block;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#222;margin-bottom:8px;">EMAIL ADDRESS *</label>
+        <input type="email" required placeholder="name@company.se" style="width:100%;padding:14px 18px;border:1px solid #e2e8f0;border-radius:12px;font-size:14.5px;background:#fff;color:#111;outline:none;">
       </div>
     </div>
 
     <div>
-      <label style="display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#333;margin-bottom:8px;">Meddelande / Beskrivning *</label>
-      <textarea required rows="5" placeholder="Beskriv ditt ärende eller projekt så hjälper vi dig omgående..." style="width:100%;padding:14px 16px;border:1px solid #ccc;border-radius:10px;font-size:15px;background:#fff;color:#111;outline:none;resize:vertical;min-height:120px;"></textarea>
+      <label style="display:block;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#222;margin-bottom:8px;">MESSAGE / DESCRIPTION *</label>
+      <textarea required rows="4" placeholder="Describe your case or project and we will help you immediately..." style="width:100%;padding:14px 18px;border:1px solid #e2e8f0;border-radius:12px;font-size:14.5px;background:#fff;color:#111;outline:none;resize:vertical;min-height:110px;"></textarea>
     </div>
 
-    <button type="submit" style="background:#000000;color:#ffffff;padding:16px 36px;border-radius:100px;font-size:15px;font-weight:700;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;width:fit-content;transition:transform .2s ease;">
-      <span>Skicka meddelande</span>
-      <svg width="16" height="16" viewBox="0 0 24 24" stroke="white" fill="none" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    <button type="submit" style="background:#000000;color:#ffffff;padding:16px 32px;border-radius:100px;font-size:14.5px;font-weight:700;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;width:fit-content;transition:transform .2s ease;">
+      <span>Submit request</span>
+      <svg width="15" height="15" viewBox="0 0 24 24" stroke="white" fill="none" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </button>
 
     <div id="contact-form-success" style="display:none;padding:16px 20px;background:#ecfdf5;border:1px solid #10b981;border-radius:10px;color:#065f46;font-size:15px;font-weight:600;margin-top:10px;">
-      Tack för ditt meddelande! Ditt ärende har registrerats och vi återkommer till dig inom 24 timmar.
+      Thank you for your message! Your request has been logged and we will get back to you within 24 hours.
     </div>
   </form>
-
-  <div id="zammad-inline-form-container" style="margin-top:20px;"></div>
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script id="zammad_form_script" src="https://anrin.zammad.com/assets/form/form.js"></script>
-  <script>
-  $(function() {
-    if ($.fn.ZammadForm) {
-      $('#zammad-inline-form-container').ZammadForm({
-        messageTitle: 'ANRIN Ärendesystem',
-        messageSubmit: 'Skicka ärende',
-        messageThankYou: 'Tack! Ditt ärende (#%s) har tagits emot.',
-        modal: false
-      });
-    }
-  });
-  </script>
 </div>
 
     </div>

@@ -1347,6 +1347,20 @@ div[class*="sticky-action"] {
 }
 </style>
 
+<style id="hd-image-rendering-fix">
+/* Crisp HD Image Rendering for Hydrotec Cards */
+.card-item img,
+.product-card img,
+.product-image,
+.hydrotec-card img {
+  image-rendering: -webkit-optimize-contrast !important;
+  image-rendering: crisp-edges !important;
+  object-fit: cover !important;
+  width: 100% !important;
+  max-height: 240px !important;
+}
+</style>
+
 </head>
 <body>
 <div id="header-root"></div>

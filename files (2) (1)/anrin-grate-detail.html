@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ANRIN — Grate Specification</title>
+<title>ANRIN — Slotted grating OvalGrip Design</title>
 <link rel="stylesheet" href="header.css">
 <link rel="stylesheet" href="hero.css">
 <script src="header.js"></script>
@@ -19,9 +19,48 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Black Header Text at Top for White-Top Grate Detail Page */
+#siteHeader:not(.scrolled) nav.main-nav a,
+#siteHeader:not(.scrolled) nav.main-nav span {
+  color: #111111 !important;
+  text-shadow: none !important;
+}
+
+#siteHeader:not(.scrolled) .logo img {
+  filter: none !important;
+}
+
+#siteHeader:not(.scrolled) .icon-btn svg {
+  stroke: #111111 !important;
+}
+
+#siteHeader:not(.scrolled) .lang-current {
+  color: #111111 !important;
+  border-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+#siteHeader:not(.scrolled) .lang-current svg {
+  stroke: #111111 !important;
+}
+
+#siteHeader:not(.scrolled) .btn-quote {
+  color: #111111 !important;
+  border-color: #111111 !important;
+}
+
+#siteHeader:not(.scrolled) .btn-quote:hover {
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+
+#siteHeader:not(.scrolled) .burger span {
+  background: #111111 !important;
+}
+
+/* Container */
 .grate-detail-container {
   max-width: 1280px;
-  margin: 140px auto 80px auto;
+  margin: 140px auto 40px auto;
   padding: 0 32px;
 }
 
@@ -29,8 +68,8 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
-  color: #666;
+  font-size: 13.5px;
+  color: #777777;
   text-decoration: none;
   margin-bottom: 20px;
   font-weight: 500;
@@ -43,44 +82,82 @@ body {
 
 .grate-title {
   font-family: 'Manrope', sans-serif;
-  font-size: 38px;
+  font-size: 36px;
   font-weight: 800;
   color: #111111;
-  margin: 0 0 36px 0;
+  margin: 0 0 32px 0;
   letter-spacing: -0.02em;
 }
 
-.grate-grid {
+/* Grid Layout */
+.grate-main-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 60px;
+  gap: 50px;
   align-items: flex-start;
 }
 
 @media (max-width: 960px) {
-  .grate-grid {
+  .grate-main-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
 }
 
-.grate-image-box {
+.grate-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.grate-img-card {
   background: #ffffff;
+  border: 1px solid #eeeeee;
   border-radius: 16px;
   padding: 40px;
   text-align: center;
-  border: 1px solid #eeeeee;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
 
-.grate-main-img {
+.grate-img-card img {
   max-width: 100%;
   height: auto;
-  max-height: 380px;
+  max-height: 320px;
   object-fit: contain;
 }
 
-/* Accordion Pill Buttons matching exact style */
+.thumbs-row {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+}
+
+.thumb-item {
+  width: 110px;
+  height: 70px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 6px;
+  cursor: pointer;
+  background: #ffffff;
+  transition: border-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumb-item.active, .thumb-item:hover {
+  border-color: #000000;
+}
+
+.thumb-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Accordion Side Buttons (Round Pills with White Text) */
 .grate-accordions {
   display: flex;
   flex-direction: column;
@@ -89,7 +166,6 @@ body {
 
 .acc-item {
   border-radius: 100px;
-  overflow: hidden;
 }
 
 .acc-header {
@@ -106,71 +182,188 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: background 0.25s, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .acc-header:hover {
   background: #222222 !important;
+  transform: translateY(-1px);
 }
 
 .acc-content {
   padding: 24px 32px;
-  font-size: 15px;
+  font-size: 14.5px;
   line-height: 1.7;
   color: #444444;
-  background: #f9f9f9;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
   border-radius: 20px;
   margin-top: 8px;
   display: none;
-  border: 1px solid #eeeeee;
 }
 
 .acc-item.active .acc-content {
   display: block;
 }
 
-/* Round Pill Download Buttons */
-.downloads-sec {
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.specs-table td {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.specs-table td:first-child {
+  color: #666;
+  width: 40%;
+}
+
+.specs-table td:last-child {
+  font-weight: 600;
+  color: #111;
+}
+
+/* Matching Channel Body Section */
+.matching-section {
   margin-top: 64px;
-  padding-top: 40px;
+  padding-top: 32px;
   border-top: 1px solid #eeeeee;
 }
 
-.downloads-sec h4 {
-  font-family: 'Manrope', sans-serif;
-  font-size: 22px;
-  font-weight: 800;
-  margin-bottom: 24px;
-  letter-spacing: -0.01em;
-}
-
-.dl-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 16px;
-}
-
-.dl-btn {
-  background: #ffffff;
-  border: 1.5px solid #000000;
-  color: #000000;
-  border-radius: 100px;
+.matching-tab-header {
+  background: #000000;
+  color: #ffffff;
   padding: 14px 28px;
-  font-size: 13px;
-  font-weight: 700;
-  text-decoration: none;
+  border-radius: 100px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
 }
 
-.dl-btn:hover {
-  background: #000000;
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+.channel-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.channel-card {
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.channel-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+
+.channel-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.channel-card h4 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.channel-card p {
+  font-size: 12.5px;
+  color: #666666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.channel-card p strong {
+  color: #111;
+}
+
+/* Showcase Photo Banner */
+.showcase-banner-wrapper {
+  margin-top: 60px;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.showcase-banner-wrapper img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+/* References Section */
+.references-section {
+  margin-top: 64px;
+  padding: 48px 0;
+  background: #f7f7f7;
+  border-radius: 20px;
+}
+
+.references-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.references-section h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0 0 32px 0;
+  letter-spacing: -0.01em;
+}
+
+.ref-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .ref-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ref-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+
+.ref-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
 }
 </style>
 </head>
@@ -181,11 +374,22 @@ body {
   <a href="javascript:history.back()" class="back-link">&lsaquo; Back to overview</a>
   <h1 class="grate-title" id="grateTitle">Slotted grating OvalGrip Design</h1>
 
-  <div class="grate-grid">
-    <div class="grate-image-box">
-      <img id="grateImg" src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png" alt="Grate Image" class="grate-main-img">
+  <div class="grate-main-grid">
+    <div class="grate-left-col">
+      <div class="grate-img-card">
+        <img id="grateImg" src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png" alt="Grate Image">
+      </div>
+      <div class="thumbs-row">
+        <div class="thumb-item active" onclick="switchImage('https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png', this)">
+          <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png" alt="Thumb 1">
+        </div>
+        <div class="thumb-item" onclick="switchImage('https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/0f/18/0f189bee-f82a-4d5b-ab19-1b1eb2b99d06/ke_100_winkel_03_ovalgrip_l50_2.png__800x0_subsampling-2.png', this)">
+          <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/0f/18/0f189bee-f82a-4d5b-ab19-1b1eb2b99d06/ke_100_winkel_03_ovalgrip_l50_2.png__800x0_subsampling-2.png" alt="Thumb 2">
+        </div>
+      </div>
     </div>
 
+    <!-- Side Round Pill Accordions matching user request -->
     <div class="grate-accordions">
       <div class="acc-item active">
         <div class="acc-header"><span>PRODUCT DESCRIPTION</span> <span>&minus;</span></div>
@@ -197,9 +401,16 @@ body {
       <div class="acc-item">
         <div class="acc-header"><span>PRODUCT INFORMATION</span> <span>&#43;</span></div>
         <div class="acc-content">
-          <strong>Material:</strong> Ductile iron (KTL-coated) / Stainless steel / Galvanized steel<br>
-          <strong>Load Classes:</strong> C250, D400, E600, F900<br>
-          <strong>Compatibility:</strong> Fits ANRIN KE-100, SF-100, Z-100 and SELF-100 channel systems according to EN 1433 standard.
+          <table class="specs-table">
+            <tr><td>Material</td><td>polyamide (black) / ductile iron</td></tr>
+            <tr><td>Length</td><td>50 cm</td></tr>
+            <tr><td>Nominal width</td><td>100 mm</td></tr>
+            <tr><td>Clasp</td><td>ANRIN TwistLock fastening</td></tr>
+            <tr><td>Loading Classes</td><td>C250, E600, F900</td></tr>
+          </table>
+          <div style="margin-top:16px;">
+            <strong>DESIGN 360° VIEW Available</strong>
+          </div>
         </div>
       </div>
 
@@ -208,28 +419,73 @@ body {
         <div class="acc-content">
           Need custom specification texts or CAD drawings for your project? Contact ANRIN technical support at <strong>info@anrin.se</strong> or request a direct quotation.
           <br><br>
-          <a href="kontakt.html" style="display:inline-block;padding:12px 24px;background:#000000;color:#ffffff;border-radius:100px;font-weight:700;text-decoration:none;font-size:13px;">Contact Technical Sales</a>
+          <a href="kontakt.html" style="display:inline-block;padding:12px 24px;background:#000000;color:#ffffff;border-radius:100px;font-weight:700;text-decoration:none;font-size:12.5px;">Contact Technical Sales</a>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="downloads-sec">
-    <h4>DOWNLOADS</h4>
-    <div class="dl-grid">
-      <a href="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public/38/8b/388b7456-97b6-48a7-9cdb-07a56e47acad/td_ke_100_uk.pdf" class="dl-btn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        TECHNICAL DATA SHEET
-      </a>
-      <a href="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public/61/ae/61ae0da2-fb7a-4fc8-b8bf-4fc9092fe007/installation_channel_systems.pdf" class="dl-btn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        INSTALLATION INSTRUCTIONS
-      </a>
+  <!-- Matching Channel Body Section (WITHOUT View Product buttons as requested) -->
+  <div class="matching-section">
+    <div class="matching-tab-header">MATCHING CHANNEL BODY &nbsp;&Delta;</div>
+    <div class="channel-cards-grid">
+      <div class="channel-card">
+        <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/13/70/13700704-25be-41de-8b20-c083fe523566/ke_100__800x0_subsampling-2.png" alt="KE-100">
+        <h4>KE-100 Reinforced edge channel</h4>
+        <p>Load class:<br><strong>A15, B125, C250, D400, E600</strong></p>
+      </div>
+
+      <div class="channel-card">
+        <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/13/70/13700704-25be-41de-8b20-c083fe523566/ke_100__800x0_subsampling-2.png" alt="KE-100 KTL">
+        <h4>KE-100 KTL Reinforced edge channel</h4>
+        <p>Load class:<br><strong>A15, B125, C250, D400, E600</strong></p>
+      </div>
+
+      <div class="channel-card">
+        <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/13/70/13700704-25be-41de-8b20-c083fe523566/ke_100__800x0_subsampling-2.png" alt="KC-100">
+        <h4>KC-100 Reinforced edge channel</h4>
+        <p>Load class:<br><strong>A15, B125, C250</strong></p>
+      </div>
+
+      <div class="channel-card">
+        <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/13/70/13700704-25be-41de-8b20-c083fe523566/ke_100__800x0_subsampling-2.png" alt="KF-100">
+        <h4>KF-100 Reinforced edge channel</h4>
+        <p>Load class:<br><strong>A15, B125, C250, D400, E600, F900</strong></p>
+      </div>
     </div>
+  </div>
+
+  <!-- Showcase Photo Banner -->
+  <div class="showcase-banner-wrapper">
+    <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/bf/51/bf51e388-7cae-4b0b-a3d7-6e40c3095ec9/ke_100_oval_grip_3.png__1200x0_subsampling-2.png" alt="Grate Showcase Installation Banner">
   </div>
 </main>
 
+<!-- References Section with verified images -->
+<section class="references-section">
+  <div class="references-inner">
+    <h2>REFERENCES</h2>
+    <div class="ref-grid">
+      <div class="ref-card">
+        <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/da/61/da61bbbd-8947-4950-9ec8-fa94d13ffb7a/sporthalle-wendschott-01.jpg__800x0_q90_subsampling-2.jpg" alt="Reference 1">
+      </div>
+      <div class="ref-card">
+        <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/00/e2/00e244ea-58fa-4e76-8bd8-fcbd8301548e/skaterpark-neustadt-01.jpg__800x0_q90_subsampling-2.jpg" alt="Reference 2">
+      </div>
+      <div class="ref-card">
+        <img src="https://hydrotec.se/wp-content/uploads/2022/08/entwaesserungsrinne-hydroblock-titelbild-86586f04.webp" alt="Reference 3">
+      </div>
+    </div>
+  </div>
+</section>
+
 <script>
+function switchImage(src, el) {
+  document.getElementById('grateImg').src = src;
+  document.querySelectorAll('.thumb-item').forEach(function(t) { t.classList.remove('active'); });
+  if (el) el.classList.add('active');
+}
+
 (function() {
   var params = new URLSearchParams(window.location.search);
   var title = params.get('title') || localStorage.getItem('selected_grate_title');

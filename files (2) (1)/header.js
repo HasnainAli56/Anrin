@@ -470,40 +470,17 @@
 })();
 
 
-/* Router for Matching Grates -> Opens dedicated anrin-grate-detail.html on anrin.vercel.app */
+
+
+
+
+
+
+/* Router for Product Pages — Every product card opens its own exact rich static page */
 (function() {
   document.addEventListener('click', function(e) {
-    var viewBtn = e.target.closest('.perfect-fit-product .rl-btn, .perfect-fit-product a, #tab-content-2 a');
-    if (!viewBtn) return;
-
-    var card = viewBtn.closest('.perfect-fit-product, .product-detail');
-    if (!card) return;
-
-    var img = card.querySelector('img');
-    var descEl = card.querySelector('.desc, .product-name, h4, .product-title');
-    var titleText = descEl ? descEl.textContent.trim() : (img ? img.alt : 'Slotted grating OvalGrip Design');
-    
-    titleText = titleText.replace(/Load class:[\s\S]*/i, '').trim();
-    var imgSrc = img ? img.src : '';
-
-    if (titleText && imgSrc) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      localStorage.setItem('selected_grate_title', titleText);
-      localStorage.setItem('selected_grate_img', imgSrc);
-
-      window.location.href = 'anrin-grate-detail.html?title=' + encodeURIComponent(titleText) + '&img=' + encodeURIComponent(imgSrc);
-    }
-  }, true);
-})();
-
-
-/* Smart Product Click Handler — Opens specific page for each product with picture, details & PDFs */
-(function() {
-  document.addEventListener('click', function(e) {
-    var link = e.target.closest('a.card-item, .card-item a, .product-card a, a[href*="anrin-page"], .quicklink-card, a.view-product, .view-product-btn');
-    var card = e.target.closest('.card-item, .product-card, .sku-card, div[data-product], .quicklink-card');
+    var link = e.target.closest('a.card-item, .card-item a, .product-card a, a.view-product, .view-product-btn, .quicklink-card');
+    var card = e.target.closest('.card-item, .product-card, .sku-card, div[data-product]');
     
     if (!link && !card) return;
 
@@ -512,75 +489,52 @@
     var imgEl = targetEl.querySelector('img');
 
     var title = titleEl ? titleEl.textContent.trim() : (imgEl ? imgEl.alt : '');
-    var imgSrc = imgEl ? imgEl.src : '';
-
     if (!title || title.length < 2) return;
 
-    // Check static mapped pages
     var lower = title.toLowerCase();
-    
-    // If it's a specific grate item under matching grates, open grate detail
-    if (e.target.closest('#tab-content-2, .rost-design-detail')) {
-      e.preventDefault();
-      e.stopPropagation();
-      localStorage.setItem('selected_grate_title', title);
-      localStorage.setItem('selected_grate_img', imgSrc);
-      window.location.href = 'anrin-grate-detail.html?title=' + encodeURIComponent(title) + '&img=' + encodeURIComponent(imgSrc);
-      return;
-    }
 
-    // Direct Static Page Mapping for major product families
-    if (lower.indexOf('ke-100') !== -1 && lower.indexOf('ktl') === -1) {
-      // KE-100
-      return; // Go to static anrin-page-1.html
-    } else if (lower.indexOf('sf-100') !== -1 || (lower.indexOf('sf') !== -1 && lower.indexOf('100') !== -1)) {
-      e.preventDefault();
-      window.location.href = 'anrin-page-2.html';
-      return;
-    } else if (lower.indexOf('z-100') !== -1 || lower.indexOf('slotted top') !== -1) {
-      e.preventDefault();
-      window.location.href = 'anrin-page-3.html';
-      return;
-    } else if (lower.indexOf('self-100') !== -1 || lower.indexOf('smart') !== -1) {
-      e.preventDefault();
-      window.location.href = 'anrin-page-4.html';
-      return;
-    } else if (lower.indexOf('self-200') !== -1) {
-      e.preventDefault();
-      window.location.href = 'anrin-page-5.html';
-      return;
-    } else if (lower.indexOf('self pp') !== -1 || lower.indexOf('pp evo') !== -1) {
-      e.preventDefault();
-      window.location.href = 'anrin-page-6.html';
-      return;
-    } else if (lower.indexOf('fotskrapa') !== -1 || lower.indexOf('boot scraper') !== -1 || lower.indexOf('schuhabstreifer') !== -1) {
-      e.preventDefault();
-      window.location.href = 'anrin-page-7.html';
-      return;
-    } else if (lower.indexOf('gårdsbrunn') !== -1 || lower.indexOf('yard sump') !== -1) {
-      e.preventDefault();
-      window.location.href = 'anrin-page-8.html';
-      return;
-    } else if (lower.indexOf('comb') !== -1 || lower.indexOf('kammrinne') !== -1) {
-      e.preventDefault();
-      window.location.href = 'anrin-page-9.html';
-      return;
-    } else if (lower.indexOf('sport') !== -1) {
-      e.preventDefault();
-      window.location.href = 'anrin-page-10.html';
-      return;
-    }
+    // Map exact product names to their specific static HTML pages
+    var pageMap = [
+      { key: 'ke-100 ktl', page: 'anrin-page-1.html' },
+      { key: 'ke-100', page: 'anrin-page-1.html' },
+      { key: 'sf-100', page: 'anrin-page-2.html' },
+      { key: 'z-100', page: 'anrin-page-3.html' },
+      { key: 'self-100', page: 'anrin-page-4.html' },
+      { key: 'self-200', page: 'anrin-page-5.html' },
+      { key: 'self pp', page: 'anrin-page-6.html' },
+      { key: 'pp evo', page: 'anrin-page-6.html' },
+      { key: 'fotskrapa', page: 'anrin-page-7.html' },
+      { key: 'schuhabstreifer', page: 'anrin-page-7.html' },
+      { key: 'boot scraper', page: 'anrin-page-7.html' },
+      { key: 'gårdsbrunn', page: 'anrin-page-8.html' },
+      { key: 'yard sump', page: 'anrin-page-8.html' },
+      { key: 'comb', page: 'anrin-page-9.html' },
+      { key: 'kammrinne', page: 'anrin-page-9.html' },
+      { key: 'sport 125 a', page: 'anrin-page-10.html' },
+      { key: 'sport 125 e', page: 'anrin-page-11.html' },
+      { key: 'sport 125 c1', page: 'anrin-page-12.html' },
+      { key: 'sport 125 r', page: 'anrin-page-13.html' },
+      { key: 'sport 125 c5', page: 'anrin-page-14.html' },
+      { key: 'sport 125', page: 'anrin-page-15.html' },
+      { key: 'sport', page: 'anrin-page-10.html' },
+      { key: 'ke-150', page: 'anrin-page-16.html' },
+      { key: 'ke-200', page: 'anrin-page-17.html' },
+      { key: 'ke-300', page: 'anrin-page-18.html' },
+      { key: 'sf-150', page: 'anrin-page-19.html' },
+      { key: 'sf-200', page: 'anrin-page-20.html' },
+      { key: 'sf-300', page: 'anrin-page-21.html' },
+      { key: 'z-150', page: 'anrin-page-22.html' },
+      { key: 'kf-100', page: 'anrin-page-23.html' },
+      { key: 'kc-100', page: 'anrin-page-24.html' }
+    ];
 
-    // For any specific variant (KE-150, KE-200, KE-300, KF-100, KC-100, SF-150, SF-200, SF-300), open dynamic anrin-product-detail.html!
-    if (lower.indexOf('ke-') !== -1 || lower.indexOf('kf-') !== -1 || lower.indexOf('kc-') !== -1 || lower.indexOf('sf-') !== -1 || lower.indexOf('z-') !== -1) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      localStorage.setItem('selected_product_title', title);
-      localStorage.setItem('selected_product_img', imgSrc);
-
-      var url = 'anrin-product-detail.html?title=' + encodeURIComponent(title) + '&img=' + encodeURIComponent(imgSrc);
-      window.location.href = url;
+    for (var i = 0; i < pageMap.length; i++) {
+      if (lower.indexOf(pageMap[i].key) !== -1) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.location.href = pageMap[i].page;
+        return;
+      }
     }
   }, true);
 })();

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANRIN — Product Specification</title>
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="hero.css">
+<script src="header.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: #ffffff;
+  color: #111111;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Black Header Text at Top */
+#siteHeader:not(.scrolled) nav.main-nav a,
+#siteHeader:not(.scrolled) nav.main-nav span {
+  color: #111111 !important;
+  text-shadow: none !important;
+}
+#siteHeader:not(.scrolled) .logo img { filter: none !important; }
+#siteHeader:not(.scrolled) .icon-btn svg { stroke: #111111 !important; }
+#siteHeader:not(.scrolled) .lang-current { color: #111111 !important; border-color: rgba(0, 0, 0, 0.4) !important; }
+#siteHeader:not(.scrolled) .lang-current svg { stroke: #111111 !important; }
+#siteHeader:not(.scrolled) .btn-quote { color: #111111 !important; border-color: #111111 !important; }
+#siteHeader:not(.scrolled) .btn-quote:hover { background: #111111 !important; color: #ffffff !important; }
+#siteHeader:not(.scrolled) .burger span { background: #111111 !important; }
+
+/* Container */
+.prod-detail-container {
+  max-width: 1280px;
+  margin: 140px auto 60px auto;
+  padding: 0 32px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  color: #777777;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.back-link:hover { color: #000000; }
+
+.prod-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: #111111;
+  margin: 0 0 32px 0;
+  letter-spacing: -0.02em;
+}
+
+/* Grid Layout */
+.prod-main-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+@media (max-width: 960px) {
+  .prod-main-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+.prod-img-card {
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.prod-img-card img {
+  max-width: 100%;
+  height: auto;
+  max-height: 340px;
+  object-fit: contain;
+}
+
+/* Accordion Side Buttons (Round Pills with White Text) */
+.prod-accordions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.acc-item {
+  border-radius: 100px;
+}
+
+.acc-header {
+  background: #000000 !important;
+  color: #ffffff !important;
+  padding: 16px 32px !important;
+  border-radius: 100px !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.25s, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.acc-header:hover {
+  background: #222222 !important;
+  transform: translateY(-1px);
+}
+
+.acc-content {
+  padding: 24px 32px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #444444;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 20px;
+  margin-top: 8px;
+  display: none;
+}
+
+.acc-item.active .acc-content {
+  display: block;
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.specs-table td {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.specs-table td:first-child {
+  color: #666;
+  width: 40%;
+}
+
+.specs-table td:last-child {
+  font-weight: 600;
+  color: #111;
+}
+
+/* Downloads Section */
+.downloads-sec {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid #eeeeee;
+}
+
+.downloads-sec h4 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.dl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.dl-btn {
+  background: #ffffff;
+  border: 1.5px solid #000000;
+  color: #000000;
+  border-radius: 100px;
+  padding: 14px 28px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.dl-btn:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+</style>
+</head>
+<body>
+<div id="header-root"></div>
+
+<main class="prod-detail-container">
+  <a href="javascript:history.back()" class="back-link">&lsaquo; Back to overview</a>
+  <h1 class="prod-title" id="prodTitle">ANRIN Channel System</h1>
+
+  <div class="prod-main-grid">
+    <div class="prod-img-card">
+      <img id="prodImg" src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/13/70/13700704-25be-41de-8b20-c083fe523566/ke_100__800x0_subsampling-2.png" alt="Product Image">
+    </div>
+
+    <div class="prod-accordions">
+      <div class="acc-item active">
+        <div class="acc-header"><span>PRODUCT DESCRIPTION</span> <span>&minus;</span></div>
+        <div class="acc-content" id="prodDesc">
+          ANRIN channel systems provide advanced drainage technology for commercial environments, industrial zones, sports facilities, and residential areas. Manufactured with high-strength polymer concrete and precision edge protection profiles.
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header"><span>PRODUCT INFORMATION</span> <span>&#43;</span></div>
+        <div class="acc-content">
+          <table class="specs-table">
+            <tr><td>Material</td><td id="specMat">Polymer concrete</td></tr>
+            <tr><td>Edge Profile</td><td id="specEdge">Galvanized steel / KTL-coated / Stainless steel</td></tr>
+            <tr><td>Length</td><td id="specLen">50 / 100 cm</td></tr>
+            <tr><td>Width</td><td id="specWidth">100 mm - 300 mm</td></tr>
+            <tr><td>Loading Classes</td><td id="specLoad">A15, B125, C250, D400, E600, F900</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header"><span>SERVICE AND CONTACT</span> <span>&#43;</span></div>
+        <div class="acc-content">
+          Need technical documentation, CAD drawings, or pricing details for this product? Contact our engineering team at <strong>info@anrin.se</strong> or request a custom quotation.
+          <br><br>
+          <a href="kontakt.html" style="display:inline-block;padding:12px 24px;background:#000000;color:#ffffff;border-radius:100px;font-weight:700;text-decoration:none;font-size:12.5px;">Contact Technical Sales</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="downloads-sec">
+    <h4>DOWNLOADS</h4>
+    <div class="dl-grid">
+      <a href="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public/38/8b/388b7456-97b6-48a7-9cdb-07a56e47acad/td_ke_100_uk.pdf" class="dl-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        TECHNICAL DATA SHEET
+      </a>
+      <a href="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public/61/ae/61ae0da2-fb7a-4fc8-b8bf-4fc9092fe007/installation_channel_systems.pdf" class="dl-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        INSTALLATION INSTRUCTIONS
+      </a>
+      <a href="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public/38/8b/388b7456-97b6-48a7-9cdb-07a56e47acad/td_ke_100_uk.pdf" class="dl-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        TENDER TEXTS
+      </a>
+      <a href="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public/61/ae/61ae0da2-fb7a-4fc8-b8bf-4fc9092fe007/installation_channel_systems.pdf" class="dl-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        PRODUCT DRAWING
+      </a>
+    </div>
+  </div>
+</main>
+
+<script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var title = params.get('title') || localStorage.getItem('selected_product_title');
+  var img = params.get('img') || localStorage.getItem('selected_product_img');
+  var mat = params.get('mat');
+  var edge = params.get('edge');
+  var len = params.get('len');
+  var width = params.get('width');
+  var load = params.get('load');
+
+  if (title) {
+    document.getElementById('prodTitle').textContent = title;
+    document.title = title + ' — ANRIN Specification';
+  }
+  if (img) {
+    document.getElementById('prodImg').src = img;
+  }
+  if (mat) document.getElementById('specMat').textContent = mat;
+  if (edge) document.getElementById('specEdge').textContent = edge;
+  if (len) document.getElementById('specLen').textContent = len;
+  if (width) document.getElementById('specWidth').textContent = width;
+  if (load) document.getElementById('specLoad').textContent = load;
+
+  // Accordion toggle logic
+  var accHeaders = document.querySelectorAll('.acc-header');
+  accHeaders.forEach(function(header) {
+    header.addEventListener('click', function() {
+      var item = this.parentElement;
+      var isActive = item.classList.contains('active');
+      
+      document.querySelectorAll('.acc-item').forEach(function(i) {
+        i.classList.remove('active');
+        var icon = i.querySelector('.acc-header span:last-child');
+        if (icon) icon.innerHTML = '&#43;';
+      });
+
+      if (!isActive) {
+        item.classList.add('active');
+        var icon = item.querySelector('.acc-header span:last-child');
+        if (icon) icon.innerHTML = '&minus;';
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

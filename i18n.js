@@ -761,7 +761,6 @@ function autoRevealElements() {
       width: 100% !important;
       max-width: 100% !important;
       margin: 0 !important;
-      padding: 0 !important;
       overflow-x: hidden !important;
     }
     .hero, .page-hero, .htec-hero, .aint-hero-home, #hero, section.hero {
@@ -772,42 +771,66 @@ function autoRevealElements() {
       left: 0 !important;
       right: 0 !important;
       padding-top: 140px !important;
-      padding-bottom: 90px !important;
-      min-height: 520px !important;
+      padding-bottom: 80px !important;
       background: #000000 !important;
       color: #ffffff !important;
       box-sizing: border-box !important;
     }
-    .hero .wrap, .page-hero .wrap, .htec-hero .wrap, .hero-content, #hero .hero-inner {
-      max-width: 1360px !important;
-      margin: 0 auto !important;
-      padding-left: 48px !important;
-      padding-right: 48px !important;
-      position: relative !important;
-      z-index: 2 !important;
-      width: 100% !important;
-      box-sizing: border-box !important;
-    }
-    /* Center Home Hero Content for Main Landing Page */
-    .hero:not(.page-hero):not(.htec-hero) .hero-content,
-    #hero:not(.page-hero) .hero-content,
-    section.hero:not(.page-hero) .hero-content {
-      text-align: center !important;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
-      margin: 0 auto !important;
-    }
-    .hero:not(.page-hero):not(.htec-hero) .eyebrow,
-    #hero:not(.page-hero) .eyebrow {
+    /* Header layout is owned by header.css — hero alignment owned by hero.css */
+    .wrap, .hero .wrap, .hero-content, .page-hero .wrap, .htec-hero .wrap, #hero .hero-inner, section.hero .wrap {
+      max-width: 1320px !important;
       margin-left: auto !important;
       margin-right: auto !important;
+      padding-left: 32px !important;
+      padding-right: 32px !important;
+      box-sizing: border-box !important;
+      width: 100% !important;
+    }
+
+    @media (max-width: 768px) {
+      .wrap, .hero .wrap, .hero-content, .page-hero .wrap, .htec-hero .wrap, #hero .hero-inner, section.hero .wrap {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+      }
+    }
+
+    .hero-content, .hero .wrap, .page-hero .wrap, .htec-hero .wrap, #hero .hero-inner, section.hero .hero-content {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+    }
+
+    /* STRICT LEFT ALIGNMENT FOR EYEBROW, TITLE SPANS, AND DESCRIPTIONS */
+    .hero .eyebrow, #hero .eyebrow, .eyebrow, .hero-content .eyebrow {
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      padding-left: 0 !important;
       display: inline-flex !important;
       align-items: center !important;
-      justify-content: center !important;
-      gap: 8px !important;
+      justify-content: flex-start !important;
+      text-align: left !important;
     }
+
+    h1.hero-title, .hero-title, h1.hero-title span, h1.hero-title em, .hero-title span, .hero-title em {
+      text-align: left !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      padding-left: 0 !important;
+      display: block !important;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+    }
+
+    .hero-sub, p.hero-sub, .hero-actions, .hero-meta, .hero-ctas {
+      text-align: left !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      padding-left: 0 !important;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+    }
+
     .hero:not(.page-hero):not(.htec-hero) .eyebrow::before,
     #hero:not(.page-hero) .eyebrow::before {
       content: '' !important;
@@ -817,20 +840,16 @@ function autoRevealElements() {
       border-radius: 50% !important;
       display: inline-block !important;
     }
-    .hero:not(.page-hero):not(.htec-hero) h1.hero-title,
-    .hero:not(.page-hero):not(.htec-hero) .hero-sub,
+
     .hero:not(.page-hero):not(.htec-hero) .hero-actions,
-    .hero:not(.page-hero):not(.htec-hero) .hero-meta {
-      text-align: center !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      align-items: center !important;
-      justify-content: center !important;
-    }
-    .hero:not(.page-hero):not(.htec-hero) .hero-actions {
+    .hero-actions {
       display: flex !important;
-      justify-content: center !important;
-      gap: 16px !important;
+      flex-direction: row !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      gap: 20px !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
     }
     .hero-brand-wordmark {
       display: none !important;
@@ -844,326 +863,12 @@ function autoRevealElements() {
       color: rgba(255, 255, 255, 0.75) !important;
     }
 
-    /* HIDE DUPLICATE SECOND HEADER TO ELIMINATE DOUBLE OVERLAPPING TEXT SITE-WIDE */
-    header.main-site-header,
-    .main-site-header,
-    header:not(#siteHeader) {
-      display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-      height: 0 !important;
-      overflow: hidden !important;
-    }
-
-    /* STATE 1: TOP OF PAGE (100% TRANSPARENT + PROMINENT BOLD WHITE TEXT & WHITE LOGO) */
-    #siteHeader:not(.scrolled) {
-      position: fixed !important;
-      display: block !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      top: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      z-index: 999999 !important;
-      background: transparent !important;
-      background-color: transparent !important;
-      background-image: none !important;
-      backdrop-filter: none !important;
-      -webkit-backdrop-filter: none !important;
-      border: none !important;
-      border-bottom: none !important;
-      box-shadow: none !important;
-      padding: 22px 0 !important;
-      transition: background 0.3s ease, padding 0.3s ease, border 0.3s ease, box-shadow 0.3s ease !important;
-    }
-
-    header:not(.scrolled) .logo img, #siteHeader:not(.scrolled) .logo img, .main-site-header:not(.scrolled) .logo img {
-      filter: brightness(0) invert(1) !important;
-      height: 28px !important;
-      width: auto !important;
-      transition: filter 0.3s ease !important;
-    }
-
-    header:not(.scrolled) nav.main-nav a, #siteHeader:not(.scrolled) nav.main-nav a, .main-site-header:not(.scrolled) nav a, nav.main-nav a:not(.scrolled) {
-      color: #ffffff !important;
-      font-family: 'Manrope', sans-serif !important;
-      font-size: 16px !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.02em !important;
-      text-decoration: none !important;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
-      opacity: 1 !important;
-      transition: color 0.3s ease, opacity 0.2s ease !important;
-    }
-
-    header:not(.scrolled) nav.main-nav a:hover, #siteHeader:not(.scrolled) nav.main-nav a:hover {
-      color: #ffffff !important;
-      opacity: 0.85 !important;
-    }
-
-    header:not(.scrolled) .icon-btn svg, #siteHeader:not(.scrolled) .icon-btn svg, .main-site-header:not(.scrolled) svg {
-      stroke: #ffffff !important;
-      color: #ffffff !important;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8)) !important;
-      transition: stroke 0.3s ease !important;
-    }
-
-    header:not(.scrolled) .lang-current, #siteHeader:not(.scrolled) .lang-current {
-      color: #ffffff !important;
-      border: 1.5px solid #ffffff !important;
-      background: transparent !important;
-      font-weight: 700 !important;
-      font-size: 13.5px !important;
-      border-radius: 100px !important;
-      padding: 6px 14px !important;
-      transition: all 0.3s ease !important;
-    }
-
-    header:not(.scrolled) .lang-current svg, #siteHeader:not(.scrolled) .lang-current svg {
-      stroke: #ffffff !important;
-    }
-
-    header:not(.scrolled) .btn-quote, #siteHeader:not(.scrolled) .btn-quote, .main-site-header:not(.scrolled) .btn-quote-main {
-      color: #ffffff !important;
-      border: 1.5px solid #ffffff !important;
-      background: transparent !important;
-      font-family: 'Manrope', sans-serif !important;
-      font-size: 14.5px !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.02em !important;
-      padding: 10px 24px !important;
-      border-radius: 100px !important;
-      transition: all 0.3s ease !important;
-      text-decoration: none !important;
-      display: inline-block !important;
-    }
-
-    header:not(.scrolled) .btn-quote:hover, #siteHeader:not(.scrolled) .btn-quote:hover {
-      background: #ffffff !important;
-      color: #000000 !important;
-      border-color: #ffffff !important;
-    }
-
-    header:not(.scrolled) .burger span, #siteHeader:not(.scrolled) .burger span {
-      background: #ffffff !important;
-    }
-
-
-    /* STATE 2: ON SCROLL DOWN (.scrolled: SOLID WHITE BG + BLACK TEXT & BLACK LOGO MATCHING SCREENSHOT) */
-    header.scrolled, #siteHeader.scrolled, .main-site-header.scrolled {
-      position: fixed !important;
-      top: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      z-index: 999999 !important;
-      background: #ffffff !important;
-      background-color: #ffffff !important;
-      border-bottom: 1px solid #e5e5e5 !important;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
-      padding: 14px 0 !important;
-      transition: background 0.3s ease, padding 0.3s ease, border 0.3s ease, box-shadow 0.3s ease !important;
-    }
-
-    header.scrolled .logo img, #siteHeader.scrolled .logo img, .main-site-header.scrolled .logo img {
-      filter: none !important;
-      height: 26px !important;
-      width: auto !important;
-    }
-
-    header.scrolled nav.main-nav a, #siteHeader.scrolled nav.main-nav a, .main-site-header.scrolled nav a {
-      color: #111111 !important;
-      font-family: 'Manrope', sans-serif !important;
-      font-size: 15px !important;
-      font-weight: 600 !important;
-      text-shadow: none !important;
-      opacity: 1 !important;
-    }
-
-    header.scrolled nav.main-nav a:hover, #siteHeader.scrolled nav.main-nav a:hover {
-      color: #111111 !important;
-      opacity: 0.65 !important;
-    }
-
-    header.scrolled .icon-btn svg, #siteHeader.scrolled .icon-btn svg, .main-site-header.scrolled svg {
-      stroke: #111111 !important;
-      color: #111111 !important;
-      filter: none !important;
-    }
-
-    header.scrolled .lang-current, #siteHeader.scrolled .lang-current {
-      color: #111111 !important;
-      border: 1px solid rgba(0, 0, 0, 0.28) !important;
-      background: transparent !important;
-      font-weight: 600 !important;
-      font-size: 13.5px !important;
-    }
-
-    header.scrolled .lang-current svg, #siteHeader.scrolled .lang-current svg {
-      stroke: #111111 !important;
-    }
-
-    header.scrolled .btn-quote, #siteHeader.scrolled .btn-quote, .main-site-header.scrolled .btn-quote-main {
-      color: #111111 !important;
-      border: 1.5px solid #111111 !important;
-      background: transparent !important;
-      font-size: 14px !important;
-      font-weight: 600 !important;
-    }
-
-    header.scrolled .btn-quote:hover, #siteHeader.scrolled .btn-quote:hover {
-      background: #111111 !important;
-      color: #ffffff !important;
-      border-color: #111111 !important;
-    }
-
-    header.scrolled .burger span, #siteHeader.scrolled .burger span {
-      background: #111111 !important;
-    }
-
-    /* STATE 3: WHEN HOVERING OVER PRODUCTS / MEGA MENU (BLACK TEXT & BLACK LOGO + LIGHT BACKDROP) */
-    header.mega-hover, #siteHeader.mega-hover, .main-site-header.mega-hover {
-      background: rgba(255, 255, 255, 0.98) !important;
-      background-color: rgba(255, 255, 255, 0.98) !important;
-      backdrop-filter: blur(14px) !important;
-      -webkit-backdrop-filter: blur(14px) !important;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
-    }
-
-    header.mega-hover .logo img, #siteHeader.mega-hover .logo img, .main-site-header.mega-hover .logo img {
-      filter: none !important;
-      height: 26px !important;
-      width: auto !important;
-    }
-
-    header.mega-hover nav.main-nav a, #siteHeader.mega-hover nav.main-nav a, .main-site-header.mega-hover nav a {
-      color: #111111 !important;
-      font-family: 'Manrope', sans-serif !important;
-      font-size: 15px !important;
-      font-weight: 600 !important;
-      text-shadow: none !important;
-      opacity: 1 !important;
-    }
-
-    header.mega-hover nav.main-nav a:hover, #siteHeader.mega-hover nav.main-nav a:hover {
-      color: #111111 !important;
-      opacity: 0.65 !important;
-    }
-
-    header.mega-hover .icon-btn svg, #siteHeader.mega-hover .icon-btn svg, .main-site-header.mega-hover svg {
-      stroke: #111111 !important;
-      color: #111111 !important;
-      filter: none !important;
-    }
-
-    header.mega-hover .lang-current, #siteHeader.mega-hover .lang-current {
-      color: #111111 !important;
-      border: 1px solid rgba(0, 0, 0, 0.28) !important;
-      background: transparent !important;
-      font-weight: 600 !important;
-      font-size: 13.5px !important;
-    }
-
-    header.mega-hover .lang-current svg, #siteHeader.mega-hover .lang-current svg {
-      stroke: #111111 !important;
-    }
-
-    header.mega-hover .btn-quote, #siteHeader.mega-hover .btn-quote, .main-site-header.mega-hover .btn-quote-main {
-      color: #111111 !important;
-      border: 1.5px solid #111111 !important;
-      background: transparent !important;
-      font-size: 14px !important;
-      font-weight: 600 !important;
-    }
-
-    header.mega-hover .btn-quote:hover, #siteHeader.mega-hover .btn-quote:hover {
-      background: #111111 !important;
-      color: #ffffff !important;
-      border-color: #111111 !important;
-    }
-
-    header.mega-hover .burger span, #siteHeader.mega-hover .burger span {
-      background: #111111 !important;
-    }
   `;
   if (document.head) {
     document.head.appendChild(style);
   } else {
     document.addEventListener('DOMContentLoaded', () => document.head.appendChild(style));
   }
-})();
-
-/* Dynamically purge duplicate second header elements across all pages to fix overlapping text */
-(function purgeDuplicateHeaders() {
-  function removeDuplicates() {
-    const mainHeader = document.getElementById('siteHeader');
-    document.querySelectorAll('header.main-site-header, .main-site-header, header:not(#siteHeader)').forEach(el => {
-      if (el !== mainHeader) {
-        el.remove();
-      }
-    });
-  }
-  removeDuplicates();
-  document.addEventListener('DOMContentLoaded', removeDuplicates);
-  window.addEventListener('load', removeDuplicates);
-})();
-
-/* Dynamically manage top (transparent + white text) vs scrolled (white bg + black text) across all pages */
-(function handleTwoStateHeader() {
-  function updateHeaderState() {
-    const isScrolled = window.scrollY > 20;
-    document.querySelectorAll('header, #siteHeader, .main-site-header').forEach(h => {
-      if (isScrolled || h.classList.contains('mega-hover')) {
-        h.classList.add('scrolled');
-        h.style.removeProperty('background');
-        h.style.removeProperty('background-color');
-        h.style.removeProperty('background-image');
-        h.style.removeProperty('box-shadow');
-        h.style.removeProperty('border');
-      } else {
-        h.classList.remove('scrolled');
-        h.style.setProperty('background', 'transparent', 'important');
-        h.style.setProperty('background-color', 'transparent', 'important');
-        h.style.setProperty('background-image', 'none', 'important');
-        h.style.setProperty('box-shadow', 'none', 'important');
-        h.style.setProperty('border', 'none', 'important');
-      }
-    });
-  }
-  updateHeaderState();
-  document.addEventListener('DOMContentLoaded', updateHeaderState);
-  window.addEventListener('load', updateHeaderState);
-  window.addEventListener('scroll', updateHeaderState);
-  setInterval(updateHeaderState, 250);
-})();
-
-/* Dynamically handle Products / Mega Menu Hover State */
-(function handleMegaHover() {
-  function attachMegaListeners() {
-    const headers = document.querySelectorAll('header, #siteHeader, .main-site-header');
-    const megaTriggers = document.querySelectorAll('.has-mega, #productsMegaTrigger, #productsMegaPanel, .mega-menu, .mega-panel, .mega-grid');
-    
-    megaTriggers.forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        headers.forEach(h => {
-          h.classList.add('mega-hover');
-          h.classList.add('scrolled');
-        });
-      });
-      el.addEventListener('mouseleave', () => {
-        headers.forEach(h => {
-          h.classList.remove('mega-hover');
-          if (window.scrollY <= 20) {
-            h.classList.remove('scrolled');
-          }
-        });
-      });
-    });
-  }
-  attachMegaListeners();
-  document.addEventListener('DOMContentLoaded', attachMegaListeners);
-  window.addEventListener('load', attachMegaListeners);
 })();
 
 /* Automatic Broken Image Fallback & Local File Link Repair */
@@ -1214,8 +919,14 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
     fixBrokenImagesAndLinks();
   });
 }
-setTimeout(autoDismissPreloader, 200);
-setTimeout(autoDismissPreloader, 500);
+window.applyLanguage = applyLanguage;
+window.setLanguage = applyLanguage;
+
+document.addEventListener('anrin:header-mounted', function () {
+  applyLanguage(getInitialLanguage());
+});
+
+/* Header rendering & styling is fully managed by header.js and header.css */
 
 
 

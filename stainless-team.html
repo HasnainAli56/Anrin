@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stainless Team — ANRIN Nordic</title>
+
+
+<script src="header.js"></script>
 <meta name="description" content="Stainless Team — An utveckling av ANRIN Nordic. Finsk kvalité, tillverkat för den svenska marknaden.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,12 +66,12 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 .hero-nav-phone{font-size:14px;color:var(--gray-300);letter-spacing:.02em;}
 @media(max-width:900px){.hero-nav-links{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:560px){.hero-nav-links{grid-template-columns:repeat(2,1fr);}}
-.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;border-top:1px solid rgba(255,255,255,.15);}
-.hero-stats div{padding:22px 24px 0;border-left:1px solid rgba(255,255,255,.15);}
-.hero-stats div:first-child{border-left:0;padding-left:0;}
+
+
+
 .hero-stats b{font-family:var(--display);font-size:16px;display:block;}
 .hero-stats span{font-size:8px;color:var(--gray-300);text-transform:uppercase;letter-spacing:.08em;}
-@media(max-width:760px){.hero-stats{grid-template-columns:repeat(2,1fr);row-gap:24px;} .hero-stats div{border-left:0;padding-left:0;}}
+@media(max-width:760px){ }
 @media(max-width:768px){.hero-inner{padding:200px 24px 64px;}}
 
 /* ---------- INTRO ---------- */
@@ -357,104 +360,7 @@ body.mobile-menu-open{overflow:hidden;}
 #backToTop.show{opacity:1;visibility:visible;transform:translateY(0);}
 @media(max-width:640px){#backToTop{right:18px;bottom:18px;width:48px;height:48px;}}</style>
 
-<style id="hero-typography-expand-override">
-/* Align Hero Content Left Edge with Navbar Logo & Pull Higher Up */
-.hero-content, .page-hero, .aint-hero-home, .htec-hero {
-  padding-top: 36px !important;
-  padding-bottom: 32px !important;
-  max-width: 1320px !important;
-  margin: 0 auto !important;
-  padding-left: 24px !important;
-  padding-right: 24px !important;
-}
 
-/* ANRIN LEADING WATER Wordmark Alignment & Style */
-.hero-brand-wordmark {
-  font-family: 'Manrope', sans-serif !important;
-  font-size: 32px !important;
-  font-weight: 900 !important;
-  color: #ffffff !important;
-  text-transform: uppercase !important;
-  letter-spacing: .04em !important;
-  margin-top: 0 !important;
-  margin-bottom: 6px !important;
-  line-height: 1 !important;
-}
-
-.hero-brand-wordmark small {
-  font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-size: 12px !important;
-  font-weight: 800 !important;
-  letter-spacing: .2em !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  margin-top: 3px !important;
-  display: block !important;
-}
-
-.eyebrow {
-  margin-top: 4px !important;
-  margin-bottom: 10px !important;
-  font-size: 12.5px !important;
-}
-
-/* Enlarge Main Hero Title & Lead Subtitle */
-.hero-title, .htec-hero h1, .page-hero h1, h1.hero-title {
-  font-size: clamp(46px, 5.8vw, 82px) !important;
-  font-weight: 800 !important;
-  line-height: 1.05 !important;
-  letter-spacing: -0.02em !important;
-  margin-top: 4px !important;
-  margin-bottom: 12px !important;
-}
-
-.hero-sub, .htec-hero p.lead, .page-hero p.lead, p.hero-sub {
-  font-size: 17.5px !important;
-  line-height: 1.6 !important;
-  max-width: 740px !important;
-  margin-top: 8px !important;
-  margin-bottom: 20px !important;
-  color: #d8d8d8 !important;
-}
-
-.hero-actions {
-  margin-top: 18px !important;
-  margin-bottom: 24px !important;
-}
-
-/* Expand Statistics Row Across to the Right Edge with Large Bold Text */
-.hero-meta, .brand-meta-row, .hero-stats {
-  width: 100% !important;
-  max-width: 100% !important;
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 20px !important;
-  margin-top: 36px !important;
-  padding-top: 24px !important;
-  padding-bottom: 12px !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.18) !important;
-  position: relative !important;
-  z-index: 10 !important;
-}
-
-.hero-meta div b, .hero-meta div strong, .brand-meta-row div b, .hero-stats div b {
-  font-family: 'Manrope', sans-serif !important;
-  font-size: 24px !important;
-  font-weight: 800 !important;
-  color: #ffffff !important;
-  display: block !important;
-  line-height: 1.2 !important;
-}
-
-.hero-meta div span, .brand-meta-row div span, .hero-stats div span {
-  font-size: 12px !important;
-  font-weight: 600 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .08em !important;
-  color: rgba(255, 255, 255, 0.75) !important;
-  margin-top: 4px !important;
-  display: block !important;
-}
-</style>
 
 
 <style id="hide-all-breadcrumbs-globally">
@@ -473,137 +379,328 @@ body.mobile-menu-open{overflow:hidden;}
 </style>
 
 
-<style id="hero-left-alignment-with-logo">
-/* PERFECT LEFT ALIGNMENT OF HERO TEXT WITH TOP NAVBAR LOGO */
-.wrap, header .wrap, .main-site-header .wrap, .hero-content, .page-hero .wrap, .hero .wrap {
-  max-width: 1320px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 24px !important;
-  padding-right: 24px !important;
-  box-sizing: border-box !important;
+
+
+
+
+
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="hero.css">
+
+
+
+
+<style id="force-hero-horizontal-stats">
+/* Unstoppable High-Specificity 4-Column Horizontal Layout for Hero Stats */
+.hero-brand-wordmark { display: none !important; }
+
+section.hero, .hero, .page-hero, .htec-hero, .aint-hero-home {
+  padding-top: 140px !important;
 }
 
-.hero-brand-wordmark, .eyebrow, h1.hero-title, .hero-title, .hero-sub, .hero-actions, .hero-meta {
-  margin-left: 0 !important;
-  padding-left: 0 !important;
-  text-align: left !important;
+section.hero .wrap.hero-meta,
+.hero .wrap.hero-meta,
+.aint-hero-home .wrap.hero-meta,
+.page-hero .wrap.hero-meta,
+.htec-hero .wrap.hero-meta,
+div.wrap.hero-meta,
+.wrap.hero-meta,
+.hero-meta,
+.brand-meta-row,
+.hero-stats {
+  all: unset !important;
+  position: relative !important;
+  z-index: 5 !important;
+  display: flex !important;
+  flex-direction: row !important;
   align-items: flex-start !important;
-}
-</style>
-
-
-<style id="hero-fine-tune-alignment-and-font">
-/* EXACT LOGO X-COORDINATE ALIGNMENT & PROPORTIONAL ELEGANT FONT SIZES */
-header.main-site-header .wrap, header#siteHeader .wrap, header .wrap,
-.hero .wrap, .hero-content, .page-hero .wrap {
+  justify-content: space-between !important;
+  gap: 32px !important;
+  width: 100% !important;
   max-width: 1320px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 24px !important;
-  padding-right: 24px !important;
+  margin: 36px auto 0 auto !important;
+  padding: 24px 32px 0 32px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.14) !important;
   box-sizing: border-box !important;
 }
 
-/* Reduced & Elegant Hero ANRIN LEADING WATER Wordmark */
-.hero-brand-wordmark {
+section.hero .wrap.hero-meta > div,
+.hero .wrap.hero-meta > div,
+.aint-hero-home .wrap.hero-meta > div,
+.page-hero .wrap.hero-meta > div,
+.htec-hero .wrap.hero-meta > div,
+div.wrap.hero-meta > div,
+.wrap.hero-meta > div,
+.hero-meta > div,
+.brand-meta-row > div,
+.hero-stats > div {
+  all: unset !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  flex: 1 1 0px !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  font-size: 11.5px !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  line-height: 1.3 !important;
+}
+
+section.hero .wrap.hero-meta > div b,
+.hero .wrap.hero-meta > div b,
+.aint-hero-home .wrap.hero-meta > div b,
+.page-hero .wrap.hero-meta > div b,
+div.wrap.hero-meta > div b,
+.wrap.hero-meta > div b,
+.hero-meta > div b,
+.brand-meta-row > div b,
+.hero-stats > div b {
+  display: block !important;
   font-family: 'Manrope', sans-serif !important;
   font-size: 24px !important;
   font-weight: 800 !important;
   color: #ffffff !important;
-  text-transform: uppercase !important;
-  letter-spacing: .04em !important;
-  line-height: 1 !important;
-  margin-top: 0 !important;
-  margin-bottom: 4px !important;
-  padding-left: 0 !important;
-  margin-left: 0 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
+  margin-bottom: 2px !important;
+  white-space: nowrap !important;
+  line-height: 1.1 !important;
 }
 
-.hero-brand-wordmark small {
-  font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-size: 10.5px !important;
-  font-weight: 700 !important;
-  letter-spacing: .18em !important;
-  color: rgba(255, 255, 255, 0.8) !important;
-  margin-top: 3px !important;
-  display: block !important;
+@media (max-width: 768px) {
+  section.hero, .hero, .page-hero, .htec-hero, .aint-hero-home {
+    padding-top: 110px !important;
+  }
+  section.hero .wrap.hero-meta, .hero .wrap.hero-meta, .aint-hero-home .wrap.hero-meta, .wrap.hero-meta {
+    gap: 12px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  section.hero .wrap.hero-meta > div b, .hero .wrap.hero-meta > div b, .wrap.hero-meta > div b {
+    font-size: 18px !important;
+  }
+  section.hero .wrap.hero-meta > div, .hero .wrap.hero-meta > div, .wrap.hero-meta > div {
+    font-size: 10px !important;
+  }
+}
+</style>
+
+<style id="round-download-buttons-and-modal-fix">
+/* Round Pill Download Buttons */
+.rl-btn,
+.rl-btn--light,
+.rl-btn--sm,
+.rl-btn--full-width,
+.dowloads .rl-btn,
+.dl-simple-row,
+.dl-trigger {
+  border-radius: 100px !important;
+  border: 1.5px solid #000000 !important;
+  padding: 12px 24px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
 }
 
-/* Sub-label & Headline slightly smaller as requested */
-.eyebrow {
-  font-size: 11.5px !important;
-  letter-spacing: .12em !important;
-  margin-top: 4px !important;
-  margin-bottom: 12px !important;
-  color: #d8d8d8 !important;
+.rl-btn:hover,
+.dl-simple-row:hover,
+.dl-trigger:hover {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: #000000 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.14) !important;
 }
 
-h1.hero-title, .hero-title, .htec-hero h1, .page-hero h1 {
+.rl-btn:hover *,
+.dl-trigger:hover * {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+.rl-btn .rl-btn__text {
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+}
+</style>
+
+
+
+<style id="round-tabs-and-view-product-buttons">
+/* 4 Separate Small Tab Buttons in 1 Horizontal Row */
+.tabs-header, .tab-headers {
+  all: unset !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 8px !important;
+  width: 100% !important;
+  margin-top: 16px !important;
+  margin-bottom: 24px !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.tab-btn, .tab-header, .tabs-header > div, .tab-headers > div {
+  all: unset !important;
+  background: #2a2a2a !important;
+  color: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 10px 10px !important;
   font-family: 'Manrope', sans-serif !important;
-  font-size: clamp(40px, 5.2vw, 72px) !important;
-  font-weight: 800 !important;
-  line-height: 1.12 !important;
-  letter-spacing: -0.02em !important;
-  max-width: 1050px !important;
-  margin-top: 4px !important;
-  margin-bottom: 14px !important;
-  padding-bottom: 6px !important;
-  overflow: visible !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.02em !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+  border: 1px solid #444444 !important;
 }
 
-h1.hero-title span em, .hero-title span em {
+.tab-btn *, .tab-header *, .tabs-header > div *, .tab-headers > div * {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  font-size: 11px !important;
+}
+
+.tab-btn:hover, .tab-header:hover, .tab-btn.active, .tab-header.active, .tabs-header > div.active {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+}
+
+@media (max-width: 768px) {
+  .tabs-header, .tab-headers {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Round Pill Style for VIEW PRODUCT buttons on Cards */
+.sku-dl, .btn-view-product, .card-item a, .view-product-btn, .sku-card a.sku-dl {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-radius: 100px !important;
+  padding: 8px 20px !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 11.5px !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
   display: inline-block !important;
-  padding-bottom: 6px !important;
-  line-height: 1.12 !important;
-  overflow: visible !important;
+  transition: all 0.3s ease !important;
+  border: 1.5px solid #000000 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
 }
 
-.hero-sub, .htec-hero p.lead, .page-hero p.lead, p.hero-sub {
-  font-size: 16.5px !important;
-  line-height: 1.6 !important;
-  max-width: 720px !important;
-  margin-top: 6px !important;
-  margin-bottom: 22px !important;
-  color: #cccccc !important;
+.sku-dl:hover, .btn-view-product:hover, .card-item a:hover, .view-product-btn:hover {
+  background: #333333 !important;
+  color: #ffffff !important;
+  border-color: #333333 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2) !important;
+}
+</style>
+
+
+
+<style id="round-tab-headers-fix">
+/* Single Clean Pill Tab Headers — No Extra Inner Rounds */
+.tab-headers, .tabs-header {
+  display: flex !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 28px !important;
+  margin-top: 16px !important;
+}
+
+.tab-headers > div,
+.tabs-header > div,
+.tab-header,
+.tab-btn {
+  all: unset !important;
+  background: #222222 !important;
+  color: #ffffff !important;
+  border-radius: 100px !important;
+  padding: 12px 24px !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  white-space: nowrap !important;
+}
+
+.tab-headers > div:hover,
+.tabs-header > div:hover,
+.tab-header:hover,
+.tab-btn:hover {
+  background: #333333 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+}
+
+.tab-headers > div.active,
+.tabs-header > div.active,
+.tab-header.active,
+.tab-btn.active {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: #000000 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25) !important;
+}
+
+/* Completely strip all inner children so there are NO nested extra rounds */
+.tab-headers > div *,
+.tabs-header > div *,
+.tab-header *,
+.tab-btn * {
+  all: unset !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+  display: inline !important;
 }
 </style>
 
 </head>
 <body>
-
-<header id="siteHeader">
-  <div class="wrap">
-    <a href="index.html" class="logo"><img src="https://anrin.se/wp-content/uploads/2022/11/ANRIN_Logo_schwarz_2.svg" alt="ANRIN Nordic"></a>
-    <nav class="main-nav">
-      <span class="has-mega" id="productsMegaTrigger"><a href="produkter.html" data-i18n="nav_produkter">Produkter</a></span>
-      <a href="projekt.html" data-i18n="nav_projekt">Projekt</a>
-      <a href="om-oss.html" data-i18n="nav_omoss">Om oss</a>
-      <a href="nedladdningar.html" data-i18n="nav_nedladdningar">Nedladdningar</a>
-      <a href="kontakt.html" data-i18n="nav_kontakt">Kontakt</a>
-    </nav>
-    <div class="header-right">
-      <button class="icon-btn" id="searchTrigger" aria-label="Sök"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
-      <div class="lang-switch">
-        <button class="lang-current"><span class="lang-label">SV</span><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="lang-menu">
-          <button data-lang="sv">Svenska</button>
-          <button data-lang="en">English</button>
-          <button data-lang="fi">Suomi</button>
-          <button data-lang="da">Dansk</button>
-          <button data-lang="no">Norsk</button>
-          <button data-lang="is">Íslenska</button>
-          <button data-lang="de">Deutsch</button>
-        </div>
-      </div>
-      <a class="btn-quote" href="kontakt.html" data-i18n="btn_quote">Begär offert</a>
-      <button class="burger" id="burgerBtn" aria-label="Meny"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-</header>
+<div id="header-root"></div>
 
 <div class="mega-close-overlay" id="megaOverlay"></div>
 <div class="mega-panel" id="megaPanel">

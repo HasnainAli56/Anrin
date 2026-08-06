@@ -1,0 +1,238 @@
+/* =============================================================
+   ANRIN NORDIC — header.css (Single Source of Truth)
+   Transparent header over hero, dark frosted bar on scroll.
+   Text and logo are ALWAYS white, ensuring 100% readability.
+   ============================================================= */
+
+/* ── Base / Top State (Transparent over hero) ────────────────── */
+header#siteHeader,
+#siteHeader {
+  all: unset !important;
+  display: block !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: 72px !important;
+  box-sizing: border-box !important;
+  z-index: 99999 !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  transition: background 0.35s ease, box-shadow 0.35s ease, height 0.35s ease, backdrop-filter 0.35s ease !important;
+}
+
+#siteHeader .wrap {
+  max-width: 1320px !important;
+  height: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  box-sizing: border-box !important;
+}
+
+/* ── Logo (Pure White) ───────────────────────────────────────── */
+#siteHeader .logo {
+  display: flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  flex-shrink: 0 !important;
+}
+
+#siteHeader .logo img {
+  height: 26px !important;
+  width: auto !important;
+  display: block !important;
+  filter: brightness(0) invert(1) !important;
+  transition: filter 0.35s ease !important;
+}
+
+/* ── Nav Links (Pure White Text) ─────────────────────────────── */
+#siteHeader nav.main-nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: 32px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#siteHeader nav.main-nav a,
+#siteHeader nav.main-nav span {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 14.5px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  letter-spacing: 0.01em !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4) !important;
+  transition: opacity 0.2s ease !important;
+}
+
+#siteHeader nav.main-nav a:hover {
+  opacity: 0.75 !important;
+}
+
+#siteHeader nav.main-nav a.active {
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  border-bottom: 2px solid #ffffff !important;
+  padding-bottom: 2px !important;
+}
+
+/* ── Right Controls ─────────────────────────────────────────── */
+#siteHeader .header-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Search Icon (White stroke) */
+#siteHeader .icon-btn {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 22px !important;
+  height: 22px !important;
+}
+
+#siteHeader .icon-btn svg {
+  width: 20px !important;
+  height: 20px !important;
+  fill: none !important;
+  stroke: #ffffff !important;
+  stroke-width: 1.8 !important;
+}
+
+/* Language Switcher Pill (White border & text) */
+#siteHeader .lang-switch {
+  position: relative !important;
+}
+
+#siteHeader .lang-current {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  background: transparent !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.6) !important;
+  border-radius: 100px !important;
+  padding: 5px 12px !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  cursor: pointer !important;
+  transition: border-color 0.2s ease !important;
+}
+
+#siteHeader .lang-current:hover {
+  border-color: #ffffff !important;
+}
+
+#siteHeader .lang-current svg {
+  width: 11px !important;
+  height: 11px !important;
+  fill: none !important;
+  stroke-width: 2 !important;
+  stroke: #ffffff !important;
+}
+
+#siteHeader .lang-menu {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+  min-width: 185px !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(0,0,0,0.09) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.14) !important;
+  padding: 8px !important;
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.18s ease, visibility 0.18s ease !important;
+}
+
+#siteHeader .lang-switch.open .lang-menu {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Quote Button (White border & text) */
+#siteHeader .btn-quote {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  padding: 9px 20px !important;
+  border-radius: 100px !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  white-space: nowrap !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.2s ease !important;
+}
+
+#siteHeader .btn-quote:hover {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Burger Menu (White bars) */
+#siteHeader .burger {
+  display: none !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  width: 24px !important;
+  height: 18px !important;
+  position: relative !important;
+  flex-shrink: 0 !important;
+}
+
+#siteHeader .burger span {
+  position: absolute !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 2px !important;
+  border-radius: 2px !important;
+  background: #ffffff !important;
+  transition: all 0.25s ease !important;
+}
+
+#siteHeader .burger span:nth-child(1) { top: 0 !important; }
+#siteHeader .burger span:nth-child(2) { top: 8px !important; }
+#siteHeader .burger span:nth-child(3) { top: 16px !important; }
+
+@media (max-width: 1100px) {
+  #siteHeader nav.main-nav { display: none !important; }
+  #siteHeader .burger { display: block !important; }
+}
+
+/* ── Scrolled State (Dark Frosted Bar) ───────────────────────── */
+#siteHeader.scrolled {
+  background: rgba(10, 10, 10, 0.88) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+  height: 64px !important;
+}
+
+/* ── Zero Body Offset for Transparent Overlay ─────────────────── */
+body {
+  padding-top: 0 !important;
+  margin: 0 !important;
+}

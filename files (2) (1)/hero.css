@@ -1,0 +1,319 @@
+/* =============================================================
+   ANRIN NORDIC — hero.css (Single Source of Truth for Hero Sections)
+   Standardized typography, spacing, dimensions, overlays, and responsiveness
+   across EVERY page on the website.
+   ============================================================= */
+
+/* ── Hero Container ─────────────────────────────────────────── */
+.hero,
+.page-hero,
+.htec-hero,
+.aint-hero-home,
+#hero,
+section.hero {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 520px !important;
+  margin: 0 !important;
+  padding-top: 140px !important;
+  padding-bottom: 80px !important;
+  background-color: #000000 !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;
+  color: #ffffff !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  transform: none !important;
+}
+
+/* ── Hero Background Photo & Overlay ───────────────────────── */
+.hero .hero-photo,
+.page-hero .hero-photo,
+.htec-hero .hero-photo,
+#hero .hero-photo {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  transform: none !important;
+}
+
+.hero .hero-photo img,
+.page-hero .hero-photo img,
+.htec-hero .hero-photo img,
+#hero .hero-photo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  filter: brightness(0.55) saturate(1.05) !important;
+  transform: none !important;
+  transition: filter 0.3s ease !important;
+  display: block !important;
+}
+
+/* Hero Background Overlay (Unified Gradient) */
+.hero .hero-photo::after,
+.page-hero .hero-photo::after,
+.htec-hero .hero-photo::after,
+#hero .hero-photo::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.65) 60%, #000000 100%) !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+/* ── Decorative SVG Vector Lines ───────────────────────────── */
+.hero .hero-lines,
+.page-hero .hero-lines,
+.htec-hero .hero-lines {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0.35 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.hero .hero-lines svg,
+.page-hero .hero-lines svg {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.hero .hero-lines path,
+.page-hero .hero-lines path {
+  fill: none !important;
+  stroke: rgba(255, 255, 255, 0.35) !important;
+  stroke-width: 1px !important;
+}
+
+/* ── Content Container (.wrap) ──────────────────────────────── */
+.hero > .wrap.hero-content,
+.page-hero > .wrap.hero-content,
+.htec-hero > .wrap.hero-content,
+#hero > .wrap.hero-content,
+.hero-content {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  max-width: 1320px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+/* ── Hide redundant hero brand wordmark (collides with fixed #siteHeader) ── */
+.hero .hero-brand-wordmark,
+.page-hero .hero-brand-wordmark,
+.htec-hero .hero-brand-wordmark,
+.hero-brand-wordmark {
+  display: none !important;
+}
+
+/* ── Eyebrow / Breadcrumb Tag ───────────────────────────────── */
+.hero .eyebrow,
+.page-hero .crumb,
+.page-hero .eyebrow,
+.hero-content .eyebrow {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #D8D8D8 !important;
+  margin-top: 0 !important;
+  margin-bottom: 14px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+/* ── Hero Title (Headline) ─────────────────────────────────── */
+.hero h1,
+.page-hero h1,
+.htec-hero h1,
+h1.hero-title,
+.hero-title {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: clamp(38px, 4.5vw, 64px) !important;
+  font-weight: 800 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.02em !important;
+  color: #ffffff !important;
+  max-width: 960px !important;
+  margin-top: 0 !important;
+  margin-bottom: 16px !important;
+  padding: 0 !important;
+  text-align: left !important;
+  overflow: visible !important;
+}
+
+.hero h1 span,
+.page-hero h1 span,
+h1.hero-title span {
+  display: block !important;
+  color: inherit !important;
+}
+
+/* ── Subtitle / Lead Paragraph ─────────────────────────────── */
+.hero .hero-sub,
+.page-hero p.lead,
+.htec-hero p.lead,
+p.hero-sub {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 17px !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  color: #CCCCCC !important;
+  max-width: 720px !important;
+  margin-top: 0 !important;
+  margin-bottom: 24px !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+/* ── CTA Buttons Container ──────────────────────────────────── */
+.hero .hero-actions,
+.page-hero .hero-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 16px !important;
+  margin-top: 10px !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  flex-wrap: wrap !important;
+}
+
+/* ── Stats Meta Row (Horizontal Line Layout) ───────────────── */
+.hero .hero-meta,
+.page-hero .hero-meta,
+.htec-hero .hero-meta,
+.hero-meta,
+.brand-meta-row,
+.hero-stats {
+  position: relative !important;
+  z-index: 2 !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.14) !important;
+  margin-top: 40px !important;
+  padding-top: 24px !important;
+  width: 100% !important;
+  max-width: 1320px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  box-sizing: border-box !important;
+}
+
+.hero .hero-meta > div,
+.page-hero .hero-meta > div,
+.htec-hero .hero-meta > div,
+.hero-meta > div,
+.brand-meta-row > div,
+.hero-stats > div {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  flex: 0 0 auto !important;
+  font-size: 12px !important;
+  color: #767676 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+}
+
+.hero .hero-meta > div b,
+.page-hero .hero-meta > div b,
+.htec-hero .hero-meta > div b,
+.hero-meta > div b,
+.brand-meta-row > div b,
+.hero-stats > div b {
+  display: block !important;
+  color: #ffffff !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  margin-bottom: 2px !important;
+}
+
+/* ── Responsive Scaling Rules (Mobile & Tablet) ─────────────── */
+@media (max-width: 900px) {
+  .hero,
+  .page-hero,
+  .htec-hero {
+    padding-top: 120px !important;
+    padding-bottom: 60px !important;
+    min-height: 440px !important;
+  }
+
+  .hero .wrap,
+  .page-hero .wrap,
+  .htec-hero .wrap {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .hero h1,
+  .page-hero h1,
+  h1.hero-title {
+    font-size: clamp(32px, 6.5vw, 48px) !important;
+  }
+
+  .hero .hero-sub,
+  .page-hero p.lead {
+    font-size: 15.5px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero,
+  .page-hero,
+  .htec-hero {
+    padding-top: 104px !important;
+    padding-bottom: 48px !important;
+    min-height: 380px !important;
+  }
+
+  .hero .wrap,
+  .page-hero .wrap,
+  .htec-hero .wrap {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .hero h1,
+  .page-hero h1,
+  h1.hero-title {
+    font-size: 30px !important;
+  }
+
+  .hero .hero-meta {
+    gap: 24px !important;
+    margin-top: 32px !important;
+  }
+}

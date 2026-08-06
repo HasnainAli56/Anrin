@@ -538,3 +538,18 @@
     }
   }, true);
 })();
+
+
+/* Remove right-side floating sidebar elements from DOM */
+(function() {
+  function removeFloaters() {
+    var floaters = document.querySelectorAll('.floating-actions, .side-nav, .quick-nav, .right-nav, .floating-buttons, .floating-widget, aside.side-nav, aside.floating-actions, div[class*="floating-action"]');
+    floaters.forEach(function(el) { el.remove(); });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', removeFloaters);
+  } else {
+    removeFloaters();
+  }
+  window.addEventListener('load', removeFloaters);
+})();

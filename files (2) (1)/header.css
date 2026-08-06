@@ -236,3 +236,35 @@ body {
   padding-top: 0 !important;
   margin: 0 !important;
 }
+
+
+/* Completely Remove Floating Right-Side Action Sidebar Everywhere */
+.floating-actions,
+.side-nav,
+.quick-nav,
+.right-nav,
+.floating-buttons,
+.floating-widget,
+.side-bar,
+.side-widget,
+.right-sidebar,
+.floating-menu,
+.quick-links-side,
+.quick-links-floating,
+.floating-icons,
+.vertical-quick-nav,
+.right-fixed-nav,
+aside.side-nav,
+aside.floating-actions,
+div[class*="floating-action"],
+div[class*="quick-nav"],
+div[class*="side-nav"],
+div[class*="sticky-action"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+

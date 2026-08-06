@@ -700,45 +700,43 @@ div.wrap.hero-meta > div b,
 
 
 
-<style id="product-info-pdf-buttons-fix">
-/* Round Pill PDF Download Buttons inside Product Information */
-.dowloads,
-.product-info .dowloads,
-.acc-content .dl-grid,
-#product-accordion .dowloads {
-  display: block !important;
-  margin-top: 24px !important;
-  padding-top: 20px !important;
-  border-top: 1px solid #eeeeee !important;
-}
 
-.dowloads h4,
-.acc-content h4 {
-  font-family: 'Manrope', sans-serif !important;
-  font-size: 16px !important;
-  font-weight: 800 !important;
-  color: #111111 !important;
-  margin-bottom: 16px !important;
-  letter-spacing: 0.02em !important;
-  text-transform: uppercase !important;
-}
 
+<style id="download-buttons-2x2-grid-fix">
+/* 2x2 Grid Layout for DOWNLOADS Buttons (2 in Row, 2 in Column) */
 .dowloads .row,
 .dowloads .dl-grid,
-.acc-content .dl-grid {
+.acc-content .dl-grid,
+.dowloads,
+#product-accordion .dowloads,
+.standalone-downloads-grid {
   display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
-  gap: 12px !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 14px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin-top: 16px !important;
+}
+
+.dowloads .col-12,
+.dowloads .col-lg-6 {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
+  padding: 0 !important;
 }
 
 .dowloads a,
 .dowloads button,
-.acc-content .dl-btn {
+.acc-content .dl-btn,
+.standalone-downloads-sec a,
+.dl-grid a,
+.dl-grid button {
   background: #ffffff !important;
   border: 1.5px solid #000000 !important;
   color: #000000 !important;
   border-radius: 100px !important;
-  padding: 12px 22px !important;
+  padding: 12px 20px !important;
   font-family: 'Plus Jakarta Sans', sans-serif !important;
   font-size: 12.5px !important;
   font-weight: 700 !important;
@@ -752,11 +750,15 @@ div.wrap.hero-meta > div b,
   box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
   box-sizing: border-box !important;
   width: 100% !important;
+  text-align: center !important;
 }
 
 .dowloads a:hover,
 .dowloads button:hover,
-.acc-content .dl-btn:hover {
+.acc-content .dl-btn:hover,
+.standalone-downloads-sec a:hover,
+.dl-grid a:hover,
+.dl-grid button:hover {
   background: #000000 !important;
   color: #ffffff !important;
   border-color: #000000 !important;
@@ -766,10 +768,54 @@ div.wrap.hero-meta > div b,
 
 .dowloads a:hover *,
 .dowloads button:hover *,
-.acc-content .dl-btn:hover * {
+.acc-content .dl-btn:hover *,
+.dl-grid a:hover * {
   color: #ffffff !important;
   stroke: #ffffff !important;
   fill: #ffffff !important;
+}
+
+@media (max-width: 640px) {
+  .dowloads .row,
+  .dowloads .dl-grid,
+  .acc-content .dl-grid,
+  .dowloads,
+  #product-accordion .dowloads,
+  .standalone-downloads-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+</style>
+
+<style id="remove-floating-actions">
+/* Completely Remove Floating Right-Side Action Sidebar Everywhere */
+.floating-actions,
+.side-nav,
+.quick-nav,
+.right-nav,
+.floating-buttons,
+.floating-widget,
+.side-bar,
+.side-widget,
+.right-sidebar,
+.floating-menu,
+.quick-links-side,
+.quick-links-floating,
+.floating-icons,
+.vertical-quick-nav,
+.right-fixed-nav,
+aside.side-nav,
+aside.floating-actions,
+div[class*="floating-action"],
+div[class*="quick-nav"],
+div[class*="side-nav"],
+div[class*="sticky-action"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 </style>
 

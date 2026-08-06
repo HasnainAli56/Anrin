@@ -553,3 +553,34 @@
   }
   window.addEventListener('load', removeFloaters);
 })();
+
+
+/* Direct Navigation to Full Grate Detail Page (anrin-grate-detail.html) instead of small modal popup */
+(function() {
+  document.addEventListener('click', function(e) {
+    var grateLink = e.target.closest('a[href*="grate-designs"], #tab-content-2 a, .tab-content-2 a, .rost-design a');
+    var grateCard = e.target.closest('#tab-content-2 .card-item, #tab-content-2 .perfect-fit-product, #tab-content-2 .product-detail, .rost-design-detail');
+    
+    if (!grateLink && !grateCard) return;
+
+    var container = grateCard || (grateLink ? grateLink.closest('.card-item, .perfect-fit-product, .product-detail, div') : null);
+    
+    var img = container ? container.querySelector('img') : null;
+    var titleEl = container ? container.querySelector('h3, h4, .desc, .product-name, .product-title, strong') : null;
+
+    var titleText = titleEl ? titleEl.textContent.trim() : (img ? img.alt : 'Slotted grating OvalGrip Design');
+    titleText = titleText.replace(/Load class:[\s\S]*/i, '').trim();
+
+    var imgSrc = img ? img.src : 'https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png';
+
+    if (titleText) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      localStorage.setItem('selected_grate_title', titleText);
+      localStorage.setItem('selected_grate_img', imgSrc);
+
+      window.location.href = 'anrin-grate-detail.html?title=' + encodeURIComponent(titleText) + '&img=' + encodeURIComponent(imgSrc);
+    }
+  }, true);
+})();

@@ -19,45 +19,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Black Header Text at Top for White-Top Grate Detail Page */
 #siteHeader:not(.scrolled) nav.main-nav a,
-#siteHeader:not(.scrolled) nav.main-nav span {
-  color: #111111 !important;
-  text-shadow: none !important;
-}
+#siteHeader:not(.scrolled) nav.main-nav span { color: #111111 !important; text-shadow: none !important; }
+#siteHeader:not(.scrolled) .logo img { filter: none !important; }
+#siteHeader:not(.scrolled) .icon-btn svg { stroke: #111111 !important; }
+#siteHeader:not(.scrolled) .lang-current { color: #111111 !important; border-color: rgba(0, 0, 0, 0.4) !important; }
+#siteHeader:not(.scrolled) .lang-current svg { stroke: #111111 !important; }
+#siteHeader:not(.scrolled) .btn-quote { color: #111111 !important; border-color: #111111 !important; }
+#siteHeader:not(.scrolled) .btn-quote:hover { background: #111111 !important; color: #ffffff !important; }
+#siteHeader:not(.scrolled) .burger span { background: #111111 !important; }
 
-#siteHeader:not(.scrolled) .logo img {
-  filter: none !important;
-}
-
-#siteHeader:not(.scrolled) .icon-btn svg {
-  stroke: #111111 !important;
-}
-
-#siteHeader:not(.scrolled) .lang-current {
-  color: #111111 !important;
-  border-color: rgba(0, 0, 0, 0.4) !important;
-}
-
-#siteHeader:not(.scrolled) .lang-current svg {
-  stroke: #111111 !important;
-}
-
-#siteHeader:not(.scrolled) .btn-quote {
-  color: #111111 !important;
-  border-color: #111111 !important;
-}
-
-#siteHeader:not(.scrolled) .btn-quote:hover {
-  background: #111111 !important;
-  color: #ffffff !important;
-}
-
-#siteHeader:not(.scrolled) .burger span {
-  background: #111111 !important;
-}
-
-/* Container */
 .grate-detail-container {
   max-width: 1280px;
   margin: 140px auto 40px auto;
@@ -75,10 +46,7 @@ body {
   font-weight: 500;
   transition: color 0.2s;
 }
-
-.back-link:hover {
-  color: #000000;
-}
+.back-link:hover { color: #000000; }
 
 .grate-title {
   font-family: 'Manrope', sans-serif;
@@ -89,7 +57,6 @@ body {
   letter-spacing: -0.02em;
 }
 
-/* Grid Layout */
 .grate-main-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -98,10 +65,7 @@ body {
 }
 
 @media (max-width: 960px) {
-  .grate-main-grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
+  .grate-main-grid { grid-template-columns: 1fr; gap: 36px; }
 }
 
 .grate-left-col {
@@ -147,26 +111,16 @@ body {
   justify-content: center;
 }
 
-.thumb-item.active, .thumb-item:hover {
-  border-color: #000000;
-}
+.thumb-item.active, .thumb-item:hover { border-color: #000000; }
+.thumb-item img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-.thumb-item img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-/* Accordion Side Buttons (Round Pills with White Text) */
 .grate-accordions {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-.acc-item {
-  border-radius: 100px;
-}
+.acc-item { border-radius: 100px; }
 
 .acc-header {
   background: #000000 !important;
@@ -186,10 +140,7 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.acc-header:hover {
-  background: #222222 !important;
-  transform: translateY(-1px);
-}
+.acc-header:hover { background: #222222 !important; transform: translateY(-1px); }
 
 .acc-content {
   padding: 24px 32px;
@@ -203,9 +154,7 @@ body {
   display: none;
 }
 
-.acc-item.active .acc-content {
-  display: block;
-}
+.acc-item.active .acc-content { display: block; }
 
 .specs-table {
   width: 100%;
@@ -214,22 +163,10 @@ body {
   font-size: 14px;
 }
 
-.specs-table td {
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-}
+.specs-table td { padding: 8px 0; border-bottom: 1px solid #eee; }
+.specs-table td:first-child { color: #666; width: 40%; }
+.specs-table td:last-child { font-weight: 600; color: #111; }
 
-.specs-table td:first-child {
-  color: #666;
-  width: 40%;
-}
-
-.specs-table td:last-child {
-  font-weight: 600;
-  color: #111;
-}
-
-/* Matching Channel Body Section */
 .matching-section {
   margin-top: 64px;
   padding-top: 32px;
@@ -254,8 +191,12 @@ body {
 
 .channel-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .channel-cards-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 .channel-card {
@@ -277,9 +218,12 @@ body {
 
 .channel-card img {
   width: 100%;
-  height: 120px;
+  height: 140px;
   object-fit: contain;
   margin-bottom: 16px;
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 8px;
 }
 
 .channel-card h4 {
@@ -297,11 +241,8 @@ body {
   line-height: 1.4;
 }
 
-.channel-card p strong {
-  color: #111;
-}
+.channel-card p strong { color: #111; }
 
-/* Showcase Photo Banner */
 .showcase-banner-wrapper {
   margin-top: 60px;
   width: 100%;
@@ -318,7 +259,6 @@ body {
   display: block;
 }
 
-/* References Section */
 .references-section {
   margin-top: 64px;
   padding: 48px 0;
@@ -347,9 +287,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .ref-grid {
-    grid-template-columns: 1fr;
-  }
+  .ref-grid { grid-template-columns: 1fr; }
 }
 
 .ref-card {
@@ -366,153 +304,6 @@ body {
   display: block;
 }
 </style>
-
-
-
-
-
-
-<style id="remove-floating-actions">
-/* Completely Remove Floating Right-Side Action Sidebar Everywhere */
-.floating-actions,
-.side-nav,
-.quick-nav,
-.right-nav,
-.floating-buttons,
-.floating-widget,
-.side-bar,
-.side-widget,
-.right-sidebar,
-.floating-menu,
-.quick-links-side,
-.quick-links-floating,
-.floating-icons,
-.vertical-quick-nav,
-.right-fixed-nav,
-aside.side-nav,
-aside.floating-actions,
-div[class*="floating-action"],
-div[class*="quick-nav"],
-div[class*="side-nav"],
-div[class*="sticky-action"] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  width: 0 !important;
-  height: 0 !important;
-}
-</style>
-
-<style id="clean-2x2-downloads-grid-fix">
-/* Perfect 2x2 Grid for DOWNLOADS Section (Heading Top, 2 in Row 1, 2 in Row 2) */
-.downloads-2x2-wrapper,
-.dowloads {
-  display: block !important;
-  width: 100% !important;
-  margin-top: 24px !important;
-  padding-top: 16px !important;
-  border-top: 1px solid #eeeeee !important;
-  clear: both !important;
-}
-
-.downloads-heading,
-.dowloads h4 {
-  font-family: 'Manrope', sans-serif !important;
-  font-size: 15px !important;
-  font-weight: 800 !important;
-  color: #111111 !important;
-  margin: 0 0 16px 0 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.02em !important;
-  display: block !important;
-  width: 100% !important;
-}
-
-.downloads-2x2-grid,
-.dowloads .row,
-.dowloads .dl-grid,
-.acc-content .dl-grid {
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important;
-  grid-template-rows: auto auto !important;
-  gap: 12px 16px !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Ensure bootstrap col wrappers don't interfere */
-.dowloads .row > [class*="col-"] {
-  width: 100% !important;
-  max-width: 100% !important;
-  flex: 0 0 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.downloads-2x2-grid a,
-.downloads-2x2-grid button,
-.dowloads a,
-.dowloads button,
-.acc-content .dl-btn,
-.dl-pill-btn {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  background: #ffffff !important;
-  border: 1.5px solid #000000 !important;
-  color: #000000 !important;
-  border-radius: 100px !important;
-  padding: 12px 16px !important;
-  font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-size: 12px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.02em !important;
-  text-transform: uppercase !important;
-  text-decoration: none !important;
-  transition: all 0.25s ease !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
-  box-sizing: border-box !important;
-  width: 100% !important;
-  margin: 0 !important;
-  white-space: nowrap !important;
-}
-
-.downloads-2x2-grid a:hover,
-.downloads-2x2-grid button:hover,
-.dowloads a:hover,
-.dowloads button:hover,
-.acc-content .dl-btn:hover,
-.dl-pill-btn:hover {
-  background: #000000 !important;
-  color: #ffffff !important;
-  border-color: #000000 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15) !important;
-}
-
-.downloads-2x2-grid a:hover *,
-.dowloads a:hover *,
-.acc-content .dl-btn:hover *,
-.dl-pill-btn:hover * {
-  color: #ffffff !important;
-  stroke: #ffffff !important;
-  fill: #ffffff !important;
-}
-
-@media (max-width: 600px) {
-  .downloads-2x2-grid,
-  .dowloads .row,
-  .dowloads .dl-grid,
-  .acc-content .dl-grid {
-    grid-template-columns: 1fr !important;
-  }
-}
-</style>
-
 </head>
 <body>
 <div id="header-root"></div>
@@ -524,14 +315,14 @@ div[class*="sticky-action"] {
   <div class="grate-main-grid">
     <div class="grate-left-col">
       <div class="grate-img-card">
-        <img id="grateImg" src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png" alt="Grate Image">
+        <img id="grateImg" src="https://www.anrin.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png" alt="Grate Image" onerror="this.src='https://www.anrin.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png'">
       </div>
       <div class="thumbs-row">
-        <div class="thumb-item active" onclick="switchImage('https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png', this)">
-          <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png" alt="Thumb 1">
+        <div class="thumb-item active" onclick="switchImage('https://www.anrin.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png', this)">
+          <img src="https://www.anrin.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png" alt="Thumb 1">
         </div>
-        <div class="thumb-item" onclick="switchImage('https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/0f/18/0f189bee-f82a-4d5b-ab19-1b1eb2b99d06/ke_100_winkel_03_ovalgrip_l50_2.png__800x0_subsampling-2.png', this)">
-          <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/0f/18/0f189bee-f82a-4d5b-ab19-1b1eb2b99d06/ke_100_winkel_03_ovalgrip_l50_2.png__800x0_subsampling-2.png" alt="Thumb 2">
+        <div class="thumb-item" onclick="switchImage('https://www.anrin.com/filer_public_thumbnails/filer_public/0f/18/0f189bee-f82a-4d5b-ab19-1b1eb2b99d06/ke_100_winkel_03_ovalgrip_l50_2.png__800x0_subsampling-2.png', this)">
+          <img src="https://www.anrin.com/filer_public_thumbnails/filer_public/0f/18/0f189bee-f82a-4d5b-ab19-1b1eb2b99d06/ke_100_winkel_03_ovalgrip_l50_2.png__800x0_subsampling-2.png" alt="Thumb 2">
         </div>
       </div>
     </div>
@@ -572,30 +363,30 @@ div[class*="sticky-action"] {
     </div>
   </div>
 
-  <!-- Matching Channel Body Section (WITHOUT View Product buttons as requested) -->
+  <!-- MATCHING CHANNEL BODY Cards with 100% Reliable Images -->
   <div class="matching-section">
     <div class="matching-tab-header">MATCHING CHANNEL BODY &nbsp;&Delta;</div>
     <div class="channel-cards-grid">
       <div class="channel-card">
-        <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/13/70/13700704-25be-41de-8b20-c083fe523566/ke_100__800x0_subsampling-2.png" alt="KE-100">
+        <img src="https://www.anrin.com/filer_public_thumbnails/filer_public/13/70/13700704-25be-41de-8b20-c083fe523566/ke_100__800x0_subsampling-2.png" alt="KE-100" onerror="this.src='https://www.anrin.com/filer_public_thumbnails/filer_public/13/70/13700704-25be-41de-8b20-c083fe523566/ke_100__800x0_subsampling-2.png'">
         <h4>KE-100 Reinforced edge channel</h4>
         <p>Load class:<br><strong>A15, B125, C250, D400, E600</strong></p>
       </div>
 
       <div class="channel-card">
-        <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/13/70/13700704-25be-41de-8b20-c083fe523566/ke_100__800x0_subsampling-2.png" alt="KE-100 KTL">
+        <img src="https://www.anrin.com/filer_public_thumbnails/filer_public/bf/51/bf51e388-7cae-4b0b-a3d7-6e40c3095ec9/ke_100_oval_grip_3.png__800x0_subsampling-2.png" alt="KE-100 KTL" onerror="this.src='https://www.anrin.com/filer_public_thumbnails/filer_public/bf/51/bf51e388-7cae-4b0b-a3d7-6e40c3095ec9/ke_100_oval_grip_3.png__800x0_subsampling-2.png'">
         <h4>KE-100 KTL Reinforced edge channel</h4>
         <p>Load class:<br><strong>A15, B125, C250, D400, E600</strong></p>
       </div>
 
       <div class="channel-card">
-        <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/13/70/13700704-25be-41de-8b20-c083fe523566/ke_100__800x0_subsampling-2.png" alt="KC-100">
+        <img src="https://www.anrin.com/filer_public_thumbnails/filer_public/16/cc/16ccf30c-e843-4d2c-887f-d0a7fb9fe213/01100430_01400430_web.png__800x0_subsampling-2.png" alt="KC-100" onerror="this.src='https://www.anrin.com/filer_public_thumbnails/filer_public/16/cc/16ccf30c-e843-4d2c-887f-d0a7fb9fe213/01100430_01400430_web.png__800x0_subsampling-2.png'">
         <h4>KC-100 Reinforced edge channel</h4>
         <p>Load class:<br><strong>A15, B125, C250</strong></p>
       </div>
 
       <div class="channel-card">
-        <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/13/70/13700704-25be-41de-8b20-c083fe523566/ke_100__800x0_subsampling-2.png" alt="KF-100">
+        <img src="https://www.anrin.com/filer_public_thumbnails/filer_public/07/0a/070acd53-ed9c-48a6-b86b-cb2113893076/ke_100_rinnenmasse.jpg__800x0_q90_subsampling-2.jpg" alt="KF-100" onerror="this.src='https://www.anrin.com/filer_public_thumbnails/filer_public/07/0a/070acd53-ed9c-48a6-b86b-cb2113893076/ke_100_rinnenmasse.jpg__800x0_q90_subsampling-2.jpg'">
         <h4>KF-100 Reinforced edge channel</h4>
         <p>Load class:<br><strong>A15, B125, C250, D400, E600, F900</strong></p>
       </div>
@@ -604,23 +395,23 @@ div[class*="sticky-action"] {
 
   <!-- Showcase Photo Banner -->
   <div class="showcase-banner-wrapper">
-    <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/bf/51/bf51e388-7cae-4b0b-a3d7-6e40c3095ec9/ke_100_oval_grip_3.png__1200x0_subsampling-2.png" alt="Grate Showcase Installation Banner">
+    <img src="https://www.anrin.com/filer_public_thumbnails/filer_public/bf/51/bf51e388-7cae-4b0b-a3d7-6e40c3095ec9/ke_100_oval_grip_3.png__1200x0_subsampling-2.png" alt="Grate Showcase Installation Banner" onerror="this.src='https://www.anrin.com/filer_public_thumbnails/filer_public/bf/51/bf51e388-7cae-4b0b-a3d7-6e40c3095ec9/ke_100_oval_grip_3.png__1200x0_subsampling-2.png'">
   </div>
 </main>
 
-<!-- References Section with verified images -->
+<!-- References Section -->
 <section class="references-section">
   <div class="references-inner">
     <h2>REFERENCES</h2>
     <div class="ref-grid">
       <div class="ref-card">
-        <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/da/61/da61bbbd-8947-4950-9ec8-fa94d13ffb7a/sporthalle-wendschott-01.jpg__800x0_q90_subsampling-2.jpg" alt="Reference 1">
+        <img src="https://www.anrin.com/filer_public_thumbnails/filer_public/da/61/da61bbbd-8947-4950-9ec8-fa94d13ffb7a/sporthalle-wendschott-01.jpg__800x0_q90_subsampling-2.jpg" alt="Reference 1" onerror="this.src='https://www.anrin.com/filer_public_thumbnails/filer_public/da/61/da61bbbd-8947-4950-9ec8-fa94d13ffb7a/sporthalle-wendschott-01.jpg__800x0_q90_subsampling-2.jpg'">
       </div>
       <div class="ref-card">
-        <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/00/e2/00e244ea-58fa-4e76-8bd8-fcbd8301548e/skaterpark-neustadt-01.jpg__800x0_q90_subsampling-2.jpg" alt="Reference 2">
+        <img src="https://www.anrin.com/filer_public_thumbnails/filer_public/00/e2/00e244ea-58fa-4e76-8bd8-fcbd8301548e/skaterpark-neustadt-01.jpg__800x0_q90_subsampling-2.jpg" alt="Reference 2" onerror="this.src='https://www.anrin.com/filer_public_thumbnails/filer_public/00/e2/00e244ea-58fa-4e76-8bd8-fcbd8301548e/skaterpark-neustadt-01.jpg__800x0_q90_subsampling-2.jpg'">
       </div>
       <div class="ref-card">
-        <img src="https://hydrotec.se/wp-content/uploads/2022/08/entwaesserungsrinne-hydroblock-titelbild-86586f04.webp" alt="Reference 3">
+        <img src="https://hydrotec.se/wp-content/uploads/2022/08/entwaesserungsrinne-hydroblock-titelbild-86586f04.webp" alt="Reference 3" onerror="this.src='https://hydrotec.se/wp-content/uploads/2022/08/entwaesserungsrinne-hydroblock-titelbild-86586f04.webp'">
       </div>
     </div>
   </div>
@@ -645,6 +436,15 @@ function switchImage(src, el) {
   if (img) {
     document.getElementById('grateImg').src = img;
   }
+
+  // Automatic image fallback handler
+  document.querySelectorAll('img').forEach(function(i) {
+    i.addEventListener('error', function() {
+      if (this.src.indexOf('divio-media.com') !== -1) {
+        this.src = this.src.replace(/anrinweb-live-[^/]+\.divio-media\.com/, 'www.anrin.com');
+      }
+    });
+  });
 
   // Accordion toggle logic
   var accHeaders = document.querySelectorAll('.acc-header');

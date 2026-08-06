@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANRIN — Grate Specification</title>
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="hero.css">
+<script src="header.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: #ffffff;
+  color: #111111;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.grate-detail-container {
+  max-width: 1280px;
+  margin: 140px auto 80px auto;
+  padding: 0 32px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: #000000;
+}
+
+.grate-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: #111111;
+  margin: 0 0 36px 0;
+  letter-spacing: -0.02em;
+}
+
+.grate-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+@media (max-width: 960px) {
+  .grate-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.grate-image-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid #eeeeee;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+}
+
+.grate-main-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 380px;
+  object-fit: contain;
+}
+
+/* Accordion Pill Buttons matching exact style */
+.grate-accordions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.acc-item {
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.acc-header {
+  background: #000000 !important;
+  color: #ffffff !important;
+  padding: 16px 32px !important;
+  border-radius: 100px !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.acc-header:hover {
+  background: #222222 !important;
+}
+
+.acc-content {
+  padding: 24px 32px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444444;
+  background: #f9f9f9;
+  border-radius: 20px;
+  margin-top: 8px;
+  display: none;
+  border: 1px solid #eeeeee;
+}
+
+.acc-item.active .acc-content {
+  display: block;
+}
+
+/* Round Pill Download Buttons */
+.downloads-sec {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid #eeeeee;
+}
+
+.downloads-sec h4 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+.dl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.dl-btn {
+  background: #ffffff;
+  border: 1.5px solid #000000;
+  color: #000000;
+  border-radius: 100px;
+  padding: 14px 28px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.dl-btn:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+</style>
+</head>
+<body>
+<div id="header-root"></div>
+
+<main class="grate-detail-container">
+  <a href="javascript:history.back()" class="back-link">&lsaquo; Back to overview</a>
+  <h1 class="grate-title" id="grateTitle">Slotted grating OvalGrip Design</h1>
+
+  <div class="grate-grid">
+    <div class="grate-image-box">
+      <img id="grateImg" src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png" alt="Grate Image" class="grate-main-img">
+    </div>
+
+    <div class="grate-accordions">
+      <div class="acc-item active">
+        <div class="acc-header"><span>PRODUCT DESCRIPTION</span> <span>&minus;</span></div>
+        <div class="acc-content" id="grateDesc">
+          ANRIN's unique grate design creates striking, contrasting accents and fits in well with both modern architectural surroundings and historic settings. With its large inlet cross-section, the textured surface guarantees high water absorption and good grip for both vehicles and pedestrians.
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header"><span>PRODUCT INFORMATION</span> <span>&#43;</span></div>
+        <div class="acc-content">
+          <strong>Material:</strong> Ductile iron (KTL-coated) / Stainless steel / Galvanized steel<br>
+          <strong>Load Classes:</strong> C250, D400, E600, F900<br>
+          <strong>Compatibility:</strong> Fits ANRIN KE-100, SF-100, Z-100 and SELF-100 channel systems according to EN 1433 standard.
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header"><span>SERVICE AND CONTACT</span> <span>&#43;</span></div>
+        <div class="acc-content">
+          Need custom specification texts or CAD drawings for your project? Contact ANRIN technical support at <strong>info@anrin.se</strong> or request a direct quotation.
+          <br><br>
+          <a href="kontakt.html" style="display:inline-block;padding:12px 24px;background:#000000;color:#ffffff;border-radius:100px;font-weight:700;text-decoration:none;font-size:13px;">Contact Technical Sales</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="downloads-sec">
+    <h4>DOWNLOADS</h4>
+    <div class="dl-grid">
+      <a href="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public/38/8b/388b7456-97b6-48a7-9cdb-07a56e47acad/td_ke_100_uk.pdf" class="dl-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        TECHNICAL DATA SHEET
+      </a>
+      <a href="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public/61/ae/61ae0da2-fb7a-4fc8-b8bf-4fc9092fe007/installation_channel_systems.pdf" class="dl-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        INSTALLATION INSTRUCTIONS
+      </a>
+    </div>
+  </div>
+</main>
+
+<script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var title = params.get('title') || localStorage.getItem('selected_grate_title');
+  var img = params.get('img') || localStorage.getItem('selected_grate_img');
+
+  if (title) {
+    document.getElementById('grateTitle').textContent = title;
+    document.title = title + ' — ANRIN Grate Specification';
+  }
+  if (img) {
+    document.getElementById('grateImg').src = img;
+  }
+
+  // Accordion toggle logic
+  var accHeaders = document.querySelectorAll('.acc-header');
+  accHeaders.forEach(function(header) {
+    header.addEventListener('click', function() {
+      var item = this.parentElement;
+      var isActive = item.classList.contains('active');
+      
+      document.querySelectorAll('.acc-item').forEach(function(i) {
+        i.classList.remove('active');
+        var icon = i.querySelector('.acc-header span:last-child');
+        if (icon) icon.innerHTML = '&#43;';
+      });
+
+      if (!isActive) {
+        item.classList.add('active');
+        var icon = item.querySelector('.acc-header span:last-child');
+        if (icon) icon.innerHTML = '&minus;';
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -334,3 +334,166 @@
     }
   }, true);
 })();
+
+
+/* Global Robust Interceptor for ALL anrin.com & external links to keep users on anrin.vercel.app */
+(function() {
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+
+    var href = a.getAttribute('href') || '';
+    if (!href || href.indexOf('mailto:') === 0 || href.indexOf('tel:') === 0) return;
+
+    var lower = href.toLowerCase();
+    
+    // Intercept any link pointing to anrin.com, anrin.se, or external domain
+    if (lower.indexOf('anrin.com') !== -1 || lower.indexOf('anrin.se') !== -1) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (lower.indexOf('reference') !== -1 || lower.indexOf('projekt') !== -1) {
+        window.location.href = 'projekt.html';
+      } else if (lower.indexOf('news') !== -1 || lower.indexOf('nyheter') !== -1) {
+        window.location.href = 'anrin-int-news.html';
+      } else if (lower.indexOf('faq') !== -1) {
+        window.location.href = 'anrin-int-faq.html';
+      } else if (lower.indexOf('download') !== -1 || lower.indexOf('nedladdningar') !== -1) {
+        window.location.href = 'nedladdningar.html';
+      } else if (lower.indexOf('contact') !== -1 || lower.indexOf('kontakt') !== -1) {
+        window.location.href = 'kontakt.html';
+      } else if (lower.indexOf('about') !== -1 || lower.indexOf('om-oss') !== -1) {
+        window.location.href = 'om-oss.html';
+      } else if (lower.indexOf('sf') !== -1) {
+        window.location.href = 'anrin-page-2.html';
+      } else if (lower.indexOf('z-') !== -1) {
+        window.location.href = 'anrin-page-3.html';
+      } else if (lower.indexOf('self') !== -1) {
+        window.location.href = 'anrin-page-4.html';
+      } else if (lower.indexOf('sport') !== -1) {
+        window.location.href = 'anrin-page-10.html';
+      } else if (lower.indexOf('produkter') !== -1 || lower.indexOf('channel') !== -1) {
+        window.location.href = 'produkter.html';
+      } else {
+        window.location.href = 'anrin-page-1.html';
+      }
+    }
+  }, true);
+})();
+
+
+/* Dedicated Grate Specification Modal — Opens Grate Details cleanly on anrin.vercel.app */
+(function() {
+  function initGrateModal() {
+    if (document.getElementById('grateSpecModal')) return;
+
+    var modal = document.createElement('div');
+    modal.id = 'grateSpecModal';
+    modal.style.cssText = 'position:fixed;inset:0;z-index:999999;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;';
+
+    modal.innerHTML = [
+      '<div style="width:100%;max-width:850px;background:#ffffff;border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.5);display:flex;flex-direction:column;">',
+      '  <div style="padding:20px 28px;background:#111111;color:#ffffff;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">',
+      '    <div style="display:flex;align-items:center;gap:12px;">',
+      '      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>',
+      '      <span id="grateModalTitle" style="font-family:sans-serif;font-size:17px;font-weight:700;">Matching Grate Specification</span>',
+      '    </div>',
+      '    <button id="grateModalCloseBtn" style="background:none;border:none;color:#fff;font-size:28px;cursor:pointer;padding:0 8px;line-height:1;">&times;</button>',
+      '  </div>',
+      '  <div style="padding:32px;display:flex;flex-direction:row;gap:32px;align-items:center;flex-wrap:wrap;overflow-y:auto;max-height:75vh;">',
+      '    <div style="flex:1 1 300px;text-align:center;background:#fafafa;padding:24px;border-radius:12px;border:1px solid #eee;">',
+      '      <img id="grateModalImg" src="" alt="Grate Image" style="max-width:100%;height:auto;max-height:260px;object-fit:contain;">',
+      '    </div>',
+      '    <div style="flex:1 1 320px;display:flex;flex-direction:column;gap:14px;">',
+      '      <h3 id="grateModalName" style="font-family:sans-serif;font-size:22px;font-weight:800;color:#111;margin:0;">Grate Name</h3>',
+      '      <div style="display:inline-block;padding:4px 12px;background:#111;color:#fff;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;align-self:flex-start;" id="grateModalTag">ANRIN Grate Option</div>',
+      '      <p id="grateModalDesc" style="font-family:sans-serif;font-size:14.5px;color:#555;line-height:1.6;margin:0;">High-strength drainage grating designed for ANRIN channel systems with certified load resistance and premium finish.</p>',
+      '      <div style="margin-top:12px;padding-top:16px;border-top:1px solid #eee;display:flex;gap:12px;">',
+      '        <a href="kontakt.html" style="padding:12px 24px;background:#000000;color:#ffffff;border-radius:100px;font-weight:700;font-size:13px;text-decoration:none;display:inline-block;text-align:center;">Request Quote for this Grate</a>',
+      '      </div>',
+      '    </div>',
+      '  </div>',
+      '</div>'
+    ].join('\n');
+
+    document.body.appendChild(modal);
+
+    var closeBtn = document.getElementById('grateModalCloseBtn');
+    var modalImg = document.getElementById('grateModalImg');
+    var modalName = document.getElementById('grateModalName');
+    var modalDesc = document.getElementById('grateModalDesc');
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeModal();
+    });
+
+    // Intercept clicks on VIEW PRODUCT buttons inside matching grates / tab contents
+    document.addEventListener('click', function(e) {
+      var viewBtn = e.target.closest('.perfect-fit-product .rl-btn, .perfect-fit-product a, #tab-content-2 a');
+      if (!viewBtn) return;
+
+      var card = viewBtn.closest('.perfect-fit-product, .product-detail');
+      if (!card) return;
+
+      // Extract image & text from card
+      var img = card.querySelector('img');
+      var descEl = card.querySelector('.desc, .product-name, h4, .product-title');
+      var titleText = descEl ? descEl.textContent.trim() : (img ? img.alt : 'ANRIN Matching Grate');
+      
+      if (!titleText || titleText.length < 3) titleText = 'ANRIN Matching Grate';
+
+      // Clean up titleText
+      titleText = titleText.replace(/Load class:[\s\S]*/i, '').trim();
+
+      if (img && img.src) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        modalImg.src = img.src;
+        modalName.textContent = titleText;
+        modalDesc.textContent = titleText + ' — high-performance drainage grate option engineered specifically for ANRIN channel systems with precision load class rating.';
+        modal.style.display = 'flex';
+      }
+    }, true);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGrateModal);
+  } else {
+    initGrateModal();
+  }
+})();
+
+
+/* Router for Matching Grates -> Opens dedicated anrin-grate-detail.html on anrin.vercel.app */
+(function() {
+  document.addEventListener('click', function(e) {
+    var viewBtn = e.target.closest('.perfect-fit-product .rl-btn, .perfect-fit-product a, #tab-content-2 a');
+    if (!viewBtn) return;
+
+    var card = viewBtn.closest('.perfect-fit-product, .product-detail');
+    if (!card) return;
+
+    var img = card.querySelector('img');
+    var descEl = card.querySelector('.desc, .product-name, h4, .product-title');
+    var titleText = descEl ? descEl.textContent.trim() : (img ? img.alt : 'Slotted grating OvalGrip Design');
+    
+    titleText = titleText.replace(/Load class:[\s\S]*/i, '').trim();
+    var imgSrc = img ? img.src : '';
+
+    if (titleText && imgSrc) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      localStorage.setItem('selected_grate_title', titleText);
+      localStorage.setItem('selected_grate_img', imgSrc);
+
+      window.location.href = 'anrin-grate-detail.html?title=' + encodeURIComponent(titleText) + '&img=' + encodeURIComponent(imgSrc);
+    }
+  }, true);
+})();

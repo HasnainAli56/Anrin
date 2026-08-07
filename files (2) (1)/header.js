@@ -247,6 +247,15 @@
       };
       document.head.appendChild(i18nScript);
     }
+
+    // Auto-mount universal site footer
+    if (typeof window.mountSiteFooter !== 'function' && !document.querySelector('script[src*="footer.js"]')) {
+      var footerScript = document.createElement('script');
+      footerScript.src = getPathPrefix() + 'footer.js';
+      document.head.appendChild(footerScript);
+    } else if (typeof window.mountSiteFooter === 'function') {
+      window.mountSiteFooter();
+    }
   }
 
   if (document.readyState === 'loading') {

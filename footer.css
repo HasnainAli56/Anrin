@@ -1,0 +1,160 @@
+/* ===================== Universal ANRIN Site Footer CSS ===================== */
+footer#siteFooter.site-footer {
+  background: #ffffff !important;
+  border-top: 1px solid #e5e5e5 !important;
+  color: #333333 !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  padding: 70px 0 35px 0 !important;
+  margin-top: 80px !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  clear: both !important;
+}
+
+.site-footer-inner {
+  max-width: 1320px !important;
+  margin: 0 auto !important;
+  padding: 0 32px !important;
+  box-sizing: border-box !important;
+}
+
+.site-footer-grid {
+  display: grid !important;
+  grid-template-columns: 1.4fr 1fr 1fr 1.1fr !important;
+  gap: 48px !important;
+  padding-bottom: 50px !important;
+}
+
+@media (max-width: 900px) {
+  .site-footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 36px !important;
+  }
+}
+
+@media (max-width: 550px) {
+  .site-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+.footer-col h5 {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: #888888 !important;
+  margin: 0 0 22px 0 !important;
+  padding: 0 !important;
+}
+
+.footer-logo img {
+  height: 24px !important;
+  width: auto !important;
+  display: block !important;
+  margin-bottom: 22px !important;
+}
+
+.footer-sub {
+  font-size: 14.5px !important;
+  line-height: 1.65 !important;
+  color: #666666 !important;
+  max-width: 310px !important;
+  margin: 0 !important;
+}
+
+.footer-links {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.footer-links li {
+  margin-bottom: 12px !important;
+  list-style: none !important;
+}
+
+.footer-links a, .footer-contact-info a {
+  color: #222222 !important;
+  font-size: 14.5px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.footer-links a:hover, .footer-contact-info a:hover {
+  color: #000000 !important;
+  text-decoration: underline !important;
+}
+
+.footer-contact-info p {
+  font-size: 14.5px !important;
+  line-height: 1.65 !important;
+  color: #333333 !important;
+  margin: 0 0 8px 0 !important;
+}
+
+.site-footer-bottom {
+  border-top: 1px solid #eeeeee !important;
+  padding-top: 28px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+  font-size: 13px !important;
+  color: #777777 !important;
+}
+
+.footer-legal-links {
+  display: flex !important;
+  gap: 24px !important;
+  flex-wrap: wrap !important;
+}
+
+.footer-legal-links a {
+  color: #777777 !important;
+  text-decoration: none !important;
+  font-size: 13px !important;
+  transition: color 0.2s ease !important;
+}
+
+.footer-legal-links a:hover {
+  color: #111111 !important;
+  text-decoration: underline !important;
+}
+
+/* Floating Back to Top Button */
+.scroll-top-btn {
+  position: fixed !important;
+  bottom: 28px !important;
+  right: 28px !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25) !important;
+  z-index: 99999 !important;
+  opacity: 0 !important;
+  visibility: hidden !hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease !important;
+}
+
+.scroll-top-btn.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-3px) scale(1.05) !important;
+  background: #222222 !important;
+}

@@ -101,8 +101,11 @@ body.mobile-menu-open{overflow:hidden;}
 .page-hero .hero-lines path{fill:none;stroke:rgba(255,255,255,.35);stroke-width:1;}
 .page-hero .wrap{position:relative;z-index:2;}
 .page-hero .crumb{font-size:12px;color:var(--gray-300);letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px;display:flex;gap:8px;}
-.page-hero h1{font-family:var(--display);font-weight:700;font-size:clamp(36px,6vw,80px);line-height:1;letter-spacing:-.02em;max-width:900px;}
-.page-hero p.lead{max-width:560px;margin-top:26px;font-size:16px;line-height:1.65;color:var(--gray-300);}
+.page-hero{position:relative !important;background:#000000 !important;color:#ffffff !important;padding:190px 0 90px !important;overflow:hidden !important;}
+.page-hero .wrap{position:relative !important;z-index:10 !important;}
+.dl-top-route-tag{display:block !important;visibility:visible !important;opacity:1 !important;font-size:12px !important;font-weight:600 !important;letter-spacing:.12em !important;text-transform:uppercase !important;color:rgba(255,255,255,.75) !important;margin-bottom:20px !important;position:relative !important;z-index:10 !important;}
+.page-hero h1{font-family:var(--display);font-weight:700;font-size:clamp(36px,6vw,80px);line-height:1;letter-spacing:-.02em;max-width:900px;color:#ffffff !important;position:relative !important;z-index:10 !important;opacity:1 !important;visibility:visible !important;}
+.page-hero p.lead{max-width:560px;margin-top:26px;font-size:16px;line-height:1.65;color:rgba(255,255,255,.8) !important;position:relative !important;z-index:10 !important;opacity:1 !important;visibility:visible !important;}
 .cat-pills{display:flex;gap:12px;flex-wrap:wrap;margin-top:40px;}
 .cat-pills a{font-size:13px;border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:10px 20px;transition:all .3s var(--ease);}
 .cat-pills a:hover{background:var(--white);color:var(--black);}
@@ -1474,10 +1477,9 @@ div[class*="sticky-action"] {
   <div class="hero-photo"><img src="https://hydrotec.se/wp-content/uploads/2022/08/entwaesserungsrinne-maxi-f1-titelbild2-d39386c9.webp" alt="Tekniska dokument"></div>
   <div class="hero-lines"><svg viewBox="0 0 1400 800" preserveAspectRatio="none"><path d="M-50,650 C 250,650 250,500 550,500 C 850,500 850,650 1150,650 C 1300,650 1350,650 1450,650"/></svg></div>
   <div class="wrap">
-    <div class="hero-brand-wordmark">ANRIN <small>LEADING WATER</small></div>
-    
-    <h1>Drawings, product sheets and certificates.</h1>
-    <p class="lead">Same structure as our previous download library — search by filename or filter by product area, document type and language.</p>
+    <div class="dl-top-route-tag" data-i18n="tag_downloads_route">HOME / DOWNLOADS</div>
+    <h1 data-i18n="dl_hero_title">Drawings, product sheets and certificates.</h1>
+    <p class="lead" data-i18n="dl_hero_sub">Same structure as our previous download library — search by filename or filter by product area, document type and language.</p>
   </div>
 </section>
 

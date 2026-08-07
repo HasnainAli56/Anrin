@@ -72,6 +72,7 @@ const LANG_NAMES = {
     lbl_adress:"Adress", lbl_telefon:"Telefon", lbl_epost:"E-post", lbl_oppet:"Öppettider", val_oppet:"Mån–Fre, 08:00–17:00",
     form_category:"Vad gäller din förfrågan?", form_name:"Namn", form_email:"E-post", form_phone:"Telefon", form_company:"Företag", form_message:"Meddelande", form_submit:"Skicka förfrågan",
     form_note:"Tack — vi återkommer inom 24 timmar till angiven e-postadress.",
+    tag_downloads_route:"HEM / NEDLADDNINGAR", dl_hero_title:"Ritningar, produktblad och certifikat.", dl_hero_sub:"Samma struktur som i vårt tidigare nedladdningsarkiv — sök på filnamn eller filtrera på produktområde, dokumenttyp och språk.",
     footer_desc:"Leading Water — kompletta lösningar för dagvattenhantering, levererade snabbast i Norden sedan 2017.",
     footer_produkter:"Produktområde", footer_foretag:"Företaget", footer_kontakt:"Kontakt",
     footer_rights:"© 2026 ANRIN Nordic — Alla rättigheter reserverade.",
@@ -85,6 +86,7 @@ const LANG_NAMES = {
   en: {
     nav_produkter:"Products", nav_projekt:"Projects", nav_omoss:"About us", nav_nedladdningar:"Downloads", nav_kontakt:"Contact",
     btn_quote:"Request a quote",
+    tag_downloads_route:"HOME / DOWNLOADS", dl_hero_title:"Drawings, product sheets and certificates.", dl_hero_sub:"Same structure as our previous download library — search by filename or filter by product area, document type and language.",
     back_to_overview:"‹ Back to overview", grate_prod_desc:"PRODUCT DESCRIPTION", grate_prod_info:"PRODUCT INFORMATION", grate_material:"Material", grate_length:"Length", grate_nominal_width:"Nominal width", grate_clasp:"Locking", grate_loading_classes:"Load classes", grate_service_contact:"SERVICE AND CONTACT", grate_contact_sales:"Contact Technical Sales", matching_channel_body:"MATCHING CHANNEL BODY", load_class:"Load class", nav_references:"REFERENCES",
     hero_eyebrow:"ANRIN Nordic — Since 2017",
     hero_title_1:"We shape the path", hero_title_2:"for water.",
@@ -123,6 +125,7 @@ const LANG_NAMES = {
   fi: {
     nav_produkter:"Tuotteet", nav_projekt:"Projektit", nav_omoss:"Meistä", nav_nedladdningar:"Ladattavat", nav_kontakt:"Yhteystiedot",
     btn_quote:"Pyydä tarjous",
+    crumb_downloads:"KOTI / LATAUKSET", dl_hero_title:"Piirustukset, tuotekortit ja sertifikaatit.", dl_hero_sub:"Sama rakenne kuin aiemmassa latauskirjastossamme — hae tiedostonimellä tai suodata tuotealueen, dokumenttityypin ja kielen mukaan.",
     back_to_overview:"‹ Takaisin yleiskatsaukseen", grate_prod_desc:"TUOTEKUVAUS", grate_prod_info:"TUOTETIEDOT", grate_material:"Materiaali", grate_length:"Pituus", grate_nominal_width:"Nimellisleveys", grate_clasp:"Lukitus", grate_loading_classes:"Kuormitusluokat", grate_service_contact:"PALVELU JA YHTEYSTIEDOT", grate_contact_sales:"Ota yhteyttä tekniseen myyntiin", matching_channel_body:"YHTEENSOPIVA KOURURUNKO", load_class:"Kuormitusluokka", nav_references:"VIITTEET",
     hero_eyebrow:"ANRIN Nordic — Vuodesta 2017",
     hero_title_1:"Muovaamme reitin", hero_title_2:"vedelle.",
@@ -161,6 +164,7 @@ const LANG_NAMES = {
   da: {
     nav_produkter:"Produkter", nav_projekt:"Projekter", nav_omoss:"Om os", nav_nedladdningar:"Downloads", nav_kontakt:"Kontakt",
     btn_quote:"Anmod om tilbud",
+    crumb_downloads:"HJEM / DOWNLOADS", dl_hero_title:"Tegninger, produktark og certifikater.", dl_hero_sub:"Samme struktur som vores tidligere downloadbibliotek — søg på filnavn eller filtrer efter produktområde, dokumenttype og sprog.",
     back_to_overview:"‹ Tilbage til oversigt", grate_prod_desc:"PRODUKTBESKRIVELSE", grate_prod_info:"PRODUKTINFORMATION", grate_material:"Materiale", grate_length:"Længde", grate_nominal_width:"Nominel bredde", grate_clasp:"Lås", grate_loading_classes:"Belastningsklasser", grate_service_contact:"SERVICE OG KONTAKT", grate_contact_sales:"Kontakt teknisk salg", matching_channel_body:"MATCHENDE RENDENKROP", load_class:"Belastningsklasse", nav_references:"REFERENCER",
     hero_eyebrow:"ANRIN Nordic — Siden 2017",
     hero_title_1:"Vi former vejen", hero_title_2:"for vandet.",
@@ -199,6 +203,7 @@ const LANG_NAMES = {
   no: {
     nav_produkter:"Produkter", nav_projekt:"Prosjekter", nav_omoss:"Om oss", nav_nedladdningar:"Nedlastinger", nav_kontakt:"Kontakt",
     btn_quote:"Be om tilbud",
+    crumb_downloads:"HJEM / NEDLASTINGER", dl_hero_title:"Tegninger, produktark og sertifikater.", dl_hero_sub:"Samme struktur som vårt tidligere nedlastingsarkiv — søk på filnavn eller filtrer etter produktområde, dokumenttype og språk.",
     back_to_overview:"‹ Tilbake til oversikt", grate_prod_desc:"PRODUKTBESKRIVELSE", grate_prod_info:"PRODUKTINFORMASJON", grate_material:"Materiale", grate_length:"Lengde", grate_nominal_width:"Nominell bredde", grate_clasp:"Lås", grate_loading_classes:"Belastningsklasser", grate_service_contact:"SERVICE OG KONTAKT", grate_contact_sales:"Kontakt teknisk salg", matching_channel_body:"MATCHENDE RENNEKROPP", load_class:"Belastningsklasse", nav_references:"REFERANSER",
     hero_eyebrow:"ANRIN Nordic — Siden 2017",
     hero_title_1:"Vi former veien", hero_title_2:"for vannet.",
@@ -237,6 +242,7 @@ const LANG_NAMES = {
   is: {
     nav_produkter:"Vörur", nav_projekt:"Verkefni", nav_omoss:"Um okkur", nav_nedladdningar:"Niðurhal", nav_kontakt:"Hafðu samband",
     btn_quote:"Óska eftir tilboði",
+    crumb_downloads:"HEIM / NIÐURHAL", dl_hero_title:"Teikningar, vörublöð og vottorð.", dl_hero_sub:"Sama uppbygging og í fyrra niðurhalsarkífi — leitaðu eftir skráarnafni eða síaðu eftir vöruflokki, skjalagerð og tungumáli.",
     back_to_overview:"‹ Til baka í yfirlit", grate_prod_desc:"VÖRULÝSING", grate_prod_info:"VÖRUUPLÝSINGAR", grate_material:"Efni", grate_length:"Lengd", grate_nominal_width:"Nafnbreidd", grate_clasp:"Læsing", grate_loading_classes:"Álagsflokkar", grate_service_contact:"ÞJÓNUSTA OG SAMSVIP", grate_contact_sales:"Hafðu samband við tæknisölu", matching_channel_body:"SAMSVARAÐUR RÆSAKROPPUR", load_class:"Álagsflokkur", nav_references:"TILVÍSANIR",
     hero_eyebrow:"ANRIN Nordic — Síðan 2017",
     hero_title_1:"Við mótum leiðina", hero_title_2:"fyrir vatnið.",
@@ -275,6 +281,7 @@ const LANG_NAMES = {
   de: {
     nav_produkter:"Produkte", nav_projekt:"Projekte", nav_omoss:"Über uns", nav_nedladdningar:"Downloads", nav_kontakt:"Kontakt",
     btn_quote:"Angebot anfragen",
+    crumb_downloads:"STARTSEITE / DOWNLOADS", dl_hero_title:"Zeichnungen, Produktblätter und Zertifikate.", dl_hero_sub:"Gleiche Struktur wie unsere bisherige Download-Bibliothek — suchen Sie nach Dateinamen oder filtern Sie nach Produktbereich, Dokumenttyp und Sprache.",
     back_to_overview:"‹ Zurück zur Übersicht", grate_prod_desc:"PRODUKTBESCHREIBUNG", grate_prod_info:"PRODUKTINFORMATIONEN", grate_material:"Material", grate_length:"Länge", grate_nominal_width:"Nennweite", grate_clasp:"Verschluss", grate_loading_classes:"Belastungsklassen", grate_service_contact:"SERVICE UND KONTAKT", grate_contact_sales:"Technischen Vertrieb kontaktieren", matching_channel_body:"PASSENDER RINNENKÖRPER", load_class:"Belastungsklasse", nav_references:"REFERENZEN",
     hero_eyebrow:"ANRIN Nordic — Seit 2017",
     hero_title_1:"Wir gestalten den Weg", hero_title_2:"für das Wasser.",

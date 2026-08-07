@@ -119,6 +119,7 @@ footer#siteFooter.site-footer {
   color: #777777 !important;
   text-decoration: none !important;
   font-size: 13px !important;
+  cursor: pointer !important;
   transition: color 0.2s ease !important;
 }
 
@@ -145,7 +146,7 @@ footer#siteFooter.site-footer {
   box-shadow: 0 4px 16px rgba(0,0,0,0.25) !important;
   z-index: 99999 !important;
   opacity: 0 !important;
-  visibility: hidden !hidden;
+  visibility: hidden !important;
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease !important;
 }
 
@@ -157,4 +158,136 @@ footer#siteFooter.site-footer {
 .scroll-top-btn:hover {
   transform: translateY(-3px) scale(1.05) !important;
   background: #222222 !important;
+}
+
+/* ===================== Universal Legal Modal CSS ===================== */
+.legal-modal-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(0, 0, 0, 0.65) !important;
+  backdrop-filter: blur(4px) !important;
+  z-index: 999999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.3s ease, visibility 0.3s ease !important;
+}
+
+.legal-modal-overlay.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.legal-modal-box {
+  background: #ffffff !important;
+  color: #111111 !important;
+  width: 100% !important;
+  max-width: 720px !important;
+  max-height: 85vh !important;
+  border-radius: 16px !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  transform: translateY(12px) scale(0.98) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.legal-modal-overlay.active .legal-modal-box {
+  transform: translateY(0) scale(1) !important;
+}
+
+.legal-modal-header {
+  padding: 24px 30px !important;
+  border-bottom: 1px solid #eeeeee !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.legal-modal-header h3 {
+  font-family: 'Manrope', 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  color: #111111 !important;
+}
+
+.legal-modal-close {
+  background: transparent !important;
+  border: none !important;
+  color: #666666 !important;
+  cursor: pointer !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: background 0.2s, color 0.2s !important;
+}
+
+.legal-modal-close:hover {
+  background: #f0f0f0 !important;
+  color: #000000 !important;
+}
+
+.legal-modal-body {
+  padding: 30px !important;
+  overflow-y: auto !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  color: #444444 !important;
+}
+
+.legal-modal-body h4 {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #111111 !important;
+  margin: 20px 0 8px 0 !important;
+}
+
+.legal-modal-body h4:first-child {
+  margin-top: 0 !important;
+}
+
+.legal-modal-body p {
+  margin: 0 0 14px 0 !important;
+}
+
+.legal-modal-body ul {
+  margin: 0 0 14px 20px !important;
+  padding: 0 !important;
+  list-style: disc !important;
+}
+
+.legal-modal-body li {
+  margin-bottom: 6px !important;
+}
+
+.legal-modal-footer {
+  padding: 16px 30px !important;
+  border-top: 1px solid #eeeeee !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  background: #fafafa !important;
+}
+
+.legal-modal-btn {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 10px 24px !important;
+  border-radius: 100px !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: opacity 0.2s !important;
+}
+
+.legal-modal-btn:hover {
+  opacity: 0.85 !important;
 }

@@ -61,10 +61,10 @@
       <div class="site-footer-bottom">
         <div class="footer-copyright" data-i18n="footer_rights">© 2026 ANRIN Nordic — All rights reserved.</div>
         <div class="footer-legal-links">
-          <a href="#" class="legal-link" data-legal="terms" data-i18n="legal_terms">Terms & Conditions</a>
-          <a href="#" class="legal-link" data-legal="cookies" data-i18n="legal_cookies">Cookies</a>
-          <a href="#" class="legal-link" data-legal="privacy" data-i18n="legal_privacy">Privacy Policy</a>
-          <a href="#" class="legal-link" data-legal="copyright" data-i18n="legal_copyright">Copyright</a>
+          <a href="${p}terms-and-conditions.html" data-i18n="legal_terms">Terms & Conditions</a>
+          <a href="${p}cookie-policy.html" data-i18n="legal_cookies">Cookies</a>
+          <a href="${p}privacy-policy.html" data-i18n="legal_privacy">Privacy Policy</a>
+          <a href="${p}copyright.html" data-i18n="legal_copyright">Copyright</a>
         </div>
       </div>
     </div>

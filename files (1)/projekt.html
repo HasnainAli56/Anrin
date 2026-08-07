@@ -1393,6 +1393,58 @@ div[class*="sticky-action"] {
 }
 </style>
 
+<style id="scrolled-header-white-text-fix">
+/* Unstoppable High-Specificity Pure White Text on Scrolled Header */
+#siteHeader.scrolled {
+  background: rgba(10, 10, 10, 0.92) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+}
+
+#siteHeader.scrolled nav.main-nav a,
+#siteHeader.scrolled nav.main-nav span,
+#siteHeader.scrolled .main-nav a,
+#siteHeader.scrolled .main-nav span {
+  color: #ffffff !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+#siteHeader.scrolled .logo img {
+  filter: brightness(0) invert(1) !important;
+}
+
+#siteHeader.scrolled .icon-btn svg,
+#siteHeader.scrolled svg {
+  stroke: #ffffff !important;
+}
+
+#siteHeader.scrolled .lang-current {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+#siteHeader.scrolled .lang-current svg {
+  stroke: #ffffff !important;
+}
+
+#siteHeader.scrolled .btn-quote {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+#siteHeader.scrolled .btn-quote:hover {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+#siteHeader.scrolled .burger span {
+  background: #ffffff !important;
+}
+</style>
+
 </head>
 <body>
 <div id="header-root"></div>

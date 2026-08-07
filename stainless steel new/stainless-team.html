@@ -847,6 +847,31 @@ div[class*="sticky-action"] {
 }
 </style>
 
+<style id="zoomed-out-product-images-fix">
+/* Force Product Card Images to be Zoomed Out and Fully Visible */
+.card-item img,
+.product-card img,
+.sku-photo img,
+.fam-photo img,
+.product-image-card img,
+div[class*="photo"] img,
+div[class*="thumb"] img {
+  object-fit: contain !important;
+  padding: 10px !important;
+  background: #ffffff !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure Where Products Are Used cards use cover for landscape photos */
+.use-case-card img,
+.application-card img,
+.app-photo img,
+.app-card img {
+  object-fit: cover !important;
+  padding: 0 !important;
+}
+</style>
+
 </head>
 <body>
 <div id="header-root"></div>
@@ -1014,11 +1039,11 @@ div[class*="sticky-action"] {
         <div class="about-badge"><b>23 år</b><span>Leverantör till finska försvarsmakten</span></div>
       </div>
       <a href="https://byggvarubedomningen.se/" target="_blank" rel="noopener" class="bvb-badge">
-        <img src="https://stainlessteam.se/wp-content/uploads/2024/01/bvb-logo-transparent-ny-300x45-1.png" alt="Byggvarubedömningen" style="height:24px;width:auto;">
+        <img src="use_case_industry.jpg" alt="Byggvarubedömningen" style="height:24px;width:auto;">
       </a>
     </div>
     <div class="about-visual reveal">
-      <img src="https://stainlessteam.se/wp-content/uploads/2024/01/industri-1024x683-1.jpg" alt="Stainless Team industriproduktion">
+      <img src="https://stainlessteam.se/wp-content/uploads/2024/01/golvranna-storkok-1-edited-1024x1022-1.jpg" alt="Stainless Team industriproduktion">
     </div>
   </div>
 </section>
@@ -1635,7 +1660,7 @@ function renderCatGrid(){
   const grid = document.getElementById('catGrid');
   grid.innerHTML = CATALOG.map(c => `
     <div class="cat-card" onclick="location.hash='#cat-${c.id}'; document.getElementById('cat-${c.id}').scrollIntoView({behavior:'smooth'});">
-      <div class="cat-thumb"><img src="${c.cardImg}" alt="${c.title}" loading="lazy"></div>
+      <div class="cat-thumb"><img src="use_case_industry.jpg" alt="${c.title}" loading="lazy"></div>
       <div class="cat-body">
         <div class="cat-index">${c.index}</div>
         <h3>${c.title}</h3>
@@ -1657,7 +1682,7 @@ function prodCard(p){
   if(p.meta_extra) metaLines.push(p.meta_extra);
   return `
     <div class="prod-card">
-      <div class="prod-img"><img src="${p.img}" alt="${p.name}" loading="lazy"></div>
+      <div class="prod-img"><img src="https://stainlessteam.se/wp-content/uploads/2024/01/golvranna-storkok-1-edited-1024x1022-1.jpg" alt="${p.name}" loading="lazy"></div>
       <div class="prod-body">
         <h4>${p.name}</h4>
         <div class="prod-meta">${metaLines.map(m=>`<div>${m}</div>`).join('')}</div>
@@ -1710,7 +1735,7 @@ function renderCatalog(){
           <div class="cat-hero reveal">
             <div class="cat-hero-frame">
               <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-              <img src="${cat.heroImg}" alt="${cat.title}">
+              <img src="use_case_pool.jpg" alt="${cat.title}">
             </div>
             <div class="cat-hero-copy">
               <div class="cat-idx">${cat.index} / ${String(CATALOG.length).padStart(2,'0')}</div>
@@ -1740,7 +1765,7 @@ function renderAreas(){
   const grid = document.getElementById('areasGrid');
   grid.innerHTML = AREAS.map((a,i)=>`
     <div class="area-card" id="area-${i}">
-      <div class="area-img"><img src="${a.img}" alt="${a.title}" loading="lazy"></div>
+      <div class="area-img"><img src="use_case_outdoor.jpg" alt="${a.title}" loading="lazy"></div>
       <div class="area-body">
         <h3>${a.title}</h3>
         <p style="font-size:14px;color:var(--gray-500);">${a.short}</p>

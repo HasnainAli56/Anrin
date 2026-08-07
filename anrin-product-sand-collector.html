@@ -825,6 +825,31 @@ div[class*="sticky-action"] {
 }
 </style>
 
+<style id="zoomed-out-product-images-fix">
+/* Force Product Card Images to be Zoomed Out and Fully Visible */
+.card-item img,
+.product-card img,
+.sku-photo img,
+.fam-photo img,
+.product-image-card img,
+div[class*="photo"] img,
+div[class*="thumb"] img {
+  object-fit: contain !important;
+  padding: 10px !important;
+  background: #ffffff !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure Where Products Are Used cards use cover for landscape photos */
+.use-case-card img,
+.application-card img,
+.app-photo img,
+.app-card img {
+  object-fit: cover !important;
+  padding: 0 !important;
+}
+</style>
+
 </head>
 <body>
 <div id="header-root"></div>

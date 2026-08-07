@@ -155,6 +155,55 @@
     }
   }
 
+  
+  /* ── Bind Language Switcher ────────────────────────────────────────────── */
+  function bindLangSwitcher(header) {
+    var langSwitches = document.querySelectorAll('.lang-switch');
+    langSwitches.forEach(function (sw) {
+      var menu = sw.querySelector('.lang-menu');
+      if (menu && (!menu.children || menu.children.length === 0)) {
+        menu.innerHTML = [
+          '<button type="button" data-lang="en">English (EN)</button>',
+          '<button type="button" data-lang="sv">Svenska (SV)</button>',
+          '<button type="button" data-lang="fi">Suomi (FI)</button>',
+          '<button type="button" data-lang="da">Dansk (DA)</button>',
+          '<button type="button" data-lang="no">Norsk (NO)</button>',
+          '<button type="button" data-lang="de">Deutsch (DE)</button>'
+        ].join('\n');
+      }
+
+      var current = sw.querySelector('.lang-current');
+      if (current && !current.dataset.bound) {
+        current.dataset.bound = 'true';
+        current.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          sw.classList.toggle('open');
+        });
+      }
+
+      sw.querySelectorAll('.lang-menu button').forEach(function (btn) {
+        if (!btn.dataset.bound) {
+          btn.dataset.bound = 'true';
+          btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            var lang = btn.getAttribute('data-lang');
+            if (typeof window.applyLanguage === 'function') {
+              window.applyLanguage(lang);
+            }
+            sw.classList.remove('open');
+          });
+        }
+      });
+    });
+
+    document.addEventListener('click', function () {
+      document.querySelectorAll('.lang-switch.open').forEach(function (s) {
+        s.classList.remove('open');
+      });
+    });
+  }
+
   /* ── Mount ─────────────────────────────────────────────────────────────── */
   function mount() {
     injectCSS();
@@ -180,6 +229,7 @@
     bindScroll(h);
     bindSearch(h);
     bindBurger(h);
+    bindLangSwitcher(h);
 
     // Signal i18n.js (which handles lang dropdown + mega menu)
     document.dispatchEvent(new CustomEvent('anrin:header-mounted', { detail: { header: h } }));

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
-<script src="../header.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stainless Team — ANRIN Nordic</title>
+
+
+<script src="header.js"></script>
 <meta name="description" content="Stainless Team — An utveckling av ANRIN Nordic. Finsk kvalité, tillverkat för den svenska marknaden.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -229,23 +229,23 @@ footer{background:var(--black);color:var(--gray-300);padding:70px 0 30px;border-
 /* ---------- MAIN ANRIN HEADER (integrated) ---------- */
 .wrap{max-width:1360px;margin:0 auto;padding:0 48px;}
 @media(max-width:768px){.wrap{padding:0 24px;}}
-#siteHeader{position:fixed;top:0;left:0;right:0;z-index:400;padding:16px 0;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--gray-150);transition:all .5s var(--ease);}
+#siteHeader{position:fixed;top:0;left:0;right:0;z-index:99999;padding:22px 0;background:transparent !important;transition:all .35s var(--ease);}
 #siteHeader .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;}
-#siteHeader .logo img{height:24px;}
+#siteHeader .logo img{height:28px;filter:brightness(0) invert(1) !important;}
 #siteHeader nav.main-nav{display:flex;gap:38px;}
 @media(max-width:1150px){#siteHeader nav.main-nav{display:none;}}
-#siteHeader nav.main-nav a{font-size:15.5px;letter-spacing:.01em;position:relative;padding:4px 0;white-space:nowrap;}
-#siteHeader nav.main-nav a.active{font-weight:600;}
+#siteHeader nav.main-nav a{font-family:'Manrope',sans-serif !important;font-size:16.5px !important;font-weight:800 !important;color:#ffffff !important;text-shadow:0 2px 8px rgba(0,0,0,0.8) !important;letter-spacing:.02em;position:relative;padding:4px 0;white-space:nowrap;}
+#siteHeader nav.main-nav a.active{font-weight:800;}
 #siteHeader nav.main-nav a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:currentColor;transition:width .35s var(--ease);}
 #siteHeader nav.main-nav a:hover::after,#siteHeader nav.main-nav a.active::after{width:100%;}
 #siteHeader .header-right{display:flex;align-items:center;gap:22px;}
-#siteHeader .icon-btn{width:19px;height:19px;display:flex;align-items:center;justify-content:center;background:none;border:none;color:inherit;padding:0;cursor:pointer;}
-#siteHeader .icon-btn svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.4;}
-#siteHeader .btn-quote{font-size:14.5px;padding:12px 24px;border:1px solid currentColor;border-radius:100px;letter-spacing:.02em;transition:background .35s var(--ease),color .35s var(--ease);white-space:nowrap;display:inline-block;}
-#siteHeader .btn-quote:hover{background:var(--black);color:var(--white);}
+#siteHeader .icon-btn{width:19px;height:19px;display:flex;align-items:center;justify-content:center;background:none;border:none;color:#ffffff !important;padding:0;cursor:pointer;}
+#siteHeader .icon-btn svg{width:100%;height:100%;stroke:#ffffff !important;fill:none;stroke-width:1.8;}
+#siteHeader .btn-quote{font-size:14.5px !important;font-weight:700 !important;color:#ffffff !important;padding:12px 24px;border:1.5px solid #ffffff !important;border-radius:100px;letter-spacing:.02em;transition:all .35s var(--ease);white-space:nowrap;display:inline-block;background:transparent !important;}
+#siteHeader .btn-quote:hover{background:#ffffff !important;color:#000000 !important;}
 #siteHeader .lang-switch{position:relative;}
-#siteHeader .lang-current{display:flex;align-items:center;gap:6px;font-size:13px;letter-spacing:.03em;padding:6px 8px;border:1px solid var(--gray-300);border-radius:100px;}
-#siteHeader .lang-current svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.6;}
+#siteHeader .lang-current{display:flex;align-items:center;gap:6px;font-size:13.5px !important;font-weight:700 !important;color:#ffffff !important;padding:6px 14px;border:1.5px solid #ffffff !important;border-radius:100px;background:transparent !important;}
+#siteHeader .lang-current svg{width:12px;height:12px;stroke:#ffffff !important;fill:none;stroke-width:1.8;}
 #siteHeader .lang-menu{position:absolute;top:calc(100% + 10px);right:0;background:var(--white);border:1px solid var(--gray-150);border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.08);min-width:168px;padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .3s var(--ease);z-index:50;}
 #siteHeader .lang-switch.open .lang-menu{opacity:1;visibility:visible;transform:translateY(0);}
 #siteHeader .lang-menu button{width:100%;text-align:left;padding:10px 12px;border-radius:999px;font-size:13px;display:flex;justify-content:space-between;align-items:center;}
@@ -256,6 +256,56 @@ footer{background:var(--black);color:var(--gray-300);padding:70px 0 30px;border-
 #siteHeader .burger span:nth-child(1){top:0;}
 #siteHeader .burger span:nth-child(2){top:6px;}
 #siteHeader .burger span:nth-child(3){top:13px;}
+
+/* ON SCROLL DOWN (.scrolled STATE MATCHING USER SCREENSHOT EXACTLY) */
+#siteHeader.scrolled {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e5e5e5 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+  padding: 14px 0 !important;
+}
+
+#siteHeader.scrolled .logo img {
+  filter: none !important;
+  height: 26px !important;
+}
+
+#siteHeader.scrolled nav.main-nav a {
+  color: #111111 !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+}
+
+#siteHeader.scrolled .icon-btn svg {
+  stroke: #111111 !important;
+  color: #111111 !important;
+}
+
+#siteHeader.scrolled .lang-current {
+  color: #111111 !important;
+  border: 1px solid rgba(0, 0, 0, 0.3) !important;
+  background: transparent !important;
+  font-weight: 600 !important;
+}
+
+#siteHeader.scrolled .lang-current svg {
+  stroke: #111111 !important;
+}
+
+#siteHeader.scrolled .btn-quote {
+  color: #111111 !important;
+  border: 1.5px solid #111111 !important;
+  background: transparent !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+#siteHeader.scrolled .btn-quote:hover {
+  background: #111111 !important;
+  color: #ffffff !important;
+}
 @media(max-width:1150px){#siteHeader .burger{display:block;}}
 @media(max-width:640px){#siteHeader .btn-quote{display:none;}#siteHeader .header-right{gap:14px;}#siteHeader .logo img{height:20px;}}
 
@@ -875,6 +925,7 @@ div[class*="thumb"] img {
 </head>
 <body>
 <div id="header-root"></div>
+
 <div class="mega-close-overlay" id="megaOverlay"></div>
 <div class="mega-panel" id="megaPanel">
   <div class="wrap mega-grid">
@@ -951,7 +1002,31 @@ div[class*="thumb"] img {
 </div>
 
 <!-- ============ HERO (subnav overlaid) ============ -->
-
+<section id="hero" class="hero">
+  <nav id="nav">
+    <div class="nav-row">
+      <a href="#hero" class="nav-brand"><b>STAINLESS TEAM</b><span>Rostfritt &amp; syrafast stål</span></a>
+    </div>
+  </nav>
+  <div class="container hero-inner">
+    <div class="hero-tag" data-i18n="ss_hero_tag">Stainless Team · In partnership with ANRIN Nordic</div>
+    <h1 data-i18n="ss_hero_title">Floor drains and <em>floor channels</em> in stainless steel.</h1>
+    <p class="hero-sub" data-i18n="ss_hero_sub">Stainless Team manufactures high-quality products in stainless and acid-resistant steel — floor drains and floor channels for all floor types. High customer satisfaction, broad expertise and 40 years of Finnish quality, manufactured for the Swedish market.</p>
+    <div class="hero-nav-links">
+      <a href="#categories" data-i18n="ss_nav_products">Products</a>
+      <a href="#areas" data-i18n="ss_nav_areas">Areas of use</a>
+      <a href="#documents" data-i18n="ss_nav_documents">Documents</a>
+      <a href="#about" data-i18n="ss_nav_about">About us</a>
+      <a href="#contact" data-i18n="ss_nav_contact">Contact</a>
+    </div>
+    <div class="hero-stats">
+      <div><b data-i18n="ss_stat1_v">40+</b><span data-i18n="ss_stat1_l">Years of experience</span></div>
+      <div><b data-i18n="ss_stat2_v">23</b><span data-i18n="ss_stat2_l">Years with Finnish Defence</span></div>
+      <div><b data-i18n="ss_stat3_v">ISO 9002</b><span data-i18n="ss_stat3_l">Quality system</span></div>
+      <div><b data-i18n="ss_stat4_v">Finland</b><span data-i18n="ss_stat4_l">Own factory & production</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- ============ INTRO ============ -->
 <section id="intro">
@@ -1049,69 +1124,50 @@ div[class*="thumb"] img {
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section id="contact">
-  <div class="container contact-grid">
-    <div class="contact-info reveal">
-      <div class="eyebrow">Kontakta oss</div>
-      <h2 style="font-family:var(--display);font-size:clamp(28px,3.4vw,42px);font-weight:700;margin-top:14px;line-height:1.2;">Troligtvis Sveriges bästa tekniska support.</h2>
-      <p>Lång och beprövad erfarenhet i branschen — proffs på golvbrunnar och golvrännor i rostfritt stål. Med en stark teknisk backoffice kan vi tackla de flesta utmaningarna. Vi hörs!</p>
-      <div class="contact-rows">
-        <div class="contact-row"><span>Telefon</span><a href="tel:0102090902">010 – 209 0 902</a></div>
-        <div class="contact-row"><span>E-post</span><a href="mailto:info@stainlessteam.se">info@stainlessteam.se</a></div>
-        <div class="contact-row"><span>Adress</span><a href="https://www.google.com/maps/search/?api=1&query=Teliv%C3%A4gen%202,%20149%2041%20NYN%C3%84SHAMN" target="_blank" rel="noopener">Telivägen 2, 149 41 Nynäshamn</a></div>
-        <div class="contact-row"><span>Bolag</span><span>ANRIN Nordic AB — Stainless Team</span></div>
-      </div>
-      <div class="social-row">
-        <a href="#" rel="noopener">Facebook</a>
-        <a href="#" rel="noopener">Youtube</a>
-        <a href="#" rel="noopener">LinkedIn</a>
-        <a href="#" rel="noopener">Instagram</a>
-      </div>
-    </div>
-    <form class="reveal" onsubmit="event.preventDefault(); this.reset(); alert('Tack! Vi hör av oss inom kort.');">
-      <div class="form-field"><label for="f-name">Namn</label><input id="f-name" type="text" required placeholder="Ditt namn"></div>
-      <div class="form-field"><label for="f-tel">Tel</label><input id="f-tel" type="tel" placeholder="Ditt telefonnummer"></div>
-      <div class="form-field"><label for="f-mail">E-post</label><input id="f-mail" type="email" required placeholder="din@epost.se"></div>
-      <div class="form-field"><label for="f-msg">Meddelande</label><textarea id="f-msg" placeholder="Beskriv ert projekt..."></textarea></div>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Skicka</button>
-    </form>
-  </div>
-</section>
+
 
 <!-- ============ FOOTER ============ -->
-<footer>
-  <div class="container">
-    <div class="foot-top">
-      <div class="foot-brand">
-        <b style="font-family:var(--display);font-size:20px;color:#fff;">STAINLESS TEAM</b>
-        <p>Golvbrunnar och golvrännor i rostfritt &amp; syrafast stål. Ett samarbete med ANRIN Nordic AB.</p>
+<footer class="main-site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-logo"><img src="https://anrin.se/wp-content/uploads/2022/11/ANRIN_Logo_schwarz_2.svg" alt="ANRIN Nordic">
+        <p data-i18n="footer_desc">Leading Water — kompletta lösningar för dagvattenhantering, levererade snabbast i Norden sedan 2017.</p>
       </div>
-      <div class="foot-col">
-        <h5>Produkter</h5>
-        <ul id="footProductLinks"></ul>
-      </div>
-      <div class="foot-col">
-        <h5>Företaget</h5>
+      <div>
+        <h5 data-i18n="footer_produkter">Produktområde</h5>
         <ul>
-          <li><a href="#about">Om oss</a></li>
-          <li><a href="#areas">Användningsområden</a></li>
-          <li><a href="#documents">Dokument</a></li>
-          <li><a href="#contact">Kontakt</a></li>
+          <li><a href="produkter.html#linjeavvattning">Linjeavvattning</a></li>
+          <li><a href="produkter.html#betackningar">Betäckningar</a></li>
+          <li><a href="produkter.html#rostfritt">Rostfritt Stål</a></li>
+          <li><a href="produkter.html#avskiljare">Avskiljare</a></li>
         </ul>
       </div>
-      <div class="foot-col">
-        <h5>Kontakt</h5>
+      <div>
+        <h5 data-i18n="footer_foretag">Företaget</h5>
         <ul>
-          <li>Telivägen 2</li>
-          <li>149 41 Nynäshamn</li>
-          <li><a href="tel:0102090902">010 – 209 0 902</a></li>
-          <li><a href="mailto:info@stainlessteam.se">info@stainlessteam.se</a></li>
+          <li><a href="om-oss.html">Om oss</a></li>
+          <li><a href="projekt.html">Projekt</a></li>
+          <li><a href="nedladdningar.html">Nedladdningar</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-i18n="footer_kontakt">Kontakt</h5>
+        <ul>
+          <li>Mysingsvägen 1</li>
+          <li>SE-149 41 Nynäshamn</li>
+          <li><a href="tel:+46102099209">+46 (0)10-20 99 209</a></li>
+          <li><a href="mailto:info@anrin.se">info@anrin.se</a></li>
         </ul>
       </div>
     </div>
-    <div class="foot-bottom">
-      <span>© 2026 Stainless Team — ANRIN Nordic AB. Alla rättigheter reserverade.</span>
-      <span>Del av ANRIN Nordic — Leading Water.</span>
+    <div class="footer-bottom">
+      <div data-i18n="footer_rights">© 2026 ANRIN Nordic — Alla rättigheter reserverade.</div>
+      <div class="legal-links">
+        <a href="cookies.html" data-i18n="legal_cookies">Cookies</a>
+        <a href="allmanna-villkor.html" data-i18n="legal_terms">Allmänna villkor</a>
+        <a href="integritetspolicy.html" data-i18n="legal_privacy">Integritetspolicy</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -1174,7 +1230,10 @@ function applyLanguage(lang){
   const dict = I18N[lang] || I18N.sv;
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const key = el.getAttribute('data-i18n');
-    if(dict[key] !== undefined) el.textContent = dict[key];
+    if(dict[key] !== undefined) {
+      if(dict[key].includes('<')) { el.innerHTML = dict[key]; }
+      else { el.textContent = dict[key]; }
+    }
   });
   document.querySelectorAll('.lang-menu button').forEach(b=>{
     b.classList.toggle('active', b.dataset.lang === lang);

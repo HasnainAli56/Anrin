@@ -1124,69 +1124,50 @@ div[class*="thumb"] img {
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section id="contact">
-  <div class="container contact-grid">
-    <div class="contact-info reveal">
-      <div class="eyebrow">Kontakta oss</div>
-      <h2 style="font-family:var(--display);font-size:clamp(28px,3.4vw,42px);font-weight:700;margin-top:14px;line-height:1.2;">Troligtvis Sveriges bästa tekniska support.</h2>
-      <p>Lång och beprövad erfarenhet i branschen — proffs på golvbrunnar och golvrännor i rostfritt stål. Med en stark teknisk backoffice kan vi tackla de flesta utmaningarna. Vi hörs!</p>
-      <div class="contact-rows">
-        <div class="contact-row"><span>Telefon</span><a href="tel:0102090902">010 – 209 0 902</a></div>
-        <div class="contact-row"><span>E-post</span><a href="mailto:info@stainlessteam.se">info@stainlessteam.se</a></div>
-        <div class="contact-row"><span>Adress</span><a href="https://www.google.com/maps/search/?api=1&query=Teliv%C3%A4gen%202,%20149%2041%20NYN%C3%84SHAMN" target="_blank" rel="noopener">Telivägen 2, 149 41 Nynäshamn</a></div>
-        <div class="contact-row"><span>Bolag</span><span>ANRIN Nordic AB — Stainless Team</span></div>
-      </div>
-      <div class="social-row">
-        <a href="#" rel="noopener">Facebook</a>
-        <a href="#" rel="noopener">Youtube</a>
-        <a href="#" rel="noopener">LinkedIn</a>
-        <a href="#" rel="noopener">Instagram</a>
-      </div>
-    </div>
-    <form class="reveal" onsubmit="event.preventDefault(); this.reset(); alert('Tack! Vi hör av oss inom kort.');">
-      <div class="form-field"><label for="f-name">Namn</label><input id="f-name" type="text" required placeholder="Ditt namn"></div>
-      <div class="form-field"><label for="f-tel">Tel</label><input id="f-tel" type="tel" placeholder="Ditt telefonnummer"></div>
-      <div class="form-field"><label for="f-mail">E-post</label><input id="f-mail" type="email" required placeholder="din@epost.se"></div>
-      <div class="form-field"><label for="f-msg">Meddelande</label><textarea id="f-msg" placeholder="Beskriv ert projekt..."></textarea></div>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Skicka</button>
-    </form>
-  </div>
-</section>
+
 
 <!-- ============ FOOTER ============ -->
-<footer>
-  <div class="container">
-    <div class="foot-top">
-      <div class="foot-brand">
-        <b style="font-family:var(--display);font-size:20px;color:#fff;">STAINLESS TEAM</b>
-        <p>Golvbrunnar och golvrännor i rostfritt &amp; syrafast stål. Ett samarbete med ANRIN Nordic AB.</p>
+<footer class="main-site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-logo"><img src="https://anrin.se/wp-content/uploads/2022/11/ANRIN_Logo_schwarz_2.svg" alt="ANRIN Nordic">
+        <p data-i18n="footer_desc">Leading Water — kompletta lösningar för dagvattenhantering, levererade snabbast i Norden sedan 2017.</p>
       </div>
-      <div class="foot-col">
-        <h5>Produkter</h5>
-        <ul id="footProductLinks"></ul>
-      </div>
-      <div class="foot-col">
-        <h5>Företaget</h5>
+      <div>
+        <h5 data-i18n="footer_produkter">Produktområde</h5>
         <ul>
-          <li><a href="#about">Om oss</a></li>
-          <li><a href="#areas">Användningsområden</a></li>
-          <li><a href="#documents">Dokument</a></li>
-          <li><a href="#contact">Kontakt</a></li>
+          <li><a href="produkter.html#linjeavvattning">Linjeavvattning</a></li>
+          <li><a href="produkter.html#betackningar">Betäckningar</a></li>
+          <li><a href="produkter.html#rostfritt">Rostfritt Stål</a></li>
+          <li><a href="produkter.html#avskiljare">Avskiljare</a></li>
         </ul>
       </div>
-      <div class="foot-col">
-        <h5>Kontakt</h5>
+      <div>
+        <h5 data-i18n="footer_foretag">Företaget</h5>
         <ul>
-          <li>Telivägen 2</li>
-          <li>149 41 Nynäshamn</li>
-          <li><a href="tel:0102090902">010 – 209 0 902</a></li>
-          <li><a href="mailto:info@stainlessteam.se">info@stainlessteam.se</a></li>
+          <li><a href="om-oss.html">Om oss</a></li>
+          <li><a href="projekt.html">Projekt</a></li>
+          <li><a href="nedladdningar.html">Nedladdningar</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-i18n="footer_kontakt">Kontakt</h5>
+        <ul>
+          <li>Mysingsvägen 1</li>
+          <li>SE-149 41 Nynäshamn</li>
+          <li><a href="tel:+46102099209">+46 (0)10-20 99 209</a></li>
+          <li><a href="mailto:info@anrin.se">info@anrin.se</a></li>
         </ul>
       </div>
     </div>
-    <div class="foot-bottom">
-      <span>© 2026 Stainless Team — ANRIN Nordic AB. Alla rättigheter reserverade.</span>
-      <span>Del av ANRIN Nordic — Leading Water.</span>
+    <div class="footer-bottom">
+      <div data-i18n="footer_rights">© 2026 ANRIN Nordic — Alla rättigheter reserverade.</div>
+      <div class="legal-links">
+        <a href="cookies.html" data-i18n="legal_cookies">Cookies</a>
+        <a href="allmanna-villkor.html" data-i18n="legal_terms">Allmänna villkor</a>
+        <a href="integritetspolicy.html" data-i18n="legal_privacy">Integritetspolicy</a>
+      </div>
     </div>
   </div>
 </footer>

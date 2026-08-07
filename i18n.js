@@ -777,7 +777,7 @@ function autoRevealElements() {
       right: 0 !important;
       padding-top: 140px !important;
       padding-bottom: 80px !important;
-      background: #000000 !important;
+      background-color: #000000 !important;
       color: #ffffff !important;
       box-sizing: border-box !important;
     }

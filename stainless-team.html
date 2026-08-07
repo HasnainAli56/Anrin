@@ -43,17 +43,12 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 .btn-dark{background:var(--black);color:var(--white);padding:17px 34px;border-radius:100px;}
 .btn-dark:hover{opacity:.8;}
 
-/* ---------- NAV (brand subnav, overlaid on hero) ---------- */
-#nav{position:absolute;top:78px;left:0;right:0;z-index:5;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.08));border-bottom:1px solid rgba(255,255,255,.2);color:#fff;}
-.nav-row{display:flex;align-items:center;height:78px;padding:0 48px;max-width:1360px;margin:0 auto;}
-.nav-brand{display:flex;flex-direction:column;line-height:1;font-family:var(--display);}
-.nav-brand b{font-size:18px;letter-spacing:.02em;color:#fff;}
-.nav-brand span{font-size:10px;letter-spacing:.14em;color:rgba(255,255,255,.7);margin-top:4px;text-transform:uppercase;font-family:var(--body);}
-@media(max-width:640px){.nav-row{padding:0 24px;}}
+/* ---------- NAV (hidden as requested) ---------- */
+#nav{display:none !important;}
 
 /* ---------- HERO ---------- */
-#hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.92) 88%),url('https://stainlessteam.se/wp-content/uploads/2024/01/utom_hus_miljo1024x683.jpg') center/cover no-repeat;color:#fff;}
-.hero-inner{max-width:1360px;margin:0 auto;padding:200px 48px 64px;width:100%;}
+#hero{position:relative !important;min-height:80vh !important;display:flex !important;align-items:flex-end !important;background-image:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.85) 100%),url('images/stainless_kitchen_drain.jpg') !important;background-size:cover !important;background-position:center !important;background-repeat:no-repeat !important;color:#fff !important;padding-top:100px !important;}
+.hero-inner{max-width:1360px !important;margin:0 auto !important;padding:110px 48px 64px !important;width:100% !important;}
 .hero-tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-300);margin-bottom:22px;}
 .hero-inner h1{font-family:var(--display);font-size:clamp(38px,6vw,74px);font-weight:700;max-width:900px;line-height:1.04;}
 .hero-sub{max-width:560px;margin-top:26px;color:var(--gray-300);font-size:17px;line-height:1.6;}
@@ -999,13 +994,8 @@ div[class*="sticky-action"] {
   </div>
 </div>
 
-<!-- ============ HERO (subnav overlaid) ============ -->
+<!-- ============ HERO ============ -->
 <section id="hero" class="hero">
-  <nav id="nav">
-    <div class="nav-row">
-      <a href="#hero" class="nav-brand"><b>STAINLESS TEAM</b><span>Rostfritt &amp; syrafast stål</span></a>
-    </div>
-  </nav>
   <div class="container hero-inner">
     <div class="hero-tag" data-i18n="ss_hero_tag">Stainless Team · In partnership with ANRIN Nordic</div>
     <h1 data-i18n="ss_hero_title">Floor drains and <em>floor channels</em> in stainless steel.</h1>

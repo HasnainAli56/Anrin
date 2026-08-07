@@ -898,27 +898,24 @@ div[class*="sticky-action"] {
 </style>
 
 <style id="zoomed-out-product-images-fix">
-/* Force Product Card Images to be Zoomed Out and Fully Visible */
-.card-item img,
-.product-card img,
+/* Force Separator Tank Product Card Images to be Zoomed Out and Fully Visible */
 .sku-photo img,
-.fam-photo img,
-.product-image-card img,
-div[class*="photo"] img,
-div[class*="thumb"] img {
+.enviroguard-card img,
+.tank-photo img {
   object-fit: contain !important;
   padding: 10px !important;
   background: #ffffff !important;
   box-sizing: border-box !important;
 }
+</style>
 
-/* Ensure Where Products Are Used cards use cover for landscape photos */
-.use-case-card img,
-.application-card img,
-.app-photo img,
-.app-card img {
-  object-fit: cover !important;
-  padding: 0 !important;
+
+<style id="page-content-visibility-fix">
+/* Ensure Page Sections & Reveals are Always 100% Visible */
+.reveal, .in, section, main, #intro, #credentials, #categories, #catalog, #areas, #docs {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
 }
 </style>
 
@@ -1730,7 +1727,7 @@ function renderCatGrid(){
   `).join('');
 
   // footer quick links
-  document.getElementById('footProductLinks').innerHTML = CATALOG.map(c=>`<li><a href="#cat-${c.id}">${c.title}</a></li>`).join('');
+  const fpl = document.getElementById('footProductLinks'); if(fpl) fpl.innerHTML = CATALOG.map(c=>`<li><a href="#cat-${c.id}">${c.title}</a></li>`).join('');
 }
 
 function prodCard(p){

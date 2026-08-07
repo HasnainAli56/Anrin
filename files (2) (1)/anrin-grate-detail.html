@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="header.css">
 <link rel="stylesheet" href="hero.css">
 <script src="header.js"></script>
+<script src="i18n.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
@@ -374,20 +375,20 @@ body {
 <div id="header-root"></div>
 
 <main class="grate-detail-container">
-  <a href="javascript:history.back()" class="back-link">&lsaquo; Back to overview</a>
+  <a href="javascript:history.back()" class="back-link" data-i18n="back_to_overview">&lsaquo; Back to overview</a>
   <h1 class="grate-title" id="grateTitle">Slotted grating OvalGrip Design</h1>
 
   <div class="grate-main-grid">
     <div class="grate-left-col">
       <div class="grate-img-card">
-        <img id="grateImg" src="https://www.anrin.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png" alt="Grate Image" onerror="this.src='https://www.anrin.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png'">
+        <img id="grateImg" src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png" alt="Grate Image">
       </div>
       <div class="thumbs-row">
-        <div class="thumb-item active" onclick="switchImage('https://www.anrin.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png', this)">
-          <img src="https://www.anrin.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png" alt="Thumb 1">
+        <div class="thumb-item active" onclick="switchImage('https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png', this)">
+          <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png" alt="Thumb 1">
         </div>
-        <div class="thumb-item" onclick="switchImage('https://www.anrin.com/filer_public_thumbnails/filer_public/0f/18/0f189bee-f82a-4d5b-ab19-1b1eb2b99d06/ke_100_winkel_03_ovalgrip_l50_2.png__800x0_subsampling-2.png', this)">
-          <img src="https://www.anrin.com/filer_public_thumbnails/filer_public/0f/18/0f189bee-f82a-4d5b-ab19-1b1eb2b99d06/ke_100_winkel_03_ovalgrip_l50_2.png__800x0_subsampling-2.png" alt="Thumb 2">
+        <div class="thumb-item" onclick="switchImage('https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/0f/18/0f189bee-f82a-4d5b-ab19-1b1eb2b99d06/ke_100_winkel_03_ovalgrip_l50_2.png__800x0_subsampling-2.png', this)">
+          <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/0f/18/0f189bee-f82a-4d5b-ab19-1b1eb2b99d06/ke_100_winkel_03_ovalgrip_l50_2.png__800x0_subsampling-2.png" alt="Thumb 2">
         </div>
       </div>
     </div>
@@ -395,21 +396,21 @@ body {
     <!-- Side Round Pill Accordions matching user request -->
     <div class="grate-accordions">
       <div class="acc-item active">
-        <div class="acc-header"><span>PRODUCT DESCRIPTION</span> <span>&minus;</span></div>
+        <div class="acc-header"><span data-i18n="grate_prod_desc">PRODUCT DESCRIPTION</span> <span>&minus;</span></div>
         <div class="acc-content" id="grateDesc">
           ANRIN's unique grate design creates striking, contrasting accents and fits in well with both modern architectural surroundings and historic settings. With its large inlet cross-section, the textured surface guarantees high water absorption and good grip for both vehicles and pedestrians.
         </div>
       </div>
 
       <div class="acc-item">
-        <div class="acc-header"><span>PRODUCT INFORMATION</span> <span>&#43;</span></div>
+        <div class="acc-header"><span data-i18n="grate_prod_info">PRODUCT INFORMATION</span> <span>&#43;</span></div>
         <div class="acc-content">
           <table class="specs-table">
-            <tr><td>Material</td><td>polyamide (black) / ductile iron</td></tr>
-            <tr><td>Length</td><td>50 cm</td></tr>
-            <tr><td>Nominal width</td><td>100 mm</td></tr>
-            <tr><td>Clasp</td><td>ANRIN TwistLock fastening</td></tr>
-            <tr><td>Loading Classes</td><td>C250, E600, F900</td></tr>
+            <tr><td data-i18n="grate_material">Material</td><td>polyamide (black) / ductile iron</td></tr>
+            <tr><td data-i18n="grate_length">Length</td><td>50 cm</td></tr>
+            <tr><td data-i18n="grate_nominal_width">Nominal width</td><td>100 mm</td></tr>
+            <tr><td data-i18n="grate_clasp">Clasp</td><td>ANRIN TwistLock fastening</td></tr>
+            <tr><td data-i18n="grate_loading_classes">Loading Classes</td><td>C250, E600, F900</td></tr>
           </table>
           <div style="margin-top:16px;">
             <strong>DESIGN 360° VIEW Available</strong>
@@ -418,11 +419,11 @@ body {
       </div>
 
       <div class="acc-item">
-        <div class="acc-header"><span>SERVICE AND CONTACT</span> <span>&#43;</span></div>
+        <div class="acc-header"><span data-i18n="grate_service_contact">SERVICE AND CONTACT</span> <span>&#43;</span></div>
         <div class="acc-content">
           Need custom specification texts or CAD drawings for your project? Contact ANRIN technical support at <strong>info@anrin.se</strong> or request a direct quotation.
           <br><br>
-          <a href="kontakt.html" style="display:inline-block;padding:12px 24px;background:#000000;color:#ffffff;border-radius:100px;font-weight:700;text-decoration:none;font-size:12.5px;">Contact Technical Sales</a>
+          <a href="kontakt.html" style="display:inline-block;padding:12px 24px;background:#000000;color:#ffffff;border-radius:100px;font-weight:700;text-decoration:none;font-size:12.5px;" data-i18n="grate_contact_sales">Contact Technical Sales</a>
         </div>
       </div>
     </div>
@@ -430,53 +431,53 @@ body {
 
   <!-- MATCHING CHANNEL BODY Cards with 100% Reliable Images -->
   <div class="matching-section">
-    <div class="matching-tab-header">MATCHING CHANNEL BODY &nbsp;&Delta;</div>
+    <div class="matching-tab-header"><span data-i18n="matching_channel_body">MATCHING CHANNEL BODY</span> &nbsp;&Delta;</div>
     <div class="channel-cards-grid">
       <div class="channel-card">
-        <img src="https://www.anrin.com/filer_public_thumbnails/filer_public/13/70/13700704-25be-41de-8b20-c083fe523566/ke_100__800x0_subsampling-2.png" alt="KE-100" onerror="this.src='https://www.anrin.com/filer_public_thumbnails/filer_public/13/70/13700704-25be-41de-8b20-c083fe523566/ke_100__800x0_subsampling-2.png'">
+        <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/13/70/13700704-25be-41de-8b20-c083fe523566/ke_100__1200x0_q90_subsampling-2.png__800x0_subsampling-2.png" alt="KE-100">
         <h4>KE-100 Reinforced edge channel</h4>
-        <p>Load class:<br><strong>A15, B125, C250, D400, E600</strong></p>
+        <p><span data-i18n="load_class">Load class</span>:<br><strong>A15, B125, C250, D400, E600</strong></p>
       </div>
 
       <div class="channel-card">
-        <img src="https://www.anrin.com/filer_public_thumbnails/filer_public/bf/51/bf51e388-7cae-4b0b-a3d7-6e40c3095ec9/ke_100_oval_grip_3.png__800x0_subsampling-2.png" alt="KE-100 KTL" onerror="this.src='https://www.anrin.com/filer_public_thumbnails/filer_public/bf/51/bf51e388-7cae-4b0b-a3d7-6e40c3095ec9/ke_100_oval_grip_3.png__800x0_subsampling-2.png'">
+        <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/52/1e/521e9c05-e4b6-40d9-bdc4-8134f9fd239a/ke_100_ktl__1200x0_q90_subsampling-2.png__800x0_subsampling-2.png" alt="KE-100 KTL">
         <h4>KE-100 KTL Reinforced edge channel</h4>
-        <p>Load class:<br><strong>A15, B125, C250, D400, E600</strong></p>
+        <p><span data-i18n="load_class">Load class</span>:<br><strong>A15, B125, C250, D400, E600</strong></p>
       </div>
 
       <div class="channel-card">
-        <img src="https://www.anrin.com/filer_public_thumbnails/filer_public/16/cc/16ccf30c-e843-4d2c-887f-d0a7fb9fe213/01100430_01400430_web.png__800x0_subsampling-2.png" alt="KC-100" onerror="this.src='https://www.anrin.com/filer_public_thumbnails/filer_public/16/cc/16ccf30c-e843-4d2c-887f-d0a7fb9fe213/01100430_01400430_web.png__800x0_subsampling-2.png'">
+        <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/23/0c/230cdf94-a23b-455b-90f8-cd0bd99c5cc5/kc_100__1200x0_q90_subsampling-2.png__800x0_subsampling-2.png" alt="KC-100">
         <h4>KC-100 Reinforced edge channel</h4>
-        <p>Load class:<br><strong>A15, B125, C250</strong></p>
+        <p><span data-i18n="load_class">Load class</span>:<br><strong>A15, B125, C250</strong></p>
       </div>
 
       <div class="channel-card">
-        <img src="https://www.anrin.com/filer_public_thumbnails/filer_public/07/0a/070acd53-ed9c-48a6-b86b-cb2113893076/ke_100_rinnenmasse.jpg__800x0_q90_subsampling-2.jpg" alt="KF-100" onerror="this.src='https://www.anrin.com/filer_public_thumbnails/filer_public/07/0a/070acd53-ed9c-48a6-b86b-cb2113893076/ke_100_rinnenmasse.jpg__800x0_q90_subsampling-2.jpg'">
+        <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/7e/23/7e233863-5378-4c4f-a362-796785121142/kf_100__1200x0_q90_subsampling-2.png__800x0_subsampling-2.png" alt="KF-100">
         <h4>KF-100 Reinforced edge channel</h4>
-        <p>Load class:<br><strong>A15, B125, C250, D400, E600, F900</strong></p>
+        <p><span data-i18n="load_class">Load class</span>:<br><strong>A15, B125, C250, D400, E600, F900</strong></p>
       </div>
     </div>
   </div>
 
   <!-- Showcase Photo Banner -->
   <div class="showcase-banner-wrapper">
-    <img src="https://www.anrin.com/filer_public_thumbnails/filer_public/bf/51/bf51e388-7cae-4b0b-a3d7-6e40c3095ec9/ke_100_oval_grip_3.png__1200x0_subsampling-2.png" alt="Grate Showcase Installation Banner" onerror="this.src='https://www.anrin.com/filer_public_thumbnails/filer_public/bf/51/bf51e388-7cae-4b0b-a3d7-6e40c3095ec9/ke_100_oval_grip_3.png__1200x0_subsampling-2.png'">
+    <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/bf/51/bf51e388-7cae-4b0b-a3d7-6e40c3095ec9/ke_100_oval_grip_3.png__1200x0_subsampling-2.png" alt="Grate Showcase Installation Banner">
   </div>
 </main>
 
 <!-- References Section -->
 <section class="references-section">
   <div class="references-inner">
-    <h2>REFERENCES</h2>
+    <h2 data-i18n="nav_references">REFERENCES</h2>
     <div class="ref-grid">
       <div class="ref-card">
-        <img src="https://www.anrin.com/filer_public_thumbnails/filer_public/da/61/da61bbbd-8947-4950-9ec8-fa94d13ffb7a/sporthalle-wendschott-01.jpg__800x0_q90_subsampling-2.jpg" alt="Reference 1" onerror="this.src='https://www.anrin.com/filer_public_thumbnails/filer_public/da/61/da61bbbd-8947-4950-9ec8-fa94d13ffb7a/sporthalle-wendschott-01.jpg__800x0_q90_subsampling-2.jpg'">
+        <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/CACHE/reference_images/da61bbbd_medium.jpeg" alt="Reference 1">
       </div>
       <div class="ref-card">
-        <img src="https://www.anrin.com/filer_public_thumbnails/filer_public/00/e2/00e244ea-58fa-4e76-8bd8-fcbd8301548e/skaterpark-neustadt-01.jpg__800x0_q90_subsampling-2.jpg" alt="Reference 2" onerror="this.src='https://www.anrin.com/filer_public_thumbnails/filer_public/00/e2/00e244ea-58fa-4e76-8bd8-fcbd8301548e/skaterpark-neustadt-01.jpg__800x0_q90_subsampling-2.jpg'">
+        <img src="https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/CACHE/reference_images/00e244ea_medium.jpeg" alt="Reference 2">
       </div>
       <div class="ref-card">
-        <img src="https://hydrotec.se/wp-content/uploads/2022/08/entwaesserungsrinne-hydroblock-titelbild-86586f04.webp" alt="Reference 3" onerror="this.src='https://hydrotec.se/wp-content/uploads/2022/08/entwaesserungsrinne-hydroblock-titelbild-86586f04.webp'">
+        <img src="https://hydrotec.se/wp-content/uploads/2022/08/entwaesserungsrinne-hydroblock-titelbild-86586f04.webp" alt="Reference 3">
       </div>
     </div>
   </div>
@@ -501,15 +502,6 @@ function switchImage(src, el) {
   if (img) {
     document.getElementById('grateImg').src = img;
   }
-
-  // Automatic image fallback handler
-  document.querySelectorAll('img').forEach(function(i) {
-    i.addEventListener('error', function() {
-      if (this.src.indexOf('divio-media.com') !== -1) {
-        this.src = this.src.replace(/anrinweb-live-[^/]+\.divio-media\.com/, 'www.anrin.com');
-      }
-    });
-  });
 
   // Accordion toggle logic
   var accHeaders = document.querySelectorAll('.acc-header');

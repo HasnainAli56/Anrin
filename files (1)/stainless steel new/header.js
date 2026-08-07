@@ -85,7 +85,7 @@
       '      </button>',
       '      <div class="lang-menu notranslate" translate="no"></div>',
       '    </div>',
-      '    <a class="btn-quote" href="' + p + 'kontakt.html" data-i18n="btn_quote">Begär offert</a>',
+      '    <a class="btn-quote" href="' + p + 'kontakt.html" data-i18n="btn_quote">Request a quote</a>',
       '    <button class="burger" id="burgerBtn" type="button" aria-label="Menu">',
       '      <span></span><span></span><span></span>',
       '    </button>',
@@ -234,11 +234,18 @@
     // Signal i18n.js (which handles lang dropdown + mega menu)
     document.dispatchEvent(new CustomEvent('anrin:header-mounted', { detail: { header: h } }));
 
-    // Apply saved language if i18n.js applyLanguage is already ready
+    // Apply saved language or auto-load i18n.js if missing
+    var lang = 'en';
+    try { lang = localStorage.getItem('anrin_lang') || 'en'; } catch (e) {}
     if (typeof window.applyLanguage === 'function') {
-      var lang = 'en';
-      try { lang = localStorage.getItem('anrin_lang') || 'en'; } catch (e) {}
       window.applyLanguage(lang);
+    } else {
+      var i18nScript = document.createElement('script');
+      i18nScript.src = getPathPrefix() + 'i18n.js';
+      i18nScript.onload = function() {
+        if (typeof window.applyLanguage === 'function') window.applyLanguage(lang);
+      };
+      document.head.appendChild(i18nScript);
     }
   }
 

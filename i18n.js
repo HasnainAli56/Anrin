@@ -39,12 +39,11 @@ const LANG_NAMES = {
   no: "Norsk",
   is: "Íslenska",
   de: "Deutsch"
-};
-
-const I18N = {
+};const I18N = {
   sv: {
     nav_produkter:"Produktområde", nav_projekt:"Projekt", nav_omoss:"Om oss", nav_nedladdningar:"Nedladdningar", nav_kontakt:"Kontakt",
     btn_quote:"Begär offert",
+    back_to_overview:"‹ Tillbaka till översikt", grate_prod_desc:"PRODUKTBESKRIVNING", grate_prod_info:"PRODUKTINFORMATION", grate_material:"Material", grate_length:"Längd", grate_nominal_width:"Nominell bredd", grate_clasp:"Låsning", grate_loading_classes:"Belastningsklasser", grate_service_contact:"SERVICE OCH KONTAKT", grate_contact_sales:"Kontakta teknisk försäljning", matching_channel_body:"MATCHANDE RÄNNKROPP", load_class:"Belastningsklass", nav_references:"REFERENSER",
     hero_eyebrow:"ANRIN Nordic — Sedan 2017",
     hero_title_1:"Vi formar vägen", hero_title_2:"för vattnet.",
     hero_sub:"Kompletta system för dagvattenhantering — linjeavvattning, betäckningar, rostfritt stål och avskiljare. Utvecklade med precision, levererade snabbast i Norden.",
@@ -86,6 +85,7 @@ const I18N = {
   en: {
     nav_produkter:"Products", nav_projekt:"Projects", nav_omoss:"About us", nav_nedladdningar:"Downloads", nav_kontakt:"Contact",
     btn_quote:"Request a quote",
+    back_to_overview:"‹ Back to overview", grate_prod_desc:"PRODUCT DESCRIPTION", grate_prod_info:"PRODUCT INFORMATION", grate_material:"Material", grate_length:"Length", grate_nominal_width:"Nominal width", grate_clasp:"Locking", grate_loading_classes:"Load classes", grate_service_contact:"SERVICE AND CONTACT", grate_contact_sales:"Contact Technical Sales", matching_channel_body:"MATCHING CHANNEL BODY", load_class:"Load class", nav_references:"REFERENCES",
     hero_eyebrow:"ANRIN Nordic — Since 2017",
     hero_title_1:"We shape the path", hero_title_2:"for water.",
     hero_sub:"Complete systems for surface water management — linear drainage, covers, stainless steel and separators. Engineered with precision, delivered faster than anyone else in the Nordics.",
@@ -123,6 +123,7 @@ const I18N = {
   fi: {
     nav_produkter:"Tuotteet", nav_projekt:"Projektit", nav_omoss:"Meistä", nav_nedladdningar:"Ladattavat", nav_kontakt:"Yhteystiedot",
     btn_quote:"Pyydä tarjous",
+    back_to_overview:"‹ Takaisin yleiskatsaukseen", grate_prod_desc:"TUOTEKUVAUS", grate_prod_info:"TUOTETIEDOT", grate_material:"Materiaali", grate_length:"Pituus", grate_nominal_width:"Nimellisleveys", grate_clasp:"Lukitus", grate_loading_classes:"Kuormitusluokat", grate_service_contact:"PALVELU JA YHTEYSTIEDOT", grate_contact_sales:"Ota yhteyttä tekniseen myyntiin", matching_channel_body:"YHTEENSOPIVA KOURURUNKO", load_class:"Kuormitusluokka", nav_references:"VIITTEET",
     hero_eyebrow:"ANRIN Nordic — Vuodesta 2017",
     hero_title_1:"Muovaamme reitin", hero_title_2:"vedelle.",
     hero_sub:"Kattavat hulevesijärjestelmät — linjakourut, kansistot, ruostumaton teräs ja erottimet. Suunniteltu tarkasti, toimitettu nopeimmin Pohjoismaissa.",
@@ -160,6 +161,7 @@ const I18N = {
   da: {
     nav_produkter:"Produkter", nav_projekt:"Projekter", nav_omoss:"Om os", nav_nedladdningar:"Downloads", nav_kontakt:"Kontakt",
     btn_quote:"Anmod om tilbud",
+    back_to_overview:"‹ Tilbage til oversigt", grate_prod_desc:"PRODUKTBESKRIVELSE", grate_prod_info:"PRODUKTINFORMATION", grate_material:"Materiale", grate_length:"Længde", grate_nominal_width:"Nominel bredde", grate_clasp:"Lås", grate_loading_classes:"Belastningsklasser", grate_service_contact:"SERVICE OG KONTAKT", grate_contact_sales:"Kontakt teknisk salg", matching_channel_body:"MATCHENDE RENDENKROP", load_class:"Belastningsklasse", nav_references:"REFERENCER",
     hero_eyebrow:"ANRIN Nordic — Siden 2017",
     hero_title_1:"Vi former vejen", hero_title_2:"for vandet.",
     hero_sub:"Komplette systemer til regnvandshåndtering — linjeafvanding, dæksler, rustfrit stål og udskillere. Udviklet med præcision, leveret hurtigst i Norden.",
@@ -191,12 +193,13 @@ const I18N = {
     footer_desc:"Leading Water — komplette løsninger til regnvandshåndtering, leveret hurtigst i Norden siden 2017.",
     footer_produkter:"Produkter", footer_foretag:"Virksomheden", footer_kontakt:"Kontakt",
     footer_rights:"© 2026 ANRIN Nordic — Alle rettigheder forbeholdes.",
-    cat_linjeavvattning:"Linjeafvanding", cat_betackningar:"Punktvandafledning / Dæksler", cat_rostfritt:"Rustfrit stål", cat_avskiljare:"Udskillere", cat_ror:"Rør & Vandtanke", cat_ovrigt:"Andet",
+    cat_linjeafvanding:"Linjeafvanding", cat_betackningar:"Punktvandafledning / Dæksler", cat_rostfritt:"Rustfrit stål", cat_avskiljare:"Udskillere", cat_ror:"Rør & Vandtanke", cat_ovrigt:"Andet",
     legal_privacy:"Privatlivspolitik", legal_cookies:"Cookies", legal_terms:"Handelsbetingelser", legal_copyright:"Ophavsret"
   },
   no: {
     nav_produkter:"Produkter", nav_projekt:"Prosjekter", nav_omoss:"Om oss", nav_nedladdningar:"Nedlastinger", nav_kontakt:"Kontakt",
     btn_quote:"Be om tilbud",
+    back_to_overview:"‹ Tilbake til oversikt", grate_prod_desc:"PRODUKTBESKRIVELSE", grate_prod_info:"PRODUKTINFORMASJON", grate_material:"Materiale", grate_length:"Lengde", grate_nominal_width:"Nominell bredde", grate_clasp:"Lås", grate_loading_classes:"Belastningsklasser", grate_service_contact:"SERVICE OG KONTAKT", grate_contact_sales:"Kontakt teknisk salg", matching_channel_body:"MATCHENDE RENNEKROPP", load_class:"Belastningsklasse", nav_references:"REFERANSER",
     hero_eyebrow:"ANRIN Nordic — Siden 2017",
     hero_title_1:"Vi former veien", hero_title_2:"for vannet.",
     hero_sub:"Komplette systemer for overvannshåndtering — linjeavvanning, dekkplater, rustfritt stål og utskillere. Utviklet med presisjon, levert raskest i Norden.",
@@ -234,6 +237,7 @@ const I18N = {
   is: {
     nav_produkter:"Vörur", nav_projekt:"Verkefni", nav_omoss:"Um okkur", nav_nedladdningar:"Niðurhal", nav_kontakt:"Hafðu samband",
     btn_quote:"Óska eftir tilboði",
+    back_to_overview:"‹ Til baka í yfirlit", grate_prod_desc:"VÖRULÝSING", grate_prod_info:"VÖRUUPLÝSINGAR", grate_material:"Efni", grate_length:"Lengd", grate_nominal_width:"Nafnbreidd", grate_clasp:"Læsing", grate_loading_classes:"Álagsflokkar", grate_service_contact:"ÞJÓNUSTA OG SAMSVIP", grate_contact_sales:"Hafðu samband við tæknisölu", matching_channel_body:"SAMSVARAÐUR RÆSAKROPPUR", load_class:"Álagsflokkur", nav_references:"TILVÍSANIR",
     hero_eyebrow:"ANRIN Nordic — Síðan 2017",
     hero_title_1:"Við mótum leiðina", hero_title_2:"fyrir vatnið.",
     hero_sub:"Heildarlausnir fyrir ofanvatnsstjórnun — línuræsi, lok, ryðfrítt stál og fituskiljur. Hannað af nákvæmni, afhent hraðast á Norðurlöndunum.",
@@ -271,6 +275,7 @@ const I18N = {
   de: {
     nav_produkter:"Produkte", nav_projekt:"Projekte", nav_omoss:"Über uns", nav_nedladdningar:"Downloads", nav_kontakt:"Kontakt",
     btn_quote:"Angebot anfragen",
+    back_to_overview:"‹ Zurück zur Übersicht", grate_prod_desc:"PRODUKTBESCHREIBUNG", grate_prod_info:"PRODUKTINFORMATIONEN", grate_material:"Material", grate_length:"Länge", grate_nominal_width:"Nennweite", grate_clasp:"Verschluss", grate_loading_classes:"Belastungsklassen", grate_service_contact:"SERVICE UND KONTAKT", grate_contact_sales:"Technischen Vertrieb kontaktieren", matching_channel_body:"PASSENDER RINNENKÖRPER", load_class:"Belastungsklasse", nav_references:"REFERENZEN",
     hero_eyebrow:"ANRIN Nordic — Seit 2017",
     hero_title_1:"Wir gestalten den Weg", hero_title_2:"für das Wasser.",
     hero_sub:"Komplette Systeme für die Regenwasserbewirtschaftung — Linienentwässerung, Abdeckungen, Edelstahl und Abscheider. Präzise entwickelt, am schnellsten in Nordeuropa geliefert.",

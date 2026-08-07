@@ -7,6 +7,7 @@
 
 
 <script src="header.js"></script>
+<script src="i18n.js"></script>
 <meta name="description" content="Stainless Team — An utveckling av ANRIN Nordic. Finsk kvalité, tillverkat för den svenska marknaden.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1224,7 +1225,8 @@ function applyBrandVisibility(lang){
   document.querySelectorAll('[data-brand="stainless"]').forEach(el=> el.classList.toggle('brand-hidden', !rules.stainless));
 }
 function applyLanguage(lang){
-  const dict = I18N[lang] || I18N.sv;
+  if (!lang) lang = 'en';
+  const dict = I18N[lang] || I18N.en;
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const key = el.getAttribute('data-i18n');
     if(dict[key] !== undefined) {
@@ -1239,6 +1241,10 @@ function applyLanguage(lang){
   document.documentElement.setAttribute('lang', lang);
   applyBrandVisibility(lang);
   try{ localStorage.setItem('anrin_lang', lang); }catch(e){}
+
+  if (typeof window.applyLanguage === 'function' && window.applyLanguage !== applyLanguage) {
+    window.applyLanguage(lang);
+  }
 }
 function detectCountryLanguage(){
   let manual = null;

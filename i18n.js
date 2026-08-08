@@ -347,13 +347,17 @@ function setCookie(name, value, days) {
 }
 
 function triggerGoogleTranslate(lang) {
-  const targetLang = lang === 'sv' ? 'sv' : lang;
-  setCookie('googtrans', `/sv/${targetLang}`, 7);
-  setCookie('googtrans', `/sv/${targetLang}`, 7);
+  if (lang === 'sv' || lang === 'en') {
+    // Clear Google Translate cookie so native dictionary translations render cleanly without auto-language shifting
+    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + window.location.hostname + "; path=/;";
+  } else {
+    setCookie('googtrans', `/sv/${lang}`, 7);
+  }
 
   const select = document.querySelector('.goog-te-combo');
   if (select) {
-    select.value = targetLang;
+    select.value = (lang === 'sv' || lang === 'en') ? '' : lang;
     select.dispatchEvent(new Event('change'));
   }
 }
@@ -894,9 +898,6 @@ function fixBrokenImagesAndLinks() {
       this.onerror = null;
       this.src = fallbackImg;
     };
-    if (img.src && (img.src.includes('stainlessteam.se') || img.src.includes('unsplash.com'))) {
-      img.src = fallbackImg;
-    }
   });
 
   document.querySelectorAll('a[href]').forEach(a => {

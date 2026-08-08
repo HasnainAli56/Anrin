@@ -283,7 +283,7 @@
       '      <span id="pdfModalTitle" style="font-family:sans-serif;font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:600px;">Document Preview</span>',
       '    </div>',
       '    <div style="display:flex;align-items:center;gap:12px;">',
-      '      <a id="pdfModalDownloadBtn" href="" download target="_blank" style="padding:8px 18px;background:rgba(255,255,255,0.18);color:#fff;border-radius:100px;font-family:sans-serif;font-size:12.5px;font-weight:600;text-decoration:none;transition:background 0.2s;">Download PDF</a>',
+      '      <button id="pdfModalDownloadBtn" type="button" style="padding:8px 18px;background:rgba(255,255,255,0.18);color:#fff;border:none;border-radius:100px;font-family:sans-serif;font-size:12.5px;font-weight:600;cursor:pointer;transition:background 0.2s, opacity 0.2s;display:inline-flex;align-items:center;gap:6px;">Download PDF</button>',
       '      <button id="pdfModalCloseBtn" style="background:none;border:none;color:#fff;font-size:26px;cursor:pointer;padding:0 8px;line-height:1;">&times;</button>',
       '    </div>',
       '  </div>',
@@ -297,6 +297,7 @@
     var iframe = document.getElementById('pdfModalFrame');
     var titleEl = document.getElementById('pdfModalTitle');
     var dlBtn = document.getElementById('pdfModalDownloadBtn');
+    var currentPdfUrl = '';
 
     function closeModal() {
       modal.style.display = 'none';
@@ -312,10 +313,75 @@
       if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
     });
 
+    // Helper to trigger direct anchor download without preview modal interception
+    function executeFileDownload(downloadUrl, name, isBlob) {
+      var a = document.createElement('a');
+      a.className = 'bypass-pdf-modal';
+      a.setAttribute('data-bypass', 'true');
+      a.style.display = 'none';
+      a.href = downloadUrl;
+      a.download = name;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function() {
+        if (a.parentNode) a.parentNode.removeChild(a);
+        if (isBlob) URL.revokeObjectURL(downloadUrl);
+      }, 1000);
+    }
+
+    // Handle Download PDF button click inside the modal
+    dlBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      var url = currentPdfUrl || dlBtn.getAttribute('data-url');
+      if (!url) return;
+
+      var filename = url.split('/').pop().split('?')[0] || 'document.pdf';
+      if (!filename.toLowerCase().endsWith('.pdf')) {
+        filename += '.pdf';
+      }
+
+      var originalText = 'Download PDF';
+      dlBtn.textContent = 'Downloading...';
+      dlBtn.style.opacity = '0.7';
+      dlBtn.style.pointerEvents = 'none';
+
+      function resetBtn() {
+        dlBtn.textContent = originalText;
+        dlBtn.style.opacity = '1';
+        dlBtn.style.pointerEvents = 'auto';
+      }
+
+      fetch(url)
+        .then(function(res) {
+          if (!res.ok) throw new Error('Fetch failed');
+          return res.blob();
+        })
+        .then(function(blob) {
+          var blobUrl = URL.createObjectURL(blob);
+          executeFileDownload(blobUrl, filename, true);
+          setTimeout(resetBtn, 1200);
+        })
+        .catch(function() {
+          executeFileDownload(url, filename, false);
+          setTimeout(resetBtn, 1200);
+        });
+    });
+
     // Intercept clicks on any link or button with PDF or document download
     document.addEventListener('click', function(e) {
+      // Ignore clicks originating inside #pdfViewerModal or on elements marked with bypass
+      if (e.target.closest('#pdfViewerModal') || e.target.closest('[data-bypass]') || e.target.closest('.bypass-pdf-modal')) {
+        return;
+      }
+
       var link = e.target.closest('a[href*=".pdf"], a[href*="ausschreiben.de"], .dl-trigger, [data-dialog-primary-url]');
       if (!link) return;
+
+      if (link.closest('#pdfViewerModal') || link.hasAttribute('data-bypass') || link.classList.contains('bypass-pdf-modal')) {
+        return;
+      }
 
       var url = link.getAttribute('href') || link.getAttribute('data-dialog-primary-url');
       if (!url || url.indexOf('javascript') === 0 || url === '#') return;
@@ -327,7 +393,8 @@
         var title = link.textContent ? link.textContent.trim() : 'Document Preview';
         if (title.length > 50) title = 'Document Preview';
         titleEl.textContent = title;
-        dlBtn.href = url;
+        currentPdfUrl = url;
+        dlBtn.setAttribute('data-url', url);
         iframe.src = url;
         modal.style.display = 'flex';
       }

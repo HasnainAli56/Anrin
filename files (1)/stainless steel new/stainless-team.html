@@ -893,17 +893,7 @@ div[class*="sticky-action"] {
 }
 </style>
 
-<style id="zoomed-out-product-images-fix">
-/* Force Separator Tank Product Card Images to be Zoomed Out and Fully Visible */
-.sku-photo img,
-.enviroguard-card img,
-.tank-photo img {
-  object-fit: contain !important;
-  padding: 10px !important;
-  background: #ffffff !important;
-  box-sizing: border-box !important;
-}
-</style>
+
 
 
 <style id="page-content-visibility-fix">
@@ -1102,11 +1092,11 @@ div[class*="sticky-action"] {
         <div class="about-badge"><b>23 år</b><span>Leverantör till finska försvarsmakten</span></div>
       </div>
       <a href="https://byggvarubedomningen.se/" target="_blank" rel="noopener" class="bvb-badge">
-        <img src="use_case_industry.jpg" alt="Byggvarubedömningen" style="height:24px;width:auto;">
+        <img src="https://stainlessteam.se/wp-content/uploads/2024/01/bvb-logo-transparent-ny-300x45-1.png" alt="Byggvarubedömningen" style="height:24px;width:auto;">
       </a>
     </div>
     <div class="about-visual reveal">
-      <img src="https://stainlessteam.se/wp-content/uploads/2024/01/golvranna-storkok-1-edited-1024x1022-1.jpg" alt="Stainless Team industriproduktion">
+      <img src="https://stainlessteam.se/wp-content/uploads/2024/01/industri-1024x683-1.jpg" alt="Stainless Team industriproduktion">
     </div>
   </div>
 </section>
@@ -1651,11 +1641,11 @@ const CATALOG = [
 ];
 
 const AREAS = [
-  {title:"Storkök", img:IMG+"hydrotec_supply_landscaping.jpg-1-edited-1024x1022-1.jpg", short:"Hygieniska golvbrunnar och golvrännor i rostfritt- eller syrafast stål för storkök.", full:"Högkvalitativa och hygieniska golvbrunnar och golvrännor för storkök i syrafast stål. Slitstarka, lättmonterade produkter som passar även i de mest krävande utrymmena."},
-  {title:"Industri", img:IMG+"industri-1024x683-1.jpg", short:"Rostfria golvbrunnar, golvrännor, spygatter och sandavskiljare med sedimentbehållare.", full:"Slitstarka golvbrunnar, golvrännor, spygatter och sandavskiljare i syrafast stål för industrimiljö. Finsk kvalité för alla golvtyper, verksamhetsanpassade efter behov."},
+  {title:"Storkök", img:"images/stainless_kitchen_drain.jpg", short:"Hygieniska golvbrunnar och golvrännor i rostfritt- eller syrafast stål för storkök.", full:"Högkvalitativa och hygieniska golvbrunnar och golvrännor för storkök i syrafast stål. Slitstarka, lättmonterade produkter som passar även i de mest krävande utrymmena."},
+  {title:"Industri", img:"use_case_industry.jpg", short:"Rostfria golvbrunnar, golvrännor, spygatter och sandavskiljare med sedimentbehållare.", full:"Slitstarka golvbrunnar, golvrännor, spygatter och sandavskiljare i syrafast stål för industrimiljö. Finsk kvalité för alla golvtyper, verksamhetsanpassade efter behov."},
   {title:"Dusch & Bad", img:IMG+"dusch-bad-1024x683-1.jpg", short:"Djupdragen ram och löstagbart eller fast vattenlås för dusch & bad.", full:"Rostfria golvbrunnar och golvrännor med tankavlopp för dusch och bad som är lätta att montera. Mycket hygieniska och stilrena i designen, med garanterat lång livslängd."},
-  {title:"Tvättstuga", img:IMG+"tvattstuga-1024x683-1.jpg", short:"Golvbrunnar, golvrännor och luddlådor för tvättstuga.", full:"Rostfria och syrafasta golvbrunnar, golvrännor och luddlådor för tvättstuga. Lätta att montera och enkla att rengöra — standardmått eller specialtillverkat."},
-  {title:"Poolområde", img:IMG+"poolomraden2-1024x683-1.jpg", short:"Golvrännor för poolbyggen och badtunnor, golvbrunnar med löstagbart vattenlås.", full:"Vi har högkvalitativa golvrännor för poolbyggen och badtunnor samt golvbrunnar med löstagbart vattenlås och djupdragen ram. Skräddarsydda lösningar utifrån era önskemål."},
+  {title:"Tvättstuga", img:"use_case_outdoor.jpg", short:"Golvbrunnar, golvrännor och luddlådor för tvättstuga.", full:"Rostfria och syrafasta golvbrunnar, golvrännor och luddlådor för tvättstuga. Lätta att montera och enkla att rengöra — standardmått eller specialtillverkat."},
+  {title:"Poolområde", img:"use_case_pool.jpg", short:"Golvrännor för poolbyggen och badtunnor, golvbrunnar med löstagbart vattenlås.", full:"Vi har högkvalitativa golvrännor för poolbyggen och badtunnor samt golvbrunnar med löstagbart vattenlås och djupdragen ram. Skräddarsydda lösningar utifrån era önskemål."},
 ];
 
 const DOCUMENTS = [
@@ -1712,7 +1702,7 @@ function renderCatGrid(){
   const grid = document.getElementById('catGrid');
   grid.innerHTML = CATALOG.map(c => `
     <div class="cat-card" onclick="location.hash='#cat-${c.id}'; document.getElementById('cat-${c.id}').scrollIntoView({behavior:'smooth'});">
-      <div class="cat-thumb"><img src="use_case_industry.jpg" alt="${c.title}" loading="lazy"></div>
+      <div class="cat-thumb"><img src="${c.cardImg}" alt="${c.title}" loading="lazy"></div>
       <div class="cat-body">
         <div class="cat-index">${c.index}</div>
         <h3>${c.title}</h3>
@@ -1734,7 +1724,7 @@ function prodCard(p){
   if(p.meta_extra) metaLines.push(p.meta_extra);
   return `
     <div class="prod-card">
-      <div class="prod-img"><img src="https://stainlessteam.se/wp-content/uploads/2024/01/golvranna-storkok-1-edited-1024x1022-1.jpg" alt="${p.name}" loading="lazy"></div>
+      <div class="prod-img"><img src="${p.img}" alt="${p.name}" loading="lazy"></div>
       <div class="prod-body">
         <h4>${p.name}</h4>
         <div class="prod-meta">${metaLines.map(m=>`<div>${m}</div>`).join('')}</div>
@@ -1787,7 +1777,7 @@ function renderCatalog(){
           <div class="cat-hero reveal">
             <div class="cat-hero-frame">
               <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-              <img src="use_case_pool.jpg" alt="${cat.title}">
+              <img src="${cat.heroImg}" alt="${cat.title}">
             </div>
             <div class="cat-hero-copy">
               <div class="cat-idx">${cat.index} / ${String(CATALOG.length).padStart(2,'0')}</div>
@@ -1817,7 +1807,7 @@ function renderAreas(){
   const grid = document.getElementById('areasGrid');
   grid.innerHTML = AREAS.map((a,i)=>`
     <div class="area-card" id="area-${i}">
-      <div class="area-img"><img src="use_case_outdoor.jpg" alt="${a.title}" loading="lazy"></div>
+      <div class="area-img"><img src="${a.img}" alt="${a.title}" loading="lazy"></div>
       <div class="area-body">
         <h3>${a.title}</h3>
         <p style="font-size:14px;color:var(--gray-500);">${a.short}</p>

@@ -421,7 +421,21 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 @media(max-width:1000px){.dlx-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:560px){.dlx-grid{grid-template-columns:1fr;}}
 .dlx-card{background:var(--black);color:var(--white);display:flex;flex-direction:column;transition:transform .35s var(--ease);}
-.dlx-thumb{aspect-ratio:3/4;background:var(--gray-700);overflow:hidden;position:relative;}
+.dlx-thumb{aspect-ratio:3/4;background:radial-gradient(circle at 40% 30%, #262930 0%, #15171c 60%, #090a0d 100%);overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:22px 20px;box-shadow:inset 8px 0 18px -4px rgba(0,0,0,0.85);border-bottom:1px solid rgba(255,255,255,0.08);}
+.dlx-thumb::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 85% 15%, rgba(255,255,255,0.07), transparent 45%),linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);background-size:100% 100%, 100% 14px;pointer-events:none;}
+.dlx-thumb-header{display:flex;justify-content:space-between;align-items:center;z-index:2;}
+.dlx-thumb-badge{font-size:9px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#e2e8f0;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);padding:3px 9px;border-radius:4px;}
+.dlx-thumb-logo-wrap{margin:auto 0;text-align:center;z-index:2;padding:16px 14px;background:rgba(255,255,255,0.03);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.09);border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,0.5);}
+.dlx-thumb-logo-wrap img{max-width:85%;height:auto;max-height:44px;object-fit:contain;filter:brightness(0) invert(1);margin:0 auto;display:block;}
+.dlx-thumb-footer{z-index:2;border-top:1px solid rgba(255,255,255,0.12);padding-top:12px;}
+.dlx-thumb-doc-title{font-family:var(--display);font-size:11.5px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:rgba(255,255,255,0.92);line-height:1.35;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+.dlx-thumb::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 85% 15%, rgba(255,255,255,0.07), transparent 45%),linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);background-size:100% 100%, 100% 14px;pointer-events:none;}
+.dlx-thumb-header{display:flex;justify-content:space-between;align-items:center;z-index:2;}
+.dlx-thumb-badge{font-size:9px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#e2e8f0;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);padding:3px 9px;border-radius:4px;}
+.dlx-thumb-logo-wrap{margin:auto 0;text-align:center;z-index:2;padding:16px 14px;background:rgba(255,255,255,0.04);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,0.3);}
+.dlx-thumb-logo-wrap img{max-width:85%;height:auto;max-height:44px;object-fit:contain;filter:brightness(0) invert(1);margin:0 auto;display:block;}
+.dlx-thumb-footer{z-index:2;border-top:1px solid rgba(255,255,255,0.12);padding-top:12px;}
+.dlx-thumb-doc-title{font-family:var(--display);font-size:11.5px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:rgba(255,255,255,0.92);line-height:1.35;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
 .dlx-thumb img{width:100%;height:100%;object-fit:cover;}
 .dlx-thumb .dlx-icon-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:13px;letter-spacing:.06em;color:var(--gray-500);text-align:center;padding:20px;}
 .dlx-body{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column;}
@@ -2042,7 +2056,7 @@ function renderDownloads(list){
   const catLabels = {linjeavvattning:"Linjeavvattning",betackningar:"Punktavvattning / Betäckningar",rostfritt:"Rostfritt",avskiljare:"Avskiljare",ror:"Rör & Vattentankar",ovrigt:"Övrigt"};
   grid.innerHTML = list.map(d=>{
     return '<div class="dlx-card" data-brand="'+(d.cat==='betackningar'?'hydrotec':d.cat==='rostfritt'?'stainless':'')+'">'
-      + '<div class="dlx-thumb"><div class="dlx-icon-fallback">'+d.title+'</div></div>'
+      + '<div class="dlx-thumb"><div class="dlx-thumb-header"><span class="dlx-thumb-badge">PDF DOCUMENT</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="dlx-thumb-logo-wrap"><img src="images/anrin-logo-black.png" alt="ANRIN Leading Water" /></div><div class="dlx-thumb-footer"><div class="dlx-thumb-doc-title">'+d.title+'</div></div></div>'
       + '<div class="dlx-body"><div class="dlx-tag">'+(catLabels[d.cat]||d.cat)+'</div>'
       + '<div class="dlx-title">'+d.title+'</div>'
       + '<a class="dlx-btn" href="'+d.url+'" target="_blank" rel="noopener">'+(d.verified ? 'Ladda ner' : 'Se dokument')+'</a></div></div>';

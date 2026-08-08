@@ -495,3 +495,53 @@ footer.main-site-footer,
   }
 }
 
+
+
+/* ── Guaranteed Mobile Burger Navigation Button ────────────────── */
+#siteHeader .burger,
+#burgerBtn,
+button.burger {
+  display: none !important;
+}
+
+@media (max-width: 1100px) {
+  #siteHeader nav.main-nav {
+    display: none !important;
+  }
+  #siteHeader .burger,
+  #burgerBtn,
+  button.burger {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 26px !important;
+    height: 18px !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative !important;
+    z-index: 999999 !important;
+    flex-shrink: 0 !important;
+  }
+
+  #siteHeader .burger span,
+  #burgerBtn span,
+  button.burger span {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    height: 2.5px !important;
+    background-color: #ffffff !important;
+    border-radius: 2px !important;
+    transition: all 0.25s ease !important;
+  }
+}
+
+@media (max-width: 900px) {
+  #siteHeader .btn-quote {
+    display: none !important;
+  }
+}
+

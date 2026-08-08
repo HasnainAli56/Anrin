@@ -774,6 +774,89 @@ function autoRevealElements() {
   style.id = 'global-full-bleed-breakout-fix';
   style.textContent = `
 
+    /* ── Hero Stat Row Mobile Optimization (2x2 Grid, Zero Word Break) ────────── */
+    @media (max-width: 768px) {
+      section.hero .wrap.hero-meta,
+      .hero .wrap.hero-meta,
+      .aint-hero-home .wrap.hero-meta,
+      .page-hero .wrap.hero-meta,
+      .htec-hero .wrap.hero-meta,
+      div.wrap.hero-meta,
+      .wrap.hero-meta,
+      .hero-meta,
+      .brand-meta-row,
+      .hero-stats,
+      .stat-row {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-rows: auto auto !important;
+        gap: 20px 14px !important;
+        margin-top: 28px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+
+      section.hero .wrap.hero-meta > div,
+      .hero .wrap.hero-meta > div,
+      .aint-hero-home .wrap.hero-meta > div,
+      .page-hero .wrap.hero-meta > div,
+      .wrap.hero-meta > div,
+      .hero-meta > div,
+      .stat-row > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        flex: none !important;
+        box-sizing: border-box !important;
+      }
+
+      section.hero .wrap.hero-meta > div b,
+      .hero .wrap.hero-meta > div b,
+      .wrap.hero-meta > div b,
+      .hero-meta > div b,
+      .stat-row div b {
+        font-size: 18px !important;
+        font-weight: 800 !important;
+        white-space: nowrap !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        hyphens: none !important;
+        line-height: 1.2 !important;
+      }
+
+      section.hero .wrap.hero-meta > div span,
+      .hero .wrap.hero-meta > div span,
+      .wrap.hero-meta > div span,
+      .hero-meta > div span,
+      .stat-row div span {
+        font-size: 11px !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        line-height: 1.3 !important;
+      }
+
+      /* Compact Mobile Product Card Sizing (anrin-page-1 to 27) */
+      .additional-product-image-container,
+      .additional-product-image {
+        height: auto !important;
+        max-height: 220px !important;
+        min-height: 140px !important;
+        padding: 16px !important;
+        background: #f8f9fa !important;
+      }
+
+      .additional-product-image img,
+      .additional-product-image-container img {
+        max-height: 180px !important;
+        object-fit: contain !important;
+      }
+    }
+
+
+
     /* ── Mobile Product Card Layout Fix (anrin-page-1 to 27) ──────────────── */
     @media (max-width: 768px) {
       .additional-products .row,

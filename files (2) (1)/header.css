@@ -472,3 +472,26 @@ footer.main-site-footer,
   background: #f0f0f0 !important;
   color: #000000 !important;
 }
+
+
+/* ── Mobile Header Optimization (< 768px) ────────────────────────── */
+@media (max-width: 768px) {
+  #siteHeader .wrap {
+    padding: 0 16px !important;
+  }
+  #siteHeader .header-right {
+    gap: 10px !important;
+  }
+  #siteHeader .btn-quote {
+    display: none !important; /* Hide quote button in mobile header so logo, lang, search & burger fit cleanly */
+  }
+  #siteHeader .burger {
+    display: block !important;
+    width: 24px !important;
+    height: 18px !important;
+  }
+  #siteHeader .logo img {
+    height: 22px !important;
+  }
+}
+

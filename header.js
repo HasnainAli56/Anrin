@@ -277,18 +277,24 @@ h.querySelectorAll('.lang-label').forEach(function(el) { el.textContent = lang.t
     modal.style.cssText = 'position:fixed;inset:0;z-index:999999;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;';
     
     modal.innerHTML = [
-      '<div style="width:100%;max-width:1100px;height:90vh;background:#ffffff;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,0.5);">',
-      '  <div style="padding:16px 24px;background:#111111;color:#ffffff;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">',
-      '    <div style="display:flex;align-items:center;gap:12px;">',
-      '      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>',
+      '<style>',
+      '  @media (max-width: 768px) {',
+      '    #pdfViewerModal { padding: 0 !important; }',
+      '    #pdfViewerModal > div { width: 100% !important; max-width: 100% !important; height: 100vh !important; height: 100dvh !important; border-radius: 0 !important; }',
+      '  }',
+      '</style>',
+      '<div style="width:100%;max-width:1440px;height:95vh;height:95dvh;background:#111111;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,0.6);">',
+      '  <div style="padding:14px 20px;background:#111111;color:#ffffff;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,0.1);">',
+      '    <div style="display:flex;align-items:center;gap:12px;min-width:0;flex:1;">',
+      '      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="flex-shrink:0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>',
       '      <span id="pdfModalTitle" style="font-family:sans-serif;font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:600px;">Document Preview</span>',
       '    </div>',
-      '    <div style="display:flex;align-items:center;gap:12px;">',
+      '    <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">',
       '      <button id="pdfModalDownloadBtn" type="button" style="padding:8px 18px;background:rgba(255,255,255,0.18);color:#fff;border:none;border-radius:100px;font-family:sans-serif;font-size:12.5px;font-weight:600;cursor:pointer;transition:background 0.2s, opacity 0.2s;display:inline-flex;align-items:center;gap:6px;">Download PDF</button>',
       '      <button id="pdfModalCloseBtn" style="background:none;border:none;color:#fff;font-size:26px;cursor:pointer;padding:0 8px;line-height:1;">&times;</button>',
       '    </div>',
       '  </div>',
-      '  <iframe id="pdfModalFrame" src="" style="width:100%;height:100%;border:none;background:#f5f5f5;"></iframe>',
+      '  <iframe id="pdfModalFrame" src="" style="width:100%;height:100%;border:none;background:#2a2a2a;"></iframe>',
       '</div>'
     ].join('\n');
 
@@ -396,7 +402,11 @@ h.querySelectorAll('.lang-label').forEach(function(el) { el.textContent = lang.t
         titleEl.textContent = title;
         currentPdfUrl = url;
         dlBtn.setAttribute('data-url', url);
-        iframe.src = url;
+        var pdfViewerUrl = url;
+        if (pdfViewerUrl.indexOf('.pdf') !== -1 && pdfViewerUrl.indexOf('#') === -1) {
+          pdfViewerUrl += '#toolbar=0&navpanes=0&view=FitH';
+        }
+        iframe.src = pdfViewerUrl;
         modal.style.display = 'flex';
       }
     }, true);

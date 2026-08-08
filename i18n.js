@@ -774,93 +774,59 @@ function autoRevealElements() {
   style.id = 'global-full-bleed-breakout-fix';
   style.textContent = `
 
-    /* Partner Logos: Small, clean, in one horizontal line */
-    .partners-strip, .partners-strip.reveal {
+    /* ── Partners / Certifications Strip: Equal Spacing & Horizontal Row ────── */
+    .partners-strip,
+    div.partners-strip {
       display: flex !important;
       flex-direction: row !important;
       align-items: center !important;
-      justify-content: center !important;
+      justify-content: space-between !important;
       flex-wrap: wrap !important;
-      gap: 28px !important;
+      gap: 32px !important;
       width: 100% !important;
-      padding: 32px 0 !important;
+      max-width: 1320px !important;
+      margin: 0 auto !important;
+      padding: 40px 0 !important;
+    }
+
+    .partners-strip .partners-label {
+      font-family: 'Manrope', -apple-system, sans-serif !important;
+      font-size: 12px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.12em !important;
+      text-transform: uppercase !important;
+      color: #767676 !important;
+      white-space: nowrap !important;
+      margin: 0 !important;
     }
 
     .partners-strip img {
-      height: 28px !important;
-      max-height: 32px !important;
+      height: 36px !important;
+      max-height: 40px !important;
       width: auto !important;
-      max-width: 130px !important;
+      max-width: 160px !important;
       object-fit: contain !important;
       display: inline-block !important;
-    }
-      
-
-
-    /* ── Content Visibility & Preloader Failsafe Fix ───────────────────────── */
-    #preloader, div#preloader {
-      display: none !important;
-      opacity: 0 !important;
-      visibility: hidden !important;
-      pointer-events: none !important;
-      z-index: -9999 !important;
+      filter: grayscale(1) opacity(0.75) !important;
+      transition: opacity 0.25s ease, filter 0.25s ease !important;
     }
 
-    .reveal, .eyebrow, .hero-sub, .hero-actions, h1.hero-title span em, .hero-content * {
-      opacity: 1 !important;
-      visibility: visible !important;
-    }
-    .reveal {
-      transform: none !important;
-    }
-
-    /* ── Universal Layout & Media Responsiveness ────────────────────────────── */
-    *, *::before, *::after {
-      box-sizing: border-box !important;
-    }
-
-    html, body {
-      width: 100% !important;
-      max-width: 100vw !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      overflow-x: hidden !important;
-      -webkit-text-size-adjust: 100% !important;
-    }
-
-    img, video, iframe, svg, canvas, picture {
-      max-width: 100% !important;
-      height: auto !important;
-    }
-
-    table {
-      display: block !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      overflow-x: auto !important;
-      -webkit-overflow-scrolling: touch !important;
-    }
-
-    .wrap, .container, .hero .wrap, .hero-content, .page-hero .wrap, 
-    .htec-hero .wrap, #hero .hero-inner, section.hero .wrap, 
-    footer .wrap, .main-site-footer .wrap, main.wrap {
-      max-width: 1320px !important;
-      width: 100% !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      padding-left: 32px !important;
-      padding-right: 32px !important;
-      box-sizing: border-box !important;
+    .partners-strip img:hover {
+      filter: grayscale(0) opacity(1) !important;
     }
 
     @media (max-width: 768px) {
-      .wrap, .container, .hero .wrap, .hero-content, .page-hero .wrap, 
-      .htec-hero .wrap, #hero .hero-inner, section.hero .wrap, 
-      footer .wrap, .main-site-footer .wrap, main.wrap {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
+      .partners-strip,
+      div.partners-strip {
+        justify-content: center !important;
+        gap: 24px !important;
+        padding: 28px 16px !important;
       }
     }
+
+
+
+    
 
     @media (max-width: 480px) {
       .wrap, .container, .hero .wrap, .hero-content, .page-hero .wrap, 

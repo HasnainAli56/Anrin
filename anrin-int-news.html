@@ -3,7 +3,7 @@
 <head>
 
 
-<script src="../header.js"></script>
+<script src="header.js" onerror="this.onerror=null;this.src='../header.js';"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nyhetsbrev — ANRIN</title>
@@ -39,7 +39,7 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 #preloader svg{width:180px;overflow:visible;}
 #preloader path{fill:none;stroke:var(--white);stroke-width:1.4;stroke-dasharray:400;stroke-dashoffset:400;animation:draw 1.6s var(--ease) forwards;}
 @keyframes draw{to{stroke-dashoffset:0;}}
-#preloader.done{opacity:0;visibility:hidden;}
+#preloader.done{opacity:0;visibility:hidden;pointer-events:none !important;}
 
 /* Flow progress line */
 #flowline{position:fixed;left:0;top:0;width:3px;height:100vh;z-index:500;background:var(--gray-150);}
@@ -664,11 +664,12 @@ details.faq-item p{font-size:14.5px;line-height:1.75;color:var(--gray-700);margi
 .news-card h4{font-family:var(--display);font-weight:700;font-size:18px;margin-bottom:12px;line-height:1.35;}
 .news-card p{font-size:14px;color:var(--gray-500);line-height:1.55;margin-bottom:16px;}
 .news-card a.news-link{margin-top:auto;font-size:14px;font-weight:600;}
-.news-modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:32px;z-index:700;opacity:0;visibility:hidden;transition:opacity .3s var(--ease),visibility .3s var(--ease);}
-.news-modal.open,.news-modal:target{opacity:1;visibility:visible;}
+.news-modal{position:fixed;inset:0;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;padding:32px;z-index:100000 !important;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s var(--ease),visibility .3s var(--ease);}
+.news-modal.open{opacity:1;visibility:visible;pointer-events:auto !important;}
 .news-modal-dialog{position:relative;width:min(1200px,100%);max-height:min(90vh,950px);overflow:auto;background:var(--white);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
 .news-modal-photo{background:var(--gray-50);min-height:400px;}
 .news-modal-photo img{width:100%;height:100%;object-fit:cover;}
+.news-modal-photo img[hidden], .news-modal-photo img:not([src]), .news-modal-photo img[src=""]{display:none !important;}
 .news-modal-photo.is-empty{display:flex;align-items:center;justify-content:center;padding:28px;color:var(--gray-500);font-family:var(--display);font-size:14px;text-transform:uppercase;letter-spacing:.08em;}
 .news-modal-content{padding:48px 44px 44px;display:flex;flex-direction:column;}
 .news-modal-date{font-size:13px;color:var(--gray-500);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
@@ -1971,8 +1972,18 @@ function initLightbox(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', ()=>{
-  initLangSwitcher();
+function runAllInits(){
+  initAintMobileMenu();
+  initNewsModal();
+  initRefModal();
+}
+
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  runAllInits();
+} else {
+  document.addEventListener('DOMContentLoaded', runAllInits);
+  window.addEventListener('load', runAllInits);
+}
   initScrollFx();
   initMobileMenu();
   initReveal();
@@ -2263,7 +2274,6 @@ function initAintMobileMenu(){
 function initNewsModal(){
   const modal = document.getElementById('news-article');
   if(!modal) return;
-  console.log('News modal found');
   const photoWrap = modal.querySelector('.news-modal-photo');
   const imgEl = modal.querySelector('.news-modal-photo img');
   const fallbackEl = modal.querySelector('.news-modal-photo span');
@@ -2272,8 +2282,36 @@ function initNewsModal(){
   const leadEl = modal.querySelector('.news-modal-lead');
   const copyEl = modal.querySelector('.news-modal-copy');
   const closeBtn = modal.querySelector('.news-modal-close');
-  const links = document.querySelectorAll('.news-card .news-link');
-  console.log('News links found:', links.length);
+  const cards = document.querySelectorAll('.news-card');
+
+  function getLang() {
+    try { return localStorage.getItem('anrin_lang') || 'en'; } catch(e) { return 'en'; }
+  }
+
+  function getArticleContent(title) {
+    const lang = getLang();
+    const isEn = lang === 'en';
+    const normalizedTitle = (title || '').split(' — ')[0].trim();
+
+    if (isEn) {
+      return `<p>ANRIN is proud to share our latest milestone regarding <strong>${normalizedTitle}</strong>. Our surface water management and linear drainage systems continue to set benchmarks across European and Nordic civil engineering projects.</p>
+      <p>From heavy-duty polymer concrete channels (load classes A15–F900) to cast iron covers and custom stainless steel solutions, every product line is engineered for high hydraulic capacity, chemical resistance and environmental safety.</p>
+      <p>For detailed CAD drawings, test certificates or project consultations, please reach out to our technical sales engineering team or visit our downloads portal.</p>`;
+    }
+
+    const contentMap = {
+      'ANRIN certifierat igen: WHG- och LAU-ytor godkända': `
+        <p>ANRIN är stolta över att återigen ha uppnått certifiering enligt WHG (Wassergefährdungsklasse) och LAU (Lageranlagenverordnung) för våra dräneringssystem. Dessa certifieringar bekräftar att våra produkter uppfyller de strängaste kraven för vattenföroreningsskydd och lagring av farliga ämnen.</p>
+        <p>Certifieringen omfattar hela vårt sortiment av polymerbetongrännor och tillbehör, vilket ger våra kunder trygghet i att de väljer produkter som är både säkra och miljövänliga.</p>`,
+      'Hållbarhet hos ANRIN': `
+        <p>Hållbarhet är kärnan i ANRINs affärsmodell. Vi arbetar aktivt med att minska vår miljöpåverkan genom hela produktlivscykeln – från råvaruval till produktion och leverans.</p>
+        <p>Våra polymerbetongrännor tillverkas med återvunnet material och är 100% återvinningsbara vid slutet av sin livstid.</p>`,
+      'Den horisontella Venturi-kopplingen': `
+        <p>Den nya horisontella Venturi-kopplingen representerar ett betydande framsteg inom dräneringsteknik. Genom sin innovativa design möjliggör den effektiv luktavskiljning utan att kompromissa med flödeskapaciteten.</p>`
+    };
+
+    return contentMap[normalizedTitle] || contentMap[title] || `<p>Läs mer om ${normalizedTitle} på ANRINs officiella webbplats. ANRINs dräneringssystem erbjuder hög kapacitet, hållbarhet och säkerhet för alla bygg- och anläggningsprojekt.</p>`;
+  }
 
   function open(card){
     if(!card) return;
@@ -2282,193 +2320,98 @@ function initNewsModal(){
     const title = card.querySelector('h4');
     const lead = card.querySelector('p');
 
+    const titleText = title ? title.textContent.trim() : 'ANRIN News';
     dateEl.textContent = date ? date.textContent.trim() : '';
-    titleEl.textContent = title ? title.textContent.trim() : '';
+    titleEl.textContent = titleText;
     leadEl.textContent = lead ? lead.textContent.trim() : '';
+    copyEl.innerHTML = getArticleContent(titleText);
 
-    // Add detailed content based on article title
-    const articleContent = getArticleContent(title ? title.textContent.trim() : '');
-    copyEl.innerHTML = articleContent;
+    imgEl.onerror = function() {
+      this.hidden = true;
+      this.setAttribute('hidden', 'hidden');
+      this.style.display = 'none';
+      photoWrap.classList.add('is-empty');
+      if(fallbackEl) {
+        fallbackEl.hidden = false;
+        fallbackEl.removeAttribute('hidden');
+        fallbackEl.style.display = 'block';
+        fallbackEl.textContent = titleText;
+      }
+    };
 
-    if(img && img.getAttribute('src')){
-      imgEl.src = img.getAttribute('src');
-      imgEl.alt = img.getAttribute('alt') || (title ? title.textContent.trim() : 'ANRIN News');
+    const src = img ? (img.getAttribute('src') || '') : '';
+    if(src && src.trim() !== '' && !src.includes('data:image/svg')){
+      imgEl.src = src;
+      imgEl.alt = img.getAttribute('alt') || titleText;
       imgEl.hidden = false;
       imgEl.removeAttribute('hidden');
+      imgEl.style.display = 'block';
       photoWrap.classList.remove('is-empty');
-      fallbackEl.hidden = true;
-      fallbackEl.setAttribute('hidden', 'hidden');
+      if(fallbackEl) {
+        fallbackEl.hidden = true;
+        fallbackEl.setAttribute('hidden', 'hidden');
+        fallbackEl.style.display = 'none';
+      }
     } else {
       imgEl.src = '';
-      imgEl.alt = '';
+      imgEl.removeAttribute('src');
       imgEl.hidden = true;
       imgEl.setAttribute('hidden', 'hidden');
+      imgEl.style.display = 'none';
       photoWrap.classList.add('is-empty');
-      fallbackEl.hidden = false;
-      fallbackEl.removeAttribute('hidden');
-      fallbackEl.textContent = title ? title.textContent.trim() : 'ANRIN News';
+      if(fallbackEl) {
+        fallbackEl.hidden = false;
+        fallbackEl.removeAttribute('hidden');
+        fallbackEl.style.display = 'block';
+        fallbackEl.textContent = titleText;
+      }
     }
 
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('news-modal-open');
-    console.log('Modal opened');
-  }
-
-  function getArticleContent(title){
-    const normalizedTitle = (title || '').split(' — ')[0].trim();
-    const contentMap = {
-      'ANRIN certifierat igen: WHG- och LAU-ytor godkända': `
-        <p>ANRIN är stolta över att återigen ha uppnått certifiering enligt WHG (Wassergefährdungsklasse) och LAU (Lageranlagenverordnung) för våra dräneringssystem. Dessa certifieringar bekräftar att våra produkter uppfyller de strängaste kraven för vattenföroreningsskydd och lagring av farliga ämnen.</p>
-        <p>Certifieringen omfattar hela vårt sortiment av polymerbetongrännor och tillbehör, vilket ger våra kunder trygghet i att de väljer produkter som är både säkra och miljövänliga. Oavsett om det gäller parkeringsplatser, industriområden eller sportanläggningar, kan ni lita på ANRINs dräneringssystem.</p>
-        <p>Vårt kontinuerliga fokus på kvalitetssäkring och innovation gör att vi ständigt förbättrar våra produkter för att möta och överträffa gällande standarder och kundförväntningar. Denna återcertifiering är ett bevis på vårt engagemang för excellens.</p>
-        <p>WHG-certifieringen är särskilt viktig för installationer där det finns risk för vattenförorening, såsom parkeringsplatser, garage och industriområden. LAU-certifieringen gäller för lagringsanläggningar för farliga ämnen och garanterar att våra dräneringssystem kan hantera potentiella läckage.</p>
-        <p>Genom att upprätthålla dessa certifieringar visar ANRIN att vi är en pålitlig partner för projekt som kräver högsta säkerhets- och miljöstandarder. Våra kunder kan känna sig trygga i att de väljer produkter som uppfyller alla relevanta regelverk.</p>
-      `,
-      'Hållbarhet hos ANRIN': `
-        <p>Hållbarhet är kärnan i ANRINs affärsmodell. Vi arbetar aktivt med att minska vår miljöpåverkan genom hela produktlivscykeln – från råvaruval till produktion och leverans.</p>
-        <p>Våra polymerbetongrännor tillverkas med återvunnet material och är 100% återvinningsbara vid slutet av sin livstid. Vi har investerat i energieffektiva produktionsanläggningar och strävar efter att minimera avfall och utsläpp.</p>
-        <p>Genom våra miljöproduktdeklarationer (EPD) enligt ISO 14025 / EN 15804 ger vi full transparens kring våra produkters miljöpåverkan, vilket gör det enkelt för våra kunder att göra informerade och hållbara val.</p>
-        <p>Vi har satt upp ambitiösa mål för att minska vårt koldioxidavtryck och öka andelen återvunnet material i våra produkter. Vårt mål är att vara ledande inom branschen när det gäller hållbar produktion.</p>
-        <p>ANRIN samarbetar också med forskningsinstitutioner och branschorganisationer för att ständigt förbättra våra hållbarhetspraxis. Vi tror att genom innovation och samarbete kan vi skapa en mer hållbar framtid för dräneringsbranschen.</p>
-      `,
-      'Den horisontella Venturi-kopplingen': `
-        <p>Den nya horisontella Venturi-kopplingen representerar ett betydande framsteg inom dräneringsteknik. Genom sin innovativa design möjliggör den effektiv luktavskiljning utan att kompromissa med flödeskapaciteten.</p>
-        <p>Kopplingen är särskilt utformad för att hantera utmanande situationer där traditionella vertikala luktlock inte är optimala. Den horisontella placeringen gör installation enklare och mer flexibel, samtidigt som den bibehåller hög prestanda.</p>
-        <p>Med denna innovation fortsätter ANRIN att leda utvecklingen av smarta och effektiva dräneringslösningar för moderna byggprojekt. Venturi-kopplingen är resultatet av år av forskning och utveckling.</p>
-        <p>Tekniken bakom Venturi-kopplingen bygger på principen om skapande av undertryck som effektivt förhindrar luktutsläpp samtidigt som vattenflödet optimeras. Detta ger en unik kombination av funktionalitet och effektivitet.</p>
-        <p>Installationen är enkel och kräver minimalt underhåll, vilket gör den till ett kostnadseffektivt val för både nya projekt och renoveringar. Kopplingen är också kompatibel med de flesta standardrörsystem.</p>
-      `,
-      'Behind The Scenes': `
-        <p>Få en unik inblick i ANRINs vardag och upptäck passionen och expertisen som driver oss framåt. Vår nya video tar med dig bakom kulisserna på våra produktionsanläggningar och visar hur vi skapar Europas ledande dräneringssystem.</p>
-        <p>Från noggrann kvalitetskontroll till innovativ produktutveckling – varje steg i processen präglas av vårt engagemang för excellens. Möt våra skickliga hantverkare och ingenjörer som varje dag arbetar för att leverera produkter av högsta kvalitet.</p>
-        <p>Videoen ger också en inblick i hur vi integrerar hållbarhet i alla aspekter av vår verksamhet, från materialval till energiförbrukning. Vi visar hur vi ständigt strävar efter att minska vår miljöpåverkan.</p>
-        <p>Du får också se hur vi arbetar med våra kunder för att skapa skräddarsydda lösningar som möter deras specifika behov. Varje projekt är unikt, och vi anpassar våra produkter och tjänster därefter.</p>
-        <p>Genom att dela denna inblick vill vi bygga förtroende och transparens med våra kunder och partners. Vi tror att öppenhet är nyckeln till långsiktiga och framgångsrika relationer.</p>
-      `,
-      'ANRIN på Carrefour des Gestions Locales de L\'Eau 2024': `
-        <p>ANRIN är stolta över att delta i Carrefour des Gestions Locales de l'Eau 2024, en av de viktigaste konferenserna för vattenhantering i Frankrike. Evenemanget samlar experter, beslutsfattare och innovatörer från hela Europa.</p>
-        <p>Vårt fokus på mässan är att presentera våra senaste innovationer inom dräneringsteknik och hållbara vattenlösningar. Vi visar upp hur våra produkter bidrar till effektiv stormvattenhantering och minskad miljöpåverkan.</p>
-        <p>Besök oss på vår monter för att diskutera era projekt och upptäck hur ANRIN kan hjälpa er att uppnå era hållbarhetsmål med våra certifierade dräneringssystem. Vårt team av experter finns på plats för att svara på era frågor.</p>
-        <p>Vi kommer också att presentera fallstudier från framgångsrika projekt runt om i Europa, vilket visar hur våra lösningar kan tillämpas i olika typer av miljöer och applikationer.</p>
-        <p>Deltagandet i Carrefour des Gestions Locales de l'Eau är en del av vårt engagemang för att vara aktivt involverade i branschutvecklingen och dela kunskap med andra ledande aktörer inom vattenhantering.</p>
-      `,
-      'ANRIN på World of Concrete 2024': `
-        <p>World of Concrete i Las Vegas är världens största mässa för betong- och murbranschens proffs. ANRIN är där för att presentera våra premium dräneringslösningar för den amerikanska marknaden.</p>
-        <p>Våra polymerbetongrännor är idealiska för betongkonstruktioner tack vare sin exceptionella hållbarhet, lätta vikt och enkla installation. Vi visar hur våra produkter kan integreras sömlöst i olika betongprojekt.</p>
-        <p>Möt vårt team för att lära dig mer om hur ANRINs lösningar kan förbättra dina projekt med avseende på prestanda, kostnadseffektivitet och hållbarhet. Vi erbjuder personliga konsultationer och projektspecifika rekommendationer.</p>
-        <p>Vi kommer också att demonstrera installationstekniker och visa hur våra produkter kan spara tid och pengar på byggarbetsplatser. Vårt fokus är på praktiska lösningar som gör skillnad i vardagen.</p>
-        <p>Vårt deltagande i World of Concrete markerar vårt engagemang för att expandera vår närvaro på den globala marknaden och bygga relationer med nya partners och kunder i USA.</p>
-      `,
-      'ANRIN Venturi-Socket': `
-        <p>ANRIN Venturi-Socket är en banbrytande innovation inom rörsockelsteknik. Denna standard-rörsockel med integrerad spjällklaff möjliggör rena rör utan luktbildning – en lösning som revolutionerar dräneringssystem.</p>
-        <p>Spjällklaffen fungerar som en effektiv barriär mot lukt samtidigt som den tillåter optimalt vattenflöde. Detta minimerar risken för dålig lukt i dräneringssystem samtidigt som prestandan bibehålls.</p>
-        <p>Venturi-Socket är kompatibel med standardrör och enkel att installera, vilket gör den till ett utmärkt val för både nya projekt och renoveringar. Installationen kräver inga specialverktyg eller komplexa procedurer.</p>
-        <p>Produkten är tillverkad av högkvalitativa material som garanterar lång livslängd och minimalt underhåll. Den är designad för att tåla de krav som ställs i moderna dräneringssystem.</p>
-        <p>Venturi-Socket har testats och certifierats enligt gällande standarder, vilket ger våra kunder trygghet i att de väljer en pålitlig och effektiv lösning för sina dräneringsbehov.</p>
-      `,
-      'Intervjun om ANRINs varumärkesrelansering': `
-        <p>Se vår exklusiva intervju där vi diskuterar bakgrunden till ANRINs varumärkesrelansering och den nya riktning vi har tagit. Lär dig om visionen, strategin och de värderingar som driver oss framåt.</p>
-        <p>Relanseringen markerar ett viktigt steg i ANRINs utveckling från en traditionell tillverkare till ett modernt, designfokuserat varumärke som ledande inom dräneringslösningar.</p>
-        <p>Intervjun belyser också vårt engagemang för hållbarhet, innovation och kundfokus – kärnvärden som definierar vem vi är och vad vi står för. Dessa värden ligger till grund för alla våra beslut och handlingar.</p>
-        <p>Vi diskuterar också de utmaningar och möjligheter som vi har mött under resan, och hur vi har anpassat oss till en föränderlig marknad. Vår förmåga att innovera och utvecklas har varit avgörande för vår framgång.</p>
-        <p>Intervjun ger också en inblick i våra framtidsplaner och hur vi avser att fortsätta leda branschen genom innovation och design. Vi har spännande projekt och initiativ på gång.</p>
-      `,
-      'ANRIN Video: Kanalrenovering': `
-        <p>Vår nya video om kanalrenovering visar hur ANRINs produkter och expertis kan förvandla gamla, slitna dräneringssystem till moderna, effektiva lösningar.</p>
-        <p>Vi visar hela processen från analys och planering till installation och slutresultat. Se hur våra polymerbetongrännor kan installeras snabbt och effektivt, vilket minimerar störningar och kostnader.</p>
-        <p>Videoen innehåller också tips och bästa praxis för framgångsrika kanalrenoveringsprojekt, baserat på vår långa erfarenhet inom branschen. Vi delar med oss av vår expertis för att hjälpa er att lyckas med era projekt.</p>
-        <p>Vi visar också hur man identifierar vanliga problem i gamla dräneringssystem och hur man väljer rätt lösningar för att åtgärda dem. Vår metodik är grundad i års erfarenhet och teknisk expertis.</p>
-        <p>Genom att visa konkreta exempel på framgångsrika renoveringar vill vi inspirera och informera våra kunder om möjligheterna med moderna dräneringsteknik.</p>
-      `,
-      'Att välja rätt dräneringsränna för uppfarten': `
-        <p>Val av rätt dräneringsränna för uppfarten är avgörande för både funktionalitet och estetik. I denna guide går vi igenom de viktigaste faktorerna att överväga.</p>
-        <p>Belastningskrav, designpreferenser och budget är alla viktiga överväganden. Vi förklarar hur olika rännor passar olika behov – från lätta bostadsuppfarter till tungt trafikerade kommersiella områden.</p>
-        <p>Vi visar också hur installation och underhåll påverkar det totala ägandekostnaden över tid, vilket hjälper dig att göra ett informerat beslut. En billigare ränna kan bli dyrare i längden om den kräver frekvent underhåll.</p>
-        <p>Vi diskuterar också materialval och hur olika material presterar under olika förhållanden. Polymerbetong är till exempel känt för sin hållbarhet och motståndskraft mot väder och slitage.</p>
-        <p>Slutligen ger vi rekommendationer för specifika situationer och hjälper dig att matcha rätt produkt med dina specifika behov och förutsättningar.</p>
-      `,
-      'Funktionell estetik': `
-        <p>Funktionell estetik är kärnan i ANRINs filosofi. Vi tror att dräneringssystem inte bara ska vara funktionella – de ska också förbättra den visuella miljön där de installeras.</p>
-        <p>Med miljontals meter installerade runt om i världen har vi ett stort ansvar för de miljöer vi omger. Våra produkter är designade för att integreras sömlöst i olika arkitektoniska stilar, från moderna till klassiska.</p>
-        <p>Genom att kombinera hög prestanda med elegant design skapar vi lösningar som både löser tekniska problem och höjer den estetiska kvaliteten på projekt. Design är inte en eftertanke – det är en integrerad del av vår produktutveckling.</p>
-        <p>Vi samarbetar med arkitekter och designers för att skapa produkter som uppfyller både tekniska och estetiska krav. Vårt mål är att dränering ska vara en designfunktion, inte en nödvändig olägenhet.</p>
-        <p>Vårt sortiment inkluderar olika stilar och finisher, vilket gör det möjligt att anpassa dräneringen till specifika projekt och designvisioner. Vi erbjuder också anpassade lösningar för unika projekt.</p>
-      `,
-      'ANRIN LEADING WATER Image Film': `
-        <p>Vårt nya varumärkesfilm "LEADING WATER" fångar kärnan i ANRINs identitet och vision. Filmen visar hur vi leder utvecklingen inom dräneringsteknik genom innovation och design.</p>
-        <p>Från våra avancerade produktionsanläggningar till imponerande installationsprojekt runt om i världen – filmen ger en omfattande bild av vem vi är och vad vi står för.</p>
-        <p>Se filmen för att förstå varför ANRIN är det naturliga valet för arkitekter, ingenjörer och byggare som kräver det bästa inom dränering. Vi visar hur våra produkter gör skillnad i verkliga projekt.</p>
-        <p>Filmen innehåller också intervjuer med vårt team och partners, som delar sina perspektiv på vad som gör ANRIN unikt. Du får höra från de som arbetar med våra produkter dagligen.</p>
-        <p>Genom att berätta vår story på ett visuellt och engagerande sätt vill vi bygga starkare relationer med våra kunder och visa dem passionen och expertisen som driver oss.</p>
-      `,
-      'Funktionella byggkomponenter för pålitlig dränering': `
-        <p>ANRIN erbjuder ett brett sortiment av funktionella byggkomponenter för pålitlig dränering i alla typer av miljöer – från gångzoner till landningsbanor.</p>
-        <p>Våra produkter är utformade för att möta specifika krav för olika användningsområden. För gångzoner erbjuder vi eleganta, lågprofilerade rännor som integreras diskret i landskapet. För landningsbanor och tung industri har vi högkapacitetslösningar som tål extrema belastningar.</p>
-        <p>Oavsett applikation kan ni lita på ANRINs produkter för att leverera konsekvent prestanda och lång livslängd. Våra produkter är testade och certifierade för att uppfylla de strängaste kraven.</p>
-        <p>Vi erbjuder också ett komplett utbud av tillbehör och komponenter som gör det möjligt att skapa skräddarsydda dräneringssystem för alla typer av projekt.</p>
-        <p>Vårt team av tekniska experter finns tillgängligt för att hjälpa er att välja rätt produkter för era specifika behov och att ge support genom hela projektet.</p>
-      `,
-      'Dagvattenhantering': `
-        <p>Kontrollerad ytavvattning är avgörande för en säker miljö och ett hållbart kretslopp. ANRIN står i frontlinjen för utveckling av effektiva dagvattenhanteringssystem.</p>
-        <p>Våra dräneringslösningar är designade för att hantera stormvatten på ett kontrollerat sätt, vilket minimerar risken för översvämningar och vattenskador. Vi integrerar även möjligheter för vattenåtervinning och infiltration där det är lämpligt.</p>
-        <p>Genom att kombinera innovativ teknik med miljövänliga material bidrar vi till att skapa mer hållbara städer och samhällen. Våra lösningar är designade för att fungera i harmoni med naturen.</p>
-        <p>Vi samarbetar med stadsplanerare, ingenjörer och myndigheter för att utveckla integrerade dagvattenhanteringssystem som möter både nuvarande och framtida behov.</p>
-        <p>Vårt mål är att vara en ledande aktör inom hållbar dagvattenhantering och att bidra till att skapa mer resilienta samhällen som kan hantera klimatförändringarnas utmaningar.</p>
-      `,
-      'Omdefinieringen av varumärket ANRIN': `
-        <p>Sedan varumärkesrelanseringen i oktober 2020 har det ägarledda ANRIN positionerat sig som leverantör av högsta kvalitet och estetik inom dräneringsbranschen.</p>
-        <p>Relanseringen markerade en strategisk omvandling från en traditionell tillverkare till ett modernt, designfokuserat varumärke. Vi har investerat i produktutveckling, design och varumärkesbyggande för att differentiera oss på marknaden.</p>
-        <p>Resultatet är ett starkt varumärke som är synonymt med innovation, kvalitet och estetisk excellens – erkänt av arkitekter och ingenjörer över hela Europa. Våra produkter är nu ett förstahandsval för designmedvetna projekt.</p>
-        <p>Vi har också stärkt vår närvaro på nya marknader och expanderat vårt distributionsnätverk för att bättre kunna betjäna våra kunder globalt. Vårt fokus på internationalisering fortsätter.</p>
-        <p>Varumärkesomvandlingen har också inneburit investeringar i digitala kanaler och kundupplevelse, vilket gör det enklare för våra kunder att interagera med oss och hitta rätt lösningar för sina behov.</p>
-      `,
-      'Vårt nya utseende!': `
-        <p>Den 2 oktober 2020 firade vi vårt varumärke tillsammans med kollegor och partners, i mindre kretsar på grund av Corona-restriktionerna. Detta markerade den officiella lanseringen av ANRINs nya identitet.</p>
-        <p>Vårt nya utseende speglar vår vision och ambition att leda branschen genom innovation och design. Den moderna, minimalistiska estetiken kommunicerar vår position som en premiumleverantör av dräneringslösningar.</p>
-        <p>Även om firandet var i mindre skala än planerat, var det ett viktigt ögonblick för oss att fira vår resa och titta fram emot de spännande möjligheter som ligger framför oss.</p>
-        <p>Den nya visuella identiteten inkluderar ett uppdaterat logotyp, färgpalett och grafisk profil som konsekvent appliceras över alla våra kanaler och material.</p>
-        <p>Vi har också lanserat en ny webbplats och digitala plattformar som bättre reflekterar vårt nya varumärke och gör det enklare för våra kunder att utforska vårt sortiment och hitta relevant information.</p>
-      `
-    };
-    
-    return contentMap[title] || contentMap[normalizedTitle] || '<p>Läs mer om denna artikel på ANRINs officiella webbplats. Artikeln innehåller detaljerad information om ämnet och visar hur ANRINs produkter och lösningar kan bidra till era projekt. Kontakta oss för mer information och personlig rådgivning.</p>';
   }
 
   function close(){
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('news-modal-open');
-    if(window.location.hash === '#news-article'){
+    if(window.location.hash.includes('news')){
       if(window.history && typeof window.history.replaceState === 'function'){
         window.history.replaceState(null, '', window.location.pathname + window.location.search);
       } else {
         window.location.hash = '';
       }
     }
-    console.log('Modal closed');
   }
 
-  links.forEach(link=>{
-    link.dataset.sourceHref = link.getAttribute('href') || '';
-    link.setAttribute('href', '#news-article');
-    link.removeAttribute('target');
-    link.removeAttribute('rel');
-    link.addEventListener('click', (e)=>{
+  cards.forEach((card) => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
       e.preventDefault();
-      console.log('Link clicked, opening modal');
-      open(link.closest('.news-card'));
+      e.stopPropagation();
+      open(card);
+    });
+
+    const links = card.querySelectorAll('a');
+    links.forEach(l => {
+      l.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        open(card);
+      });
     });
   });
 
-  if(closeBtn) closeBtn.addEventListener('click', (e)=>{
-    e.preventDefault();
-    close();
-  });
-  modal.addEventListener('click', (e)=>{ if(e.target === modal) close(); });
-  document.addEventListener('keydown', (e)=>{
-    if(e.key === 'Escape' && modal.classList.contains('open')) close();
-  });
+  if(closeBtn) closeBtn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); close(); });
+  modal.addEventListener('click', (e) => { if(e.target === modal) close(); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && modal.classList.contains('open')) close(); });
+
+  // If hash is present or page requested with hash, cleanly open first card
+  if(window.location.hash.includes('news')){
+    const targetCard = cards[0];
+    if(targetCard) setTimeout(() => open(targetCard), 50);
+  }
 }
 
 /* Reference detail modal — uses the REFERENCES array already defined above in this same script */
@@ -2498,22 +2441,6 @@ function initRefModal(){
     b.addEventListener('click', ()=> open(parseInt(b.getAttribute('data-ref-idx'),10)));
   });
   const closeBtn = modal.querySelector('.ref-modal-close');
-  if(closeBtn) closeBtn.addEventListener('click', ()=> modal.classList.remove('open'));
-  modal.addEventListener('click', (e)=>{ if(e.target === modal) modal.classList.remove('open'); });
-  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') modal.classList.remove('open'); });
-}
-
-document.addEventListener('DOMContentLoaded', ()=>{
-  initAintMobileMenu();
-  initNewsModal();
-  initRefModal();
-});
-
-</script>
-<button id="backToTop" aria-label="Till toppen"><svg viewBox="0 0 24 24"><path d="M12 19V5"/><polyline points="5 12 12 5 19 12"/></svg></button>
-<script>
-(function(){var b=document.getElementById('backToTop');if(!b)return;var t=null;var f=function(){if(t)return;t=setTimeout(function(){b.classList.toggle('show',window.scrollY>300);t=null;},80);};document.addEventListener('scroll',f,{passive:true});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();
-</script>
-<script src="../i18n.js"></script>
+<script src="i18n.js" onerror="this.onerror=null;this.src='../i18n.js';"></script>
 </body>
 </html>

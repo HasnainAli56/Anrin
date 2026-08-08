@@ -236,7 +236,8 @@
 
     // Apply saved language or auto-load i18n.js if missing
     var lang = 'en';
-    try { lang = localStorage.getItem('anrin_lang') || 'en'; } catch (e) {}
+try { lang = localStorage.getItem('anrin_lang') || 'en'; } catch (e) {}
+h.querySelectorAll('.lang-label').forEach(function(el) { el.textContent = lang.toUpperCase(); });
     if (typeof window.applyLanguage === 'function') {
       window.applyLanguage(lang);
     } else {

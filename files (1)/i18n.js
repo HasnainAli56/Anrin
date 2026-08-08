@@ -774,6 +774,145 @@ function autoRevealElements() {
   style.id = 'global-full-bleed-breakout-fix';
   style.textContent = `
 
+    /* ── Mobile Product Card Layout Fix (anrin-page-1 to 27) ──────────────── */
+    @media (max-width: 768px) {
+      .additional-products .row,
+      .responsive-tabs-component .row,
+      .tab-content .row {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 100% !important;
+      }
+
+      .additional-products .col,
+      .responsive-tabs-component .col,
+      .tab-content .col,
+      .sku-card,
+      .card-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: auto !important;
+        height: auto !important;
+        margin-bottom: 16px !important;
+      }
+
+      .additional-product-image-container,
+      .additional-product-image,
+      .card-image-wrapper {
+        position: relative !important;
+        width: 100% !important;
+        height: 220px !important;
+        max-height: 240px !important;
+        min-height: 180px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: hidden !important;
+        background: #f8f9fa !important;
+        border-radius: 12px !important;
+        padding: 12px !important;
+        box-sizing: border-box !important;
+      }
+
+      .additional-product-image img,
+      .additional-product-image-container img,
+      .card-image-wrapper img {
+        position: static !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+        margin: 0 auto !important;
+        display: block !important;
+      }
+
+      .additional-product-info,
+      .card-info {
+        padding: 16px 12px !important;
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      .additional-product-info .product-name,
+      .additional-product-info h3,
+      .additional-product-info h4 {
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        margin-bottom: 6px !important;
+        color: #111111 !important;
+      }
+
+      .additional-product-info .product-description,
+      .additional-product-info p {
+        font-size: 13.5px !important;
+        line-height: 1.5 !important;
+        color: #555555 !important;
+      }
+
+      /* Hero Stats 2x2 Grid Layout */
+      section.hero .wrap.hero-meta,
+      .hero .wrap.hero-meta,
+      .aint-hero-home .wrap.hero-meta,
+      .page-hero .wrap.hero-meta,
+      .htec-hero .wrap.hero-meta,
+      div.wrap.hero-meta,
+      .wrap.hero-meta,
+      .hero-meta,
+      .brand-meta-row,
+      .hero-stats,
+      .stat-row {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto auto !important;
+        gap: 24px 16px !important;
+        margin-top: 28px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+      section.hero .wrap.hero-meta > div,
+      .hero .wrap.hero-meta > div,
+      .aint-hero-home .wrap.hero-meta > div,
+      .page-hero .wrap.hero-meta > div,
+      .wrap.hero-meta > div,
+      .hero-meta > div,
+      .stat-row > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        flex: none !important;
+        box-sizing: border-box !important;
+      }
+
+      section.hero .wrap.hero-meta > div b,
+      .hero .wrap.hero-meta > div b,
+      .wrap.hero-meta > div b,
+      .hero-meta > div b,
+      .stat-row div b {
+        font-size: 24px !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+      }
+
+      section.hero .wrap.hero-meta > div span,
+      .hero .wrap.hero-meta > div span,
+      .wrap.hero-meta > div span,
+      .hero-meta > div span,
+      .stat-row div span {
+        font-size: 11px !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+      }
+    }
+
+
+
     /* ── Hero Stat Row Mobile 2x2 Grid Layout (2 per col, 2 per row) ────────── */
     .stat-row, div.stat-row, .hero-content .stat-row {
       display: flex !important;

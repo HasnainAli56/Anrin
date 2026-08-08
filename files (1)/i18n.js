@@ -773,12 +773,81 @@ function autoRevealElements() {
   const style = document.createElement('style');
   style.id = 'global-full-bleed-breakout-fix';
   style.textContent = `
+
+    /* ── Content Visibility & Preloader Failsafe Fix ───────────────────────── */
+    #preloader, div#preloader {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      z-index: -9999 !important;
+    }
+
+    .reveal, .eyebrow, .hero-sub, .hero-actions, h1.hero-title span em, .hero-content * {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .reveal {
+      transform: none !important;
+    }
+
+    /* ── Universal Layout & Media Responsiveness ────────────────────────────── */
+    *, *::before, *::after {
+      box-sizing: border-box !important;
+    }
+
     html, body {
       width: 100% !important;
-      max-width: 100% !important;
+      max-width: 100vw !important;
       margin: 0 !important;
+      padding: 0 !important;
       overflow-x: hidden !important;
+      -webkit-text-size-adjust: 100% !important;
     }
+
+    img, video, iframe, svg, canvas, picture {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+
+    table {
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+    }
+
+    .wrap, .container, .hero .wrap, .hero-content, .page-hero .wrap, 
+    .htec-hero .wrap, #hero .hero-inner, section.hero .wrap, 
+    footer .wrap, .main-site-footer .wrap, main.wrap {
+      max-width: 1320px !important;
+      width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding-left: 32px !important;
+      padding-right: 32px !important;
+      box-sizing: border-box !important;
+    }
+
+    @media (max-width: 768px) {
+      .wrap, .container, .hero .wrap, .hero-content, .page-hero .wrap, 
+      .htec-hero .wrap, #hero .hero-inner, section.hero .wrap, 
+      footer .wrap, .main-site-footer .wrap, main.wrap {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .wrap, .container, .hero .wrap, .hero-content, .page-hero .wrap, 
+      .htec-hero .wrap, #hero .hero-inner, section.hero .wrap, 
+      footer .wrap, .main-site-footer .wrap, main.wrap {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+    }
+
     .hero, .page-hero, .htec-hero, .aint-hero-home, #hero, section.hero {
       position: relative !important;
       width: 100% !important;
@@ -792,94 +861,125 @@ function autoRevealElements() {
       color: #ffffff !important;
       box-sizing: border-box !important;
     }
-    /* Header layout is owned by header.css — hero alignment owned by hero.css */
-    .wrap, .hero .wrap, .hero-content, .page-hero .wrap, .htec-hero .wrap, #hero .hero-inner, section.hero .wrap {
-      max-width: 1320px !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      padding-left: 32px !important;
-      padding-right: 32px !important;
-      box-sizing: border-box !important;
-      width: 100% !important;
-    }
 
-    @media (max-width: 768px) {
-      .wrap, .hero .wrap, .hero-content, .page-hero .wrap, .htec-hero .wrap, #hero .hero-inner, section.hero .wrap {
-        padding-left: 24px !important;
-        padding-right: 24px !important;
-      }
-    }
-
-    .hero-content, .hero .wrap, .page-hero .wrap, .htec-hero .wrap, #hero .hero-inner, section.hero .hero-content {
+    .hero-content {
       display: flex !important;
       flex-direction: column !important;
       align-items: flex-start !important;
       text-align: left !important;
     }
 
-    /* STRICT LEFT ALIGNMENT FOR EYEBROW, TITLE SPANS, AND DESCRIPTIONS */
-    .hero .eyebrow, #hero .eyebrow, .eyebrow, .hero-content .eyebrow {
-      margin-left: 0 !important;
-      margin-right: auto !important;
-      padding-left: 0 !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: flex-start !important;
-      text-align: left !important;
+    @media (max-width: 768px) {
+      .hero, .page-hero, .htec-hero, .aint-hero-home, #hero, section.hero {
+        padding-top: 100px !important;
+        padding-bottom: 48px !important;
+      }
     }
 
-    h1.hero-title, .hero-title, h1.hero-title span, h1.hero-title em, .hero-title span, .hero-title em {
-      text-align: left !important;
-      margin-left: 0 !important;
-      margin-right: auto !important;
-      padding-left: 0 !important;
-      display: block !important;
-      align-items: flex-start !important;
-      justify-content: flex-start !important;
+    /* ── Mobile Typography & Headings ─────────────────────────────────────── */
+    @media (max-width: 768px) {
+      h1, .hero-title, h1.hero-title, .page-hero h1 {
+        font-size: clamp(26px, 7vw, 42px) !important;
+        line-height: 1.18 !important;
+        letter-spacing: -0.015em !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+
+      h2, .section-title, h2.section-title, .cta-banner h2 {
+        font-size: clamp(22px, 5.5vw, 32px) !important;
+        line-height: 1.25 !important;
+        word-break: break-word !important;
+      }
+
+      h3, .card-title, h3.title, .cat-block h3, .product-card h3 {
+        font-size: clamp(18px, 4.5vw, 24px) !important;
+        line-height: 1.3 !important;
+      }
+
+      .lead, p.lead, .hero-sub, p.hero-sub, .section-desc {
+        font-size: clamp(14px, 3.8vw, 16.5px) !important;
+        line-height: 1.55 !important;
+      }
     }
 
-    .hero-sub, p.hero-sub, .hero-actions, .hero-meta, .hero-ctas {
-      text-align: left !important;
-      margin-left: 0 !important;
-      margin-right: auto !important;
-      padding-left: 0 !important;
-      align-items: flex-start !important;
-      justify-content: flex-start !important;
+    /* ── Layout Grids & Cards Transformation on Mobile ─────────────────────── */
+    @media (max-width: 992px) {
+      .split, .cat-block, .chart-card {
+        grid-template-columns: 1fr !important;
+        gap: 36px !important;
+      }
+      .products-grid, .projects-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
     }
 
-    .hero:not(.page-hero):not(.htec-hero) .eyebrow::before,
-    #hero:not(.page-hero) .eyebrow::before {
-      content: '' !important;
-      width: 7px !important;
-      height: 7px !important;
-      background: #10b981 !important;
-      border-radius: 50% !important;
-      display: inline-block !important;
+    @media (max-width: 640px) {
+      .products-grid, .projects-grid, .news-grid, .prod-grid, .grid, 
+      .ref-grid, .downloads-grid, .contact-grid, .hero-grid, .features-grid, 
+      .cat-grid, .cards-grid, .dl-grid, .specs-grid, .prod-cards, .system-grid, 
+      .products-grid, .use-cases-grid, .steps-grid, .stats-grid, .gallery-grid,
+      .footer-top, .main-site-footer .footer-top, .stat-row {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 20px !important;
+      }
+
+      .product-card, .project-card, .news-card, .prod-card, .card, 
+      .ref-card, .dl-row, .contact-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: auto !important;
+      }
+
+      .process-item {
+        grid-template-columns: 44px 1fr !important;
+        gap: 16px !important;
+      }
+      .process-item .pi-desc {
+        grid-column: 1 / -1 !important;
+      }
+
+      .hero-actions, .hero-ctas, .btn-group, .cta-banner .wrap, .cat-cta {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 12px !important;
+      }
+
+      .hero-actions a, .hero-ctas a, .btn-primary, .btn-secondary, 
+      .btn-quote, .btn, .btn-dark, .btn-ghost-line, .cta-banner a {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        min-height: 48px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+      }
     }
 
-    .hero:not(.page-hero):not(.htec-hero) .hero-actions,
-    .hero-actions {
-      display: flex !important;
-      flex-direction: row !important;
-      justify-content: flex-start !important;
-      align-items: center !important;
-      gap: 20px !important;
-      margin-left: 0 !important;
-      margin-right: auto !important;
-    }
-    .hero-brand-wordmark {
-      display: none !important;
-    }
-    .crumb, .eyebrow {
-      margin-top: 0 !important;
-      margin-bottom: 18px !important;
-      font-size: 12px !important;
-      letter-spacing: 0.08em !important;
-      text-transform: uppercase !important;
-      color: rgba(255, 255, 255, 0.75) !important;
+    @media (max-width: 768px) {
+      .news-modal-dialog, .ref-modal-dialog, .modal-dialog, .lightbox-dialog,
+      .modal-content, .news-modal .news-modal-dialog {
+        width: 94% !important;
+        max-width: 100% !important;
+        margin: 16px auto !important;
+        padding: 20px 16px !important;
+        max-height: 88vh !important;
+        overflow-y: auto !important;
+        border-radius: 16px !important;
+        box-sizing: border-box !important;
+      }
+
+      section, .section-pad {
+        padding-top: 44px !important;
+        padding-bottom: 44px !important;
+      }
     }
 
-  `;
+`;
   if (document.head) {
     document.head.appendChild(style);
   } else {

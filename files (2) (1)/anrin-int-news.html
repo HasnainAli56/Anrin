@@ -2388,21 +2388,19 @@ function initNewsModal(){
 
   cards.forEach((card) => {
     card.style.cursor = 'pointer';
-    card.addEventListener('click', (e) => {
+  });
+
+  document.addEventListener('click', (e) => {
+    const cardLink = e.target.closest('a[href*="#news-article"], .news-link');
+    const card = e.target.closest('.news-card');
+
+    if (cardLink || card) {
       e.preventDefault();
       e.stopPropagation();
-      open(card);
-    });
-
-    const links = card.querySelectorAll('a');
-    links.forEach(l => {
-      l.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        open(card);
-      });
-    });
-  });
+      const targetCard = card || (cardLink ? cardLink.closest('.news-card') : null) || cards[0];
+      open(targetCard);
+    }
+  }, true);
 
   if(closeBtn) closeBtn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); close(); });
   modal.addEventListener('click', (e) => { if(e.target === modal) close(); });

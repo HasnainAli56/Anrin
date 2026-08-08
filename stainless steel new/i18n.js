@@ -347,7 +347,7 @@ function setCookie(name, value, days) {
 }
 
 function triggerGoogleTranslate(lang) {
-  if (lang === 'sv' || lang === 'en') {
+  if (lang === 'sv') {
     // Clear Google Translate cookie so native dictionary translations render cleanly without auto-language shifting
     document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + window.location.hostname + "; path=/;";
@@ -357,7 +357,7 @@ function triggerGoogleTranslate(lang) {
 
   const select = document.querySelector('.goog-te-combo');
   if (select) {
-    select.value = (lang === 'sv' || lang === 'en') ? '' : lang;
+    select.value = (lang === 'sv') ? '' : lang;
     select.dispatchEvent(new Event('change'));
   }
 }
@@ -774,30 +774,36 @@ function autoRevealElements() {
   style.id = 'global-full-bleed-breakout-fix';
   style.textContent = `
 
-    /* ── Hero Stat Row Mobile Optimization (2x2 Grid, Zero Overlap) ────────── */
-    .stat-row, div.stat-row {
+    /* ── Hero Stat Row Mobile 2x2 Grid Layout (2 per col, 2 per row) ────────── */
+    .stat-row, div.stat-row, .hero-content .stat-row {
       display: flex !important;
       flex-wrap: wrap !important;
       gap: 36px !important;
       margin-top: 40px !important;
+      width: 100% !important;
     }
 
     @media (max-width: 768px) {
-      .stat-row, div.stat-row {
+      .stat-row, div.stat-row, .hero-content .stat-row {
         display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 24px 18px !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto auto !important;
+        gap: 24px 16px !important;
         margin-top: 28px !important;
         width: 100% !important;
+        max-width: 100% !important;
       }
       .stat-row > div {
+        width: 100% !important;
+        max-width: 100% !important;
         min-width: 0 !important;
-        word-break: break-word !important;
-        overflow: visible !important;
+        box-sizing: border-box !important;
+        flex: none !important;
       }
       .stat-row div b {
         font-size: 26px !important;
         line-height: 1.15 !important;
+        display: block !important;
       }
       .stat-row div span {
         font-size: 11px !important;
@@ -805,6 +811,20 @@ function autoRevealElements() {
         display: block !important;
       }
     }
+
+    @media (max-width: 400px) {
+      .stat-row, div.stat-row, .hero-content .stat-row {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 20px 12px !important;
+      }
+      .stat-row div b {
+        font-size: 22px !important;
+      }
+    }
+
+
+
+    
 
     @media (max-width: 400px) {
       .stat-row, div.stat-row {

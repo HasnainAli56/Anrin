@@ -774,6 +774,29 @@ function autoRevealElements() {
   style.id = 'global-full-bleed-breakout-fix';
   style.textContent = `
 
+    /* Partner Logos: Small, clean, in one horizontal line */
+    .partners-strip, .partners-strip.reveal {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-wrap: wrap !important;
+      gap: 28px !important;
+      width: 100% !important;
+      padding: 32px 0 !important;
+    }
+
+    .partners-strip img {
+      height: 28px !important;
+      max-height: 32px !important;
+      width: auto !important;
+      max-width: 130px !important;
+      object-fit: contain !important;
+      display: inline-block !important;
+    }
+      
+
+
     /* ── Content Visibility & Preloader Failsafe Fix ───────────────────────── */
     #preloader, div#preloader {
       display: none !important;

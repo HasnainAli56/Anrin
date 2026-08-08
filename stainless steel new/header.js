@@ -294,7 +294,7 @@ h.querySelectorAll('.lang-label').forEach(function(el) { el.textContent = lang.t
       '      <button id="pdfModalCloseBtn" style="background:none;border:none;color:#fff;font-size:26px;cursor:pointer;padding:0 8px;line-height:1;">&times;</button>',
       '    </div>',
       '  </div>',
-      '  <iframe id="pdfModalFrame" src="" style="width:100%;height:100%;border:none;background:#2a2a2a;"></iframe>',
+      '  <iframe id="pdfModalFrame" src="" style="width:100%;height:100%;flex:1;min-height:0;border:none;background:#525659;"></iframe>',
       '</div>'
     ].join('\n');
 

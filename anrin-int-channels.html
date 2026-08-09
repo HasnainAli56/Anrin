@@ -1083,17 +1083,61 @@ div.wrap.hero-meta > div b,
 
 @media (max-width: 768px) {
   section.hero, .hero, .page-hero, .htec-hero, .aint-hero-home {
-    padding-top: 110px !important;
+    padding-top: 100px !important;
   }
-  section.hero .wrap.hero-meta, .hero .wrap.hero-meta, .aint-hero-home .wrap.hero-meta, .wrap.hero-meta {
-    gap: 12px !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+  section.hero .wrap.hero-meta,
+  .hero .wrap.hero-meta,
+  .aint-hero-home .wrap.hero-meta,
+  .page-hero .wrap.hero-meta,
+  .htec-hero .wrap.hero-meta,
+  div.wrap.hero-meta,
+  .wrap.hero-meta,
+  .hero-meta,
+  .brand-meta-row,
+  .hero-stats {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto auto !important;
+    flex-direction: unset !important;
+    gap: 22px 14px !important;
+    padding: 20px 16px 0 16px !important;
+    margin-top: 28px !important;
+    max-width: 100% !important;
+    justify-content: unset !important;
   }
-  section.hero .wrap.hero-meta > div b, .hero .wrap.hero-meta > div b, .wrap.hero-meta > div b {
-    font-size: 18px !important;
+  section.hero .wrap.hero-meta > div,
+  .hero .wrap.hero-meta > div,
+  .aint-hero-home .wrap.hero-meta > div,
+  .page-hero .wrap.hero-meta > div,
+  .wrap.hero-meta > div,
+  .hero-meta > div,
+  .brand-meta-row > div,
+  .hero-stats > div {
+    flex: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
   }
-  section.hero .wrap.hero-meta > div, .hero .wrap.hero-meta > div, .wrap.hero-meta > div {
+  section.hero .wrap.hero-meta > div b,
+  .hero .wrap.hero-meta > div b,
+  .aint-hero-home .wrap.hero-meta > div b,
+  .page-hero .wrap.hero-meta > div b,
+  .wrap.hero-meta > div b,
+  .hero-meta > div b,
+  .brand-meta-row > div b,
+  .hero-stats > div b {
+    font-size: 19px !important;
+    white-space: nowrap !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+  }
+  section.hero .wrap.hero-meta > div,
+  .hero .wrap.hero-meta > div,
+  .wrap.hero-meta > div,
+  .hero-meta > div,
+  .brand-meta-row > div,
+  .hero-stats > div {
     font-size: 10px !important;
   }
 }

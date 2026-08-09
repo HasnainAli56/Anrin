@@ -651,3 +651,89 @@ body.light-header #siteHeader:not(.scrolled) .burger span {
   background: #ffffff !important;
 }
 
+
+
+/* ── 100% Transparent Top Header (Mobile & Web) ──────────────────── */
+#siteHeader:not(.scrolled),
+header#siteHeader:not(.scrolled),
+header:not(.scrolled) {
+  background: transparent !important;
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Light-header pages (white top background): dark text, logo & icons when NOT scrolled */
+#siteHeader.light-header:not(.scrolled) nav.main-nav a,
+#siteHeader.light-header:not(.scrolled) nav.main-nav span,
+body.light-header #siteHeader:not(.scrolled) nav.main-nav a,
+body.light-header #siteHeader:not(.scrolled) nav.main-nav span {
+  color: #111111 !important;
+  text-shadow: none !important;
+}
+
+#siteHeader.light-header:not(.scrolled) .logo img,
+body.light-header #siteHeader:not(.scrolled) .logo img {
+  filter: none !important;
+}
+
+#siteHeader.light-header:not(.scrolled) .icon-btn svg,
+body.light-header #siteHeader:not(.scrolled) .icon-btn svg {
+  stroke: #111111 !important;
+}
+
+#siteHeader.light-header:not(.scrolled) .lang-current,
+body.light-header #siteHeader:not(.scrolled) .lang-current {
+  color: #111111 !important;
+  border-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+#siteHeader.light-header:not(.scrolled) .lang-current svg,
+body.light-header #siteHeader:not(.scrolled) .lang-current svg {
+  stroke: #111111 !important;
+}
+
+#siteHeader.light-header:not(.scrolled) .btn-quote,
+body.light-header #siteHeader:not(.scrolled) .btn-quote {
+  color: #111111 !important;
+  border-color: #111111 !important;
+}
+
+#siteHeader.light-header:not(.scrolled) .burger span,
+body.light-header #siteHeader:not(.scrolled) .burger span {
+  background: #111111 !important;
+}
+
+/* Scrolled state: dark frosted navbar everywhere */
+#siteHeader.scrolled {
+  background: rgba(10, 10, 10, 0.92) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+}
+
+#siteHeader.scrolled nav.main-nav a,
+#siteHeader.scrolled nav.main-nav span,
+#siteHeader.scrolled .logo img {
+  color: #ffffff !important;
+  filter: brightness(0) invert(1) !important;
+}
+
+#siteHeader.scrolled .icon-btn svg,
+#siteHeader.scrolled .lang-current svg {
+  stroke: #ffffff !important;
+}
+
+#siteHeader.scrolled .lang-current,
+#siteHeader.scrolled .btn-quote {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+#siteHeader.scrolled .burger span {
+  background: #ffffff !important;
+}
+

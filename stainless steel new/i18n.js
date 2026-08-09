@@ -774,6 +774,96 @@ function autoRevealElements() {
   style.id = 'global-full-bleed-breakout-fix';
   style.textContent = `
 
+    /* ── Hero Stat Row Mobile Optimization (2 Cols x 2 Rows Grid, Zero Word Break) ── */
+    @media (max-width: 768px) {
+      section.hero .wrap.hero-meta,
+      .hero .wrap.hero-meta,
+      .aint-hero-home .wrap.hero-meta,
+      .page-hero .wrap.hero-meta,
+      .htec-hero .wrap.hero-meta,
+      div.wrap.hero-meta,
+      .wrap.hero-meta,
+      .hero-meta,
+      .brand-meta-row,
+      .hero-stats,
+      .stat-row,
+      div.stat-row {
+        all: unset !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto auto !important;
+        gap: 24px 16px !important;
+        margin-top: 32px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 20px 16px 0 16px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.14) !important;
+        box-sizing: border-box !important;
+      }
+
+      section.hero .wrap.hero-meta > div,
+      .hero .wrap.hero-meta > div,
+      .aint-hero-home .wrap.hero-meta > div,
+      .page-hero .wrap.hero-meta > div,
+      .wrap.hero-meta > div,
+      .hero-meta > div,
+      .brand-meta-row > div,
+      .hero-stats > div,
+      .stat-row > div {
+        all: unset !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+      }
+
+      section.hero .wrap.hero-meta > div b,
+      .hero .wrap.hero-meta > div b,
+      .aint-hero-home .wrap.hero-meta > div b,
+      .page-hero .wrap.hero-meta > div b,
+      .wrap.hero-meta > div b,
+      .hero-meta > div b,
+      .brand-meta-row > div b,
+      .hero-stats > div b,
+      .stat-row div b {
+        display: block !important;
+        font-family: 'Manrope', sans-serif !important;
+        font-size: 20px !important;
+        font-weight: 800 !important;
+        color: #ffffff !important;
+        margin-bottom: 4px !important;
+        white-space: nowrap !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        hyphens: none !important;
+        line-height: 1.15 !important;
+      }
+
+      section.hero .wrap.hero-meta > div span,
+      .hero .wrap.hero-meta > div span,
+      .wrap.hero-meta > div span,
+      .hero-meta > div span,
+      .brand-meta-row > div span,
+      .hero-stats > div span,
+      .stat-row div span {
+        display: block !important;
+        font-size: 11px !important;
+        color: rgba(255, 255, 255, 0.75) !important;
+        letter-spacing: 0.04em !important;
+        text-transform: uppercase !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        line-height: 1.3 !important;
+      }
+    }
+
+
+
     /* ── Universal Mobile Optimization for ANRIN Product Pages (anrin-page-1 to 27) ── */
     @media (max-width: 768px) {
       body {
@@ -902,86 +992,7 @@ function autoRevealElements() {
 
 
 
-    /* ── Hero Stat Row Mobile Optimization (2x2 Grid, Zero Word Break) ────────── */
-    @media (max-width: 768px) {
-      section.hero .wrap.hero-meta,
-      .hero .wrap.hero-meta,
-      .aint-hero-home .wrap.hero-meta,
-      .page-hero .wrap.hero-meta,
-      .htec-hero .wrap.hero-meta,
-      div.wrap.hero-meta,
-      .wrap.hero-meta,
-      .hero-meta,
-      .brand-meta-row,
-      .hero-stats,
-      .stat-row {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        grid-template-rows: auto auto !important;
-        gap: 20px 14px !important;
-        margin-top: 28px !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        padding-left: 16px !important;
-        padding-right: 16px !important;
-      }
-
-      section.hero .wrap.hero-meta > div,
-      .hero .wrap.hero-meta > div,
-      .aint-hero-home .wrap.hero-meta > div,
-      .page-hero .wrap.hero-meta > div,
-      .wrap.hero-meta > div,
-      .hero-meta > div,
-      .stat-row > div {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        flex: none !important;
-        box-sizing: border-box !important;
-      }
-
-      section.hero .wrap.hero-meta > div b,
-      .hero .wrap.hero-meta > div b,
-      .wrap.hero-meta > div b,
-      .hero-meta > div b,
-      .stat-row div b {
-        font-size: 18px !important;
-        font-weight: 800 !important;
-        white-space: nowrap !important;
-        word-break: normal !important;
-        overflow-wrap: normal !important;
-        hyphens: none !important;
-        line-height: 1.2 !important;
-      }
-
-      section.hero .wrap.hero-meta > div span,
-      .hero .wrap.hero-meta > div span,
-      .wrap.hero-meta > div span,
-      .hero-meta > div span,
-      .stat-row div span {
-        font-size: 11px !important;
-        white-space: normal !important;
-        word-break: normal !important;
-        overflow-wrap: break-word !important;
-        line-height: 1.3 !important;
-      }
-
-      /* Compact Mobile Product Card Sizing (anrin-page-1 to 27) */
-      .additional-product-image-container,
-      .additional-product-image {
-        height: auto !important;
-        max-height: 220px !important;
-        min-height: 140px !important;
-        padding: 16px !important;
-        background: #f8f9fa !important;
-      }
-
-      .additional-product-image img,
-      .additional-product-image-container img {
-        max-height: 180px !important;
-        object-fit: contain !important;
-      }
-    }
+    
 
 
 

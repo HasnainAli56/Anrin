@@ -725,10 +725,25 @@ if (document.readyState === 'loading') {
       color: inherit !important;
       cursor: inherit !important;
     }
-    body {
+    
+    html, body {
       top: 0px !important;
+      margin-top: 0px !important;
+      padding-top: 0px !important;
       position: static !important;
     }
+    .goog-te-banner-frame,
+    .goog-te-banner-frame.skiptranslate,
+    iframe.goog-te-banner-frame,
+    .skiptranslate.goog-te-banner-frame {
+      display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      width: 0 !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+  
     .skiptranslate:not(.notranslate):not(#google_translate_element) {
       display: none !important;
     }
@@ -1112,15 +1127,19 @@ function autoRevealElements() {
         box-sizing: border-box !important;
       }
 
-      section.hero .wrap.hero-meta > div b,
-      .hero .wrap.hero-meta > div b,
-      .wrap.hero-meta > div b,
-      .hero-meta > div b,
-      .stat-row div b {
-        font-size: 24px !important;
-        white-space: normal !important;
-        word-break: break-word !important;
-      }
+      
+    section.hero .wrap.hero-meta > div b,
+    .hero .wrap.hero-meta > div b,
+    .wrap.hero-meta > div b,
+    .hero-meta > div b,
+    .stat-row div b {
+      font-size: 17px !important;
+      white-space: nowrap !important;
+      word-break: normal !important;
+      overflow-wrap: normal !important;
+      hyphens: none !important;
+    }
+  
 
       section.hero .wrap.hero-meta > div span,
       .hero .wrap.hero-meta > div span,
@@ -1457,3 +1476,15 @@ document.addEventListener('anrin:header-mounted', function () {
 
 
 
+
+/* Continuous fail-safe to kill Google Translate top 40px body gap */
+setInterval(function() {
+  if (document.body) {
+    if (document.body.style.top !== '0px' && document.body.style.top !== '') document.body.style.top = '0px';
+    if (document.body.style.marginTop !== '0px' && document.body.style.marginTop !== '') document.body.style.marginTop = '0px';
+  }
+  if (document.documentElement) {
+    if (document.documentElement.style.top !== '0px' && document.documentElement.style.top !== '') document.documentElement.style.top = '0px';
+    if (document.documentElement.style.marginTop !== '0px' && document.documentElement.style.marginTop !== '') document.documentElement.style.marginTop = '0px';
+  }
+}, 150);

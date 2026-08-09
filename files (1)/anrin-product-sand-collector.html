@@ -346,16 +346,20 @@ div.wrap.hero-meta > div b,
   .wrap.hero-meta,
   .hero-meta,
   .brand-meta-row,
-  .hero-stats {
+  .hero-stats,
+  .stat-row,
+  div.stat-row {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     grid-template-rows: auto auto !important;
     flex-direction: unset !important;
-    gap: 22px 14px !important;
-    padding: 20px 16px 0 16px !important;
-    margin-top: 28px !important;
+    gap: 20px 12px !important;
+    padding: 18px 16px 0 16px !important;
+    margin-top: 24px !important;
+    width: 100% !important;
     max-width: 100% !important;
     justify-content: unset !important;
+    box-sizing: border-box !important;
   }
   section.hero .wrap.hero-meta > div,
   .hero .wrap.hero-meta > div,
@@ -364,11 +368,13 @@ div.wrap.hero-meta > div b,
   .wrap.hero-meta > div,
   .hero-meta > div,
   .brand-meta-row > div,
-  .hero-stats > div {
+  .hero-stats > div,
+  .stat-row > div {
     flex: none !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
+    box-sizing: border-box !important;
   }
   section.hero .wrap.hero-meta > div b,
   .hero .wrap.hero-meta > div b,
@@ -377,20 +383,26 @@ div.wrap.hero-meta > div b,
   .wrap.hero-meta > div b,
   .hero-meta > div b,
   .brand-meta-row > div b,
-  .hero-stats > div b {
-    font-size: 19px !important;
+  .hero-stats > div b,
+  .stat-row div b {
+    font-size: 17px !important;
     white-space: nowrap !important;
     word-break: normal !important;
     overflow-wrap: normal !important;
     hyphens: none !important;
+    line-height: 1.15 !important;
   }
-  section.hero .wrap.hero-meta > div,
-  .hero .wrap.hero-meta > div,
-  .wrap.hero-meta > div,
-  .hero-meta > div,
-  .brand-meta-row > div,
-  .hero-stats > div {
-    font-size: 10px !important;
+  section.hero .wrap.hero-meta > div span,
+  .hero .wrap.hero-meta > div span,
+  .wrap.hero-meta > div span,
+  .hero-meta > div span,
+  .brand-meta-row > div span,
+  .hero-stats > div span,
+  .stat-row div span {
+    font-size: 10.5px !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    line-height: 1.25 !important;
   }
 }
 </style>

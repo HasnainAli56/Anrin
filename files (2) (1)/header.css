@@ -1,3 +1,5 @@
+/* Anti Top Gap Rule */
+html, body { top: 0 !important; margin-top: 0 !important; padding-top: 0 !important; }
 /* =============================================================
    ANRIN NORDIC — header.css (Single Source of Truth)
    Transparent header over hero, dark frosted bar on scroll.

@@ -133,26 +133,50 @@
 
   /* ── Mobile burger: open #mobile-menu if present, else toggle nav ──────── */
   function bindBurger(header) {
-    var btn = header.querySelector('#burgerBtn');
-    if (!btn) return;
-    var mm = document.getElementById('mobile-menu');
-    if (mm) {
-      btn.addEventListener('click', function () {
-        mm.classList.add('open');
-        document.body.classList.add('mobile-menu-open');
-      });
-      var close = document.getElementById('closeMenu');
-      if (close) close.addEventListener('click', function () {
-        mm.classList.remove('open');
-        document.body.classList.remove('mobile-menu-open');
-      });
-    } else {
-      var nav = header.querySelector('nav.main-nav');
-      if (nav) btn.addEventListener('click', function () {
-        nav.classList.toggle('mobile-open');
-        btn.classList.toggle('active');
-      });
+    function attachBurgerHandler(forceRebind) {
+      var btn = header.querySelector('#burgerBtn');
+      if (!btn) return;
+      if (btn.dataset.anrinMenuBound === 'true' && !forceRebind) return;
+
+      /* Replace node so duplicate page-level listeners cannot stack on the same button */
+      var freshBtn = btn.cloneNode(true);
+      btn.parentNode.replaceChild(freshBtn, btn);
+      btn = freshBtn;
+      btn.dataset.anrinMenuBound = 'true';
+
+      var mm = document.getElementById('mobile-menu');
+      if (mm) {
+        function closeMobileMenu() {
+          mm.classList.remove('open');
+          document.body.classList.remove('mobile-menu-open');
+        }
+        function openMobileMenu() {
+          mm.classList.add('open');
+          document.body.classList.add('mobile-menu-open');
+        }
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (mm.classList.contains('open')) closeMobileMenu();
+          else openMobileMenu();
+        });
+        var close = document.getElementById('closeMenu');
+        if (close) close.addEventListener('click', closeMobileMenu);
+        document.querySelectorAll('#mobile-menu a').forEach(function (link) {
+          link.addEventListener('click', closeMobileMenu);
+        });
+      } else {
+        var nav = header.querySelector('nav.main-nav');
+        if (nav) btn.addEventListener('click', function () {
+          nav.classList.toggle('mobile-open');
+          btn.classList.toggle('active');
+        });
+      }
     }
+
+    attachBurgerHandler(false);
+    /* Re-bind after inline page scripts so only one toggle handler remains */
+    window.addEventListener('load', function () { attachBurgerHandler(true); });
   }
 
   
@@ -204,6 +228,86 @@
     });
   }
 
+  /* ── Late mobile fixes (must run after page inline styles) ─────────────── */
+  function injectLateMobileFixes() {
+    var style = document.getElementById('anrin-late-mobile-fixes');
+    if (!style) {
+      style = document.createElement('style');
+      style.id = 'anrin-late-mobile-fixes';
+      document.head.appendChild(style);
+    }
+    style.textContent = [
+      '@media (max-width: 900px) {',
+      '  html:has(body .hero), html:has(body section.hero) { background: #000000 !important; }',
+      '  body:has(.hero), body:has(section.hero), body:has(.page-hero), body:has(.htec-hero), body:has(.aint-hero-home) {',
+      '    padding-top: 0 !important;',
+      '    background-color: #000000 !important;',
+      '  }',
+      '  .hero .wrap.hero-content .hero-meta,',
+      '  section.hero .wrap.hero-content .hero-meta,',
+      '  .hero .hero-meta,',
+      '  .hero-meta {',
+      '    display: grid !important;',
+      '    grid-template-columns: 1fr 1fr !important;',
+      '    grid-template-rows: auto auto !important;',
+      '    gap: 24px 20px !important;',
+      '    width: 100% !important;',
+      '    max-width: 100% !important;',
+      '    flex-direction: unset !important;',
+      '    justify-content: unset !important;',
+      '    align-items: unset !important;',
+      '  }',
+      '  .hero .wrap.hero-content .hero-meta > div,',
+      '  .hero .hero-meta > div,',
+      '  .hero-meta > div {',
+      '    flex: none !important;',
+      '    width: 100% !important;',
+      '    max-width: 100% !important;',
+      '    min-width: 0 !important;',
+      '  }',
+      '  .hero .wrap.hero-content .hero-meta > div b,',
+      '  .hero .hero-meta > div b,',
+      '  .hero-meta > div b {',
+      '    white-space: normal !important;',
+      '    word-break: normal !important;',
+      '    overflow-wrap: normal !important;',
+      '    hyphens: none !important;',
+      '    font-size: clamp(16px, 4.5vw, 22px) !important;',
+      '    line-height: 1.2 !important;',
+      '  }',
+      '  .hero .wrap.hero-content .hero-meta > div span,',
+      '  .hero .hero-meta > div span,',
+      '  .hero-meta > div span {',
+      '    white-space: normal !important;',
+      '    word-break: normal !important;',
+      '    overflow-wrap: normal !important;',
+      '    font-size: 10px !important;',
+      '    line-height: 1.35 !important;',
+      '  }',
+      '}',
+      '@media (max-width: 1100px) {',
+      '  #mobile-menu .close-btn, #closeMenu {',
+      '    display: none !important;',
+      '    visibility: hidden !important;',
+      '    pointer-events: none !important;',
+      '  }',
+      '  body.mobile-menu-open #siteHeader .burger,',
+      '  body.mobile-menu-open #burgerBtn {',
+      '    display: flex !important;',
+      '    visibility: visible !important;',
+      '    opacity: 1 !important;',
+      '    pointer-events: auto !important;',
+      '  }',
+      '  body.mobile-menu-open #siteHeader .burger span:nth-child(1),',
+      '  body.mobile-menu-open #burgerBtn span:nth-child(1) { transform: translateY(7px) rotate(45deg) !important; }',
+      '  body.mobile-menu-open #siteHeader .burger span:nth-child(2),',
+      '  body.mobile-menu-open #burgerBtn span:nth-child(2) { opacity: 0 !important; }',
+      '  body.mobile-menu-open #siteHeader .burger span:nth-child(3),',
+      '  body.mobile-menu-open #burgerBtn span:nth-child(3) { transform: translateY(-7px) rotate(-45deg) !important; }',
+      '}'
+    ].join('\n');
+  }
+
   /* ── Mount ─────────────────────────────────────────────────────────────── */
   function mount() {
     injectCSS();
@@ -230,6 +334,7 @@
     bindSearch(h);
     bindBurger(h);
     bindLangSwitcher(h);
+    injectLateMobileFixes();
 
     // Signal i18n.js (which handles lang dropdown + mega menu)
     document.dispatchEvent(new CustomEvent('anrin:header-mounted', { detail: { header: h } }));
@@ -264,6 +369,7 @@ h.querySelectorAll('.lang-label').forEach(function(el) { el.textContent = lang.t
   } else {
     mount();
   }
+  window.addEventListener('load', injectLateMobileFixes);
 })();
 
 
@@ -490,52 +596,6 @@ h.querySelectorAll('.lang-label').forEach(function(el) { el.textContent = lang.t
 })();
 
 
-/* Global Robust Interceptor for ALL anrin.com & external links to keep users on anrin.vercel.app */
-(function() {
-  document.addEventListener('click', function(e) {
-    var a = e.target.closest('a[href]');
-    if (!a) return;
-
-    var href = a.getAttribute('href') || '';
-    if (!href || href.indexOf('mailto:') === 0 || href.indexOf('tel:') === 0) return;
-
-    var lower = href.toLowerCase();
-    
-    // Intercept any link pointing to anrin.com, anrin.se, or external domain
-    if (lower.indexOf('anrin.com') !== -1 || lower.indexOf('anrin.se') !== -1) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      if (lower.indexOf('reference') !== -1 || lower.indexOf('projekt') !== -1) {
-        window.location.href = 'projekt.html';
-      } else if (lower.indexOf('news') !== -1 || lower.indexOf('nyheter') !== -1) {
-        window.location.href = 'anrin-int-news.html';
-      } else if (lower.indexOf('faq') !== -1) {
-        window.location.href = 'anrin-int-faq.html';
-      } else if (lower.indexOf('download') !== -1 || lower.indexOf('nedladdningar') !== -1) {
-        window.location.href = 'nedladdningar.html';
-      } else if (lower.indexOf('contact') !== -1 || lower.indexOf('kontakt') !== -1) {
-        window.location.href = 'kontakt.html';
-      } else if (lower.indexOf('about') !== -1 || lower.indexOf('om-oss') !== -1) {
-        window.location.href = 'om-oss.html';
-      } else if (lower.indexOf('sf') !== -1) {
-        window.location.href = 'anrin-page-2.html';
-      } else if (lower.indexOf('z-') !== -1) {
-        window.location.href = 'anrin-page-3.html';
-      } else if (lower.indexOf('self') !== -1) {
-        window.location.href = 'anrin-page-4.html';
-      } else if (lower.indexOf('sport') !== -1) {
-        window.location.href = 'anrin-page-10.html';
-      } else if (lower.indexOf('produkter') !== -1 || lower.indexOf('channel') !== -1) {
-        window.location.href = 'produkter.html';
-      } else {
-        window.location.href = 'anrin-page-1.html';
-      }
-    }
-  }, true);
-})();
-
-
 /* Dedicated Grate Specification Modal — Opens Grate Details cleanly on anrin.vercel.app */
 (function() {
   function initGrateModal() {
@@ -621,76 +681,6 @@ h.querySelectorAll('.lang-label').forEach(function(el) { el.textContent = lang.t
   } else {
     initGrateModal();
   }
-})();
-
-
-
-
-
-
-
-
-/* Router for Product Pages — Every product card opens its own exact rich static page */
-(function() {
-  document.addEventListener('click', function(e) {
-    var link = e.target.closest('a.card-item, .card-item a, .product-card a, a.view-product, .view-product-btn, .quicklink-card');
-    var card = e.target.closest('.card-item, .product-card, .sku-card, div[data-product]');
-    
-    if (!link && !card) return;
-
-    var targetEl = card || link;
-    var titleEl = targetEl.querySelector('h3, h4, .product-title, .title, strong');
-    var imgEl = targetEl.querySelector('img');
-
-    var title = titleEl ? titleEl.textContent.trim() : (imgEl ? imgEl.alt : '');
-    if (!title || title.length < 2) return;
-
-    var lower = title.toLowerCase();
-
-    // Map exact product names to their specific static HTML pages
-    var pageMap = [
-      { key: 'ke-100 ktl', page: 'anrin-page-1.html' },
-      { key: 'ke-100', page: 'anrin-page-1.html' },
-      { key: 'sf-100', page: 'anrin-page-2.html' },
-      { key: 'z-100', page: 'anrin-page-3.html' },
-      { key: 'self-100', page: 'anrin-page-4.html' },
-      { key: 'self-200', page: 'anrin-page-5.html' },
-      { key: 'self pp', page: 'anrin-page-6.html' },
-      { key: 'pp evo', page: 'anrin-page-6.html' },
-      { key: 'fotskrapa', page: 'anrin-page-7.html' },
-      { key: 'schuhabstreifer', page: 'anrin-page-7.html' },
-      { key: 'boot scraper', page: 'anrin-page-7.html' },
-      { key: 'gårdsbrunn', page: 'anrin-page-8.html' },
-      { key: 'yard sump', page: 'anrin-page-8.html' },
-      { key: 'comb', page: 'anrin-page-9.html' },
-      { key: 'kammrinne', page: 'anrin-page-9.html' },
-      { key: 'sport 125 a', page: 'anrin-page-10.html' },
-      { key: 'sport 125 e', page: 'anrin-page-11.html' },
-      { key: 'sport 125 c1', page: 'anrin-page-12.html' },
-      { key: 'sport 125 r', page: 'anrin-page-13.html' },
-      { key: 'sport 125 c5', page: 'anrin-page-14.html' },
-      { key: 'sport 125', page: 'anrin-page-15.html' },
-      { key: 'sport', page: 'anrin-page-10.html' },
-      { key: 'ke-150', page: 'anrin-page-16.html' },
-      { key: 'ke-200', page: 'anrin-page-17.html' },
-      { key: 'ke-300', page: 'anrin-page-18.html' },
-      { key: 'sf-150', page: 'anrin-page-19.html' },
-      { key: 'sf-200', page: 'anrin-page-20.html' },
-      { key: 'sf-300', page: 'anrin-page-21.html' },
-      { key: 'z-150', page: 'anrin-page-22.html' },
-      { key: 'kf-100', page: 'anrin-page-23.html' },
-      { key: 'kc-100', page: 'anrin-page-24.html' }
-    ];
-
-    for (var i = 0; i < pageMap.length; i++) {
-      if (lower.indexOf(pageMap[i].key) !== -1) {
-        e.preventDefault();
-        e.stopPropagation();
-        window.location.href = pageMap[i].page;
-        return;
-      }
-    }
-  }, true);
 })();
 
 

@@ -290,6 +290,82 @@ p.hero-sub {
   }
 }
 
+@media (max-width: 900px) {
+  .hero .hero-meta,
+  .hero .wrap.hero-content .hero-meta,
+  .page-hero .hero-meta,
+  .htec-hero .hero-meta,
+  .hero-meta,
+  .brand-meta-row,
+  .hero-stats,
+  .hero .wrap.hero-meta,
+  .hero-content .hero-meta,
+  section.hero .wrap.hero-content .hero-meta {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto auto !important;
+    gap: 24px 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+    flex-direction: unset !important;
+    justify-content: unset !important;
+    align-items: unset !important;
+  }
+
+  .hero .hero-meta > div,
+  .hero .wrap.hero-content .hero-meta > div,
+  .page-hero .hero-meta > div,
+  .htec-hero .hero-meta > div,
+  .hero-meta > div,
+  .brand-meta-row > div,
+  .hero-stats > div,
+  .hero-content .hero-meta > div,
+  section.hero .wrap.hero-content .hero-meta > div {
+    flex: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .hero .hero-meta > div b,
+  .hero .wrap.hero-content .hero-meta > div b,
+  .page-hero .hero-meta > div b,
+  .htec-hero .hero-meta > div b,
+  .hero-meta > div b,
+  .brand-meta-row > div b,
+  .hero-stats > div b,
+  .hero-content .hero-meta > div b,
+  section.hero .wrap.hero-content .hero-meta > div b {
+    font-size: clamp(16px, 4.5vw, 22px) !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+    line-height: 1.2 !important;
+  }
+
+  .hero .hero-meta > div span,
+  .hero .wrap.hero-content .hero-meta > div span,
+  .page-hero .hero-meta > div span,
+  .htec-hero .hero-meta > div span,
+  .hero-meta > div span,
+  .brand-meta-row > div span,
+  .hero-stats > div span,
+  .hero-content .hero-meta > div span,
+  section.hero .wrap.hero-content .hero-meta > div span {
+    font-size: 10px !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+  }
+}
+
 @media (max-width: 600px) {
   .hero,
   .page-hero,
@@ -313,7 +389,7 @@ p.hero-sub {
   }
 
   .hero .hero-meta {
-    gap: 24px !important;
+    gap: 20px 16px !important;
     margin-top: 32px !important;
   }
 }

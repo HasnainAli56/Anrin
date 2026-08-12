@@ -39,7 +39,8 @@ const LANG_NAMES = {
   no: "Norsk",
   is: "Íslenska",
   de: "Deutsch"
-};const I18N = {
+};
+const I18N = {
   sv: {
     news_hero_title:"Nyheter, certifieringar och produktuppdateringar.", news_hero_sub:"17 artiklar från ANRINs nyhetsarkiv, 2020 till 2025.", news_read_article:"Läs artikeln →", news_subscribe_title:"Vill du få uppdateringar direkt i din inkorg?", news_subscribe_btn:"Prenumerera på nyhetsbrevet", nav_produkter:"Produktområde", nav_projekt:"Projekt", nav_omoss:"Om oss", nav_nedladdningar:"Nedladdningar", nav_kontakt:"Kontakt",
     btn_quote:"Begär offert",
@@ -790,9 +791,11 @@ function autoRevealElements() {
   style.textContent = `
 
     /* ── Hero Stat Row Mobile Optimization (2 Cols x 2 Rows Grid, Zero Word Break) ── */
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       section.hero .wrap.hero-meta,
       .hero .wrap.hero-meta,
+      .hero .wrap.hero-content .hero-meta,
+      section.hero .wrap.hero-content .hero-meta,
       .aint-hero-home .wrap.hero-meta,
       .page-hero .wrap.hero-meta,
       .htec-hero .wrap.hero-meta,
@@ -807,7 +810,7 @@ function autoRevealElements() {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
-        gap: 24px 16px !important;
+        gap: 24px 20px !important;
         margin-top: 32px !important;
         width: 100% !important;
         max-width: 100% !important;
@@ -818,6 +821,8 @@ function autoRevealElements() {
 
       section.hero .wrap.hero-meta > div,
       .hero .wrap.hero-meta > div,
+      .hero .wrap.hero-content .hero-meta > div,
+      section.hero .wrap.hero-content .hero-meta > div,
       .aint-hero-home .wrap.hero-meta > div,
       .page-hero .wrap.hero-meta > div,
       .wrap.hero-meta > div,
@@ -881,7 +886,7 @@ function autoRevealElements() {
 
     /* ── Universal Mobile Optimization for ANRIN Product Pages (anrin-page-1 to 27) ── */
     @media (max-width: 768px) {
-      body {
+      body:not(:has(.hero)):not(:has(section.hero)):not(:has(.page-hero)):not(:has(.htec-hero)):not(:has(.aint-hero-home)) {
         padding-top: 70px !important;
       }
 
@@ -1093,6 +1098,8 @@ function autoRevealElements() {
       /* Hero Stats 2x2 Grid Layout */
       section.hero .wrap.hero-meta,
       .hero .wrap.hero-meta,
+      .hero .wrap.hero-content .hero-meta,
+      section.hero .wrap.hero-content .hero-meta,
       .aint-hero-home .wrap.hero-meta,
       .page-hero .wrap.hero-meta,
       .htec-hero .wrap.hero-meta,
@@ -1105,16 +1112,20 @@ function autoRevealElements() {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: auto auto !important;
-        gap: 24px 16px !important;
+        gap: 24px 20px !important;
         margin-top: 28px !important;
         width: 100% !important;
         max-width: 100% !important;
         padding-left: 20px !important;
         padding-right: 20px !important;
+        flex-direction: unset !important;
+        justify-content: unset !important;
       }
 
       section.hero .wrap.hero-meta > div,
       .hero .wrap.hero-meta > div,
+      .hero .wrap.hero-content .hero-meta > div,
+      section.hero .wrap.hero-content .hero-meta > div,
       .aint-hero-home .wrap.hero-meta > div,
       .page-hero .wrap.hero-meta > div,
       .wrap.hero-meta > div,

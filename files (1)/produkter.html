@@ -1532,10 +1532,36 @@ div[class*="sticky-action"] {
 /* Force Separator Tank Product Card Images to be Zoomed Out and Fully Visible */
 .sku-photo img,
 .enviroguard-card img,
-.tank-photo img {
+.tank-photo img,
+#enviroguard .fam-photo img,
+#enviroguard .brand-banner-photo img {
   object-fit: contain !important;
-  padding: 10px !important;
+  object-position: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+#enviroguard .fam-photo {
+  aspect-ratio: 16 / 12 !important;
   background: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 16px !important;
+  box-sizing: border-box !important;
+}
+
+#enviroguard .fam-card:hover .fam-photo img {
+  transform: scale(1.04) !important;
+}
+
+#enviroguard .brand-banner-photo {
+  background: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px !important;
   box-sizing: border-box !important;
 }
 </style>

@@ -739,3 +739,123 @@ body.light-header #siteHeader:not(.scrolled) .burger span {
   background: #ffffff !important;
 }
 
+
+/* ── Mobile-only: top gap, nav close fix ─────────────────────────── */
+@media (max-width: 768px) {
+  html, body {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  html:has(body:not(.light-header) .hero),
+  html:has(body:not(.light-header) section.hero) {
+    background-color: #000000 !important;
+  }
+
+  #header-root {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  body:not(.light-header) .hero,
+  body:not(.light-header) section.hero,
+  body:not(.light-header) .page-hero,
+  body:not(.light-header) .htec-hero,
+  body:not(.light-header) .aint-hero-home {
+    margin-top: 0 !important;
+    background-color: #000000 !important;
+  }
+
+  body:not(.light-header) .hero .hero-photo,
+  body:not(.light-header) section.hero .hero-photo,
+  body:not(.light-header) .page-hero .hero-photo,
+  body:not(.light-header) .htec-hero .hero-photo {
+    top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  #siteHeader,
+  header#siteHeader {
+    top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Kill injected body padding on full-bleed hero pages (prevents white top strip) */
+  body:has(.hero),
+  body:has(section.hero),
+  body:has(.page-hero),
+  body:has(.htec-hero),
+  body:has(.aint-hero-home) {
+    padding-top: 0 !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  /* Hide duplicate X inside the menu panel — burger becomes the close control */
+  #mobile-menu .close-btn,
+  #closeMenu {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  /* Animate burger into X when menu is open (single control, no overlap) */
+  body.mobile-menu-open #siteHeader .burger,
+  body.mobile-menu-open #burgerBtn,
+  body.mobile-menu-open button.burger {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  body.mobile-menu-open #siteHeader .burger span:nth-child(1),
+  body.mobile-menu-open #burgerBtn span:nth-child(1),
+  body.mobile-menu-open button.burger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg) !important;
+  }
+
+  body.mobile-menu-open #siteHeader .burger span:nth-child(2),
+  body.mobile-menu-open #burgerBtn span:nth-child(2),
+  body.mobile-menu-open button.burger span:nth-child(2) {
+    opacity: 0 !important;
+  }
+
+  body.mobile-menu-open #siteHeader .burger span:nth-child(3),
+  body.mobile-menu-open #burgerBtn span:nth-child(3),
+  body.mobile-menu-open button.burger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg) !important;
+  }
+}
+
+/* ── ENVIROguard Mega Menu & Separator Tank Zoomed-Out Contain Fix ──────── */
+.mega-col .mega-photo:has(img[alt*="ENVIROguard"]),
+.mega-col .mega-photo:has(img[src*="cs-NS-"]),
+.mega-brand[href*="enviroguard"] .mega-photo,
+.mega-col:last-child .mega-photo {
+  background: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 8px !important;
+  box-sizing: border-box !important;
+}
+
+.mega-col .mega-photo img[alt*="ENVIROguard"],
+.mega-col .mega-photo img[alt*="enviroguard" i],
+.mega-col .mega-photo img[src*="cs-NS-"],
+.mega-brand[href*="enviroguard"] .mega-photo img,
+.mega-col:last-child .mega-photo img {
+  object-fit: contain !important;
+  object-position: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+  padding: 4px !important;
+  background: #ffffff !important;
+}
+
+

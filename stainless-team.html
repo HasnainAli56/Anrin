@@ -1427,7 +1427,15 @@ const golvbrunnAccessories = [
 function getRealPdfUrl(href) {
   if (!href) return '';
   if (href.startsWith('pdfs/')) {
-    return IMG + href.substring(5);
+    const file = href.substring(5);
+    const lower = file.toLowerCase();
+    if (lower.includes('betonggolv') || lower.includes('massagolv') || lower.includes('klinkergolv') || lower.includes('plastmatta')) {
+      return "https://stainlessteam.se/wp-content/uploads/2024/02/" + file;
+    }
+    if (lower.includes('svanhals')) {
+      return "https://stainlessteam.se/wp-content/uploads/2025/02/" + file;
+    }
+    return IMG + file;
   }
   return href;
 }

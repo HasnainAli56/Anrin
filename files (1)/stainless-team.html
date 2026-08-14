@@ -1579,7 +1579,17 @@ const CATALOG = [
     spec:["Bottenutlopp eller sidoutlopp","Med eller utan fall","Valfri bredd, längd & slits","Material: rostfritt / syrafast stål"],
     hasTabs:true,
     tabs:{
-      storkok:{label:"Storkök & Industri", heroImg:IMG+"Golvranna_T-150-1.png", note:"Vi skräddarsyr rännor för ert projekt med fokus på hygien, miljö och kostnadseffektivitet — bottenutlopp, sidoutlopp, med eller utan fall, slits, valfri bredd och längd. Kontakta oss för en intresseanmälan så återkommer vi omgående.", groups:[]},
+      storkok:{label:"Storkök & Industri", heroImg:IMG+"Golvranna_T-150-1.png", note:"Vi skräddarsyr rännor för ert projekt med fokus på hygien, miljö och kostnadseffektivitet — bottenutlopp, sidoutlopp, med eller utan fall, slits, valfri bredd och längd. Kontakta oss för en intresseanmälan så återkommer vi omgående.", groups:[
+        {label:"Industrirännor", items:[
+          {name:"Golvränna RST 300/310",img:IMG+"Golvranna_T-150-1.png",artnr:"3303270",klass:"EN 1.4301/1.4404",pdf:"pdfs/Produktblad_Stor_Industrieranna-1.pdf",meta_extra:"För industrilokaler och storkök"},
+          {name:"Stor industriränna",img:IMG+"Golvranna_T-150.png",artnr:"3303271",klass:"EN 1.4301/1.4404",pdf:"pdfs/Produktblad_Stor_Industrieranna-2.pdf",meta_extra:"Hygienisk och slitstark industriränna"},
+          {name:"Spärränna med galler",img:IMG+"golvranna_bad_web-2.png",artnr:"3303272",klass:"EN 1.4301",pdf:"pdfs/Produktblad_Sparranna-1.pdf",meta_extra:"Spärränna i rostfritt stål"}
+        ]},
+        {label:"Storkökstillbehör", items:[
+          {name:"Carry Hot — intagsvagn",img:IMG+"Gipsavskiljare-specialprodukter.png",artnr:"3303273",klass:"Rostfritt stål",pdf:"pdfs/Produktblad_Carry_Hot.pdf",meta_extra:"Intagsvagn för professionella kök"},
+          {name:"Gipsavskiljare",img:IMG+"Gipsavskiljare-specialprodukter.png",artnr:"44446564",klass:"EN 1.4404 (syrafast)",pdf:"pdfs/Produktblad_Gipsavskiljare-2.pdf",meta_extra:"Separerar gips och slam"}
+        ]}
+      ]},
       duschbad:{label:"Dusch & Bad", heroImg:IMG+"golvbrunnar-badrum-edited.png", groups:[
         {label:"Golvränna DIM 32/50", items:[
           {name:"1000×100mm — utlopp 32",img:IMG+"golvranna_bad_web-2.png",artnr:"44446521",klass:"EN 1.4301/1.4404",meta_extra:"Klinker, betong, massa eller plastmatta"},
@@ -1600,8 +1610,8 @@ const CATALOG = [
           {name:"1000×150mm — utlopp 110",img:IMG+"Pool_utemiljo_web.png",artnr:"44446562",klass:"EN 1.4301/1.4404",meta_extra:"Betong"},
         ]},
         {label:"Golvränna DIM 160", items:[
-          {name:"600×400mm — utlopp 75/100",img:IMG+"ST_Golvbrunnar.png",artnr:"3314607",klass:"EN 1.4301/1.4404",meta_extra:"Betong"},
-          {name:"600×400mm — utlopp 75/110",img:IMG+"ST_Golvbrunnar.png",artnr:"44446522",klass:"EN 1.4301/1.4404",meta_extra:"Klinker"},
+          {name:"600×400mm — utlopp 75/100",img:IMG+"3314607.png",artnr:"3314607",klass:"EN 1.4301/1.4404",meta_extra:"Betong"},
+          {name:"600×400mm — utlopp 75/110",img:IMG+"3314607.png",artnr:"44446522",klass:"EN 1.4301/1.4404",meta_extra:"Klinker"},
         ]}
       ]},
     }

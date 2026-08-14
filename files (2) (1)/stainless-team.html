@@ -1271,7 +1271,7 @@ function applyBrandVisibility(lang){
   document.querySelectorAll('[data-brand="stainless"]').forEach(el=> el.classList.toggle('brand-hidden', !rules.stainless));
 }
 function applyLanguage(lang){
-  if (!lang) lang = 'en';
+  if (!lang) lang = 'sv';
   const dict = I18N[lang] || I18N.en;
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const key = el.getAttribute('data-i18n');

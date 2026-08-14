@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
-<script src="../header.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Om oss — ANRIN Nordic</title>
+
+
+<script src="header.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
 
@@ -541,7 +541,10 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 #backToTop{position:fixed;right:28px;bottom:28px;width:54px;height:54px;border-radius:50%;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 32px rgba(0,0,0,.28);z-index:520;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(16px);transition:opacity .4s var(--ease),visibility .4s,transform .4s var(--ease),background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease);}
 #backToTop:hover{background:var(--white);color:var(--black);border:1px solid var(--gray-300);}
 #backToTop.show{opacity:1;visibility:visible;transform:translateY(0);}
-@media(max-width:640px){#backToTop{right:18px;bottom:18px;width:48px;height:48px;}}/* Section Head & Faint Text High-Contrast Visibility Fix */
+@media(max-width:640px){#backToTop{right:18px;bottom:18px;width:48px;height:48px;}}
+
+
+/* Section Head & Faint Text High-Contrast Visibility Fix */
 .section-head p, .eyebrow, .intro-copy, .cred-card p, .prod-meta, .accessory-note {
   color: #555555 !important;
 }
@@ -772,9 +775,6 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 }
 </script>
 
-
-
-
 <style id="lang-switch-dropdown-fix">
 .lang-switch.open .lang-menu {
   display: block !important;
@@ -785,9 +785,6 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
   background: #f0f0f0 !important;
 }
 </style>
-
-
-
 
 
 <style id="hero-font-size-wordmark-override">
@@ -809,9 +806,6 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 </style>
-
-
-
 
 
 <style id="perfect-hero-fit-override">
@@ -858,9 +852,6 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 }
 
 </style>
-
-
-
 
 
 
@@ -1548,10 +1539,9 @@ div[class*="sticky-action"] {
 </head>
 <body>
 <div id="header-root"></div>
+
 <div id="preloader"><svg viewBox="0 0 200 60"><path d="M0,45 C 40,45 40,15 80,15 C 120,15 120,45 160,45 C 180,45 190,45 200,45"/></svg></div>
 <div id="flowline"><div class="fill"></div><div class="drop"></div></div>
-
-
 
 <div class="mega-close-overlay" id="megaOverlay"></div>
 <div class="mega-panel" id="megaPanel">
@@ -1643,25 +1633,25 @@ div[class*="sticky-action"] {
 
 <section id="our-history" style="padding:90px 0;background:#ffffff;">
   <div class="wrap" style="max-width:1100px;margin:0 auto;padding:0 24px;">
-    <h2 style="font-family:'Manrope',sans-serif;font-size:clamp(28px,3.8vw,44px);font-weight:800;color:#111111;margin-bottom:24px;line-height:1.15;">ANRIN Nordic — Leading Water Since 2017 (and Still Having a Blast!)</h2>
+    <h2 style="font-family:'Manrope',sans-serif;font-size:clamp(28px,3.8vw,44px);font-weight:800;color:#111111;margin-bottom:24px;line-height:1.15;" data-i18n="about_history_title">ANRIN Nordic — Leading Water Since 2017 (and Still Having a Blast!)</h2>
     <div style="font-size:17px;line-height:1.75;color:#444444;">
-      <p style="margin-bottom:22px;">Born in Sweden in 2017, ANRIN Nordic has quickly expanded across all the Nordic countries, becoming the drainage solution superheroes you didn't know you needed. From the land of saunas to the fjords, we've established ourselves as the ultimate water wranglers. And with the largest stock of drainage products in the entire Nordic region, we're always ready — whether it's a downpour or a melt-off, we've got your back (and your drains!). But wait, there's more! Our mighty headquarters in Germany, home to our parent company, is where the magic happens. That's right — our high-quality drainage channels are designed and manufactured there, by the finest engineering minds. So, when you work with us, you're not just getting Nordic knowhow, you're tapping into German precision, too! Talk about a dream team.</p>
-      <p style="margin-bottom:22px;">So, if you're in the market for a company that leads water with a smile (and a laugh), look no further. ANRIN Nordic is here to keep your water flowing, your project glowing, and your day just a little brighter.</p>
-      <p style="font-weight:800;color:#111111;font-size:18px;margin-top:10px;">ANRIN Nordic — Leading Water, with German Engineering and Nordic Charm!</p>
+      <p style="margin-bottom:22px;" data-i18n="about_history_p1">Born in Sweden in 2017, ANRIN Nordic has quickly expanded across all the Nordic countries, becoming the drainage solution superheroes you didn't know you needed. From the land of saunas to the fjords, we've established ourselves as the ultimate water wranglers. And with the largest stock of drainage products in the entire Nordic region, we're always ready — whether it's a downpour or a melt-off, we've got your back (and your drains!). But wait, there's more! Our mighty headquarters in Germany, home to our parent company, is where the magic happens. That's right — our high-quality drainage channels are designed and manufactured there, by the finest engineering minds. So, when you work with us, you're not just getting Nordic knowhow, you're tapping into German precision, too! Talk about a dream team.</p>
+      <p style="margin-bottom:22px;" data-i18n="about_history_p2">So, if you're in the market for a company that leads water with a smile (and a laugh), look no further. ANRIN Nordic is here to keep your water flowing, your project glowing, and your day just a little brighter.</p>
+      <p style="font-weight:800;color:#111111;font-size:18px;margin-top:10px;" data-i18n="about_history_p3">ANRIN Nordic — Leading Water, with German Engineering and Nordic Charm!</p>
     </div>
 
     <div class="history-stats-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;padding-top:36px;border-top:1px solid #e5e5e5;text-align:center;">
       <div>
         <b class="count" data-count="2017" style="font-family:'Manrope',sans-serif;font-size:42px;font-weight:800;color:#111;display:block;">2017</b>
-        <span style="font-size:12px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.08em;">GRUNDAT / FOUNDED</span>
+        <span style="font-size:12px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.08em;" data-i18n="about_stat_founded">GRUNDAT / FOUNDED</span>
       </div>
       <div>
         <b class="count" data-count="1500" data-suffix="+" style="font-family:'Manrope',sans-serif;font-size:42px;font-weight:800;color:#111;display:block;">1500+</b>
-        <span style="font-size:12px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.08em;">STOCKED PRODUCTS</span>
+        <span style="font-size:12px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.08em;" data-i18n="about_stat_products">STOCKED PRODUCTS</span>
       </div>
       <div>
         <b class="count" data-count="24" data-suffix="h" style="font-family:'Manrope',sans-serif;font-size:42px;font-weight:800;color:#111;display:block;">24h</b>
-        <span style="font-size:12px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.08em;">SVAR PÅ OFFERT</span>
+        <span style="font-size:12px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.08em;" data-i18n="about_stat_quote">SVAR PÅ OFFERT</span>
       </div>
     </div>
   </div>

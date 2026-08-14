@@ -117,8 +117,8 @@
 
     // Apply language if i18n is loaded
     if (typeof window.applyLanguage === 'function') {
-      var lang = 'en';
-      try { lang = localStorage.getItem('anrin_lang') || 'en'; } catch (e) {}
+      var lang = 'sv';
+      try { lang = localStorage.getItem('anrin_lang') || 'sv'; } catch (e) {}
       window.applyLanguage(lang);
     }
   }

@@ -1424,7 +1424,15 @@ const golvbrunnAccessories = [
   {name:"Klämring för vinyl/altro golv", img:IMG+"Ring-for-tjock-plastmatta-150.png", meta:["150 — 3305205","220 — 3305207"]},
 ];
 
-function gb(name, img, artnr, pdf){ return {name, img:IMG+img, artnr, pdf: pdf? IMG + pdf : null, klass:"EN 1.4404"}; }
+function getRealPdfUrl(href) {
+  if (!href) return '';
+  if (href.startsWith('pdfs/')) {
+    return IMG + href.substring(5);
+  }
+  return href;
+}
+
+function gb(name, img, artnr, pdf){ return {name, img:IMG+img, artnr, pdf: pdf? getRealPdfUrl("pdfs/" + pdf) : null, klass:"EN 1.4404"}; }
 
 const golvbrunnarTabs = {
   betong: {
@@ -1628,7 +1636,7 @@ const CATALOG = [
         gb("SG-ST 150/32 S","Spygatt-32-sida-for-betonggolv-1.png","3310601","3310601.pdf"),
         gb("SG-ST 150/32 B","Spygatt-32-botten-for-betonggolv.png","3310621","3310621.pdf"),
         gb("SG-ST 150/50 S","Spygatt-50-sida-for-betonggolv.png","3310602","3310602.pdf"),
-        gb("SG-ST 150/50 B","Spygatt-50-botten-for-betonggolv.png","3310622","3310622.pdf"),
+        gb("SG-ST 150/50 B","Spygatt-50-botten-for-betonggolv.png","3310622","3316457-1.pdf"),
       ]}]},
       massa:{label:"Massa", groups:[{label:"Spygatt för massa", items:[
         gb("SG-ST 150/32 S","Spygatt-32-sida-for-massagolv.png","3317201","3317201.pdf"),
@@ -1818,7 +1826,7 @@ function prodCard(p){
       <div class="prod-body">
         <h4>${p.name}</h4>
         <div class="prod-meta">${metaLines.map(m=>`<div>${m}</div>`).join('')}</div>
-        ${p.pdf ? `<div class="prod-links"><a href="${p.pdf}" target="_blank" rel="noopener">Teknikskiss ↓</a></div>` : ''}
+        ${p.pdf ? `<div class="prod-links"><a href="${getRealPdfUrl(p.pdf)}" target="_blank" rel="noopener">Teknikskiss ↓</a></div>` : ''}
         ${p.note ? `<div class="prod-meta" style="margin-top:8px;color:var(--gray-500);font-size:12.5px;">${p.note}</div>` : ''}
       </div>
     </div>`;
@@ -1834,7 +1842,7 @@ function renderTabPanel(cat, tabKey){
     html += `<div class="group-label">${g.label}</div><div class="prod-grid">${g.items.map(prodCard).join('')}</div>`;
   });
   if(tab.installPdf){
-    html += `<div class="accessory-note">Installationsanvisning: <a href="${tab.installPdf}" target="_blank" rel="noopener" style="color:var(--black);">ladda ner PDF ↓</a></div>`;
+    html += `<div class="accessory-note">Installationsanvisning: <a href="${getRealPdfUrl(tab.installPdf)}" target="_blank" rel="noopener" style="color:var(--black);">ladda ner PDF ↓</a></div>`;
   }
   return html;
 }
@@ -1855,7 +1863,7 @@ function renderCatalog(){
     } else {
       body = `<div class="prod-grid">${(cat.products||[]).map(prodCard).join('')}</div>`;
       if(cat.extraDocs){
-        body += `<div class="accessory-note">Ytterligare dokument: ${cat.extraDocs.map(d=>`<a href="${d.href}" target="_blank" rel="noopener" style="color:var(--black);margin-right:16px;">${d.label} ↓</a>`).join('')}</div>`;
+        body += `<div class="accessory-note">Ytterligare dokument: ${cat.extraDocs.map(d=>`<a href="${getRealPdfUrl(d.href)}" target="_blank" rel="noopener" style="color:var(--black);margin-right:16px;">${d.label} ↓</a>`).join('')}</div>`;
       }
     }
     if(cat.accessories){
@@ -1917,7 +1925,7 @@ function renderDocs(){
     bucket.map(g=>`
       <div class="doc-group">
         <h4>${g.group}</h4>
-        <ul class="doc-list">${g.docs.map(d=>`<li><a href="${d.href}" target="_blank" rel="noopener">${d.label}</a></li>`).join('')}</ul>
+        <ul class="doc-list">${g.docs.map(d=>`<li><a href="${getRealPdfUrl(d.href)}" target="_blank" rel="noopener">${d.label}</a></li>`).join('')}</ul>
       </div>
     `).join('')
   }</div>`).join('');

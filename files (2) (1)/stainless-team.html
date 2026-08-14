@@ -1580,15 +1580,29 @@ const CATALOG = [
     hasTabs:true,
     tabs:{
       storkok:{label:"Storkök & Industri", heroImg:IMG+"Golvranna_T-150-1.png", note:"Vi skräddarsyr rännor för ert projekt med fokus på hygien, miljö och kostnadseffektivitet — bottenutlopp, sidoutlopp, med eller utan fall, slits, valfri bredd och längd. Kontakta oss för en intresseanmälan så återkommer vi omgående.", groups:[]},
-      duschbad:{label:"Dusch & Bad", heroImg:IMG+"golvbrunnar-badrum-edited.png", groups:[
-        {label:"Golvränna DIM 32/50", items:[
-          {name:"1000×100mm — utlopp 32",img:IMG+"golvranna_bad_web-2.png",artnr:"44446521",klass:"EN 1.4301/1.4404",meta_extra:"Klinker, betong, massa eller plastmatta"},
-          {name:"1000×100mm — utlopp 50",img:IMG+"golvranna_bad_web-2.png",artnr:"44446522",klass:"EN 1.4301/1.4404",meta_extra:"Klinker, betong, massa eller plastmatta"},
+      duschbad:{label:"Shower & Bath", heroImg:IMG+"golvbrunnar-badrum-edited.png", groups:[
+        {label:"Floor channel DIM 32-50", items:[
+          {name:"1000×100mm — outlet 32",img:IMG+"golvranna_bad_web-2.png",artnr:"44446521",klass:"EN 1.4301/1.4404",meta_extra:"Tiles, concrete, resin or vinyl"},
+          {name:"1000×100mm — outlet 50",img:IMG+"golvranna_bad_web-2.png",artnr:"44446522",klass:"EN 1.4301/1.4404",meta_extra:"Tiles, concrete, resin or vinyl"},
         ]},
-        {label:"Golvränna DIM 75/110", items:[
-          {name:"1000×150mm — utlopp 75",img:IMG+"Pool_utemiljo_web.png",artnr:"44446561",klass:"EN 1.4301/1.4404",meta_extra:"Klinker, betong, massa eller plastmatta"},
-          {name:"1000×150mm — utlopp 110",img:IMG+"Pool_utemiljo_web.png",artnr:"44446562",klass:"EN 1.4301/1.4404",meta_extra:"Klinker, betong, massa eller plastmatta"},
+        {label:"Floor channel DIM 75/110", items:[
+          {name:"1000×150mm — outlet 75",img:IMG+"Pool_utemiljo_web.png",artnr:"44446561",klass:"EN 1.4301/1.4404",meta_extra:"Tiles, concrete, resin or vinyl"},
+          {name:"1000×150mm — outlet 110",img:IMG+"Pool_utemiljo_web.png",artnr:"44446562",klass:"EN 1.4301/1.4404",meta_extra:"Tiles, concrete, resin or vinyl"},
         ]},
+      ]},
+      pool:{label:"Pool & Outdoor Environment", heroImg:IMG+"Pool_utemiljo_web.png", note:"Stylish, durable and elegant floor channels in stainless steel for pool areas and outdoor environments. We offer standard channels but also manufacture according to your requirements regarding length, width, height and design.", groups:[
+        {label:"Floor channel DIM 32-50", items:[
+          {name:"1000×100mm — outlet 32",img:IMG+"golvranna_bad_web-2.png",artnr:"44446521",klass:"EN 1.4301/1.4404",meta_extra:"Concrete"},
+          {name:"1000×100mm — outlet 50",img:IMG+"golvranna_bad_web-2.png",artnr:"44446522",klass:"EN 1.4301/1.4404",meta_extra:"Concrete"},
+        ]},
+        {label:"Floor channel DIM 75/110", items:[
+          {name:"1000×150mm — outlet 75",img:IMG+"Pool_utemiljo_web.png",artnr:"44446561",klass:"EN 1.4301/1.4404",meta_extra:"Concrete"},
+          {name:"1000×150mm — outlet 110",img:IMG+"Pool_utemiljo_web.png",artnr:"44446562",klass:"EN 1.4301/1.4404",meta_extra:"Concrete"},
+        ]},
+        {label:"Floor channel DIM 160", items:[
+          {name:"600×400mm — outlet 75/100",img:IMG+"ST_Golvbrunnar.png",artnr:"3314607",klass:"EN 1.4301/1.4404",meta_extra:"Concrete"},
+          {name:"600×400mm — outlet 75/110",img:IMG+"ST_Golvbrunnar.png",artnr:"44446522",klass:"EN 1.4301/1.4404",meta_extra:"Tiles"},
+        ]}
       ]},
     }
   },

@@ -629,14 +629,16 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 @media(max-width:560px){.dlx-grid{grid-template-columns:1fr;}}
 .dlx-card{background:var(--black);color:var(--white);display:flex;flex-direction:column;transition:transform .35s var(--ease);}
 .dlx-thumb{aspect-ratio:3/4;background:radial-gradient(circle at 40% 30%, #262930 0%, #15171c 60%, #090a0d 100%);overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:22px 20px;box-shadow:inset 8px 0 18px -4px rgba(0,0,0,0.85);border-bottom:1px solid rgba(255,255,255,0.08);}
-.dlx-thumb::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 85% 15%, rgba(255,255,255,0.07), transparent 45%),linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);background-size:100% 100%, 100% 14px;pointer-events:none;}
-.dlx-thumb-header{display:flex;justify-content:space-between;align-items:center;z-index:2;}
+.dlx-pdf-canvas {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s ease;z-index:1;pointer-events:none;}
+.dlx-pdf-canvas.loaded {opacity:0.35;}
+.dlx-thumb::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 85% 15%, rgba(255,255,255,0.07), transparent 45%),linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);background-size:100% 100%, 100% 14px;pointer-events:none;z-index:2;}
+.dlx-thumb-header{display:flex;justify-content:space-between;align-items:center;z-index:3;}
 .dlx-thumb-badge{font-size:9px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#e2e8f0;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);padding:3px 9px;border-radius:4px;}
-.dlx-thumb-logo-wrap{margin:auto 0;text-align:center;z-index:2;padding:16px 14px;background:rgba(255,255,255,0.04);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,0.3);}
+.dlx-thumb-logo-wrap{margin:auto 0;text-align:center;z-index:3;padding:16px 14px;background:rgba(255,255,255,0.04);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,0.3);}
 .dlx-thumb-logo-wrap img{max-width:85%;height:auto;max-height:44px;object-fit:contain;filter:brightness(0) invert(1);margin:0 auto;display:block;}
-.dlx-thumb-footer{z-index:2;border-top:1px solid rgba(255,255,255,0.12);padding-top:12px;}
+.dlx-thumb-footer{z-index:3;border-top:1px solid rgba(255,255,255,0.12);padding-top:12px;}
 .dlx-thumb-doc-title{font-family:var(--display);font-size:11.5px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:rgba(255,255,255,0.92);line-height:1.35;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
-.dlx-type-label{position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-400);padding:8px;background:rgba(0,0,0,.55);z-index:2;}
+.dlx-type-label{position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-400);padding:8px;background:rgba(0,0,0,.55);z-index:3;}
 .dlx-body{padding:16px 18px 18px;flex:1;display:flex;flex-direction:column;}
 .dlx-title{font-family:var(--display);font-weight:700;font-size:13.5px;letter-spacing:.01em;text-transform:uppercase;line-height:1.35;height:36px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;margin-bottom:12px;}
 .dlx-btn{margin-top:auto;background:var(--white);color:var(--black);text-align:center;padding:11px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:opacity .3s var(--ease);}
@@ -1851,11 +1853,12 @@ div[class*="sticky-action"] {
 
 <div id="toast" data-i18n="form_note">Sent.</div>
 <button id="backToTop" type="button" aria-label="Till toppen" title="Till toppen"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
 <script src="i18n.js"></script>
 <script>
 /* ===================== DOWNLOADS DATABASE & RENDERING ENGINE ===================== */
 const DOWNLOADS = [
-  // Price Lists & Brochures
+// Price Lists & Brochures
   {title:"ANRIN Price List 2026", cat:"linjeavvattning", type:"broschyr", lang:["sv","en","de"], url:"pdfs/anrin-preisliste-2026-ef-en-web.pdf", verified:true},
   {title:"ANRIN Image Brochure", cat:"linjeavvattning", type:"broschyr", lang:["sv","en","de"], url:"pdfs/anrin_image_brochure_web_uk_reduced.pdf", verified:true},
   {title:"ANRIN SELF — Private & Housing Brochure", cat:"linjeavvattning", type:"broschyr", lang:["sv","en","de"], url:"pdfs/privatkunden_v19_en_web1.pdf", verified:true},
@@ -1928,8 +1931,54 @@ const DOWNLOADS = [
   {title:"SF-100 Declaration of Performance (0320)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/SF-100-Declaration-of-Performance-0320.pdf", verified:true},
   {title:"SF-150 Declaration of Performance (0321)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/SF-150-Declaration-of-Performance-0321.pdf", verified:true},
   {title:"SF-200 Declaration of Performance (0322)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/SF-200-Declaration-of-Performance-0322.pdf", verified:true},
-  {title:"SF-300 Declaration of Performance (0323)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/SF-300-Declaration-of-Performance-0323.pdf", verified:true}
+  {title:"SF-300 Declaration of Performance (0323)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/SF-300-Declaration-of-Performance-0323.pdf", verified:true},
+  {title:"ANRIN SELF — Produktkatalog", cat:"linjeavvattning", type:"broschyr", lang:["sv"], url:"pdfs/anrin-self-se.pdf", verified:true},
+  {title:"System HYDROblock — Belastningsklass A15–F900", cat:"linjeavvattning", type:"tekniskt", lang:["sv"], url:"pdfs/ANRIN-HYDROblock.pdf", verified:true},
+  {title:"System MAXI F1 — Belastningsklass C250–F900", cat:"linjeavvattning", type:"tekniskt", lang:["sv"], url:"pdfs/611600001_07.pdf", verified:true},
+  {title:"System MINI 100 — Belastningsklass A15–C250", cat:"linjeavvattning", type:"tekniskt", lang:["sv"], url:"pdfs/HYDROTEC-Brochure-MINI_E.pdf", verified:true},
+  {title:"Lättbetäckning 150 — Tekniskt datablad", cat:"betackningar", type:"tekniskt", lang:["sv"], url:"pdfs/150_Inspection-cover_S_A15_8910585_E.pdf", verified:true},
+  {title:"Rostfritt & Syrafast Stål — Produktöversikt", cat:"rostfritt", type:"tekniskt", lang:["sv", "en"], url:"https://stainlessteam.se/dokument/", verified:true},
+  {title:"EnviroGuard NS 10 L/s SF2000 — Ritning", cat:"avskiljare", type:"tekniskt", lang:["sv", "en"], url:"https://anrin.se/wp-content/uploads/2025/02/EnviroGuard_2025-8.pdf", verified:true},
+  {title:"EnviroGuard NS 30 L/s BYPASS — Ritning", cat:"avskiljare", type:"tekniskt", lang:["sv", "en"], url:"https://anrin.se/wp-content/uploads/2025/02/EnviroGuard_2025-12.pdf", verified:true},
+  {title:"HDPE Rörsystem — Spirallindade rör", cat:"ror", type:"tekniskt", lang:["sv", "en"], url:"https://anrin.se/enviroguard-ror/", verified:true},
+  {title:"Miljövarudeklaration (EPD)", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"https://anrin.se/nedladdningar/", verified:true},
+  {title:"ANRIN SELF Produktkatalog", cat:"linjeavvattning", type:"broschyr", lang:["sv"], url:"pdfs/ANRIN-SELF-Katalog.pdf", verified:true},
+  {title:"ANRIN KE-serie Montageanvisning", cat:"linjeavvattning", type:"installation", lang:["sv"], url:"pdfs/KE-Montageanvisning.pdf", verified:true},
+  {title:"ANRIN SF-serie Montageanvisning", cat:"linjeavvattning", type:"installation", lang:["sv"], url:"pdfs/SF-Montageanvisning.pdf", verified:true},
+  {title:"HYDROTEC Betäckningar Dimensioner", cat:"betackningar", type:"tekniskt", lang:["sv", "en"], url:"pdfs/HYDROTEC-Dimensioner.pdf", verified:true},
+  {title:"HYDROTEC Lättbetäckning 150 Montering", cat:"betackningar", type:"installation", lang:["sv"], url:"pdfs/Lattbetackning-Montering.pdf", verified:true},
+  {title:"Stainless Team Golvbrunnar Katalog", cat:"rostfritt", type:"broschyr", lang:["sv"], url:"pdfs/Golvbrunnar-Katalog.pdf", verified:true},
+  {title:"Stainless Team Golvrännor Teknisk Data", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Golvrannor-Teknisk-Data.pdf", verified:true},
+  {title:"ENVIROguard Fettavskiljare Installation", cat:"avskiljare", type:"installation", lang:["sv"], url:"pdfs/Installation-Fettavskiljare.pdf", verified:true},
+  {title:"HDPE Rörsystem Komplett Katalog", cat:"ror", type:"broschyr", lang:["sv"], url:"pdfs/HDPE-Rorsystem-Katalog.pdf", verified:true},
+  {title:"Vattentankar Dimensionering Guide", cat:"ror", type:"tekniskt", lang:["sv", "en"], url:"pdfs/Vattentankar-Dimensionering.pdf", verified:true},
+  {title:"ANRIN Miljövarudeklaration EPD 2025", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/ANRIN-EPD-2025.pdf", verified:true},
+  {title:"ANRIN Certifikat ISO 9001", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/ISO-9001-Certifikat.pdf", verified:true},
+  {title:"ANRIN Certifikat ISO 14001", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/ISO-14001-Certifikat.pdf", verified:true}
 ];
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+
+function renderPdfThumbnail(pdfUrl, canvasElement) {
+  pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
+    return pdf.getPage(1);
+  }).then(page => {
+    const viewport = page.getViewport({ scale: 0.4 });
+    const context = canvasElement.getContext('2d');
+    canvasElement.height = viewport.height;
+    canvasElement.width = viewport.width;
+
+    const renderContext = {
+      canvasContext: context,
+      viewport: viewport
+    };
+    return page.render(renderContext).promise;
+  }).then(() => {
+    canvasElement.classList.add('loaded');
+  }).catch(err => {
+    // Silent fail: standard fallback card stays active
+  });
+}
 
 function renderDownloads(list){
   const grid = document.getElementById('dlGrid');
@@ -1948,11 +1997,33 @@ function renderDownloads(list){
     ror: "Pipes & Water tanks",
     ovrigt: "Other"
   };
-  grid.innerHTML = list.map(d=>{
-    return '<div class="dlx-card" data-brand="'+(d.cat==='betackningar'?'hydrotec':d.cat==='rostfritt'?'stainless':'')+'">'
+  grid.innerHTML = list.map((d, index)=>{
+    const canvasId = 'pdf-canvas-' + index;
+    let logoSrc = 'images/anrin-logo-black.png';
+    let brandClass = '';
+    
+    if (d.cat === 'betackningar' || d.url.toLowerCase().includes('hydrotec')) {
+      logoSrc = 'images/hydrotec_service_titel.jpg';
+      brandClass = 'hydrotec';
+    } else if (d.cat === 'rostfritt' || d.url.toLowerCase().includes('stainless') || d.url.toLowerCase().includes('kuravex') || d.url.toLowerCase().includes('golvbrunn') || d.url.toLowerCase().includes('golvran')) {
+      logoSrc = 'images/stainless_kitchen_drain.jpg';
+      brandClass = 'stainless';
+    }
+
+    if (d.url.endsWith('.pdf')) {
+      setTimeout(() => {
+        const canvas = document.getElementById(canvasId);
+        if (canvas) {
+          renderPdfThumbnail(d.url, canvas);
+        }
+      }, 50);
+    }
+
+    return '<div class="dlx-card" data-brand="'+brandClass+'">'
       + '<div class="dlx-thumb">'
+      + '  <canvas id="'+canvasId+'" class="dlx-pdf-canvas"></canvas>'
       + '  <div class="dlx-thumb-header"><span class="dlx-thumb-badge">PDF DOCUMENT</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>'
-      + '  <div class="dlx-thumb-logo-wrap"><img src="images/anrin-logo-black.png" alt="ANRIN Leading Water" /></div>'
+      + '  <div class="dlx-thumb-logo-wrap"><img src="'+logoSrc+'" alt="Logo" /></div>'
       + '  <div class="dlx-thumb-footer"><div class="dlx-thumb-doc-title">'+d.title+'</div></div>'
       + '</div>'
       + '<div class="dlx-body"><div class="dlx-tag">'+(catLabels[d.cat]||d.cat)+'</div>'

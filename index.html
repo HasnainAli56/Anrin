@@ -1961,7 +1961,7 @@ div[class*="sticky-action"] {
             <div class="pc-link" data-i18n="read_more">Learn more →</div>
           </div>
         </a>
-        <a href="index.html#enviroguard" class="product-card">
+        <a href="index.html#enviroguard" class="product-card enviroguard-card">
           <div class="pc-photo photo-wrap"><img class="photo lightbox-trigger" src="https://anrin.se/wp-content/uploads/2025/01/cs-NS-10-l-s-SF-2000.52-640x1024.jpg" alt="ENVIROguard oil separator"></div>
           <div><div class="pc-index">04</div></div>
           <div>
@@ -2343,12 +2343,29 @@ function initLegalModal(){
   };
 
   function openModal(type){
-    const dict = I18N[document.documentElement.getAttribute('lang')||'sv'] || I18N.sv;
+    const lang = document.documentElement.getAttribute('lang') || 'sv';
+    const dict = I18N[lang] || I18N.sv;
     const c = content[type];
-    if(!c || !dict[c.titleKey]) return;
-    body.innerHTML = dict[c.contentKey];
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    if(!c) return;
+
+    if (type === 'terms') {
+      const isSubFolder = window.location.pathname.includes('/files');
+      const pathPrefix = isSubFolder ? '../' : '';
+      let pdfFile = 'Allmanna-villkor-sv.pdf';
+      if (lang === 'no') pdfFile = 'Allmanna-villkor-no.pdf';
+      else if (lang === 'da') pdfFile = 'Allmanna-villkor-da.pdf';
+      else if (lang === 'fi') pdfFile = 'Allmanna-villkor-fi.pdf';
+      
+      const finalUrl = pathPrefix + 'pdfs/' + pdfFile;
+      body.innerHTML = '<iframe src="' + finalUrl + '" width="100%" height="550px" style="border:none;border-radius:8px;"></iframe>';
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    } else {
+      if(!dict[c.titleKey]) return;
+      body.innerHTML = dict[c.contentKey];
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   function closeModal(){
@@ -2436,7 +2453,7 @@ const DOWNLOADS = [
   {title:"ANRIN Produktbroschyr 2025", cat:"linjeavvattning", type:"broschyr", lang:["sv","en"], url:"pdfs/gewerbekunden_broschuere_en.pdf", verified:true},
   {title:"ANRIN Professionell Broschyr 2025", cat:"linjeavvattning", type:"broschyr", lang:["sv","en"], url:"pdfs/sportstattenbau_final_screen_en1.pdf", verified:true},
   {title:"Installationsanvisningar ENVIROguard", cat:"avskiljare", type:"installation", lang:["sv"], url:"pdfs/Installationsanvisningar-Enviroguard.pdf", verified:true},
-  {title:"EnviroGuard NS 10 l/s SF2000 — Ritning", cat:"avskiljare", type:"tekniskt", lang:["sv","en"], url:"pdfs/EnviroGuard_2025-8.pdf", verified:true},
+  {title:"EnviroGuard NS 10 l/s SF2000 — Ritning", cat:"avskiljare", type:"tekniskt", lang:["sv","en"], url:"https://anrin.se/wp-content/uploads/2025/02/EnviroGuard_2025-8.pdf", verified:true},
   {title:"Lättbetäckning 150 — Tekniskt datablad", cat:"betackningar", type:"tekniskt", lang:["sv","en"], url:"pdfs/150_Inspection-cover_S_A15_8910585_E.pdf", verified:true},
   {title:"System HYDROblock — Produktblad", cat:"betackningar", type:"tekniskt", lang:["sv"], url:"pdfs/ANRIN-HYDROblock.pdf", verified:true},
   {title:"ANRIN SELF Produktkatalog", cat:"linjeavvattning", type:"broschyr", lang:["sv","en"], url:"pdfs/ANRIN-SELF-Katalog.pdf", verified:true},
@@ -2446,7 +2463,7 @@ const DOWNLOADS = [
   {title:"HYDROTEC Lättbetäckning 150 Montering", cat:"betackningar", type:"installation", lang:["sv","en"], url:"pdfs/Lattbetackning-Montering.pdf", verified:true},
   {title:"Stainless Team Golvbrunnar Katalog", cat:"rostfritt", type:"broschyr", lang:["sv","en"], url:"pdfs/Golvbrunnar-Katalog.pdf", verified:true},
   {title:"Stainless Team Golvrännor Teknisk Data", cat:"rostfritt", type:"tekniskt", lang:["sv","en"], url:"pdfs/Golvrannor-Teknisk-Data.pdf", verified:true},
-  {title:"ENVIROguard NS 30 l/s Bypass Ritning", cat:"avskiljare", type:"tekniskt", lang:["sv","en"], url:"pdfs/EnviroGuard_2025-12.pdf", verified:true},
+  {title:"ENVIROguard NS 30 l/s Bypass Ritning", cat:"avskiljare", type:"tekniskt", lang:["sv","en"], url:"https://anrin.se/wp-content/uploads/2025/02/EnviroGuard_2025-12.pdf", verified:true},
   {title:"ENVIROguard Fettavskiljare Installation", cat:"avskiljare", type:"installation", lang:["sv"], url:"pdfs/Installation-Fettavskiljare.pdf", verified:true},
   {title:"HDPE Rörsystem Komplett Katalog", cat:"ror", type:"broschyr", lang:["sv","en"], url:"pdfs/HDPE-Rorsystem-Katalog.pdf", verified:true},
   {title:"Vattentankar Dimensionering Guide", cat:"ror", type:"tekniskt", lang:["sv"], url:"pdfs/Vattentankar-Dimensionering.pdf", verified:true},

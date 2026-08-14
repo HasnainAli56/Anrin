@@ -50,10 +50,15 @@
 
         <div class="footer-col">
           <h5 data-i18n="footer_kontakt">CONTACT</h5>
-          <div class="footer-contact-info">
+          <div class="footer-contact-info sweden-branch">
             <p>Mysingsvägen 1<br>SE-149 41 NYNÄSHAMN</p>
             <p><a href="tel:+46102099209">+46 (0)10-209 9 209</a></p>
             <p><a href="mailto:info@anrin.se">info@anrin.se</a></p>
+          </div>
+          <div class="footer-contact-info finland-branch" style="display:none;">
+            <p>Öglan 7B 10<br>FI-02700 GRANKULLA<br>FINLAND</p>
+            <p><a href="tel:+358451855020">+358 45 185 5020</a></p>
+            <p><a href="mailto:info@anrin.fi">info@anrin.fi</a></p>
           </div>
         </div>
       </div>

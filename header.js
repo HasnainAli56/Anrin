@@ -509,16 +509,43 @@ h.querySelectorAll('.lang-label').forEach(function(el) { el.textContent = lang.t
       var url = link.getAttribute('href') || link.getAttribute('data-dialog-primary-url');
       if (!url || url.indexOf('javascript') === 0 || url === '#') return;
 
-      if (url.indexOf('.pdf') !== -1 || url.indexOf('ausschreiben.de') !== -1 || url.indexOf('divio-media.com') !== -1) {
+      if (url.indexOf('.pdf') !== -1 || url.indexOf('ausschreiben.de') !== -1 || url.indexOf('divio-media.com') !== -1 || url.indexOf('stainlessteam.se') !== -1 || url.indexOf('hydrotec.se') !== -1 || url.indexOf('/filer_public/') !== -1 || url.indexOf('/stainlessteam-files/') !== -1 || url.indexOf('/hydrotec-files/') !== -1 || url.indexOf('/hydrotec-files-nonwww/') !== -1) {
         e.preventDefault();
         e.stopPropagation();
+
+        // Normalize URL to keep on same domain
+        var normalizedUrl = url;
+        var divioBase = 'https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com';
+        var stainlessteamBase = 'https://stainlessteam.se';
+        var hydrotecBase = 'https://www.hydrotec.se';
+        var hydrotecNonWwwBase = 'https://hydrotec.se';
+        
+        if (window.location.protocol === 'file:') {
+          // Local execution: must use absolute URLs to avoid local file path errors
+          if (normalizedUrl.indexOf('/filer_public/') === 0) {
+            normalizedUrl = divioBase + normalizedUrl;
+          } else if (normalizedUrl.indexOf('/stainlessteam-files/') === 0) {
+            normalizedUrl = stainlessteamBase + normalizedUrl.replace('/stainlessteam-files/', '/wp-content/uploads/');
+          } else if (normalizedUrl.indexOf('/hydrotec-files/') === 0) {
+            normalizedUrl = hydrotecBase + normalizedUrl.replace('/hydrotec-files/', '/wp-content/uploads/');
+          } else if (normalizedUrl.indexOf('/hydrotec-files-nonwww/') === 0) {
+            normalizedUrl = hydrotecNonWwwBase + normalizedUrl.replace('/hydrotec-files-nonwww/', '/wp-content/uploads/');
+          }
+        } else {
+          // Server/Vercel execution: rewrite absolute URLs to relative proxy paths
+          normalizedUrl = normalizedUrl
+            .replace(divioBase, '')
+            .replace(stainlessteamBase + '/wp-content/uploads/', '/stainlessteam-files/')
+            .replace(hydrotecBase + '/wp-content/uploads/', '/hydrotec-files/')
+            .replace(hydrotecNonWwwBase + '/wp-content/uploads/', '/hydrotec-files-nonwww/');
+        }
 
         var title = link.textContent ? link.textContent.trim() : 'Document Preview';
         if (title.length > 50) title = 'Document Preview';
         titleEl.textContent = title;
-        currentPdfUrl = url;
-        dlBtn.setAttribute('data-url', url);
-        var pdfViewerUrl = url;
+        currentPdfUrl = normalizedUrl;
+        dlBtn.setAttribute('data-url', normalizedUrl);
+        var pdfViewerUrl = normalizedUrl;
         if (pdfViewerUrl.indexOf('.pdf') !== -1 && pdfViewerUrl.indexOf('#') === -1) {
           pdfViewerUrl += '#toolbar=0&navpanes=0&view=FitH';
         }
@@ -715,7 +742,7 @@ h.querySelectorAll('.lang-label').forEach(function(el) { el.textContent = lang.t
     var titleText = titleEl ? titleEl.textContent.trim() : (img ? img.alt : 'Slotted grating OvalGrip Design');
     titleText = titleText.replace(/Load class:[\s\S]*/i, '').trim();
 
-    var imgSrc = img ? img.src : 'https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png';
+    var imgSrc = img ? img.src : '/filer_public_thumbnails/filer_public/5a/e1/5ae1fcf7-7f8a-48c3-b72d-fb7085030861/ke_100_oval_grip_3.png__800x0_subsampling-2.png';
 
     if (titleText) {
       e.preventDefault();

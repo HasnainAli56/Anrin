@@ -980,7 +980,7 @@ div[class*="sticky-action"] {
   <div class="wrap mega-grid">
     <div class="mega-col">
       <a href="files (2) (1)/anrin-int.html" class="mega-brand">
-        <div class="mega-photo"><img src="https://hydrotec.se/wp-content/uploads/2022/08/entwaesserungsrinne-hydroblock-titelbild-86586f04.webp" alt="ANRIN"></div>
+        <div class="mega-photo"><img src="/hydrotec-files-nonwww/2022/08/entwaesserungsrinne-hydroblock-titelbild-86586f04.webp" alt="ANRIN"></div>
         <h4>ANRIN</h4>
       </a>
       <p>Rännsystem i polymerbetong — KE, SF, Z, SELF och ANRIN SPORT.</p>
@@ -993,7 +993,7 @@ div[class*="sticky-action"] {
     </div>
     <div class="mega-col" data-brand="hydrotec">
       <a href="files (1)/hydrotec.html" class="mega-brand">
-        <div class="mega-photo"><img src="https://hydrotec.se/wp-content/uploads/2022/07/Lattbetackning-A15-DN-300.jpg" alt="HYDROTEC"></div>
+        <div class="mega-photo"><img src="/hydrotec-files-nonwww/2022/07/Lattbetackning-A15-DN-300.jpg" alt="HYDROTEC"></div>
         <h4>HYDROTEC</h4>
       </a>
       <p>Betongkanalsystem, betäckningar och stadsinredning.</p>
@@ -1006,7 +1006,7 @@ div[class*="sticky-action"] {
     </div>
     <div class="mega-col" data-brand="stainless">
       <a href="/stainless steel new/stainless-team.html" class="mega-brand">
-        <div class="mega-photo"><img src="https://stainlessteam.se/wp-content/uploads/2024/01/hydrotec_supply_landscaping.jpg-1-edited-1024x1022-1.jpg" alt="Stainless Team"></div>
+        <div class="mega-photo"><img src="/stainlessteam-files/2024/01/hydrotec_supply_landscaping.jpg-1-edited-1024x1022-1.jpg" alt="Stainless Team"></div>
         <h4>Stainless Team</h4>
       </a>
       <p>Rostfritt och syrafast stål — golvbrunnar, golvrännor och specialprodukter.</p>
@@ -1158,11 +1158,11 @@ div[class*="sticky-action"] {
         <div class="about-badge"><b>23 år</b><span>Leverantör till finska försvarsmakten</span></div>
       </div>
       <a href="https://byggvarubedomningen.se/" target="_blank" rel="noopener" class="bvb-badge">
-        <img src="https://stainlessteam.se/wp-content/uploads/2024/01/bvb-logo-transparent-ny-300x45-1.png" alt="Byggvarubedömningen" style="height:24px;width:auto;">
+        <img src="/stainlessteam-files/2024/01/bvb-logo-transparent-ny-300x45-1.png" alt="Byggvarubedömningen" style="height:24px;width:auto;">
       </a>
     </div>
     <div class="about-visual reveal">
-      <img src="https://stainlessteam.se/wp-content/uploads/2024/01/industri-1024x683-1.jpg" alt="Stainless Team industriproduktion">
+      <img src="/stainlessteam-files/2024/01/industri-1024x683-1.jpg" alt="Stainless Team industriproduktion">
     </div>
   </div>
 </section>
@@ -1409,8 +1409,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 <script>
 /* ================= DATA ================= */
-const IMG = "https://stainlessteam.se/wp-content/uploads/2024/01/";
-const IMG25 = "https://stainlessteam.se/wp-content/uploads/2025/02/";
+const IMG = "/stainlessteam-files/2024/01/";
+const IMG25 = "/stainlessteam-files/2025/02/";
 
 // Shared accessories used across all golvbrunnar floor-type tabs
 const golvbrunnAccessories = [
@@ -1430,10 +1430,10 @@ function getRealPdfUrl(href) {
     const file = href.substring(5);
     const lower = file.toLowerCase();
     if (lower.includes('betonggolv') || lower.includes('massagolv') || lower.includes('klinkergolv') || lower.includes('plastmatta')) {
-      return "https://stainlessteam.se/wp-content/uploads/2024/02/" + file;
+      return "/stainlessteam-files/2024/02/" + file;
     }
     if (lower.includes('svanhals')) {
-      return "https://stainlessteam.se/wp-content/uploads/2025/02/" + file;
+      return "/stainlessteam-files/2025/02/" + file;
     }
     return IMG + file;
   }

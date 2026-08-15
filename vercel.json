@@ -3,6 +3,26 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/filer_public/:path*",
+      "destination": "https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public/:path*"
+    },
+    {
+      "source": "/filer_public_thumbnails/:path*",
+      "destination": "https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/filer_public_thumbnails/:path*"
+    },
+    {
+      "source": "/stainlessteam-files/:path*",
+      "destination": "https://stainlessteam.se/wp-content/uploads/:path*"
+    },
+    {
+      "source": "/hydrotec-files/:path*",
+      "destination": "https://www.hydrotec.se/wp-content/uploads/:path*"
+    },
+    {
+      "source": "/hydrotec-files-nonwww/:path*",
+      "destination": "https://hydrotec.se/wp-content/uploads/:path*"
+    },
+    {
       "source": "/produkter",
       "destination": "/produkter.html"
     },

@@ -2,7 +2,15 @@
 
 
 
+
+
+
+
 <html lang="en">
+
+
+
+
 
 
 
@@ -10,11 +18,23 @@
 
 
 
+
+
+
+
 <meta charset="UTF-8">
 
 
 
+
+
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
 
 
 
@@ -30,7 +50,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <script src="header.js"></script>
+
+
+
+
 
 
 
@@ -38,7 +74,15 @@
 
 
 
+
+
+
+
 <style>
+
+
+
+
 
 
 
@@ -50,7 +94,19 @@
 
 
 
+
+
+
+
+
+
+
+
 :root{
+
+
+
+
 
 
 
@@ -58,7 +114,15 @@
 
 
 
+
+
+
+
   --white:#FFFFFF;
+
+
+
+
 
 
 
@@ -66,7 +130,15 @@
 
 
 
+
+
+
+
   --gray-150:#EFEFEF;
+
+
+
+
 
 
 
@@ -74,7 +146,15 @@
 
 
 
+
+
+
+
   --gray-500:#767676;
+
+
+
+
 
 
 
@@ -82,7 +162,15 @@
 
 
 
+
+
+
+
   --display:'Manrope', sans-serif;
+
+
+
+
 
 
 
@@ -90,7 +178,15 @@
 
 
 
+
+
+
+
   --ease:cubic-bezier(.16,.8,.24,1);
+
+
+
+
 
 
 
@@ -98,7 +194,15 @@
 
 
 
+
+
+
+
 *{margin:0;padding:0;box-sizing:border-box;}
+
+
+
+
 
 
 
@@ -106,7 +210,15 @@ html{scroll-behavior:smooth;}
 
 
 
+
+
+
+
 body{font-family:var(--body);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:18px;}
+
+
+
+
 
 
 
@@ -114,7 +226,15 @@ a{color:inherit;text-decoration:none;}
 
 
 
+
+
+
+
 ul{list-style:none;}
+
+
+
+
 
 
 
@@ -122,7 +242,15 @@ img{display:block;max-width:100%;}
 
 
 
+
+
+
+
 button{font-family:inherit;cursor:pointer;background:none;border:none;color:inherit;}
+
+
+
+
 
 
 
@@ -130,7 +258,15 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 
 
 
+
+
+
+
 @media(max-width:768px){.wrap{padding:0 24px;}}
+
+
+
+
 
 
 
@@ -142,7 +278,19 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 
 
 
+
+
+
+
+
+
+
+
 /* Preloader */
+
+
+
+
 
 
 
@@ -150,7 +298,15 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 
 
 
+
+
+
+
 #preloader svg{width:180px;overflow:visible;}
+
+
+
+
 
 
 
@@ -158,7 +314,15 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 
 
 
+
+
+
+
 @keyframes draw{to{stroke-dashoffset:0;}}
+
+
+
+
 
 
 
@@ -170,7 +334,19 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 
 
 
+
+
+
+
+
+
+
+
 /* Flow progress line */
+
+
+
+
 
 
 
@@ -178,11 +354,23 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 
 
 
+
+
+
+
 #flowline .fill{position:absolute;left:0;top:0;width:100%;height:0%;background:var(--black);transition:height .05s linear;}
 
 
 
+
+
+
+
 #flowline .drop{position:absolute;left:50%;transform:translateX(-50%);width:8px;height:8px;border-radius:50%;background:var(--black);top:0;box-shadow:0 0 0 5px var(--white);}
+
+
+
+
 
 
 
@@ -194,11 +382,27 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 
 
 
+
+
+
+
+
+
+
+
 /* Header */
 
 
 
+
+
+
+
 header{position:fixed;top:0;left:0;right:0;z-index:400;padding:26px 0;transition:all .5s var(--ease);}
+
+
+
+
 
 
 
@@ -210,7 +414,19 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:2
 
 
 
+
+
+
+
+
+
+
+
 .logo img{height:24px;transition:filter .4s var(--ease);}
+
+
+
+
 
 
 
@@ -218,7 +434,15 @@ nav.main-nav{display:flex;gap:38px;}
 
 
 
+
+
+
+
 @media(max-width:1150px){nav.main-nav{display:none;}}
+
+
+
+
 
 
 
@@ -226,7 +450,15 @@ nav.main-nav a{font-size:15.5px;letter-spacing:.01em;position:relative;padding:4
 
 
 
+
+
+
+
 nav.main-nav a.active{font-weight:600;}
+
+
+
+
 
 
 
@@ -234,7 +466,15 @@ nav.main-nav a::after{content:'';position:absolute;left:0;bottom:0;width:0;heigh
 
 
 
+
+
+
+
 nav.main-nav a:hover::after, nav.main-nav a.active::after{width:100%;}
+
+
+
+
 
 
 
@@ -242,7 +482,15 @@ nav.main-nav a:hover::after, nav.main-nav a.active::after{width:100%;}
 
 
 
+
+
+
+
 .icon-btn{width:19px;height:19px;display:flex;align-items:center;justify-content:center;}
+
+
+
+
 
 
 
@@ -250,11 +498,23 @@ nav.main-nav a:hover::after, nav.main-nav a.active::after{width:100%;}
 
 
 
+
+
+
+
 .btn-quote{font-size:14.5px;padding:12px 24px;border:1px solid currentColor;border-radius:100px;letter-spacing:.02em;transition:background .35s var(--ease),color .35s var(--ease);white-space:nowrap;}
 
 
 
+
+
+
+
 .btn-quote:hover{background:var(--black);color:var(--white);}
+
+
+
+
 
 
 
@@ -266,7 +526,19 @@ nav.main-nav a:hover::after, nav.main-nav a.active::after{width:100%;}
 
 
 
+
+
+
+
+
+
+
+
 /* Language switcher */
+
+
+
+
 
 
 
@@ -274,7 +546,15 @@ nav.main-nav a:hover::after, nav.main-nav a.active::after{width:100%;}
 
 
 
+
+
+
+
 .lang-current{display:flex;align-items:center;gap:6px;font-size:13px;letter-spacing:.03em;padding:6px 8px;border:1px solid var(--gray-300);border-radius:100px;}
+
+
+
+
 
 
 
@@ -282,7 +562,15 @@ nav.main-nav a:hover::after, nav.main-nav a.active::after{width:100%;}
 
 
 
+
+
+
+
 .lang-menu{position:absolute;top:calc(100% + 10px);right:0;background:var(--white);border:1px solid var(--gray-150);border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.08);min-width:168px;padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .3s var(--ease);z-index:50;}
+
+
+
+
 
 
 
@@ -290,11 +578,23 @@ nav.main-nav a:hover::after, nav.main-nav a.active::after{width:100%;}
 
 
 
+
+
+
+
 .lang-menu button{width:100%;text-align:left;padding:10px 12px;border-radius:999px;font-size:13px;display:flex;justify-content:space-between;align-items:center;}
 
 
 
+
+
+
+
 .lang-menu button:hover{background:var(--gray-50);}
+
+
+
+
 
 
 
@@ -306,7 +606,19 @@ nav.main-nav a:hover::after, nav.main-nav a.active::after{width:100%;}
 
 
 
+
+
+
+
+
+
+
+
 .burger{display:none;width:22px;height:14px;position:relative;}
+
+
+
+
 
 
 
@@ -314,7 +626,15 @@ nav.main-nav a:hover::after, nav.main-nav a.active::after{width:100%;}
 
 
 
+
+
+
+
 .burger span:nth-child(1){top:0;}
+
+
+
+
 
 
 
@@ -322,7 +642,15 @@ nav.main-nav a:hover::after, nav.main-nav a.active::after{width:100%;}
 
 
 
+
+
+
+
 .burger span:nth-child(3){top:13px;}
+
+
+
+
 
 
 
@@ -334,7 +662,19 @@ nav.main-nav a:hover::after, nav.main-nav a.active::after{width:100%;}
 
 
 
+
+
+
+
+
+
+
+
 #mobile-menu{position:fixed;inset:0;background:var(--black);color:var(--white);z-index:600;display:flex;flex-direction:column;justify-content:center;padding:48px;transform:translateY(-100%);transition:transform .55s var(--ease);}
+
+
+
+
 
 
 
@@ -342,7 +682,15 @@ nav.main-nav a:hover::after, nav.main-nav a.active::after{width:100%;}
 
 
 
+
+
+
+
 body.mobile-menu-open{overflow:hidden;}
+
+
+
+
 
 
 
@@ -350,7 +698,15 @@ body.mobile-menu-open{overflow:hidden;}
 
 
 
+
+
+
+
 #mobile-menu a{font-family:var(--display);font-size:30px;font-weight:600;display:block;margin:12px 0;}
+
+
+
+
 
 
 
@@ -358,7 +714,15 @@ body.mobile-menu-open{overflow:hidden;}
 
 
 
+
+
+
+
 #mobile-menu .mm-foot{position:absolute;bottom:40px;left:48px;right:48px;font-size:13px;color:var(--gray-300);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+
+
+
+
 
 
 
@@ -366,7 +730,15 @@ body.mobile-menu-open{overflow:hidden;}
 
 
 
+
+
+
+
 .page-hero .wrap{position:relative !important;z-index:10 !important;}
+
+
+
+
 
 
 
@@ -374,7 +746,15 @@ body.mobile-menu-open{overflow:hidden;}
 
 
 
+
+
+
+
 .page-hero h1{font-family:var(--display);font-weight:700;font-size:clamp(36px,6vw,80px);line-height:1;letter-spacing:-.02em;max-width:900px;color:#ffffff !important;position:relative !important;z-index:10 !important;opacity:1 !important;visibility:visible !important;}
+
+
+
+
 
 
 
@@ -382,11 +762,23 @@ body.mobile-menu-open{overflow:hidden;}
 
 
 
+
+
+
+
 .cat-pills{display:flex;gap:12px;flex-wrap:wrap;margin-top:40px;}
 
 
 
+
+
+
+
 .cat-pills a{font-size:13px;border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:10px 20px;transition:all .3s var(--ease);}
+
+
+
+
 
 
 
@@ -398,7 +790,19 @@ body.mobile-menu-open{overflow:hidden;}
 
 
 
+
+
+
+
+
+
+
+
 /* Home hero */
+
+
+
+
 
 
 
@@ -406,7 +810,15 @@ body.mobile-menu-open{overflow:hidden;}
 
 
 
+
+
+
+
 .hero-lines{position:absolute;inset:0;opacity:.5;}
+
+
+
+
 
 
 
@@ -414,7 +826,15 @@ body.mobile-menu-open{overflow:hidden;}
 
 
 
+
+
+
+
 .hero-lines path{fill:none;stroke:rgba(255,255,255,.35);stroke-width:1;}
+
+
+
+
 
 
 
@@ -422,7 +842,15 @@ body.mobile-menu-open{overflow:hidden;}
 
 
 
+
+
+
+
 .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-300);display:flex;align-items:center;gap:12px;margin-bottom:28px;opacity:0;transform:translateY(14px);animation:rise .9s var(--ease) .2s forwards;}
+
+
+
+
 
 
 
@@ -430,7 +858,15 @@ body.mobile-menu-open{overflow:hidden;}
 
 
 
+
+
+
+
 h1.hero-title{font-family:var(--display);font-weight:700;font-size:clamp(40px,7vw,104px);line-height:.98;letter-spacing:-.02em;max-width:1180px;}
+
+
+
+
 
 
 
@@ -438,7 +874,15 @@ h1.hero-title span{display:block;overflow:hidden;}
 
 
 
+
+
+
+
 h1.hero-title span em{font-style:normal;display:block;transform:translateY(100%);animation:rise .9s var(--ease) forwards;}
+
+
+
+
 
 
 
@@ -446,7 +890,15 @@ h1.hero-title span:nth-child(1) em{animation-delay:.05s;}
 
 
 
+
+
+
+
 h1.hero-title span:nth-child(2) em{animation-delay:.18s;color:var(--gray-500);}
+
+
+
+
 
 
 
@@ -454,7 +906,15 @@ h1.hero-title span:nth-child(2) em{animation-delay:.18s;color:var(--gray-500);}
 
 
 
+
+
+
+
 .hero-sub{max-width:560px;margin-top:32px;font-size:18.5px;line-height:1.68;color:var(--gray-300);opacity:0;animation:fadeUp 1s var(--ease) .5s forwards;}
+
+
+
+
 
 
 
@@ -462,7 +922,15 @@ h1.hero-title span:nth-child(2) em{animation-delay:.18s;color:var(--gray-500);}
 
 
 
+
+
+
+
 .hero-actions{display:flex;gap:20px;margin-top:46px;align-items:center;flex-wrap:wrap;opacity:0;animation:fadeUp 1s var(--ease) .7s forwards;}
+
+
+
+
 
 
 
@@ -470,7 +938,15 @@ h1.hero-title span:nth-child(2) em{animation-delay:.18s;color:var(--gray-500);}
 
 
 
+
+
+
+
 .btn-primary:hover{transform:translateY(-3px);}
+
+
+
+
 
 
 
@@ -478,7 +954,15 @@ h1.hero-title span:nth-child(2) em{animation-delay:.18s;color:var(--gray-500);}
 
 
 
+
+
+
+
 .btn-dark:hover{opacity:.8;}
+
+
+
+
 
 
 
@@ -486,11 +970,35 @@ h1.hero-title span:nth-child(2) em{animation-delay:.18s;color:var(--gray-500);}
 
 
 
+
+
+
+
 .btn-ghost-line::after{content:'';position:absolute;left:0;bottom:-4px;width:100%;height:1px;background:var(--white);transform:scaleX(.3);transform-origin:left;transition:transform .4s var(--ease);}
 
 
 
+
+
+
+
 .btn-ghost-line:hover::after{transform:scaleX(1);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -514,7 +1022,19 @@ h1.hero-title span:nth-child(2) em{animation-delay:.18s;color:var(--gray-500);}
 
 
 
+
+
+
+
+
+
+
+
 /* Sections */
+
+
+
+
 
 
 
@@ -522,7 +1042,15 @@ section{position:relative;}
 
 
 
+
+
+
+
 .section-pad{padding:130px 0;}
+
+
+
+
 
 
 
@@ -530,7 +1058,15 @@ section{position:relative;}
 
 
 
+
+
+
+
 .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:76px;}
+
+
+
+
 
 
 
@@ -538,7 +1074,15 @@ section{position:relative;}
 
 
 
+
+
+
+
 .tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+
+
+
+
 
 
 
@@ -546,7 +1090,15 @@ section{position:relative;}
 
 
 
+
+
+
+
 h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,50px);letter-spacing:-.015em;line-height:1.06;max-width:640px;}
+
+
+
+
 
 
 
@@ -554,7 +1106,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .reveal{opacity:0;transform:translateY(32px);transition:opacity .9s var(--ease),transform .9s var(--ease);}
+
+
+
+
 
 
 
@@ -566,7 +1126,19 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
+
+
+
+
 /* Product / category grid */
+
+
+
+
 
 
 
@@ -574,7 +1146,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 @media(max-width:1024px){.products-grid{grid-template-columns:repeat(2,1fr);}}
+
+
+
+
 
 
 
@@ -582,7 +1162,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .product-card{background:var(--white);padding:44px 32px;min-height:400px;display:flex;flex-direction:column;justify-content:space-between;transition:background .5s var(--ease),color .5s var(--ease);position:relative;overflow:hidden;}
+
+
+
+
 
 
 
@@ -590,7 +1178,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .product-card .pc-icon{width:44px;height:44px;margin-bottom:auto;}
+
+
+
+
 
 
 
@@ -598,7 +1194,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .product-card .pc-index{font-size:12px;color:var(--gray-500);letter-spacing:.06em;margin-bottom:22px;}
+
+
+
+
 
 
 
@@ -606,7 +1210,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .product-card p{font-size:15.5px;line-height:1.65;color:var(--gray-500);}
+
+
+
+
 
 
 
@@ -614,7 +1226,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .product-card .pc-link{margin-top:24px;font-size:14.5px;display:flex;align-items:center;gap:8px;transform:translateX(0);transition:transform .35s var(--ease);}
+
+
+
+
 
 
 
@@ -626,7 +1246,19 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
+
+
+
+
 /* Category detail block (produkter.html) */
+
+
+
+
 
 
 
@@ -634,7 +1266,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .cat-block:last-child{border-bottom:1px solid var(--gray-150);}
+
+
+
+
 
 
 
@@ -642,7 +1282,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .cat-figure{aspect-ratio:5/4;background:var(--gray-50);border:1px solid var(--gray-150);display:flex;align-items:center;justify-content:center;position:relative;}
+
+
+
+
 
 
 
@@ -650,7 +1298,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .cat-figure .frame-label{position:absolute;bottom:20px;left:20px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--gray-500);}
+
+
+
+
 
 
 
@@ -658,7 +1314,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .cat-block h3{font-family:var(--display);font-weight:700;font-size:clamp(26px,3.2vw,40px);letter-spacing:-.01em;margin-bottom:18px;}
+
+
+
+
 
 
 
@@ -666,11 +1330,23 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .spec-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
 
 
 
+
+
+
+
 .spec-tags span{font-size:12px;border:1px solid var(--gray-300);padding:7px 14px;border-radius:100px;color:var(--gray-700);}
+
+
+
+
 
 
 
@@ -682,7 +1358,19 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
+
+
+
+
 /* About split */
+
+
+
+
 
 
 
@@ -690,7 +1378,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 @media(max-width:900px){.split{grid-template-columns:1fr;gap:48px;}}
+
+
+
+
 
 
 
@@ -698,7 +1394,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .about-figure svg{width:72%;}
+
+
+
+
 
 
 
@@ -706,7 +1410,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .about-body p{font-size:17.5px;line-height:1.78;color:var(--gray-700);margin-bottom:20px;}
+
+
+
+
 
 
 
@@ -714,7 +1426,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .stat-row div b{display:block;font-family:var(--display);font-size:36px;font-weight:700;}
+
+
+
+
 
 
 
@@ -722,7 +1442,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 @media(max-width:768px){
+
+
+
+
 
 
 
@@ -730,7 +1458,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
   .stat-row>div{width:100%!important;max-width:100%!important;min-width:0!important;}
+
+
+
+
 
 
 
@@ -738,11 +1474,23 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
   .stat-row div span{font-size:11px!important;white-space:normal!important;word-break:normal!important;line-height:1.3!important;}
 
 
 
+
+
+
+
 }
+
+
+
+
 
 
 
@@ -754,7 +1502,19 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
+
+
+
+
 /* Growth chart */
+
+
+
+
 
 
 
@@ -762,7 +1522,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .chart-card .chart-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;}
+
+
+
+
 
 
 
@@ -770,7 +1538,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .chart-card .chart-head span{font-size:12px;color:var(--gray-500);text-transform:uppercase;letter-spacing:.06em;}
+
+
+
+
 
 
 
@@ -778,7 +1554,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .chart-line{fill:none;stroke:var(--black);stroke-width:2;stroke-dasharray:600;stroke-dashoffset:600;transition:stroke-dashoffset 1.6s var(--ease);}
+
+
+
+
 
 
 
@@ -786,7 +1570,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .chart-dot{opacity:0;transition:opacity .4s var(--ease) 1.4s;}
+
+
+
+
 
 
 
@@ -794,7 +1586,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .chart-card.in .chart-area{opacity:1;}
+
+
+
+
 
 
 
@@ -802,7 +1602,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .chart-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--gray-500);margin-top:10px;letter-spacing:.04em;}
+
+
+
+
 
 
 
@@ -810,11 +1618,23 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .chart-bars .bar{flex:1;background:var(--gray-150);position:relative;display:flex;align-items:flex-end;overflow:hidden;}
 
 
 
+
+
+
+
 .chart-bars .bar .fillbar{width:100%;height:0%;background:var(--black);transition:height 1.4s var(--ease);}
+
+
+
+
 
 
 
@@ -826,7 +1646,19 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
+
+
+
+
 /* Process */
+
+
+
+
 
 
 
@@ -834,7 +1666,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .process-item{display:grid;grid-template-columns:80px 1fr 1fr;gap:32px;padding:38px 0;border-bottom:1px solid var(--gray-150);align-items:center;}
+
+
+
+
 
 
 
@@ -842,11 +1682,23 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .process-item .pi-num{font-family:var(--display);font-size:14px;color:var(--gray-500);}
 
 
 
+
+
+
+
 .process-item h4{font-family:var(--display);font-size:24px;font-weight:700;}
+
+
+
+
 
 
 
@@ -858,7 +1710,19 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
+
+
+
+
 /* Partners */
+
+
+
+
 
 
 
@@ -866,11 +1730,23 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .partners-strip img{height:36px;width:auto;filter:grayscale(1);opacity:.75;transition:opacity .3s var(--ease);}
 
 
 
+
+
+
+
 .partners-strip img:hover{opacity:1;}
+
+
+
+
 
 
 
@@ -882,11 +1758,27 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
+
+
+
+
 /* CTA banner */
 
 
 
+
+
+
+
 .cta-banner{background:var(--black);color:var(--white);padding:130px 0;text-align:center;}
+
+
+
+
 
 
 
@@ -898,7 +1790,19 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
+
+
+
+
 /* Projects grid */
+
+
+
+
 
 
 
@@ -906,7 +1810,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 @media(max-width:900px){.projects-grid{grid-template-columns:repeat(2,1fr);}}
+
+
+
+
 
 
 
@@ -914,7 +1826,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .project-card{background:var(--white);padding:38px 30px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between;transition:background .4s var(--ease),color .4s var(--ease);}
+
+
+
+
 
 
 
@@ -922,7 +1842,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .project-card .proj-tag{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--gray-500);}
+
+
+
+
 
 
 
@@ -930,7 +1858,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .project-card h4{font-family:var(--display);font-size:21px;font-weight:700;margin:14px 0 8px;}
+
+
+
+
 
 
 
@@ -938,7 +1874,19 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .project-card:hover p{color:var(--gray-300);}
+
+
+
+
+
+
+
+
 
 
 
@@ -950,7 +1898,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 @media(max-width:700px){.dl-row{grid-template-columns:auto 1fr;}.dl-row .dl-tag,.dl-row .dl-btn{grid-column:2;justify-self:start;margin-top:6px;}}
+
+
+
+
 
 
 
@@ -958,7 +1914,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .dl-row h5{font-family:var(--display);font-size:15px;font-weight:700;}
+
+
+
+
 
 
 
@@ -966,7 +1930,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .dl-row .dl-tag{font-size:11px;color:var(--gray-500);text-transform:uppercase;letter-spacing:.05em;border:1px solid var(--gray-300);padding:5px 12px;border-radius:100px;white-space:nowrap;}
+
+
+
+
 
 
 
@@ -978,7 +1950,19 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
+
+
+
+
 /* Contact */
+
+
+
+
 
 
 
@@ -986,7 +1970,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 @media(max-width:600px){.contact-hero-form{padding:32px 24px;}}
+
+
+
+
 
 
 
@@ -994,7 +1986,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 @media(max-width:600px){.form-grid{grid-template-columns:1fr;}}
+
+
+
+
 
 
 
@@ -1002,7 +2002,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .field{margin-bottom:0;}
+
+
+
+
 
 
 
@@ -1010,7 +2018,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .field input,.field textarea,.field select{width:100%;border:none;border-bottom:1px solid var(--gray-300);padding:13px 0;font-family:var(--body);font-size:16.5px;background:transparent;transition:border-color .3s var(--ease);}
+
+
+
+
 
 
 
@@ -1018,7 +2034,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .field textarea{resize:vertical;min-height:100px;}
+
+
+
+
 
 
 
@@ -1026,7 +2050,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 @media(max-width:600px){.cat-select-grid{grid-template-columns:repeat(2,1fr);}}
+
+
+
+
 
 
 
@@ -1034,7 +2066,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .cat-select-grid input{display:none;}
+
+
+
+
 
 
 
@@ -1042,7 +2082,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .cat-select-grid label:has(input:checked){background:var(--black);color:var(--white);border-color:var(--black);}
+
+
+
+
 
 
 
@@ -1050,7 +2098,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .submit-btn{background:var(--black);color:var(--white);padding:17px 38px;border-radius:100px;font-size:14px;font-weight:600;margin-top:8px;transition:opacity .3s;}
+
+
+
+
 
 
 
@@ -1058,7 +2114,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 #form-note{font-size:13px;color:var(--gray-500);margin-top:16px;display:none;}
+
+
+
+
 
 
 
@@ -1066,7 +2130,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .contact-info dt{color:var(--gray-500);}
+
+
+
+
 
 
 
@@ -1074,7 +2146,15 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
 .contact-map{margin-top:40px;border:1px solid var(--gray-150);aspect-ratio:16/10;overflow:hidden;}
+
+
+
+
 
 
 
@@ -1086,7 +2166,19 @@ h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(28px
 
 
 
+
+
+
+
+
+
+
+
 /* Footer */
+
+
+
+
 
 
 
@@ -1094,7 +2186,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:76px;}
+
+
+
+
 
 
 
@@ -1102,7 +2202,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 @media(max-width:520px){.footer-top{grid-template-columns:1fr;}}
+
+
+
+
 
 
 
@@ -1110,7 +2218,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .footer-top li{margin-bottom:12px;font-size:15px;}
+
+
+
+
 
 
 
@@ -1118,7 +2234,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .footer-logo img{height:22px;margin-bottom:22px;}
+
+
+
+
 
 
 
@@ -1126,7 +2250,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .footer-social{display:flex;gap:16px;margin-top:22px;}
+
+
+
+
 
 
 
@@ -1134,7 +2266,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .footer-social a:hover{background:var(--black);color:var(--white);border-color:var(--black);}
+
+
+
+
 
 
 
@@ -1142,11 +2282,23 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .footer-bottom{border-top:1px solid var(--gray-150);padding:26px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--gray-500);}
 
 
 
+
+
+
+
 .footer-bottom .legal-links{display:flex;gap:22px;flex-wrap:wrap;}
+
+
+
+
 
 
 
@@ -1158,11 +2310,27 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* Toast */
 
 
 
+
+
+
+
 #toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(120%);background:var(--black);color:var(--white);padding:16px 26px;border-radius:100px;font-size:14px;z-index:700;transition:transform .5s var(--ease);}
+
+
+
+
 
 
 
@@ -1174,7 +2342,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* Data source note (transparency strip) */
+
+
+
+
 
 
 
@@ -1186,7 +2366,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* Real photography treatment (keeps strict B&W brand palette) */
+
+
+
+
 
 
 
@@ -1194,7 +2386,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .photo-wrap{overflow:hidden;position:relative;}
+
+
+
+
 
 
 
@@ -1202,7 +2402,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .hero-photo{position:absolute;inset:0;z-index:0;}
+
+
+
+
 
 
 
@@ -1210,7 +2418,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.55) 55%, #000 100%);}
+
+
+
+
 
 
 
@@ -1218,7 +2434,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .pc-photo img{filter:none;}
+
+
+
+
 
 
 
@@ -1226,7 +2450,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .cat-figure.photo-wrap{padding:0;}
+
+
+
+
 
 
 
@@ -1234,7 +2466,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .ref-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-150);border:1px solid var(--gray-150);margin-top:20px;}
+
+
+
+
 
 
 
@@ -1242,7 +2482,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 @media(max-width:560px){.ref-grid{grid-template-columns:1fr;}}
+
+
+
+
 
 
 
@@ -1250,7 +2498,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .ref-card img{width:100%;height:100%;object-fit:cover;object-position:center;filter:none;transition:transform .8s var(--ease);}
+
+
+
+
 
 
 
@@ -1258,7 +2514,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .ref-card .ref-cap{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg, rgba(0,0,0,.75), transparent);color:var(--white);font-size:13px;font-weight:600;}
+
+
+
+
 
 
 
@@ -1270,7 +2534,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* Clickable / lightbox-enabled images */
+
+
+
+
 
 
 
@@ -1278,7 +2554,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 #lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9000;display:none;align-items:center;justify-content:center;padding:40px;}
+
+
+
+
 
 
 
@@ -1286,7 +2570,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 #lightbox img{max-width:min(1100px,90vw);max-height:82vh;object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,.5);}
+
+
+
+
 
 
 
@@ -1294,7 +2586,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 #lightbox .lb-close{position:absolute;top:28px;right:28px;width:26px;height:26px;color:var(--white);}
+
+
+
+
 
 
 
@@ -1302,7 +2602,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 #lightbox .lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:1px solid rgba(255,255,255,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);transition:background .3s var(--ease);}
+
+
+
+
 
 
 
@@ -1310,7 +2618,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 #lightbox .lb-nav svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6;}
+
+
+
+
 
 
 
@@ -1318,7 +2634,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 #lightbox .lb-next{right:28px;}
+
+
+
+
 
 
 
@@ -1330,7 +2654,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* Brand-visibility (country/language driven) — hidden by default toggle class */
+
+
+
+
 
 
 
@@ -1342,7 +2678,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* ---------- GLOBAL POLISH ---------- */
+
+
+
+
 
 
 
@@ -1350,7 +2698,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .fam-photo:hover img{transform:scale(1.05);}
+
+
+
+
 
 
 
@@ -1358,7 +2714,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .brand-banner-photo img{transition:transform .7s var(--ease);max-width:100%;}
+
+
+
+
 
 
 
@@ -1366,7 +2730,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .fam-card{transition:box-shadow .3s var(--ease);}
+
+
+
+
 
 
 
@@ -1374,7 +2746,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .fam-dl{transition:gap .3s var(--ease);}
+
+
+
+
 
 
 
@@ -1382,11 +2762,23 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .dl-row{transition:background .3s var(--ease),padding .3s var(--ease);border-radius:6px;margin:0;padding:24px 16px;}
 
 
 
+
+
+
+
 .dl-row:hover{background:var(--gray-50);padding-left:22px;}
+
+
+
+
 
 
 
@@ -1398,7 +2790,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* ===================== Mega menu ===================== */
+
+
+
+
 
 
 
@@ -1406,7 +2810,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .mega-panel{
+
+
+
+
 
 
 
@@ -1414,7 +2826,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
   box-shadow:0 30px 60px rgba(0,0,0,.08);padding:130px 0 48px;
+
+
+
+
 
 
 
@@ -1422,7 +2842,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
   z-index:390;
+
+
+
+
 
 
 
@@ -1430,7 +2858,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .mega-panel.open{opacity:1;visibility:visible;transform:translateY(0);}
+
+
+
+
 
 
 
@@ -1438,7 +2874,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 @media(max-width:900px){.mega-grid{grid-template-columns:repeat(2,1fr);}}
+
+
+
+
 
 
 
@@ -1446,7 +2890,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .mega-col .mega-photo{width:100%;aspect-ratio:4/3;overflow:hidden;margin-bottom:14px;background:var(--gray-50);}
+
+
+
+
 
 
 
@@ -1454,7 +2906,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .mega-col h4{font-family:var(--display);font-size:17px;font-weight:700;margin-bottom:6px;}
+
+
+
+
 
 
 
@@ -1462,7 +2922,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .mega-col ul{margin-top:8px;}
+
+
+
+
 
 
 
@@ -1470,7 +2938,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .mega-col ul li a{color:var(--gray-700);}
+
+
+
+
 
 
 
@@ -1478,7 +2954,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .mega-close-overlay{position:fixed;inset:0;background:rgba(0,0,0,.25);z-index:380;opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s;}
+
+
+
+
 
 
 
@@ -1490,7 +2974,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* ===================== Global product search ===================== */
+
+
+
+
 
 
 
@@ -1498,7 +2994,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .site-search-panel{
+
+
+
+
 
 
 
@@ -1506,7 +3010,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
   transform:translateY(-100%);transition:transform .4s var(--ease);border-bottom:1px solid var(--gray-150);
+
+
+
+
 
 
 
@@ -1514,7 +3026,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 }
+
+
+
+
 
 
 
@@ -1522,7 +3042,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .site-search-panel input{
+
+
+
+
 
 
 
@@ -1530,7 +3058,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
   font-size:clamp(24px,4vw,40px);font-weight:600;background:transparent;
+
+
+
+
 
 
 
@@ -1538,7 +3074,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .site-search-panel input:focus{outline:none;}
+
+
+
+
 
 
 
@@ -1546,7 +3090,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 @media(max-width:768px){.search-results{grid-template-columns:1fr;}.site-search-panel{bottom:0;min-height:100vh;padding:96px 0 36px;overflow-y:auto;}.site-search-panel input{font-size:24px;}.search-close{top:24px;right:24px;width:44px;height:44px;padding:10px;}}
+
+
+
+
 
 
 
@@ -1554,7 +3106,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .search-hit:hover{border-color:var(--black);}
+
+
+
+
 
 
 
@@ -1562,7 +3122,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .search-hit .sh-cat{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-500);}
+
+
+
+
 
 
 
@@ -1570,11 +3138,23 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .search-empty{color:var(--gray-500);font-size:15px;margin-top:24px;}
 
 
 
+
+
+
+
 .search-close{position:absolute;top:32px;right:48px;width:24px;height:24px;}
+
+
+
+
 
 
 
@@ -1586,7 +3166,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* ===================== Filter Explorer (Projects / Downloads) ===================== */
+
+
+
+
 
 
 
@@ -1594,7 +3186,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .explorer-side{border:1px solid var(--gray-300);padding:20px;background:var(--black);width:100%;}
+
+
+
+
 
 
 
@@ -1602,7 +3202,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .explorer-search:focus{outline:none;border-color:var(--black);}
+
+
+
+
 
 
 
@@ -1610,7 +3218,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .filter-groups-horizontal{display:flex;flex-wrap:wrap;gap:48px;margin-bottom:16px;justify-content:space-between;}
+
+
+
+
 
 
 
@@ -1618,7 +3234,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .filter-group h5{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-300);margin-bottom:8px;}
+
+
+
+
 
 
 
@@ -1626,7 +3250,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .filter-select:focus{outline:none;border-color:var(--black);}
+
+
+
+
 
 
 
@@ -1634,7 +3266,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .filter-reset{font-size:13px;text-decoration:underline;color:var(--gray-300);margin-top:8px;}
+
+
+
+
 
 
 
@@ -1642,7 +3282,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .explorer-count b{color:var(--black);font-weight:700;}
+
+
+
+
+
+
+
+
 
 
 
@@ -1658,7 +3310,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* Reference / project cards */
+
+
+
+
 
 
 
@@ -1666,7 +3330,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 @media(max-width:900px){.ref-explorer-grid{grid-template-columns:repeat(2,1fr);}}
+
+
+
+
 
 
 
@@ -1674,7 +3346,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .refx-card{background:var(--white);display:flex;flex-direction:column;}
+
+
+
+
 
 
 
@@ -1682,7 +3362,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .refx-photo img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease);cursor:zoom-in;}
+
+
+
+
 
 
 
@@ -1690,7 +3378,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .refx-brand-tag{position:absolute;top:12px;left:12px;background:var(--black);color:var(--white);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;}
+
+
+
+
 
 
 
@@ -1698,7 +3394,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .refx-loc{font-size:12px;color:var(--gray-500);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;}
+
+
+
+
 
 
 
@@ -1706,11 +3410,27 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .refx-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;}
 
 
 
+
+
+
+
 .refx-tags span{font-size:10.5px;border:1px solid var(--gray-300);padding:3px 9px;border-radius:100px;color:var(--gray-700);}
+
+
+
+
+
+
+
+
 
 
 
@@ -1726,7 +3446,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 .dl-row{display:grid;grid-template-columns:auto 1fr auto auto;gap:18px;align-items:center;padding:24px 0;border-bottom:1px solid var(--gray-150);}
+
+
+
+
 
 
 
@@ -1734,7 +3466,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .dl-row .dl-icon{width:36px;height:36px;border:1px solid var(--gray-300);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;letter-spacing:.04em;}
+
+
+
+
 
 
 
@@ -1742,11 +3482,23 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .dl-row .dl-meta{font-size:12px;color:var(--gray-500);margin-top:2px;}
 
 
 
+
+
+
+
 .dl-row .dl-tag{font-size:11px;color:var(--gray-500);text-transform:uppercase;letter-spacing:.05em;border:1px solid var(--gray-300);padding:5px 12px;border-radius:100px;white-space:nowrap;}
+
+
+
+
 
 
 
@@ -1758,7 +3510,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* Contact */
+
+
+
+
 
 
 
@@ -1766,7 +3530,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 @media(max-width:600px){.contact-hero-form{padding:32px 24px;}}
+
+
+
+
 
 
 
@@ -1774,7 +3546,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 @media(max-width:600px){.form-grid{grid-template-columns:1fr;}}
+
+
+
+
 
 
 
@@ -1782,7 +3562,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .field{margin-bottom:0;}
+
+
+
+
 
 
 
@@ -1790,7 +3578,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .field input,.field textarea,.field select{width:100%;border:none;border-bottom:1px solid var(--gray-300);padding:13px 0;font-family:var(--body);font-size:16.5px;background:transparent;transition:border-color .3s var(--ease);}
+
+
+
+
 
 
 
@@ -1798,7 +3594,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .field textarea{resize:vertical;min-height:100px;}
+
+
+
+
 
 
 
@@ -1806,7 +3610,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 @media(max-width:600px){.cat-select-grid{grid-template-columns:repeat(2,1fr);}}
+
+
+
+
 
 
 
@@ -1814,7 +3626,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .cat-select-grid input{display:none;}
+
+
+
+
 
 
 
@@ -1822,7 +3642,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .cat-select-grid label:has(input:checked){background:var(--black);color:var(--white);border-color:var(--black);}
+
+
+
+
 
 
 
@@ -1830,7 +3658,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .submit-btn{background:var(--black);color:var(--white);padding:17px 38px;border-radius:100px;font-size:14px;font-weight:600;margin-top:8px;transition:opacity .3s;}
+
+
+
+
 
 
 
@@ -1838,7 +3674,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 #form-note{font-size:13px;color:var(--gray-500);margin-top:16px;display:none;}
+
+
+
+
 
 
 
@@ -1846,7 +3690,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .contact-info dt{color:var(--gray-500);}
+
+
+
+
 
 
 
@@ -1854,7 +3706,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .contact-map{margin-top:40px;border:1px solid var(--gray-150);aspect-ratio:16/10;overflow:hidden;}
+
+
+
+
 
 
 
@@ -1866,7 +3726,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* Footer */
+
+
+
+
 
 
 
@@ -1874,7 +3746,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:76px;}
+
+
+
+
 
 
 
@@ -1882,7 +3762,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 @media(max-width:520px){.footer-top{grid-template-columns:1fr;}}
+
+
+
+
 
 
 
@@ -1890,7 +3778,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .footer-top li{margin-bottom:12px;font-size:15px;}
+
+
+
+
 
 
 
@@ -1898,7 +3794,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .footer-logo img{height:22px;margin-bottom:22px;}
+
+
+
+
 
 
 
@@ -1906,7 +3810,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .footer-social{display:flex;gap:16px;margin-top:22px;}
+
+
+
+
 
 
 
@@ -1914,7 +3826,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .footer-social a:hover{background:var(--black);color:var(--white);border-color:var(--black);}
+
+
+
+
 
 
 
@@ -1922,11 +3842,23 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .footer-bottom{border-top:1px solid var(--gray-150);padding:26px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--gray-500);}
 
 
 
+
+
+
+
 .footer-bottom .legal-links{display:flex;gap:22px;flex-wrap:wrap;}
+
+
+
+
 
 
 
@@ -1938,11 +3870,27 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* Toast */
 
 
 
+
+
+
+
 #toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(120%);background:var(--black);color:var(--white);padding:16px 26px;border-radius:100px;font-size:14px;z-index:700;transition:transform .5s var(--ease);}
+
+
+
+
 
 
 
@@ -1954,7 +3902,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* Data source note (transparency strip) */
+
+
+
+
 
 
 
@@ -1966,7 +3926,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* Real photography treatment (keeps strict B&W brand palette) */
+
+
+
+
 
 
 
@@ -1974,7 +3946,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .photo-wrap{overflow:hidden;position:relative;}
+
+
+
+
 
 
 
@@ -1982,7 +3962,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .hero-photo{position:absolute;inset:0;z-index:0;}
+
+
+
+
 
 
 
@@ -1990,7 +3978,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.55) 55%, #000 100%);}
+
+
+
+
 
 
 
@@ -1998,7 +3994,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .pc-photo img{filter:none;}
+
+
+
+
 
 
 
@@ -2006,7 +4010,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .cat-figure.photo-wrap{padding:0;}
+
+
+
+
 
 
 
@@ -2014,7 +4026,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .ref-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-150);border:1px solid var(--gray-150);margin-top:20px;}
+
+
+
+
 
 
 
@@ -2022,7 +4042,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 @media(max-width:560px){.ref-grid{grid-template-columns:1fr;}}
+
+
+
+
 
 
 
@@ -2030,7 +4058,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .ref-card img{width:100%;height:100%;object-fit:cover;object-position:center;filter:none;transition:transform .8s var(--ease);}
+
+
+
+
 
 
 
@@ -2038,7 +4074,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .ref-card .ref-cap{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg, rgba(0,0,0,.75), transparent);color:var(--white);font-size:13px;font-weight:600;}
+
+
+
+
 
 
 
@@ -2050,7 +4094,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* Clickable / lightbox-enabled images */
+
+
+
+
 
 
 
@@ -2058,7 +4114,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 #lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9000;display:none;align-items:center;justify-content:center;padding:40px;}
+
+
+
+
 
 
 
@@ -2066,7 +4130,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 #lightbox img{max-width:min(1100px,90vw);max-height:82vh;object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,.5);}
+
+
+
+
 
 
 
@@ -2074,7 +4146,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 #lightbox .lb-close{position:absolute;top:28px;right:28px;width:26px;height:26px;color:var(--white);}
+
+
+
+
 
 
 
@@ -2082,7 +4162,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 #lightbox .lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:1px solid rgba(255,255,255,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);transition:background .3s var(--ease);}
+
+
+
+
 
 
 
@@ -2090,7 +4178,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 #lightbox .lb-nav svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6;}
+
+
+
+
 
 
 
@@ -2098,7 +4194,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 #lightbox .lb-next{right:28px;}
+
+
+
+
 
 
 
@@ -2110,7 +4214,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* Brand-visibility (country/language driven) — hidden by default toggle class */
+
+
+
+
 
 
 
@@ -2122,7 +4238,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* ---------- GLOBAL POLISH ---------- */
+
+
+
+
 
 
 
@@ -2130,7 +4258,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .fam-photo:hover img{transform:scale(1.05);}
+
+
+
+
 
 
 
@@ -2138,7 +4274,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .brand-banner-photo img{transition:transform .7s var(--ease);max-width:100%;}
+
+
+
+
 
 
 
@@ -2146,7 +4290,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .fam-card{transition:box-shadow .3s var(--ease);}
+
+
+
+
 
 
 
@@ -2154,7 +4306,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .fam-dl{transition:gap .3s var(--ease);}
+
+
+
+
 
 
 
@@ -2162,11 +4322,23 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .dl-row{transition:background .3s var(--ease),padding .3s var(--ease);border-radius:6px;margin:0;padding:24px 16px;}
 
 
 
+
+
+
+
 .dl-row:hover{background:var(--gray-50);padding-left:22px;}
+
+
+
+
 
 
 
@@ -2178,7 +4350,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* ===================== Mega menu ===================== */
+
+
+
+
 
 
 
@@ -2186,7 +4370,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .mega-panel{
+
+
+
+
 
 
 
@@ -2194,7 +4386,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
   box-shadow:0 30px 60px rgba(0,0,0,.08);padding:130px 0 48px;
+
+
+
+
 
 
 
@@ -2202,7 +4402,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
   z-index:390;
+
+
+
+
 
 
 
@@ -2210,7 +4418,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .mega-panel.open{opacity:1;visibility:visible;transform:translateY(0);}
+
+
+
+
 
 
 
@@ -2218,7 +4434,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 @media(max-width:900px){.mega-grid{grid-template-columns:repeat(2,1fr);}}
+
+
+
+
 
 
 
@@ -2226,7 +4450,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .mega-col .mega-photo{width:100%;aspect-ratio:4/3;overflow:hidden;margin-bottom:14px;background:var(--gray-50);}
+
+
+
+
 
 
 
@@ -2234,7 +4466,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .mega-col h4{font-family:var(--display);font-size:17px;font-weight:700;margin-bottom:6px;}
+
+
+
+
 
 
 
@@ -2242,7 +4482,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .mega-col ul{margin-top:8px;}
+
+
+
+
 
 
 
@@ -2250,7 +4498,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .mega-col ul li a{color:var(--gray-700);}
+
+
+
+
 
 
 
@@ -2258,7 +4514,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .mega-close-overlay{position:fixed;inset:0;background:rgba(0,0,0,.25);z-index:380;opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s;}
+
+
+
+
 
 
 
@@ -2270,7 +4534,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* ===================== Global product search ===================== */
+
+
+
+
 
 
 
@@ -2278,7 +4554,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .site-search-panel{
+
+
+
+
 
 
 
@@ -2286,7 +4570,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
   transform:translateY(-100%);transition:transform .4s var(--ease);border-bottom:1px solid var(--gray-150);
+
+
+
+
 
 
 
@@ -2294,7 +4586,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 }
+
+
+
+
 
 
 
@@ -2302,7 +4602,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .site-search-panel input{
+
+
+
+
 
 
 
@@ -2310,7 +4618,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
   font-size:clamp(24px,4vw,40px);font-weight:600;background:transparent;
+
+
+
+
 
 
 
@@ -2318,7 +4634,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .site-search-panel input:focus{outline:none;}
+
+
+
+
 
 
 
@@ -2326,7 +4650,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 @media(max-width:768px){.search-results{grid-template-columns:1fr;}.site-search-panel{bottom:0;min-height:100vh;padding:96px 0 36px;overflow-y:auto;}.site-search-panel input{font-size:24px;}.search-close{top:24px;right:24px;width:44px;height:44px;padding:10px;}}
+
+
+
+
 
 
 
@@ -2334,7 +4666,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .search-hit:hover{border-color:var(--black);}
+
+
+
+
 
 
 
@@ -2342,7 +4682,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .search-hit .sh-cat{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-500);}
+
+
+
+
 
 
 
@@ -2350,11 +4698,23 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .search-empty{color:var(--gray-500);font-size:15px;margin-top:24px;}
 
 
 
+
+
+
+
 .search-close{position:absolute;top:32px;right:48px;width:24px;height:24px;}
+
+
+
+
 
 
 
@@ -2366,7 +4726,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* ===================== Filter Explorer (Projects / Downloads) ===================== */
+
+
+
+
 
 
 
@@ -2374,7 +4746,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .explorer-side{border:1px solid var(--gray-300);padding:20px;background:var(--black);width:100%;}
+
+
+
+
 
 
 
@@ -2382,7 +4762,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .explorer-search:focus{outline:none;border-color:var(--black);}
+
+
+
+
 
 
 
@@ -2390,7 +4778,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .filter-groups-horizontal{display:flex;flex-wrap:wrap;gap:48px;margin-bottom:16px;justify-content:space-between;}
+
+
+
+
 
 
 
@@ -2398,7 +4794,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .filter-group h5{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-300);margin-bottom:8px;}
+
+
+
+
 
 
 
@@ -2406,7 +4810,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .filter-select:focus{outline:none;border-color:var(--black);}
+
+
+
+
 
 
 
@@ -2414,7 +4826,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .filter-reset{font-size:13px;text-decoration:underline;color:var(--gray-300);margin-top:8px;}
+
+
+
+
 
 
 
@@ -2422,7 +4842,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .explorer-count b{color:var(--black);font-weight:700;}
+
+
+
+
+
+
+
+
 
 
 
@@ -2438,7 +4870,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* Reference / project cards */
+
+
+
+
 
 
 
@@ -2446,7 +4890,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 @media(max-width:900px){.ref-explorer-grid{grid-template-columns:repeat(2,1fr);}}
+
+
+
+
 
 
 
@@ -2454,7 +4906,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .refx-card{background:var(--white);display:flex;flex-direction:column;}
+
+
+
+
 
 
 
@@ -2462,7 +4922,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .refx-photo img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease);cursor:zoom-in;}
+
+
+
+
 
 
 
@@ -2470,7 +4938,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .refx-brand-tag{position:absolute;top:12px;left:12px;background:var(--black);color:var(--white);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;}
+
+
+
+
 
 
 
@@ -2478,7 +4954,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .refx-loc{font-size:12px;color:var(--gray-500);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;}
+
+
+
+
 
 
 
@@ -2486,11 +4970,27 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .refx-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;}
 
 
 
+
+
+
+
 .refx-tags span{font-size:10.5px;border:1px solid var(--gray-300);padding:3px 9px;border-radius:100px;color:var(--gray-700);}
+
+
+
+
+
+
+
+
 
 
 
@@ -2502,7 +5002,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .dlx-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--gray-150);border:1px solid var(--gray-150);}
+
+
+
+
 
 
 
@@ -2510,7 +5018,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 @media(max-width:560px){.dlx-grid{grid-template-columns:1fr;}}
+
+
+
+
 
 
 
@@ -2518,7 +5034,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .dlx-thumb{aspect-ratio:3/4;background:radial-gradient(circle at 40% 30%, #262930 0%, #15171c 60%, #090a0d 100%);overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:22px 20px;box-shadow:inset 8px 0 18px -4px rgba(0,0,0,0.85);border-bottom:1px solid rgba(255,255,255,0.08);}
+
+
+
+
 
 
 
@@ -2526,7 +5050,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .dlx-pdf-canvas.loaded {opacity:0.35;}
+
+
+
+
 
 
 
@@ -2534,7 +5066,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .dlx-thumb-header{display:flex;justify-content:space-between;align-items:center;z-index:3;}
+
+
+
+
 
 
 
@@ -2542,7 +5082,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .dlx-thumb-logo-wrap{margin:auto 0;text-align:center;z-index:3;padding:16px 14px;background:rgba(255,255,255,0.04);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,0.3);}
+
+
+
+
 
 
 
@@ -2550,7 +5098,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .dlx-thumb-footer{z-index:3;border-top:1px solid rgba(255,255,255,0.12);padding-top:12px;}
+
+
+
+
 
 
 
@@ -2558,7 +5114,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .dlx-type-label{position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-400);padding:8px;background:rgba(0,0,0,.55);z-index:3;}
+
+
+
+
 
 
 
@@ -2566,7 +5130,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .dlx-title{font-family:var(--display);font-weight:700;font-size:13.5px;letter-spacing:.01em;text-transform:uppercase;line-height:1.35;height:36px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;margin-bottom:12px;}
+
+
+
+
 
 
 
@@ -2574,7 +5146,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .dlx-btn:hover{opacity:.82;}
+
+
+
+
 
 
 
@@ -2586,7 +5166,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* Product family (brand hub) tables + cards */
+
+
+
+
 
 
 
@@ -2594,7 +5186,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .family-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:44px;flex-wrap:wrap;}
+
+
+
+
 
 
 
@@ -2602,7 +5202,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .fam-card{background:var(--white);display:flex;flex-direction:column;}
+
+
+
+
 
 
 
@@ -2610,7 +5218,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .fam-photo img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease);}
+
+
+
+
 
 
 
@@ -2618,7 +5234,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .fam-body{padding:24px 26px 28px;flex:1;display:flex;flex-direction:column;}
+
+
+
+
 
 
 
@@ -2626,7 +5250,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .fam-body p{font-size:14.5px;color:var(--gray-500);line-height:1.6;margin-bottom:16px;}
+
+
+
+
 
 
 
@@ -2634,7 +5266,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .fam-spec-table tr{border-top:1px solid var(--gray-150);}
+
+
+
+
 
 
 
@@ -2642,11 +5282,23 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 .fam-spec-table td:first-child{color:var(--gray-500);width:42%;}
 
 
 
+
+
+
+
 .fam-spec-table td:last-child{font-weight:600;}
+
+
+
+
 
 
 
@@ -2658,7 +5310,19 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
+
+
+
+
 /* Responsive tables (spec sheets) */
+
+
+
+
 
 
 
@@ -2666,7 +5330,15 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
 
 
 
+
+
+
+
 table.spec-table{width:100%;border-collapse:collapse;min-width:640px;font-size:14.5px;}
+
+
+
+
 
 
 
@@ -2674,7 +5346,15 @@ table.spec-table th{text-align:left;background:var(--black);color:var(--white);p
 
 
 
+
+
+
+
 table.spec-table td{padding:13px 18px;border-top:1px solid var(--gray-150);}
+
+
+
+
 
 
 
@@ -2686,7 +5366,19 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
+
+
+
+
 /* Brand intro banner (used at top of each product family section) */
+
+
+
+
 
 
 
@@ -2694,7 +5386,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
 @media(max-width:800px){.brand-banner{grid-template-columns:1fr;}}
+
+
+
+
 
 
 
@@ -2702,7 +5402,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
 .brand-banner-photo img{width:100%;height:100%;object-fit:cover;}
+
+
+
+
 
 
 
@@ -2710,11 +5418,23 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
 .brand-banner-text .tag{margin-bottom:14px;}
 
 
 
+
+
+
+
 .brand-banner-text h3{font-family:var(--display);font-weight:700;font-size:clamp(24px,2.8vw,34px);margin-bottom:16px;letter-spacing:-.01em;}
+
+
+
+
 
 
 
@@ -2738,7 +5458,31 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Sub-category pill nav within a product family */
+
+
+
+
 
 
 
@@ -2746,7 +5490,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
 .subcat-nav a{font-size:13px;border:1px solid var(--gray-300);border-radius:100px;padding:9px 18px;transition:all .3s var(--ease);}
+
+
+
+
 
 
 
@@ -2758,7 +5510,19 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
+
+
+
+
 /* Legal Modal */
+
+
+
+
 
 
 
@@ -2766,7 +5530,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
 .legal-modal.open{display:flex;opacity:1;}
+
+
+
+
 
 
 
@@ -2774,7 +5546,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
 @keyframes slideUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+
+
+
 
 
 
@@ -2782,7 +5562,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
 .legal-modal-close:hover{background:var(--black);color:var(--white);border-color:var(--black);}
+
+
+
+
 
 
 
@@ -2790,7 +5578,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
 #legalModalBody h4{font-family:var(--display);font-size:16px;margin:20px 0 8px;color:var(--black);}
+
+
+
+
 
 
 
@@ -2798,7 +5594,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
 #legalModalBody ul{margin:8px 0 16px 20px;color:var(--gray-700);}
+
+
+
+
 
 
 
@@ -2806,7 +5610,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
 #legalModalBody a{color:var(--black);text-decoration:underline;}
+
+
+
+
 
 
 
@@ -2814,7 +5626,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
 .legal-link{cursor:pointer;color:inherit;text-decoration:none;border-bottom:1px dotted currentColor;}
+
+
+
+
 
 
 
@@ -2826,7 +5646,19 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
+
+
+
+
 @media(max-width:640px){
+
+
+
+
 
 
 
@@ -2834,11 +5666,31 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   .legal-modal-close{top:8px;right:8px;}
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2854,7 +5706,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
 #backToTop{position:fixed;right:28px;bottom:28px;width:54px;height:54px;border-radius:50%;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 32px rgba(0,0,0,.28);z-index:520;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(16px);transition:opacity .4s var(--ease),visibility .4s,transform .4s var(--ease),background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease);}
+
+
+
+
 
 
 
@@ -2862,7 +5722,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
 #backToTop.show{opacity:1;visibility:visible;transform:translateY(0);}
+
+
+
+
 
 
 
@@ -2878,7 +5746,23 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /* Section Head & Faint Text High-Contrast Visibility Fix */
+
+
+
+
 
 
 
@@ -2886,11 +5770,23 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   color: #555555 !important;
 
 
 
+
+
+
+
 }
+
+
+
+
 
 
 
@@ -2898,11 +5794,31 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   color: #d8d8d8 !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2918,7 +5834,35 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
 .hero, .htec-hero, .page-hero, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2946,7 +5890,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   margin-top: 8px !important;
+
+
+
+
 
 
 
@@ -2954,7 +5906,19 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -2966,7 +5930,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   margin-top: 10px !important;
+
+
+
+
 
 
 
@@ -2974,7 +5946,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   max-width: 780px !important;
+
+
+
+
 
 
 
@@ -2982,11 +5962,27 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   line-height: 1.5 !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -2998,7 +5994,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   display: grid !important;
+
+
+
+
 
 
 
@@ -3006,7 +6010,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   margin-top: 24px !important;
+
+
+
+
 
 
 
@@ -3014,7 +6026,19 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3026,11 +6050,27 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   grid-template-columns: repeat(6, 1fr) !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3042,11 +6082,27 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   grid-template-columns: repeat(7, 1fr) !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3058,7 +6114,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   display: flex !important;
+
+
+
+
 
 
 
@@ -3066,7 +6130,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   justify-content: center !important;
+
+
+
+
 
 
 
@@ -3074,7 +6146,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   padding: 12px 6px !important;
+
+
+
+
 
 
 
@@ -3082,7 +6162,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   background: #ffffff !important;
+
+
+
+
 
 
 
@@ -3090,7 +6178,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   font-family: var(--body, sans-serif) !important;
+
+
+
+
 
 
 
@@ -3098,7 +6194,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   font-size: 13.5px !important;
+
+
+
+
 
 
 
@@ -3106,7 +6210,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   border: none !important;
+
+
+
+
 
 
 
@@ -3114,7 +6226,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   transition: background .25s var(--ease), color .25s var(--ease), transform .25s var(--ease) !important;
+
+
+
+
 
 
 
@@ -3122,11 +6242,27 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   white-space: nowrap !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3138,7 +6274,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   .htec-hero-nav {
+
+
+
+
 
 
 
@@ -3146,7 +6290,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -3154,7 +6306,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
     grid-template-columns: repeat(4, 1fr) !important;
+
+
+
+
 
 
 
@@ -3162,7 +6322,19 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3174,7 +6346,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   .hero, .htec-hero, .page-hero, 
+
+
+
+
 
 
 
@@ -3182,11 +6362,23 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
     grid-template-columns: repeat(2, 1fr) !important;
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -3194,11 +6386,23 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
     grid-template-columns: repeat(2, 1fr) !important;
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -3206,7 +6410,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
     padding: 10px 4px !important;
+
+
+
+
 
 
 
@@ -3214,11 +6426,27 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
   }
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3230,7 +6458,15 @@ table.spec-table tr:nth-child(even) td{background:var(--gray-50);}
 
 
 
+
+
+
+
 header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
+
+
+
+
 
 
 
@@ -3238,7 +6474,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   visibility: hidden !important;
+
+
+
+
 
 
 
@@ -3246,7 +6490,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   max-height: 0 !important;
+
+
+
+
 
 
 
@@ -3254,7 +6506,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   pointer-events: none !important;
+
+
+
+
 
 
 
@@ -3262,7 +6522,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   margin: 0 !important;
+
+
+
+
 
 
 
@@ -3270,11 +6538,39 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   border: none !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3295,6 +6591,30 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 .hero, .htec-hero, .page-hero, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3322,7 +6642,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   font-size: 11.5px !important;
+
+
+
+
 
 
 
@@ -3330,7 +6658,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   text-transform: uppercase !important;
+
+
+
+
 
 
 
@@ -3338,11 +6674,27 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   margin-bottom: 8px !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3354,7 +6706,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   font-family: var(--display, 'Manrope', sans-serif) !important;
+
+
+
+
 
 
 
@@ -3362,7 +6722,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   font-weight: 700 !important;
+
+
+
+
 
 
 
@@ -3370,7 +6738,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   color: #ffffff !important;
+
+
+
+
 
 
 
@@ -3378,7 +6754,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   margin-top: 4px !important;
+
+
+
+
 
 
 
@@ -3386,7 +6770,19 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3398,7 +6794,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   max-width: 680px !important;
+
+
+
+
 
 
 
@@ -3406,7 +6810,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   margin-bottom: 20px !important;
+
+
+
+
 
 
 
@@ -3414,7 +6826,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   line-height: 1.5 !important;
+
+
+
+
 
 
 
@@ -3422,7 +6842,19 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3434,7 +6866,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   display: grid !important;
+
+
+
+
 
 
 
@@ -3442,7 +6882,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   gap: 10px !important;
+
+
+
+
 
 
 
@@ -3450,11 +6898,27 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   width: 100% !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3466,7 +6930,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   display: grid !important;
+
+
+
+
 
 
 
@@ -3474,7 +6946,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   gap: 10px !important;
+
+
+
+
 
 
 
@@ -3482,11 +6962,27 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   width: 100% !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3498,7 +6994,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   display: flex !important;
+
+
+
+
 
 
 
@@ -3506,7 +7010,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   justify-content: center !important;
+
+
+
+
 
 
 
@@ -3514,7 +7026,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   padding: 12px 6px !important;
+
+
+
+
 
 
 
@@ -3522,7 +7042,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   background: #ffffff !important;
+
+
+
+
 
 
 
@@ -3530,7 +7058,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   font-family: var(--body, 'Plus Jakarta Sans', sans-serif) !important;
+
+
+
+
 
 
 
@@ -3538,7 +7074,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   font-size: 13.5px !important;
+
+
+
+
 
 
 
@@ -3546,7 +7090,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   border: none !important;
+
+
+
+
 
 
 
@@ -3554,7 +7106,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   transition: background .25s var(--ease), color .25s var(--ease), transform .25s var(--ease) !important;
+
+
+
+
 
 
 
@@ -3562,11 +7122,27 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   white-space: nowrap !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3578,7 +7154,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   background: #f0f0f0 !important;
+
+
+
+
 
 
 
@@ -3586,7 +7170,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   transform: translateY(-2px) !important;
+
+
+
+
 
 
 
@@ -3594,7 +7186,19 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3606,7 +7210,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   .aint-hero-nav {
+
+
+
+
 
 
 
@@ -3614,7 +7226,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -3622,7 +7242,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
     grid-template-columns: repeat(3, 1fr) !important;
+
+
+
+
 
 
 
@@ -3630,7 +7258,19 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3642,7 +7282,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   .hero, .htec-hero, .page-hero, 
+
+
+
+
 
 
 
@@ -3650,11 +7298,23 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
     grid-template-columns: repeat(2, 1fr) !important;
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -3662,7 +7322,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
     padding: 10px 4px !important;
+
+
+
+
 
 
 
@@ -3670,11 +7338,23 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   }
 
 
 
+
+
+
+
 }
+
+
+
+
 
 
 
@@ -3682,7 +7362,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 <link rel="canonical" href="https://anrin.se/nedladdningar.html">
+
+
+
+
 
 
 
@@ -3690,7 +7378,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 <link rel="alternate" hreflang="en" href="https://anrin.se/nedladdningar.html">
+
+
+
+
 
 
 
@@ -3698,7 +7394,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 <link rel="alternate" hreflang="da" href="https://anrin.se/nedladdningar.html">
+
+
+
+
 
 
 
@@ -3706,7 +7410,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 <link rel="alternate" hreflang="is" href="https://anrin.se/nedladdningar.html">
+
+
+
+
 
 
 
@@ -3714,7 +7426,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 <link rel="alternate" hreflang="x-default" href="https://anrin.se/nedladdningar.html">
+
+
+
+
 
 
 
@@ -3722,11 +7442,23 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 {
 
 
 
+
+
+
+
   "@context":"https://schema.org",
+
+
+
+
 
 
 
@@ -3734,7 +7466,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   "name":"Nedladdningar — ANRIN Nordic",
+
+
+
+
 
 
 
@@ -3742,7 +7482,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   "isPartOf":{"@type":"WebSite","name":"ANRIN Nordic","url":"https://anrin.se"}
+
+
+
+
 
 
 
@@ -3750,7 +7498,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 </script>
+
+
+
+
 
 
 
@@ -3758,7 +7514,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 {
+
+
+
+
 
 
 
@@ -3766,7 +7530,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   "@type":"Organization",
+
+
+
+
 
 
 
@@ -3774,7 +7546,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   "url":"https://anrin.se",
+
+
+
+
 
 
 
@@ -3782,7 +7562,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   "contactPoint":{"@type":"ContactPoint","telephone":"+46-10-209-9-209","contactType":"customer service","availableLanguage":["Swedish","English"]}
+
+
+
+
 
 
 
@@ -3790,7 +7578,19 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 </script>
+
+
+
+
+
+
+
+
 
 
 
@@ -3802,7 +7602,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 .lang-switch.open .lang-menu {
+
+
+
+
 
 
 
@@ -3810,7 +7618,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   opacity: 1 !important;
+
+
+
+
 
 
 
@@ -3818,7 +7634,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 }
+
+
+
+
 
 
 
@@ -3826,7 +7650,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   background: #f0f0f0 !important;
+
+
+
+
 
 
 
@@ -3834,7 +7666,23 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3850,7 +7698,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 /* Increase Hero Heading & Paragraph Text Size */
+
+
+
+
 
 
 
@@ -3858,7 +7714,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   font-size: clamp(44px, 5.8vw, 78px) !important;
+
+
+
+
 
 
 
@@ -3866,7 +7730,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   line-height: 1.06 !important;
+
+
+
+
 
 
 
@@ -3874,7 +7746,19 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3886,7 +7770,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   font-size: 18px !important;
+
+
+
+
 
 
 
@@ -3894,11 +7786,39 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   max-width: 740px !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3930,7 +7850,23 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <style id="perfect-hero-fit-override">
+
+
+
+
 
 
 
@@ -3954,7 +7890,31 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .eyebrow {
+
+
+
+
 
 
 
@@ -3962,7 +7922,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   margin-bottom: 8px !important;
+
+
+
+
 
 
 
@@ -3970,7 +7938,19 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -3982,7 +7962,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 .hero-content, .page-hero, .aint-hero-home, .htec-hero {
+
+
+
+
 
 
 
@@ -3990,11 +7978,27 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   padding-bottom: 20px !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -4006,7 +8010,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   margin-top: 4px !important;
+
+
+
+
 
 
 
@@ -4014,7 +8026,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   font-size: clamp(38px, 5.2vw, 68px) !important;
+
+
+
+
 
 
 
@@ -4022,7 +8042,19 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -4034,7 +8066,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   margin-top: 6px !important;
+
+
+
+
 
 
 
@@ -4042,7 +8082,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   font-size: 16.5px !important;
+
+
+
+
 
 
 
@@ -4050,11 +8098,27 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   max-width: 720px !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -4066,7 +8130,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   margin-top: 14px !important;
+
+
+
+
 
 
 
@@ -4074,7 +8146,19 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -4086,11 +8170,23 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   margin-top: 14px !important;
 
 
 
+
+
+
+
   margin-bottom: 12px !important;
+
+
+
+
 
 
 
@@ -4102,7 +8198,39 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
+
+
+
+
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4130,7 +8258,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 /* Hide Breadcrumb Routes (.crumb) Site-wide Across All Pages */
+
+
+
+
 
 
 
@@ -4138,7 +8274,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   display: none !important;
+
+
+
+
 
 
 
@@ -4146,7 +8290,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   height: 0 !important;
+
+
+
+
 
 
 
@@ -4154,7 +8306,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   opacity: 0 !important;
+
+
+
+
 
 
 
@@ -4162,7 +8322,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   overflow: hidden !important;
+
+
+
+
 
 
 
@@ -4170,7 +8338,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
   padding: 0 !important;
+
+
+
+
 
 
 
@@ -4178,7 +8354,43 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4214,7 +8426,31 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 <link rel="stylesheet" href="hero.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4238,7 +8474,15 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
 /* ANRIN Nordic Hero Stats (Desktop 4-col, Mobile 2x2 grid) */
+
+
+
+
 
 
 
@@ -4250,7 +8494,19 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 
 
+
+
+
+
+
+
+
+
 section.hero, .hero, .page-hero, .htec-hero, .aint-hero-home {
+
+
+
+
 
 
 
@@ -4258,7 +8514,19 @@ section.hero, .hero, .page-hero, .htec-hero, .aint-hero-home {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -4270,7 +8538,15 @@ section.hero .wrap.hero-meta,
 
 
 
+
+
+
+
 .hero .wrap.hero-meta,
+
+
+
+
 
 
 
@@ -4278,7 +8554,15 @@ section.hero .wrap.hero-meta,
 
 
 
+
+
+
+
 .page-hero .wrap.hero-meta,
+
+
+
+
 
 
 
@@ -4286,7 +8570,15 @@ section.hero .wrap.hero-meta,
 
 
 
+
+
+
+
 div.wrap.hero-meta,
+
+
+
+
 
 
 
@@ -4294,7 +8586,15 @@ div.wrap.hero-meta,
 
 
 
+
+
+
+
 .hero-meta,
+
+
+
+
 
 
 
@@ -4302,7 +8602,15 @@ div.wrap.hero-meta,
 
 
 
+
+
+
+
 .hero-stats,
+
+
+
+
 
 
 
@@ -4310,7 +8618,15 @@ div.wrap.hero-meta,
 
 
 
+
+
+
+
 div.stat-row {
+
+
+
+
 
 
 
@@ -4318,7 +8634,15 @@ div.stat-row {
 
 
 
+
+
+
+
   flex-direction: row !important;
+
+
+
+
 
 
 
@@ -4326,7 +8650,15 @@ div.stat-row {
 
 
 
+
+
+
+
   justify-content: space-between !important;
+
+
+
+
 
 
 
@@ -4334,7 +8666,15 @@ div.stat-row {
 
 
 
+
+
+
+
   width: 100% !important;
+
+
+
+
 
 
 
@@ -4342,7 +8682,15 @@ div.stat-row {
 
 
 
+
+
+
+
   margin: 36px auto 0 auto !important;
+
+
+
+
 
 
 
@@ -4350,7 +8698,15 @@ div.stat-row {
 
 
 
+
+
+
+
   border-top: 1px solid rgba(255, 255, 255, 0.14) !important;
+
+
+
+
 
 
 
@@ -4358,7 +8714,19 @@ div.stat-row {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -4370,7 +8738,15 @@ section.hero .wrap.hero-meta > div,
 
 
 
+
+
+
+
 .hero .wrap.hero-meta > div,
+
+
+
+
 
 
 
@@ -4378,7 +8754,15 @@ section.hero .wrap.hero-meta > div,
 
 
 
+
+
+
+
 .page-hero .wrap.hero-meta > div,
+
+
+
+
 
 
 
@@ -4386,7 +8770,15 @@ section.hero .wrap.hero-meta > div,
 
 
 
+
+
+
+
 div.wrap.hero-meta > div,
+
+
+
+
 
 
 
@@ -4394,7 +8786,15 @@ div.wrap.hero-meta > div,
 
 
 
+
+
+
+
 .hero-meta > div,
+
+
+
+
 
 
 
@@ -4402,7 +8802,15 @@ div.wrap.hero-meta > div,
 
 
 
+
+
+
+
 .hero-stats > div,
+
+
+
+
 
 
 
@@ -4410,7 +8818,15 @@ div.wrap.hero-meta > div,
 
 
 
+
+
+
+
   display: flex !important;
+
+
+
+
 
 
 
@@ -4418,7 +8834,15 @@ div.wrap.hero-meta > div,
 
 
 
+
+
+
+
   align-items: flex-start !important;
+
+
+
+
 
 
 
@@ -4426,7 +8850,15 @@ div.wrap.hero-meta > div,
 
 
 
+
+
+
+
   flex: 1 1 0px !important;
+
+
+
+
 
 
 
@@ -4434,7 +8866,15 @@ div.wrap.hero-meta > div,
 
 
 
+
+
+
+
   box-sizing: border-box !important;
+
+
+
+
 
 
 
@@ -4442,7 +8882,15 @@ div.wrap.hero-meta > div,
 
 
 
+
+
+
+
   color: rgba(255, 255, 255, 0.75) !important;
+
+
+
+
 
 
 
@@ -4450,7 +8898,15 @@ div.wrap.hero-meta > div,
 
 
 
+
+
+
+
   text-transform: uppercase !important;
+
+
+
+
 
 
 
@@ -4458,7 +8914,19 @@ div.wrap.hero-meta > div,
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -4470,7 +8938,15 @@ section.hero .wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .hero .wrap.hero-meta > div b,
+
+
+
+
 
 
 
@@ -4478,7 +8954,15 @@ section.hero .wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .page-hero .wrap.hero-meta > div b,
+
+
+
+
 
 
 
@@ -4486,7 +8970,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .wrap.hero-meta > div b,
+
+
+
+
 
 
 
@@ -4494,7 +8986,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .brand-meta-row > div b,
+
+
+
+
 
 
 
@@ -4502,7 +9002,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .stat-row div b {
+
+
+
+
 
 
 
@@ -4510,7 +9018,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   font-family: 'Manrope', sans-serif !important;
+
+
+
+
 
 
 
@@ -4518,7 +9034,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   font-weight: 800 !important;
+
+
+
+
 
 
 
@@ -4526,7 +9050,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   margin-bottom: 2px !important;
+
+
+
+
 
 
 
@@ -4534,11 +9066,27 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   line-height: 1.1 !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -4550,7 +9098,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   section.hero, .hero, .page-hero, .htec-hero, .aint-hero-home {
+
+
+
+
 
 
 
@@ -4558,7 +9114,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -4566,7 +9130,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   .hero .wrap.hero-meta,
+
+
+
+
 
 
 
@@ -4574,7 +9146,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   .page-hero .wrap.hero-meta,
+
+
+
+
 
 
 
@@ -4582,7 +9162,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   div.wrap.hero-meta,
+
+
+
+
 
 
 
@@ -4590,7 +9178,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   .hero-meta,
+
+
+
+
 
 
 
@@ -4598,7 +9194,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   .hero-stats,
+
+
+
+
 
 
 
@@ -4606,7 +9210,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   div.stat-row {
+
+
+
+
 
 
 
@@ -4614,7 +9226,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     grid-template-columns: 1fr 1fr !important;
+
+
+
+
 
 
 
@@ -4622,7 +9242,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     gap: 20px 14px !important;
+
+
+
+
 
 
 
@@ -4630,7 +9258,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     margin: 24px 0 0 0 !important;
+
+
+
+
 
 
 
@@ -4638,7 +9274,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     max-width: 100% !important;
+
+
+
+
 
 
 
@@ -4646,7 +9290,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -4654,7 +9306,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   .hero .wrap.hero-meta > div,
+
+
+
+
 
 
 
@@ -4662,7 +9322,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   .page-hero .wrap.hero-meta > div,
+
+
+
+
 
 
 
@@ -4670,7 +9338,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   .hero-meta > div,
+
+
+
+
 
 
 
@@ -4678,7 +9354,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   .hero-stats > div,
+
+
+
+
 
 
 
@@ -4686,7 +9370,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     display: flex !important;
+
+
+
+
 
 
 
@@ -4694,7 +9386,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     align-items: flex-start !important;
+
+
+
+
 
 
 
@@ -4702,7 +9402,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     flex: none !important;
+
+
+
+
 
 
 
@@ -4710,7 +9418,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     max-width: 100% !important;
+
+
+
+
 
 
 
@@ -4718,11 +9434,23 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     box-sizing: border-box !important;
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -4730,7 +9458,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   .hero .wrap.hero-meta > div b,
+
+
+
+
 
 
 
@@ -4738,7 +9474,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   .page-hero .wrap.hero-meta > div b,
+
+
+
+
 
 
 
@@ -4746,7 +9490,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   .hero-meta > div b,
+
+
+
+
 
 
 
@@ -4754,7 +9506,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   .hero-stats > div b,
+
+
+
+
 
 
 
@@ -4762,7 +9522,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     display: block !important;
+
+
+
+
 
 
 
@@ -4770,7 +9538,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     font-size: 16px !important;
+
+
+
+
 
 
 
@@ -4778,7 +9554,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     color: #ffffff !important;
+
+
+
+
 
 
 
@@ -4786,7 +9570,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     white-space: nowrap !important;
+
+
+
+
 
 
 
@@ -4794,7 +9586,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     overflow-wrap: normal !important;
+
+
+
+
 
 
 
@@ -4802,11 +9602,23 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     line-height: 1.2 !important;
 
 
 
+
+
+
+
   }
+
+
+
+
 
 
 
@@ -4814,7 +9626,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   .hero .wrap.hero-meta > div span,
+
+
+
+
 
 
 
@@ -4822,7 +9642,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   .hero-meta > div span,
+
+
+
+
 
 
 
@@ -4830,7 +9658,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   .hero-stats > div span,
+
+
+
+
 
 
 
@@ -4838,7 +9674,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     display: block !important;
+
+
+
+
 
 
 
@@ -4846,7 +9690,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     color: rgba(255, 255, 255, 0.75) !important;
+
+
+
+
 
 
 
@@ -4854,7 +9706,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     text-transform: uppercase !important;
+
+
+
+
 
 
 
@@ -4862,7 +9722,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
     line-height: 1.3 !important;
+
+
+
+
 
 
 
@@ -4870,11 +9738,27 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 }
 
 
 
+
+
+
+
 </style>
+
+
+
+
+
+
+
+
 
 
 
@@ -4886,7 +9770,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 /* Round Pill Download Buttons */
+
+
+
+
 
 
 
@@ -4894,7 +9786,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .rl-btn--light,
+
+
+
+
 
 
 
@@ -4902,7 +9802,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .rl-btn--full-width,
+
+
+
+
 
 
 
@@ -4910,7 +9818,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .dl-simple-row,
+
+
+
+
 
 
 
@@ -4918,7 +9834,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   border-radius: 100px !important;
+
+
+
+
 
 
 
@@ -4926,7 +9850,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   padding: 12px 24px !important;
+
+
+
+
 
 
 
@@ -4934,7 +9866,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+
+
+
+
 
 
 
@@ -4942,7 +9882,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   align-items: center !important;
+
+
+
+
 
 
 
@@ -4950,11 +9898,27 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   gap: 8px !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -4966,7 +9930,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .dl-simple-row:hover,
+
+
+
+
 
 
 
@@ -4974,7 +9946,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   background: #000000 !important;
+
+
+
+
 
 
 
@@ -4982,7 +9962,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   border-color: #000000 !important;
+
+
+
+
 
 
 
@@ -4990,11 +9978,27 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   box-shadow: 0 6px 16px rgba(0,0,0,0.14) !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -5006,7 +10010,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .dl-trigger:hover * {
+
+
+
+
 
 
 
@@ -5014,11 +10026,27 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   stroke: #ffffff !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -5030,7 +10058,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   font-weight: 600 !important;
+
+
+
+
 
 
 
@@ -5038,11 +10074,35 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 }
 
 
 
+
+
+
+
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5062,7 +10122,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 /* 4 Separate Small Tab Buttons in 1 Horizontal Row */
+
+
+
+
 
 
 
@@ -5070,7 +10138,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   all: unset !important;
+
+
+
+
 
 
 
@@ -5078,7 +10154,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   grid-template-columns: repeat(4, 1fr) !important;
+
+
+
+
 
 
 
@@ -5086,7 +10170,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   width: 100% !important;
+
+
+
+
 
 
 
@@ -5094,7 +10186,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   margin-bottom: 24px !important;
+
+
+
+
 
 
 
@@ -5102,7 +10202,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   border: none !important;
+
+
+
+
 
 
 
@@ -5110,7 +10218,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   box-shadow: none !important;
+
+
+
+
 
 
 
@@ -5118,11 +10234,27 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   box-sizing: border-box !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -5134,7 +10266,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   all: unset !important;
+
+
+
+
 
 
 
@@ -5142,7 +10282,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   color: #ffffff !important;
+
+
+
+
 
 
 
@@ -5150,7 +10298,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   padding: 10px 10px !important;
+
+
+
+
 
 
 
@@ -5158,7 +10314,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   font-weight: 700 !important;
+
+
+
+
 
 
 
@@ -5166,7 +10330,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   letter-spacing: 0.02em !important;
+
+
+
+
 
 
 
@@ -5174,7 +10346,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   cursor: pointer !important;
+
+
+
+
 
 
 
@@ -5182,7 +10362,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   display: flex !important;
+
+
+
+
 
 
 
@@ -5190,7 +10378,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   justify-content: center !important;
+
+
+
+
 
 
 
@@ -5198,7 +10394,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   text-align: center !important;
+
+
+
+
 
 
 
@@ -5206,11 +10410,27 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   border: 1px solid #444444 !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -5222,7 +10442,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   color: #ffffff !important;
+
+
+
+
 
 
 
@@ -5230,11 +10458,27 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   font-size: 11px !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -5246,7 +10490,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   background: #000000 !important;
+
+
+
+
 
 
 
@@ -5254,7 +10506,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   border-color: #ffffff !important;
+
+
+
+
 
 
 
@@ -5262,7 +10522,19 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -5274,7 +10546,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   .tabs-header, .tab-headers {
+
+
+
+
 
 
 
@@ -5282,11 +10562,27 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   }
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -5298,7 +10594,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .sku-dl, .btn-view-product, .card-item a, .view-product-btn, .sku-card a.sku-dl {
+
+
+
+
 
 
 
@@ -5306,7 +10610,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   color: #ffffff !important;
+
+
+
+
 
 
 
@@ -5314,7 +10626,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   padding: 8px 20px !important;
+
+
+
+
 
 
 
@@ -5322,7 +10642,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   font-weight: 700 !important;
+
+
+
+
 
 
 
@@ -5330,7 +10658,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   letter-spacing: 0.04em !important;
+
+
+
+
 
 
 
@@ -5338,7 +10674,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   text-decoration: none !important;
+
+
+
+
 
 
 
@@ -5346,7 +10690,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   transition: all 0.3s ease !important;
+
+
+
+
 
 
 
@@ -5354,11 +10706,27 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -5370,7 +10738,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   background: #333333 !important;
+
+
+
+
 
 
 
@@ -5378,7 +10754,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   border-color: #333333 !important;
+
+
+
+
 
 
 
@@ -5386,7 +10770,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   box-shadow: 0 6px 16px rgba(0,0,0,0.2) !important;
+
+
+
+
 
 
 
@@ -5394,7 +10786,27 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5414,7 +10826,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 /* Single Clean Pill Tab Headers — No Extra Inner Rounds */
+
+
+
+
 
 
 
@@ -5422,7 +10842,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   display: flex !important;
+
+
+
+
 
 
 
@@ -5430,7 +10858,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   flex-wrap: wrap !important;
+
+
+
+
 
 
 
@@ -5438,11 +10874,27 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   margin-top: 16px !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -5454,7 +10906,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .tabs-header > div,
+
+
+
+
 
 
 
@@ -5462,7 +10922,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .tab-btn {
+
+
+
+
 
 
 
@@ -5470,7 +10938,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   background: #222222 !important;
+
+
+
+
 
 
 
@@ -5478,7 +10954,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   border-radius: 100px !important;
+
+
+
+
 
 
 
@@ -5486,7 +10970,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   font-family: 'Manrope', sans-serif !important;
+
+
+
+
 
 
 
@@ -5494,7 +10986,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   font-weight: 700 !important;
+
+
+
+
 
 
 
@@ -5502,7 +11002,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   text-transform: uppercase !important;
+
+
+
+
 
 
 
@@ -5510,7 +11018,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+
+
+
+
 
 
 
@@ -5518,7 +11034,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   cursor: pointer !important;
+
+
+
+
 
 
 
@@ -5526,7 +11050,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   align-items: center !important;
+
+
+
+
 
 
 
@@ -5534,7 +11066,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   box-sizing: border-box !important;
+
+
+
+
 
 
 
@@ -5542,7 +11082,19 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -5554,7 +11106,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .tabs-header > div:hover,
+
+
+
+
 
 
 
@@ -5562,7 +11122,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .tab-btn:hover {
+
+
+
+
 
 
 
@@ -5570,7 +11138,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   color: #ffffff !important;
+
+
+
+
 
 
 
@@ -5578,7 +11154,19 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -5590,7 +11178,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .tabs-header > div.active,
+
+
+
+
 
 
 
@@ -5598,7 +11194,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .tab-btn.active {
+
+
+
+
 
 
 
@@ -5606,7 +11210,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   color: #ffffff !important;
+
+
+
+
 
 
 
@@ -5614,7 +11226,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   font-weight: 800 !important;
+
+
+
+
 
 
 
@@ -5622,7 +11242,19 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -5634,7 +11266,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .tab-headers > div *,
+
+
+
+
 
 
 
@@ -5642,7 +11282,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .tab-header *,
+
+
+
+
 
 
 
@@ -5650,7 +11298,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   all: unset !important;
+
+
+
+
 
 
 
@@ -5658,7 +11314,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   border: none !important;
+
+
+
+
 
 
 
@@ -5666,7 +11330,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   padding: 0 !important;
+
+
+
+
 
 
 
@@ -5674,7 +11346,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   box-shadow: none !important;
+
+
+
+
 
 
 
@@ -5682,7 +11362,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   color: #ffffff !important;
+
+
+
+
 
 
 
@@ -5690,7 +11378,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   stroke: #ffffff !important;
+
+
+
+
 
 
 
@@ -5698,7 +11394,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   font-size: inherit !important;
+
+
+
+
 
 
 
@@ -5706,7 +11410,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   letter-spacing: inherit !important;
+
+
+
+
 
 
 
@@ -5714,7 +11426,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
   display: inline !important;
+
+
+
+
 
 
 
@@ -5722,7 +11442,43 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5758,7 +11514,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 /* Completely Remove Floating Right-Side Action Sidebar Everywhere */
+
+
+
+
 
 
 
@@ -5766,7 +11530,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .side-nav,
+
+
+
+
 
 
 
@@ -5774,7 +11546,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .right-nav,
+
+
+
+
 
 
 
@@ -5782,7 +11562,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .floating-widget,
+
+
+
+
 
 
 
@@ -5790,7 +11578,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .side-widget,
+
+
+
+
 
 
 
@@ -5798,7 +11594,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .floating-menu,
+
+
+
+
 
 
 
@@ -5806,7 +11610,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .quick-links-floating,
+
+
+
+
 
 
 
@@ -5814,7 +11626,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 .vertical-quick-nav,
+
+
+
+
 
 
 
@@ -5822,7 +11642,15 @@ div.wrap.hero-meta > div b,
 
 
 
+
+
+
+
 aside.side-nav,
+
+
+
+
 
 
 
@@ -5830,7 +11658,15 @@ aside.floating-actions,
 
 
 
+
+
+
+
 div[class*="floating-action"],
+
+
+
+
 
 
 
@@ -5838,7 +11674,15 @@ div[class*="quick-nav"],
 
 
 
+
+
+
+
 div[class*="side-nav"],
+
+
+
+
 
 
 
@@ -5846,7 +11690,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   display: none !important;
+
+
+
+
 
 
 
@@ -5854,7 +11706,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   opacity: 0 !important;
+
+
+
+
 
 
 
@@ -5862,7 +11722,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   width: 0 !important;
+
+
+
+
 
 
 
@@ -5870,11 +11738,27 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 }
 
 
 
+
+
+
+
 </style>
+
+
+
+
+
+
+
+
 
 
 
@@ -5886,7 +11770,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 /* Perfect 2x2 Grid for DOWNLOADS Section (Heading Top, 2 in Row 1, 2 in Row 2) */
+
+
+
+
 
 
 
@@ -5894,7 +11786,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 .dowloads {
+
+
+
+
 
 
 
@@ -5902,7 +11802,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   width: 100% !important;
+
+
+
+
 
 
 
@@ -5910,7 +11818,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   padding-top: 16px !important;
+
+
+
+
 
 
 
@@ -5918,11 +11834,27 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   clear: both !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -5934,7 +11866,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 .dowloads h4 {
+
+
+
+
 
 
 
@@ -5942,7 +11882,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   font-size: 15px !important;
+
+
+
+
 
 
 
@@ -5950,7 +11898,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   color: #111111 !important;
+
+
+
+
 
 
 
@@ -5958,7 +11914,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   text-transform: uppercase !important;
+
+
+
+
 
 
 
@@ -5966,7 +11930,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   display: block !important;
+
+
+
+
 
 
 
@@ -5974,7 +11946,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -5986,7 +11970,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 .dowloads .row,
+
+
+
+
 
 
 
@@ -5994,7 +11986,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 .acc-content .dl-grid {
+
+
+
+
 
 
 
@@ -6002,7 +12002,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   grid-template-columns: repeat(2, 1fr) !important;
+
+
+
+
 
 
 
@@ -6010,7 +12018,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   gap: 12px 16px !important;
+
+
+
+
 
 
 
@@ -6018,7 +12034,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   box-sizing: border-box !important;
+
+
+
+
 
 
 
@@ -6026,11 +12050,27 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   padding: 0 !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -6042,7 +12082,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 .dowloads .row > [class*="col-"] {
+
+
+
+
 
 
 
@@ -6050,7 +12098,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   max-width: 100% !important;
+
+
+
+
 
 
 
@@ -6058,7 +12114,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   padding: 0 !important;
+
+
+
+
 
 
 
@@ -6066,7 +12130,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -6078,7 +12154,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 .downloads-2x2-grid button,
+
+
+
+
 
 
 
@@ -6086,7 +12170,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 .dowloads button,
+
+
+
+
 
 
 
@@ -6094,7 +12186,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 .dl-pill-btn {
+
+
+
+
 
 
 
@@ -6102,7 +12202,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   align-items: center !important;
+
+
+
+
 
 
 
@@ -6110,7 +12218,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   gap: 8px !important;
+
+
+
+
 
 
 
@@ -6118,7 +12234,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   border: 1.5px solid #000000 !important;
+
+
+
+
 
 
 
@@ -6126,7 +12250,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   border-radius: 100px !important;
+
+
+
+
 
 
 
@@ -6134,7 +12266,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   font-family: 'Plus Jakarta Sans', sans-serif !important;
+
+
+
+
 
 
 
@@ -6142,7 +12282,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   font-weight: 700 !important;
+
+
+
+
 
 
 
@@ -6150,7 +12298,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   text-transform: uppercase !important;
+
+
+
+
 
 
 
@@ -6158,7 +12314,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   transition: all 0.25s ease !important;
+
+
+
+
 
 
 
@@ -6166,7 +12330,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   box-sizing: border-box !important;
+
+
+
+
 
 
 
@@ -6174,7 +12346,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   margin: 0 !important;
+
+
+
+
 
 
 
@@ -6182,7 +12362,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -6194,7 +12386,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 .downloads-2x2-grid button:hover,
+
+
+
+
 
 
 
@@ -6202,7 +12402,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 .dowloads button:hover,
+
+
+
+
 
 
 
@@ -6210,7 +12418,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 .dl-pill-btn:hover {
+
+
+
+
 
 
 
@@ -6218,7 +12434,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   color: #ffffff !important;
+
+
+
+
 
 
 
@@ -6226,7 +12450,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   transform: translateY(-2px) !important;
+
+
+
+
 
 
 
@@ -6234,7 +12466,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -6246,7 +12490,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 .dowloads a:hover *,
+
+
+
+
 
 
 
@@ -6254,7 +12506,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 .dl-pill-btn:hover * {
+
+
+
+
 
 
 
@@ -6262,7 +12522,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   stroke: #ffffff !important;
+
+
+
+
 
 
 
@@ -6270,7 +12538,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -6282,7 +12562,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   .downloads-2x2-grid,
+
+
+
+
 
 
 
@@ -6290,7 +12578,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   .dowloads .dl-grid,
+
+
+
+
 
 
 
@@ -6298,7 +12594,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
     grid-template-columns: 1fr !important;
+
+
+
+
 
 
 
@@ -6306,11 +12610,27 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 }
 
 
 
+
+
+
+
 </style>
+
+
+
+
+
+
+
+
 
 
 
@@ -6322,7 +12642,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 /* Unstoppable High-Specificity Pure White Text on Scrolled Header */
+
+
+
+
 
 
 
@@ -6330,7 +12658,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   background: rgba(10, 10, 10, 0.92) !important;
+
+
+
+
 
 
 
@@ -6338,7 +12674,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   -webkit-backdrop-filter: blur(16px) !important;
+
+
+
+
 
 
 
@@ -6346,11 +12690,27 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -6362,7 +12722,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 #siteHeader.scrolled nav.main-nav span,
+
+
+
+
 
 
 
@@ -6370,7 +12738,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 #siteHeader.scrolled .main-nav span {
+
+
+
+
 
 
 
@@ -6378,7 +12754,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   text-shadow: none !important;
+
+
+
+
 
 
 
@@ -6386,7 +12770,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -6398,11 +12794,27 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   filter: brightness(0) invert(1) !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -6414,7 +12826,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 #siteHeader.scrolled svg {
+
+
+
+
 
 
 
@@ -6422,7 +12842,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -6434,7 +12866,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   color: #ffffff !important;
+
+
+
+
 
 
 
@@ -6442,7 +12882,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -6454,11 +12906,27 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   stroke: #ffffff !important;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -6470,7 +12938,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   color: #ffffff !important;
+
+
+
+
 
 
 
@@ -6478,7 +12954,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -6490,7 +12978,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   background: #ffffff !important;
+
+
+
+
 
 
 
@@ -6498,7 +12994,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -6510,7 +13018,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   background: #ffffff !important;
+
+
+
+
 
 
 
@@ -6518,7 +13034,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 </style>
+
+
+
+
+
+
+
+
 
 
 
@@ -6530,7 +13058,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 /* Force Separator Tank Product Card Images to be Zoomed Out and Fully Visible */
+
+
+
+
 
 
 
@@ -6538,7 +13074,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 .enviroguard-card img,
+
+
+
+
 
 
 
@@ -6546,7 +13090,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   object-fit: contain !important;
+
+
+
+
 
 
 
@@ -6554,7 +13106,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   background: #ffffff !important;
+
+
+
+
 
 
 
@@ -6562,11 +13122,31 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 }
 
 
 
+
+
+
+
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6582,7 +13162,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 <body>
+
+
+
+
 
 
 
@@ -6594,7 +13182,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
+
+
+
+
 <div id="preloader"><svg viewBox="0 0 200 60"><path d="M0,45 C 40,45 40,15 80,15 C 120,15 120,45 160,45 C 180,45 190,45 200,45"/></svg></div>
+
+
+
+
 
 
 
@@ -6606,7 +13206,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
+
+
+
+
 <div class="mega-close-overlay" id="megaOverlay"></div>
+
+
+
+
 
 
 
@@ -6614,11 +13226,23 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   <div class="wrap mega-grid">
 
 
 
+
+
+
+
     <div class="mega-col">
+
+
+
+
 
 
 
@@ -6626,7 +13250,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
         <div class="mega-photo"><img src="/hydrotec-files-nonwww/2022/08/entwaesserungsrinne-hydroblock-titelbild-86586f04.webp" alt="ANRIN"></div>
+
+
+
+
 
 
 
@@ -6634,7 +13266,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
       </a>
+
+
+
+
 
 
 
@@ -6642,7 +13282,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
       <ul>
+
+
+
+
 
 
 
@@ -6650,7 +13298,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
         <li><a href="produkter.html#anrin-sf">Channel for heavy traffic (SF)</a></li>
+
+
+
+
 
 
 
@@ -6658,7 +13314,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
         <li><a href="produkter.html#anrin-sport">ANRIN SPORT</a></li>
+
+
+
+
 
 
 
@@ -6666,7 +13330,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
     </div>
+
+
+
+
 
 
 
@@ -6674,7 +13346,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
       <a href="files (1)/hydrotec.html" class="mega-brand">
+
+
+
+
 
 
 
@@ -6682,11 +13362,23 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
         <h4>HYDROTEC</h4>
 
 
 
+
+
+
+
       </a>
+
+
+
+
 
 
 
@@ -6694,7 +13386,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
       <ul>
+
+
+
+
 
 
 
@@ -6702,7 +13402,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
         <li><a href="produkter.html#hydrotec-betack">Covers</a></li>
+
+
+
+
 
 
 
@@ -6710,7 +13418,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
         <li><a href="produkter.html#hydrotec-forsorj">Supply</a></li>
+
+
+
+
 
 
 
@@ -6718,7 +13434,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
     </div>
+
+
+
+
 
 
 
@@ -6726,7 +13450,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
       <a href="/stainless steel new/stainless-team.html" class="mega-brand">
+
+
+
+
 
 
 
@@ -6734,11 +13466,23 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
         <h4>Stainless Team</h4>
 
 
 
+
+
+
+
       </a>
+
+
+
+
 
 
 
@@ -6746,7 +13490,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
       <ul>
+
+
+
+
 
 
 
@@ -6754,7 +13506,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
         <li><a href="produkter.html#stainless-golvrannor">Floor channels</a></li>
+
+
+
+
 
 
 
@@ -6762,11 +13522,23 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
       </ul>
 
 
 
+
+
+
+
     </div>
+
+
+
+
 
 
 
@@ -6774,7 +13546,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
       <a href="index.html#enviroguard" class="mega-brand">
+
+
+
+
 
 
 
@@ -6782,7 +13562,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
         <h4>ENVIROguard</h4>
+
+
+
+
 
 
 
@@ -6790,7 +13578,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
       <p>Oil and grease separators according to EN 858:2003, plus HDPE pipe systems.</p>
+
+
+
+
 
 
 
@@ -6798,7 +13594,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
         <li><a href="produkter.html#enviroguard-olja">Oil separators</a></li>
+
+
+
+
 
 
 
@@ -6806,7 +13610,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
         <li><a href="produkter.html#enviroguard-ror">HDPE pipe systems</a></li>
+
+
+
+
 
 
 
@@ -6814,7 +13626,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
     </div>
+
+
+
+
 
 
 
@@ -6822,7 +13642,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -6834,7 +13666,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   <button class="close-btn" id="closeMenu"><svg viewBox="0 0 24 24" stroke="white" fill="none" stroke-width="1.4"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></button>
+
+
+
+
 
 
 
@@ -6842,7 +13682,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   <a href="projekt.html" data-i18n="nav_projekt">Projects</a>
+
+
+
+
 
 
 
@@ -6850,7 +13698,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   <a href="nedladdningar.html" data-i18n="nav_nedladdningar">Downloads</a>
+
+
+
+
 
 
 
@@ -6858,7 +13714,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   <div class="mm-langs notranslate" translate="no"><button data-lang="sv">SV</button><button data-lang="en">EN</button><button data-lang="fi">FI</button><button data-lang="da">DA</button><button data-lang="no">NO</button><button data-lang="is">IS</button><button data-lang="de">DE</button></div>
+
+
+
+
 
 
 
@@ -6866,7 +13730,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -6878,7 +13754,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   <div class="wrap" style="position:relative;">
+
+
+
+
 
 
 
@@ -6886,7 +13770,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
     <input type="text" placeholder="Search products, categories, pages…">
+
+
+
+
 
 
 
@@ -6894,11 +13786,27 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   </div>
 
 
 
+
+
+
+
 </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -6910,7 +13818,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   <div class="hero-photo"><img src="/hydrotec-files-nonwww/2022/08/entwaesserungsrinne-maxi-f1-titelbild2-d39386c9.webp" alt="Tekniska dokument"></div>
+
+
+
+
 
 
 
@@ -6918,7 +13834,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   <div class="wrap">
+
+
+
+
 
 
 
@@ -6926,7 +13850,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
     <h1 data-i18n="dl_hero_title">Drawings, product sheets and certificates.</h1>
+
+
+
+
 
 
 
@@ -6934,11 +13866,27 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   </div>
 
 
 
+
+
+
+
 </section>
+
+
+
+
+
+
+
+
 
 
 
@@ -6950,11 +13898,23 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   <div class="explorer">
 
 
 
+
+
+
+
     <aside class="explorer-side">
+
+
+
+
 
 
 
@@ -6966,11 +13926,27 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
+
+
+
+
       <div class="filter-groups-horizontal">
 
 
 
+
+
+
+
         <div class="filter-group">
+
+
+
+
 
 
 
@@ -6978,11 +13954,23 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
           <select class="filter-select" id="catFilter">
 
 
 
+
+
+
+
             <option value="">All</option>
+
+
+
+
 
 
 
@@ -6990,7 +13978,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
             <option value="betackningar">Point drainage</option>
+
+
+
+
 
 
 
@@ -6998,7 +13994,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
             <option value="avskiljare">Separators</option>
+
+
+
+
 
 
 
@@ -7006,11 +14010,23 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
             <option value="ovrigt">Other</option>
 
 
 
+
+
+
+
           </select>
+
+
+
+
 
 
 
@@ -7022,7 +14038,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
+
+
+
+
         <div class="filter-group">
+
+
+
+
 
 
 
@@ -7030,7 +14058,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
           <select class="filter-select" id="typeFilter">
+
+
+
+
 
 
 
@@ -7038,7 +14074,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
             <option value="tekniskt">Technical data sheet</option>
+
+
+
+
 
 
 
@@ -7046,7 +14090,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
             <option value="installation">Installation instructions</option>
+
+
+
+
 
 
 
@@ -7054,11 +14106,27 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
           </select>
 
 
 
+
+
+
+
         </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -7070,7 +14138,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
           <h5>Language</h5>
+
+
+
+
 
 
 
@@ -7078,7 +14154,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
             <option value="">All</option>
+
+
+
+
 
 
 
@@ -7086,7 +14170,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
             <option value="fi">Finnish</option>
+
+
+
+
 
 
 
@@ -7094,7 +14186,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
             <option value="da">Danish</option>
+
+
+
+
 
 
 
@@ -7102,7 +14202,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
           </select>
+
+
+
+
 
 
 
@@ -7110,7 +14218,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
       </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -7122,7 +14242,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
     </aside>
+
+
+
+
+
+
+
+
 
 
 
@@ -7134,7 +14266,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
       <div class="explorer-count" id="dlCount"></div>
+
+
+
+
 
 
 
@@ -7142,11 +14282,27 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
     </div>
 
 
 
+
+
+
+
   </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -7158,7 +14314,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 </main>
+
+
+
+
+
+
+
+
 
 
 
@@ -7170,7 +14338,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   <div class="wrap">
+
+
+
+
 
 
 
@@ -7178,11 +14354,23 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
     <a href="kontakt.html" class="btn-primary" data-i18n="cta_btn">Starta en dialog</a>
 
 
 
+
+
+
+
   </div>
+
+
+
+
 
 
 
@@ -7194,7 +14382,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
+
+
+
+
 <footer>
+
+
+
+
 
 
 
@@ -7202,11 +14402,23 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
     <div class="footer-top">
 
 
 
+
+
+
+
       <div>
+
+
+
+
 
 
 
@@ -7214,7 +14426,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
         <p data-i18n="footer_desc">Leading Water.</p>
+
+
+
+
 
 
 
@@ -7222,7 +14442,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
       <div>
+
+
+
+
 
 
 
@@ -7230,7 +14458,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
         <ul>
+
+
+
+
 
 
 
@@ -7238,7 +14474,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
           <li data-brand="hydrotec"><a href="produkter.html#hydrotec">HYDROTEC</a></li>
+
+
+
+
 
 
 
@@ -7246,7 +14490,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
           <li><a href="produkter.html#enviroguard">ENVIROguard</a></li>
+
+
+
+
 
 
 
@@ -7254,11 +14506,23 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
       </div>
 
 
 
+
+
+
+
       <div>
+
+
+
+
 
 
 
@@ -7266,7 +14530,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
         <ul>
+
+
+
+
 
 
 
@@ -7274,7 +14546,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
           <li><a href="projekt.html" data-i18n="nav_projekt">Projects</a></li>
+
+
+
+
 
 
 
@@ -7282,7 +14562,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
           <li><a href="kontakt.html" data-i18n="nav_kontakt">Contact</a></li>
+
+
+
+
 
 
 
@@ -7290,7 +14578,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -7298,7 +14594,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
         <h5 data-i18n="footer_kontakt">Contact</h5>
+
+
+
+
 
 
 
@@ -7306,7 +14610,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
           <li>Mysingsvägen 1</li><li>SE-14941 Nynäshamn</li>
+
+
+
+
 
 
 
@@ -7314,7 +14626,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
           <li><a href="mailto:info@anrin.se">info@anrin.se</a></li>
+
+
+
+
 
 
 
@@ -7322,11 +14642,23 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
       </div>
 
 
 
+
+
+
+
     </div>
+
+
+
+
 
 
 
@@ -7334,7 +14666,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
       <div data-i18n="footer_rights">© 2026 ANRIN Nordic — All rights reserved.</div>
+
+
+
+
 
 
 
@@ -7342,7 +14682,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
         <a href="#" class="legal-link" data-legal="terms" data-i18n="legal_terms">Terms</a>
+
+
+
+
 
 
 
@@ -7350,7 +14698,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
         <a href="#" class="legal-link" data-legal="privacy" data-i18n="legal_privacy">Privacy policy</a>
+
+
+
+
 
 
 
@@ -7358,7 +14714,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -7366,7 +14730,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   </div>
+
+
+
+
 
 
 
@@ -7378,7 +14750,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
+
+
+
+
 <!-- Legal Modals -->
+
+
+
+
 
 
 
@@ -7386,7 +14770,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
   <div class="legal-modal-content">
+
+
+
+
 
 
 
@@ -7394,11 +14786,23 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
     <div id="legalModalBody"></div>
 
 
 
+
+
+
+
   </div>
+
+
+
+
 
 
 
@@ -7410,7 +14814,19 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
+
+
+
+
 <div id="toast" data-i18n="form_note">Sent.</div>
+
+
+
+
 
 
 
@@ -7418,7 +14834,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+
+
+
+
 
 
 
@@ -7426,7 +14850,15 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 <script>
+
+
+
+
 
 
 
@@ -7434,401 +14866,159 @@ div[class*="sticky-action"] {
 
 
 
+
+
+
+
 const DOWNLOADS = [
-
-
-
-// Price Lists & Brochures
-
-
-
-  {title:"ANRIN Price List 2026", cat:"linjeavvattning", type:"broschyr", lang:["sv","en","de"], url:"pdfs/anrin-preisliste-2026-ef-en-web.pdf", verified:true},
-
-
-
-  {title:"ANRIN Image Brochure", cat:"linjeavvattning", type:"broschyr", lang:["sv","en","de"], url:"pdfs/anrin_image_brochure_web_uk_reduced.pdf", verified:true},
-
-
-
-  {title:"ANRIN SELF — Private & Housing Brochure", cat:"linjeavvattning", type:"broschyr", lang:["sv","en","de"], url:"pdfs/privatkunden_v19_en_web1.pdf", verified:true},
-
-
-
-  {title:"ANRIN DRAIN — Commercial Construction Brochure", cat:"linjeavvattning", type:"broschyr", lang:["sv","en","de"], url:"pdfs/gewerbekunden_broschuere_en.pdf", verified:true},
-
-
-
-  {title:"ANRIN SPORT — Facilities Construction Brochure", cat:"linjeavvattning", type:"broschyr", lang:["sv","en","de"], url:"pdfs/sportstattenbau_final_screen_en1.pdf", verified:true},
-
-
-
-  {title:"ANRIN Master Catalog 2026", cat:"linjeavvattning", type:"broschyr", lang:["sv","en","de"], url:"pdfs/ANRIN_Katalog_2026.pdf", verified:true},
-
-
-
-
-
-
-
-  // ANRIN DRAIN — Technical Datasheets
-
-
-
-  {title:"KC-100 Edge-reinforced channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_kc_100_uk.pdf", verified:true},
-
-
-
-  {title:"KE-100 Edge-reinforced channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_ke_100_uk.pdf", verified:true},
-
-
-
-  {title:"KE-150 Edge-reinforced channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_ke_150_uk.pdf", verified:true},
-
-
-
-  {title:"KE-200 Edge-reinforced channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_ke_200_uk.pdf", verified:true},
-
-
-
-  {title:"KE-300 Edge-reinforced channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_ke_300_uk.pdf", verified:true},
-
-
-
-  {title:"KF-100 Edge-reinforced channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_kf_100_uk.pdf", verified:true},
-
-
-
-  {title:"ANRIN Gullies & Point drainage — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_punkteinlaufe_uk.pdf", verified:true},
-
-
-
-  {title:"SF-100 Heavy traffic channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sf_100_uk.pdf", verified:true},
-
-
-
-  {title:"SF-150 Heavy traffic channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sf_150_uk.pdf", verified:true},
-
-
-
-  {title:"SF-200 Heavy traffic channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sf_200_uk.pdf", verified:true},
-
-
-
-  {title:"SF-300 Heavy traffic channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sf_300_uk.pdf", verified:true},
-
-
-
-  {title:"SOLID BLOCK 100 Monolithic — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sf_solid_block_100_uk.pdf", verified:true},
-
-
-
-  {title:"SOLID BLOCK 200 Monolithic — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sf_solid_block_200_uk.pdf", verified:true},
-
-
-
-  {title:"Z-100 Slotted top channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_z_100_uk.pdf", verified:true},
-
-
-
-  {title:"Z-150 Slotted top channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_z_150_uk.pdf", verified:true},
-
-
-
-
-
-
-
-  // ANRIN SELF — Technical Datasheets
-
-
-
-  {title:"SELF-100 Smart Channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_100-smart_uk.pdf", verified:true},
-
-
-
-  {title:"SELF-150 Channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_150_uk.pdf", verified:true},
-
-
-
-  {title:"SELF-200 Channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_200_uk.pdf", verified:true},
-
-
-
-  {title:"SELF ECO Channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_eco_uk.pdf", verified:true},
-
-
-
-  {title:"SELF GL-100 Channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_gl100_uk.pdf", verified:true},
-
-
-
-  {title:"Yard Gully SELF — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_hofeinlauf_yard_sump_uk.pdf", verified:true},
-
-
-
-  {title:"SELF Mini Channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_mini_uk.pdf", verified:true},
-
-
-
-  {title:"SELF Comfort Boot Scrapers — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_komfort-schuhabstreifer_uk_lay2.pdf", verified:true},
-
-
-
-  {title:"SELF PP Plastic Pipe Channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_pp_uk.pdf", verified:true},
-
-
-
-  {title:"SELF LC-150 Pipe Channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_drainage_channels_lc_150_uk.pdf", verified:true},
-
-
-
-  {title:"SELF Slotted Top — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_schlitzaufsatz_uk.pdf", verified:true},
-
-
-
-
-
-
-
-  // ANRIN SPORT — Technical Datasheets
-
-
-
-  {title:"SPORT Drainage 125 (C.1–C.4 / R.1–R.4) — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_entw_system125_typ_c14r14_uk.pdf", verified:true},
-
-
-
-  {title:"SPORT Drainage 125 (C.5–C.8 / R.5–R.8) — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_entw_system125_typ_c58r58_uk.pdf", verified:true},
-
-
-
-  {title:"SPORT Drainage 125 (A/B/E/F) — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_entwaesserungssystem125_typ_abef_uk.pdf", verified:true},
-
-
-
-  {title:"SPORT Cable Shaft — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_kabelverteilerschacht_cableshaft_uk.pdf", verified:true},
-
-
-
-  {title:"SPORT Clamp Rail — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_klemmschiene_clamp_rail_uk.pdf", verified:true},
-
-
-
-  {title:"SPORT Clamp Stone — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_klemmstein_clamp_stone_uk.pdf", verified:true},
-
-
-
-  {title:"SPORT Tray Channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_muldenrinne_tray_channel_uk.pdf", verified:true},
-
-
-
-  {title:"SPORT Turf Edge Plate — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_turf_edge_plate_uk.pdf", verified:true},
-
-
-
-  {title:"SPORT NW 100 Artificial Turf — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_nw100_uk.pdf", verified:true},
-
-
-
-  {title:"SPORT NW 125 Artificial Turf — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_nw125_uk_lay2.pdf", verified:true},
-
-
-
-  {title:"SPORT Sand Collector — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_sandfangrinne_uk.pdf", verified:true},
-
-
-
-  {title:"SPORT Soft Kerb — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_weichkantenstein_softkerbing_uk.pdf", verified:true},
-
-
-
-
-
-
-
-  // Certificates
-
-
-
-  {title:"KOMO Certificate — Quality Assurance", cat:"ovrigt", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/komo_produktzertifikat08_englisch_2024.pdf", verified:true},
-
-
-
-  {title:"ISO 9001 Certificate — Quality Management", cat:"ovrigt", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/iso_9001_2015_englisch-27.pdf", verified:true},
-
-
-
-  {title:"WHG Specialist Certificate", cat:"ovrigt", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/fo_072_zertifikat_fachbetrieb.pdf", verified:true},
-
-
-
-  {title:"ISO 14001 Certificate — Environmental Management", cat:"ovrigt", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/iso_14001_2015_englisch-27.pdf", verified:true},
-
-
-
-
-
-
-
-  // Declarations of Performance (DoP)
-
-
-
-  {title:"SPORT Cable Shaft — Declaration of Performance", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/declaration_of_performance___cable_shaft.pdf", verified:true},
-
-
-
-  {title:"SPORT 125 ABEF — Declaration of Performance", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/declaration_of_performance___sport_125abef.pdf", verified:true},
-
-
-
-  {title:"SPORT 125C — Declaration of Performance", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/declaration_of_performance___sport_125c.pdf", verified:true},
-
-
-
-  {title:"SPORT NW100 Turf — Declaration of Performance", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/declaration_of_performance___sport_nw100synthetic_turf.pdf", verified:true},
-
-
-
-  {title:"SPORT Tray Channel — Declaration of Performance", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/declaration_of_performance___trachannel.pdf", verified:true},
-
-
-
-  {title:"SPORT Sand Collector — Declaration of Performance", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/declaration_of_performance__sand_collecting_channel.pdf", verified:true},
-
-
-
-  {title:"SPORT Soft Kerb — Declaration of Performance", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/declaration_of_performance___weichkantenstein.pdf", verified:true},
-
-
-
-  {title:"KE-100 Declaration of Performance (0110)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/KE-100-Declaration-of-Performance-0110.pdf", verified:true},
-
-
-
-  {title:"KE-150 Declaration of Performance (0111)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/KE-150-Declaration-of-Performance-0111.pdf", verified:true},
-
-
-
-  {title:"KE-200 Declaration of Performance (0112)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/KE-200-Declaration-of-Performance-0112.pdf", verified:true},
-
-
-
-  {title:"KE-300 Declaration of Performance (0113)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/KE-300-Declaration-of-Performance-0113.pdf", verified:true},
-
-
-
-  {title:"SF-100 Declaration of Performance (0320)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/SF-100-Declaration-of-Performance-0320.pdf", verified:true},
-
-
-
-  {title:"SF-150 Declaration of Performance (0321)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/SF-150-Declaration-of-Performance-0321.pdf", verified:true},
-
-
-
-  {title:"SF-200 Declaration of Performance (0322)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/SF-200-Declaration-of-Performance-0322.pdf", verified:true},
-
-
-
-  {title:"SF-300 Declaration of Performance (0323)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/SF-300-Declaration-of-Performance-0323.pdf", verified:true},
-
-
-
-  {title:"ANRIN SELF — Produktkatalog", cat:"linjeavvattning", type:"broschyr", lang:["sv"], url:"pdfs/anrin-self-se.pdf", verified:true},
-
-
-
-  {title:"System HYDROblock — Belastningsklass A15–F900", cat:"linjeavvattning", type:"tekniskt", lang:["sv"], url:"pdfs/ANRIN-HYDROblock.pdf", verified:true},
-
-
-
-  {title:"System MAXI F1 — Belastningsklass C250–F900", cat:"linjeavvattning", type:"tekniskt", lang:["sv"], url:"pdfs/611600001_07.pdf", verified:true},
-
-
-
-  {title:"System MINI 100 — Belastningsklass A15–C250", cat:"linjeavvattning", type:"tekniskt", lang:["sv"], url:"pdfs/HYDROTEC-Brochure-MINI_E.pdf", verified:true},
-
-
-
-  {title:"Lättbetäckning 150 — Tekniskt datablad", cat:"betackningar", type:"tekniskt", lang:["sv"], url:"pdfs/150_Inspection-cover_S_A15_8910585_E.pdf", verified:true},
-
-
-
-  {title:"Rostfritt & Syrafast Stål — Produktöversikt", cat:"rostfritt", type:"tekniskt", lang:["sv", "en"], url:"https://stainlessteam.se/dokument/", verified:true},
-
-
-
-  {title:"EnviroGuard NS 10 L/s SF2000 — Ritning", cat:"avskiljare", type:"tekniskt", lang:["sv", "en"], url:"https://anrin.se/wp-content/uploads/2025/02/EnviroGuard_2025-8.pdf", verified:true},
-
-
-
-  {title:"EnviroGuard NS 30 L/s BYPASS — Ritning", cat:"avskiljare", type:"tekniskt", lang:["sv", "en"], url:"https://anrin.se/wp-content/uploads/2025/02/EnviroGuard_2025-12.pdf", verified:true},
-
-
-
-  {title:"HDPE Rörsystem — Spirallindade rör", cat:"ror", type:"tekniskt", lang:["sv", "en"], url:"https://anrin.se/enviroguard-ror/", verified:true},
-
-
-
-  {title:"Miljövarudeklaration (EPD)", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"https://anrin.se/nedladdningar/", verified:true},
-
-
-
-  {title:"ANRIN SELF Produktkatalog", cat:"linjeavvattning", type:"broschyr", lang:["sv"], url:"pdfs/ANRIN-SELF-Katalog.pdf", verified:true},
-
-
-
-  {title:"ANRIN KE-serie Montageanvisning", cat:"linjeavvattning", type:"installation", lang:["sv"], url:"pdfs/KE-Montageanvisning.pdf", verified:true},
-
-
-
-  {title:"ANRIN SF-serie Montageanvisning", cat:"linjeavvattning", type:"installation", lang:["sv"], url:"pdfs/SF-Montageanvisning.pdf", verified:true},
-
-
-
-  {title:"HYDROTEC Betäckningar Dimensioner", cat:"betackningar", type:"tekniskt", lang:["sv", "en"], url:"pdfs/HYDROTEC-Dimensioner.pdf", verified:true},
-
-
-
-  {title:"HYDROTEC Lättbetäckning 150 Montering", cat:"betackningar", type:"installation", lang:["sv"], url:"pdfs/Lattbetackning-Montering.pdf", verified:true},
-
-
-
-  {title:"Stainless Team Golvbrunnar Katalog", cat:"rostfritt", type:"broschyr", lang:["sv"], url:"pdfs/Golvbrunnar-Katalog.pdf", verified:true},
-
-
-
-  {title:"Stainless Team Golvrännor Teknisk Data", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Golvrannor-Teknisk-Data.pdf", verified:true},
-
-
-
-  {title:"ENVIROguard Fettavskiljare Installation", cat:"avskiljare", type:"installation", lang:["sv"], url:"pdfs/Installation-Fettavskiljare.pdf", verified:true},
-
-
-
-  {title:"HDPE Rörsystem Komplett Katalog", cat:"ror", type:"broschyr", lang:["sv"], url:"pdfs/HDPE-Rorsystem-Katalog.pdf", verified:true},
-
-
-
-  {title:"Vattentankar Dimensionering Guide", cat:"ror", type:"tekniskt", lang:["sv", "en"], url:"pdfs/Vattentankar-Dimensionering.pdf", verified:true},
-
-
-
-  {title:"ANRIN Miljövarudeklaration EPD 2025", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/ANRIN-EPD-2025.pdf", verified:true},
-
-
-
-  {title:"ANRIN Certifikat ISO 9001", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/ISO-9001-Certifikat.pdf", verified:true},
-
-
-
-  {title:"ANRIN Certifikat ISO 14001", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/ISO-14001-Certifikat.pdf", verified:true},
-
-  {title:"HYDROTEC Produktkatalog — Avvattningsrännor", cat:"linjeavvattning", type:"broschyr", lang:["sv"], url:"/hydrotec-files/2022/08/ANRIN_HYDROTEC_Katalog-Avvattningsraennor_WEBB.pdf", verified:true},
-
-  {title:"HYDROTEC Försörjningsteknik — Produktkatalog", cat:"betackningar", type:"broschyr", lang:["sv"], url:"hydrotec-catalog-surface-boxes.pdf", verified:true}
-
+  {title:"ANRIN Price List 2026", cat:"linjeavvattning", type:"broschyr", lang:["sv","en","de"], url:"pdfs/anrin-preisliste-2026-ef-en-web.pdf", verified:true, brand:"anrin"},
+  {title:"ANRIN Image Brochure", cat:"linjeavvattning", type:"broschyr", lang:["sv","en","de"], url:"pdfs/anrin_image_brochure_web_uk_reduced.pdf", verified:true, brand:"anrin"},
+  {title:"ANRIN SELF — Private & Housing Brochure", cat:"linjeavvattning", type:"broschyr", lang:["sv","en","de"], url:"pdfs/privatkunden_v19_en_web1.pdf", verified:true, brand:"anrin"},
+  {title:"ANRIN DRAIN — Commercial Construction Brochure", cat:"linjeavvattning", type:"broschyr", lang:["sv","en","de"], url:"pdfs/gewerbekunden_broschuere_en.pdf", verified:true, brand:"anrin"},
+  {title:"ANRIN SPORT — Facilities Construction Brochure", cat:"linjeavvattning", type:"broschyr", lang:["sv","en","de"], url:"pdfs/sportstattenbau_final_screen_en1.pdf", verified:true, brand:"anrin"},
+  {title:"ANRIN Master Catalog 2026", cat:"linjeavvattning", type:"broschyr", lang:["sv","en","de"], url:"pdfs/ANRIN_Katalog_2026.pdf", verified:true, brand:"anrin"},
+  {title:"KC-100 Edge-reinforced channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_kc_100_uk.pdf", verified:true, brand:"anrin"},
+  {title:"KE-100 Edge-reinforced channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_ke_100_uk.pdf", verified:true, brand:"anrin"},
+  {title:"KE-150 Edge-reinforced channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_ke_150_uk.pdf", verified:true, brand:"anrin"},
+  {title:"KE-200 Edge-reinforced channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_ke_200_uk.pdf", verified:true, brand:"anrin"},
+  {title:"KE-300 Edge-reinforced channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_ke_300_uk.pdf", verified:true, brand:"anrin"},
+  {title:"KF-100 Edge-reinforced channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_kf_100_uk.pdf", verified:true, brand:"anrin"},
+  {title:"ANRIN Gullies & Point drainage — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_punkteinlaufe_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SF-100 Heavy traffic channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sf_100_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SF-150 Heavy traffic channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sf_150_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SF-200 Heavy traffic channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sf_200_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SF-300 Heavy traffic channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sf_300_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SOLID BLOCK 100 Monolithic — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sf_solid_block_100_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SOLID BLOCK 200 Monolithic — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sf_solid_block_200_uk.pdf", verified:true, brand:"anrin"},
+  {title:"Z-100 Slotted top channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_z_100_uk.pdf", verified:true, brand:"anrin"},
+  {title:"Z-150 Slotted top channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_z_150_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SELF-100 Smart Channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_100-smart_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SELF-150 Channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_150_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SELF-200 Channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_200_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SELF ECO Channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_eco_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SELF GL-100 Channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_gl100_uk.pdf", verified:true, brand:"anrin"},
+  {title:"Yard Gully SELF — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_hofeinlauf_yard_sump_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SELF Mini Channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_mini_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SELF Comfort Boot Scrapers — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_komfort-schuhabstreifer_uk_lay2.pdf", verified:true, brand:"anrin"},
+  {title:"SELF PP Plastic Pipe Channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_pp_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SELF LC-150 Pipe Channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_drainage_channels_lc_150_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SELF Slotted Top — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_self_schlitzaufsatz_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT Drainage 125 (C.1–C.4 / R.1–R.4) — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_entw_system125_typ_c14r14_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT Drainage 125 (C.5–C.8 / R.5–R.8) — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_entw_system125_typ_c58r58_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT Drainage 125 (A/B/E/F) — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_entwaesserungssystem125_typ_abef_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT Cable Shaft — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_kabelverteilerschacht_cableshaft_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT Clamp Rail — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_klemmschiene_clamp_rail_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT Clamp Stone — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_klemmstein_clamp_stone_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT Tray Channel — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_muldenrinne_tray_channel_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT Turf Edge Plate — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_turf_edge_plate_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT NW 100 Artificial Turf — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_nw100_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT NW 125 Artificial Turf — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_nw125_uk_lay2.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT Sand Collector — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_sandfangrinne_uk.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT Soft Kerb — Datasheet", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/td_sport_weichkantenstein_softkerbing_uk.pdf", verified:true, brand:"anrin"},
+  {title:"KOMO Certificate — Quality Assurance", cat:"ovrigt", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/komo_produktzertifikat08_englisch_2024.pdf", verified:true, brand:"anrin"},
+  {title:"ISO 9001 Certificate — Quality Management", cat:"ovrigt", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/iso_9001_2015_englisch-27.pdf", verified:true, brand:"anrin"},
+  {title:"WHG Specialist Certificate", cat:"ovrigt", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/fo_072_zertifikat_fachbetrieb.pdf", verified:true, brand:"anrin"},
+  {title:"ISO 14001 Certificate — Environmental Management", cat:"ovrigt", type:"tekniskt", lang:["sv","en","de"], url:"pdfs/iso_14001_2015_englisch-27.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT Cable Shaft — Declaration of Performance", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/declaration_of_performance___cable_shaft.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT 125 ABEF — Declaration of Performance", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/declaration_of_performance___sport_125abef.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT 125C — Declaration of Performance", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/declaration_of_performance___sport_125c.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT NW100 Turf — Declaration of Performance", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/declaration_of_performance___sport_nw100synthetic_turf.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT Tray Channel — Declaration of Performance", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/declaration_of_performance___trachannel.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT Sand Collector — Declaration of Performance", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/declaration_of_performance__sand_collecting_channel.pdf", verified:true, brand:"anrin"},
+  {title:"SPORT Soft Kerb — Declaration of Performance", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/declaration_of_performance___weichkantenstein.pdf", verified:true, brand:"anrin"},
+  {title:"KE-100 Declaration of Performance (0110)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/KE-100-Declaration-of-Performance-0110.pdf", verified:true, brand:"anrin"},
+  {title:"KE-150 Declaration of Performance (0111)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/KE-150-Declaration-of-Performance-0111.pdf", verified:true, brand:"anrin"},
+  {title:"KE-200 Declaration of Performance (0112)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/KE-200-Declaration-of-Performance-0112.pdf", verified:true, brand:"anrin"},
+  {title:"KE-300 Declaration of Performance (0113)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/KE-300-Declaration-of-Performance-0113.pdf", verified:true, brand:"anrin"},
+  {title:"SF-100 Declaration of Performance (0320)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/SF-100-Declaration-of-Performance-0320.pdf", verified:true, brand:"anrin"},
+  {title:"SF-150 Declaration of Performance (0321)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/SF-150-Declaration-of-Performance-0321.pdf", verified:true, brand:"anrin"},
+  {title:"SF-200 Declaration of Performance (0322)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/SF-200-Declaration-of-Performance-0322.pdf", verified:true, brand:"anrin"},
+  {title:"SF-300 Declaration of Performance (0323)", cat:"linjeavvattning", type:"tekniskt", lang:["sv","en"], url:"pdfs/SF-300-Declaration-of-Performance-0323.pdf", verified:true, brand:"anrin"},
+  {title:"ANRIN SELF — Produktkatalog", cat:"linjeavvattning", type:"broschyr", lang:["sv"], url:"pdfs/anrin-self-se.pdf", verified:true, brand:"anrin"},
+  {title:"System HYDROblock — Belastningsklass A15–F900", cat:"linjeavvattning", type:"tekniskt", lang:["sv"], url:"pdfs/ANRIN-HYDROblock.pdf", verified:true, brand:"anrin"},
+  {title:"System MAXI F1 — Belastningsklass C250–F900", cat:"linjeavvattning", type:"tekniskt", lang:["sv"], url:"pdfs/611600001_07.pdf", verified:true, brand:"anrin"},
+  {title:"Lättbetäckning 150 — Tekniskt datablad", cat:"betackningar", type:"tekniskt", lang:["sv"], url:"pdfs/150_Inspection-cover_S_A15_8910585_E.pdf", verified:true, brand:"anrin"},
+  {title:"EnviroGuard NS 10 L/s SF2000 — Ritning", cat:"avskiljare", type:"tekniskt", lang:["sv","en"], url:"https://anrin.se/wp-content/uploads/2025/02/EnviroGuard_2025-8.pdf", verified:true, brand:"anrin"},
+  {title:"EnviroGuard NS 30 L/s BYPASS — Ritning", cat:"avskiljare", type:"tekniskt", lang:["sv","en"], url:"https://anrin.se/wp-content/uploads/2025/02/EnviroGuard_2025-12.pdf", verified:true, brand:"anrin"},
+  {title:"HDPE Rörsystem — Spirallindade rör", cat:"ror", type:"tekniskt", lang:["sv","en"], url:"https://anrin.se/enviroguard-ror/", verified:true, brand:"anrin"},
+  {title:"Miljövarudeklaration (EPD)", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"https://anrin.se/nedladdningar/", verified:true, brand:"anrin"},
+  {title:"ANRIN SELF Produktkatalog", cat:"linjeavvattning", type:"broschyr", lang:["sv"], url:"pdfs/ANRIN-SELF-Katalog.pdf", verified:true, brand:"anrin"},
+  {title:"ANRIN KE-serie Montageanvisning", cat:"linjeavvattning", type:"installation", lang:["sv"], url:"pdfs/KE-Montageanvisning.pdf", verified:true, brand:"anrin"},
+  {title:"ANRIN SF-serie Montageanvisning", cat:"linjeavvattning", type:"installation", lang:["sv"], url:"pdfs/SF-Montageanvisning.pdf", verified:true, brand:"anrin"},
+  {title:"ENVIROguard Fettavskiljare Installation", cat:"avskiljare", type:"installation", lang:["sv"], url:"pdfs/Installation-Fettavskiljare.pdf", verified:true, brand:"anrin"},
+  {title:"HDPE Rörsystem Komplett Katalog", cat:"ror", type:"broschyr", lang:["sv"], url:"pdfs/HDPE-Rorsystem-Katalog.pdf", verified:true, brand:"anrin"},
+  {title:"Vattentankar Dimensionering Guide", cat:"ror", type:"tekniskt", lang:["sv","en"], url:"pdfs/Vattentankar-Dimensionering.pdf", verified:true, brand:"anrin"},
+  {title:"ANRIN Miljövarudeklaration EPD 2025", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/ANRIN-EPD-2025.pdf", verified:true, brand:"anrin"},
+  {title:"ANRIN Certifikat ISO 9001", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/ISO-9001-Certifikat.pdf", verified:true, brand:"anrin"},
+  {title:"ANRIN Certifikat ISO 14001", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/ISO-14001-Certifikat.pdf", verified:true, brand:"anrin"},
+  {title:"HYDROTEC Product Catalog", cat:"betackningar", type:"tekniskt", lang:["sv"], url:"hydrotec-catalog-surface-boxes.pdf", verified:true, brand:"hydrotec"},
+  {title:"Download catalog →", cat:"ovrigt", type:"tekniskt", lang:["en"], url:"pdfs/hydrotec-abfallbehaelter_10-2017_de-en_web.pdf", verified:true, brand:"hydrotec"},
+  {title:"Download catalog →", cat:"ovrigt", type:"tekniskt", lang:["en"], url:"pdfs/hydrotec-catalog-tree-protection_09-2018_en_web.pdf", verified:true, brand:"hydrotec"},
+  {title:"Download catalog →", cat:"ovrigt", type:"tekniskt", lang:["en"], url:"pdfs/hydrotec-bodenhuelsen_de-en_12-2018_web.pdf", verified:true, brand:"hydrotec"},
+  {title:"Download catalog →", cat:"ovrigt", type:"broschyr", lang:["en"], url:"pdfs/ANRIN_HYDROTEC_Katalog-Avvattningsraennor_WEBB.pdf", verified:true, brand:"hydrotec"},
+  {title:"HYDROTEC Product Catalog", cat:"ovrigt", type:"broschyr", lang:["en"], url:"/hydrotec-files/2022/08/ANRIN_HYDROTEC_Katalog-Avvattningsraennor_WEBB.pdf", verified:true, brand:"hydrotec"},
+  {title:"Download product sheet →", cat:"linjeavvattning", type:"tekniskt", lang:["sv"], url:"pdfs/HYDROTEC-Brochure-MINI_E.pdf", verified:true, brand:"hydrotec"},
+  {title:"Technical data sheet →", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/600_SCANDICpur-SN-200_8946350_E.pdf", verified:true, brand:"hydrotec"},
+  {title:"Technical data sheet →", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/600_SCANDIC-SN-200_89463510.pdf", verified:true, brand:"hydrotec"},
+  {title:"Technical data sheet →", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/600_SCANDIC-SN_89463500.pdf", verified:true, brand:"hydrotec"},
+  {title:"Technical data sheet →", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/640_SCANDIC-SN-270_894712.pdf", verified:true, brand:"hydrotec"},
+  {title:"Dimension drawing →", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/894584_SA-0584-KAZ-01.pdf", verified:true, brand:"hydrotec"},
+  {title:"Technical data sheet →", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/315-SCANDIC_D400_994253_E.pdf", verified:true, brand:"hydrotec"},
+  {title:"Technical data sheet →", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/315_CUPOLA_9918315.pdf", verified:true, brand:"hydrotec"},
+  {title:"Technical data sheet →", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/400-SCANDIC-teleskop_C250_993254_E.pdf", verified:true, brand:"hydrotec"},
+  {title:"Technical data sheet →", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/640_SCANDIC_Adapter_8947121.pdf", verified:true, brand:"hydrotec"},
+  {title:"Download product sheet →", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/68000000_07.pdf", verified:true, brand:"hydrotec"},
+  {title:"Download product sheet →", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/6803000041_07.pdf", verified:true, brand:"hydrotec"},
+  {title:"Download product sheet →", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/664600502_07.pdf", verified:true, brand:"hydrotec"},
+  {title:"Download product sheet →", cat:"ovrigt", type:"tekniskt", lang:["sv"], url:"pdfs/063101000_07.pdf", verified:true, brand:"hydrotec"},
+  {title:"Stainless Team — Produktpresentation", cat:"rostfritt", type:"broschyr", lang:["sv","en"], url:"pdfs/Rostfria_golvraennor_golvbrunnar_for-2.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Spärränna med galler", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Produktblad_Sparranna-1.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Spärränna", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Sparranna.png", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Golvränna RST 300/310", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Produktblad_Stor_Industrieranna-1.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Golvränna med slätgaller", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Gallerranna-med-slatgaller.png", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Kanalränna med slits", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Kanalranna_slits.png", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Kanalränna brunnsdel", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Kanalranna_slits3.png", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Stor industriränna", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Produktblad_Stor_Industrieranna-2.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Kuravex", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Kuravex_fotskrapa-1.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Carry Hot", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Produktblad_Carry_Hot.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Gipsavskiljare", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Produktblad_Gipsavskiljare-2.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Latrintömning", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Latrintomning.png", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Utformning av slits på kanalränna", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Kanalranna_slits2.png", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Dialysutslagback", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Dialysutslagback.png", verified:true, brand:"stainless"},
+  {title:"Stainless Team — 300x300 220 B110", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/300x300_220_B110.png", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Golvbrunnar G-ST 150/220", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Produktblad_G-ST150-220-2.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Golvbrunn MAXI", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Produktblad_Stor_Golvbrunn-2.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Luftningsbrunn", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Produktblad_Luftningsbrunn-2.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — 400x400 Golvbrunn MAXI", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/400x400_golvbrunn_maxi.png", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Golvbrunnar G-ST 200/300", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Produktblad_G-ST200-300-2.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Terrassbrunn", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Produktblad_Terrassbrunn-2.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — G-ST150 extra inlopp", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/G-ST150_extra_inlopp.png", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Produktblad Svanhals", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Produktblad_Svanhals-1.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Golvbrunn — Betonggolv", cat:"rostfritt", type:"installation", lang:["sv"], url:"pdfs/Installation_Betonggolv-1.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Golvbrunn — Massagolv", cat:"rostfritt", type:"installation", lang:["sv"], url:"pdfs/Installation_Massagolv-1.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Golvbrunn — Klinkergolv", cat:"rostfritt", type:"installation", lang:["sv"], url:"pdfs/Installation_Klinkergolv-1.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Golvbrunn — Plastmatta", cat:"rostfritt", type:"installation", lang:["sv"], url:"pdfs/Installation_Tjock_Plastmatta-1.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Kuravex", cat:"rostfritt", type:"installation", lang:["sv"], url:"pdfs/Installation_Kuravex-1.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Kanalränna", cat:"rostfritt", type:"installation", lang:["sv"], url:"pdfs/Installation_Kanalranna-3.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Installation klämring", cat:"rostfritt", type:"installation", lang:["sv"], url:"pdfs/Installation_klamring-2.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Terrassbrunn med klisterfläns", cat:"rostfritt", type:"installation", lang:["sv"], url:"pdfs/Installation_Terrassbrunn-2.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Golvbrunnar", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Drift_och_skotselanvisning-2.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Golvrännor", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Drift_och_skotselanvisning_golvrannor-2.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Terrassbrunn", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Drift_och_skotselanvisning_Terrassbrunn-2.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Gipsavskiljare", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/Drift_och_skotselanvisning_Gipsavskiljare-2.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Golvbrunnar utlopp 75/110", cat:"rostfritt", type:"tekniskt", lang:["sv","en"], url:"pdfs/RTH-06074-08-EN.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Sandavskiljare", cat:"rostfritt", type:"tekniskt", lang:["sv","en"], url:"pdfs/RTH-06076-08-EN.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — Golvbrunnar MAXI", cat:"rostfritt", type:"tekniskt", lang:["sv","en"], url:"pdfs/RTH-06075-08-EN.pdf", verified:true, brand:"stainless"},
+  {title:"Stainless Team — 3-D ritning", cat:"rostfritt", type:"tekniskt", lang:["sv"], url:"pdfs/300X300-220_110_SIDO-3D-1.pdf", verified:true, brand:"stainless"}
 ];
+
+
+
+
+
+
+
+
 
 
 
@@ -7844,7 +15034,19 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs
 
 
 
+
+
+
+
+
+
+
+
 function renderPdfThumbnail(pdfUrl, canvasElement) {
+
+
+
+
 
 
 
@@ -7852,7 +15054,15 @@ function renderPdfThumbnail(pdfUrl, canvasElement) {
 
 
 
+
+
+
+
     return pdf.getPage(1);
+
+
+
+
 
 
 
@@ -7860,7 +15070,15 @@ function renderPdfThumbnail(pdfUrl, canvasElement) {
 
 
 
+
+
+
+
     const viewport = page.getViewport({ scale: 0.4 });
+
+
+
+
 
 
 
@@ -7868,7 +15086,15 @@ function renderPdfThumbnail(pdfUrl, canvasElement) {
 
 
 
+
+
+
+
     canvasElement.height = viewport.height;
+
+
+
+
 
 
 
@@ -7880,7 +15106,19 @@ function renderPdfThumbnail(pdfUrl, canvasElement) {
 
 
 
+
+
+
+
+
+
+
+
     const renderContext = {
+
+
+
+
 
 
 
@@ -7888,7 +15126,15 @@ function renderPdfThumbnail(pdfUrl, canvasElement) {
 
 
 
+
+
+
+
       viewport: viewport
+
+
+
+
 
 
 
@@ -7896,7 +15142,15 @@ function renderPdfThumbnail(pdfUrl, canvasElement) {
 
 
 
+
+
+
+
     return page.render(renderContext).promise;
+
+
+
+
 
 
 
@@ -7904,7 +15158,15 @@ function renderPdfThumbnail(pdfUrl, canvasElement) {
 
 
 
+
+
+
+
     canvasElement.classList.add('loaded');
+
+
+
+
 
 
 
@@ -7912,7 +15174,15 @@ function renderPdfThumbnail(pdfUrl, canvasElement) {
 
 
 
+
+
+
+
     // Silent fail: standard fallback card stays active
+
+
+
+
 
 
 
@@ -7920,7 +15190,19 @@ function renderPdfThumbnail(pdfUrl, canvasElement) {
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -7929,206 +15211,70 @@ function renderPdfThumbnail(pdfUrl, canvasElement) {
 
 
 function renderDownloads(list){
-
-
-
   const grid = document.getElementById('dlGrid');
-
-
-
   const count = document.getElementById('dlCount');
-
-
-
   if(!grid) return;
-
-
-
   if(count) count.innerHTML = 'Showing <b>' + list.length + '</b> of <b>' + DOWNLOADS.length + '</b> documents';
-
-
-
   if(!list.length){
-
-
-
     grid.innerHTML = '<p style="padding:40px;color:var(--gray-500);grid-column:1/-1;text-align:center;">No documents match selected filters.</p>';
-
-
-
     return;
-
-
-
   }
-
-
-
   const catLabels = {
-
-
-
     linjeavvattning: "Linear drainage",
-
-
-
     betackningar: "Point drainage / Covers",
-
-
-
     rostfritt: "Stainless steel",
-
-
-
     avskiljare: "Separators",
-
-
-
     ror: "Pipes & Water tanks",
-
-
-
     ovrigt: "Other"
-
-
-
   };
-
-
-
   grid.innerHTML = list.map((d, index)=>{
-
-
-
     const canvasId = 'pdf-canvas-' + index;
-
-
-
     let logoSrc = 'images/anrin-logo-black.png';
-
-
-
-    let brandClass = '';
-
-
-
+    let brandClass = d.brand || 'anrin';
+    let brandLabel = 'ANRIN NORDIC';
     
-
-
-
-    if (d.cat === 'betackningar' || d.url.toLowerCase().includes('hydrotec')) {
-
-
-
-      logoSrc = 'images/hydrotec_service_titel.jpg';
-
-
-
-      brandClass = 'hydrotec';
-
-
-
-    } else if (d.cat === 'rostfritt' || d.url.toLowerCase().includes('stainless') || d.url.toLowerCase().includes('kuravex') || d.url.toLowerCase().includes('golvbrunn') || d.url.toLowerCase().includes('golvran')) {
-
-
-
-      logoSrc = 'images/stainless_kitchen_drain.jpg';
-
-
-
-      brandClass = 'stainless';
-
-
-
+    if (brandClass === 'hydrotec') {
+      logoSrc = '/hydrotec-files-nonwww/2022/07/logo.svg';
+      brandLabel = 'HYDROTEC';
+    } else if (brandClass === 'stainless') {
+      logoSrc = '/stainlessteam-files/2024/01/anrin_stainless_team_logo_white.svg';
+      brandLabel = 'STAINLESS TEAM';
     }
-
-
-
-
-
-
-
+    
     if (d.url.endsWith('.pdf')) {
-
-
-
       setTimeout(() => {
-
-
-
         const canvas = document.getElementById(canvasId);
-
-
-
         if (canvas) {
-
-
-
           renderPdfThumbnail(d.url, canvas);
-
-
-
         }
-
-
-
       }, 50);
-
-
-
     }
-
-
-
-
-
-
-
+    
     return '<div class="dlx-card" data-brand="'+brandClass+'">'
-
-
-
       + '<div class="dlx-thumb">'
-
-
-
       + '  <canvas id="'+canvasId+'" class="dlx-pdf-canvas"></canvas>'
-
-
-
       + '  <div class="dlx-thumb-header"><span class="dlx-thumb-badge">PDF DOCUMENT</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>'
-
-
-
       + '  <div class="dlx-thumb-logo-wrap"><img src="'+logoSrc+'" alt="Logo" /></div>'
-
-
-
       + '  <div class="dlx-thumb-footer"><div class="dlx-thumb-doc-title">'+d.title+'</div></div>'
-
-
-
       + '</div>'
-
-
-
-      + '<div class="dlx-body"><div class="dlx-tag">'+(catLabels[d.cat]||d.cat)+'</div>'
-
-
-
-      + '<div class="dlx-title">'+d.title+'</div>'
-
-
-
-      + '<a class="dlx-btn" href="'+d.url+'" download>Download PDF ↓</a></div></div>';
-
-
-
+      + '<div class="dlx-body">'
+      + '  <div class="dlx-brand-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">'
+      + '    <span class="dlx-tag" style="color:var(--gray-500); margin:0;">'+(catLabels[d.cat]||d.cat)+'</span>'
+      + '    <span class="dlx-brand-name" style="color:#000; font-weight:800;">'+brandLabel+'</span>'
+      + '  </div>'
+      + '  <div class="dlx-title" style="margin-top:4px;">'+d.title+'</div>'
+      + '  <a class="dlx-btn" href="'+d.url+'" download>Download PDF ↓</a>'
+      + '</div></div>';
   }).join('');
-
-
-
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -8140,7 +15286,15 @@ function applyDownloadFilters(){
 
 
 
+
+
+
+
   const searchInput = document.getElementById('dlSearch');
+
+
+
+
 
 
 
@@ -8148,11 +15302,27 @@ function applyDownloadFilters(){
 
 
 
+
+
+
+
   const typeSelect = document.getElementById('typeFilter');
 
 
 
+
+
+
+
   const langSelect = document.getElementById('langFilter');
+
+
+
+
+
+
+
+
 
 
 
@@ -8164,11 +15334,23 @@ function applyDownloadFilters(){
 
 
 
+
+
+
+
   const cat = catSelect ? catSelect.value : '';
 
 
 
+
+
+
+
   const type = typeSelect ? typeSelect.value : '';
+
+
+
+
 
 
 
@@ -8180,7 +15362,19 @@ function applyDownloadFilters(){
 
 
 
+
+
+
+
+
+
+
+
   const filtered = DOWNLOADS.filter(d => {
+
+
+
+
 
 
 
@@ -8188,7 +15382,15 @@ function applyDownloadFilters(){
 
 
 
+
+
+
+
     if (cat && d.cat !== cat) return false;
+
+
+
+
 
 
 
@@ -8196,11 +15398,23 @@ function applyDownloadFilters(){
 
 
 
+
+
+
+
     if (lang && !d.lang.includes(lang)) return false;
 
 
 
+
+
+
+
     return true;
+
+
+
+
 
 
 
@@ -8212,11 +15426,31 @@ function applyDownloadFilters(){
 
 
 
+
+
+
+
+
+
+
+
   renderDownloads(filtered);
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -8228,7 +15462,19 @@ function initDownloadExplorer(){
 
 
 
+
+
+
+
   renderDownloads(DOWNLOADS);
+
+
+
+
+
+
+
+
 
 
 
@@ -8240,7 +15486,15 @@ function initDownloadExplorer(){
 
 
 
+
+
+
+
   const catSelect = document.getElementById('catFilter');
+
+
+
+
 
 
 
@@ -8248,7 +15502,15 @@ function initDownloadExplorer(){
 
 
 
+
+
+
+
   const langSelect = document.getElementById('langFilter');
+
+
+
+
 
 
 
@@ -8260,7 +15522,19 @@ function initDownloadExplorer(){
 
 
 
+
+
+
+
+
+
+
+
   if (searchInput) searchInput.addEventListener('input', applyDownloadFilters);
+
+
+
+
 
 
 
@@ -8268,7 +15542,15 @@ function initDownloadExplorer(){
 
 
 
+
+
+
+
   if (typeSelect) typeSelect.addEventListener('change', applyDownloadFilters);
+
+
+
+
 
 
 
@@ -8280,7 +15562,19 @@ function initDownloadExplorer(){
 
 
 
+
+
+
+
+
+
+
+
   if (resetBtn) {
+
+
+
+
 
 
 
@@ -8288,7 +15582,15 @@ function initDownloadExplorer(){
 
 
 
+
+
+
+
       if (searchInput) searchInput.value = '';
+
+
+
+
 
 
 
@@ -8296,7 +15598,15 @@ function initDownloadExplorer(){
 
 
 
+
+
+
+
       if (typeSelect) typeSelect.value = '';
+
+
+
+
 
 
 
@@ -8304,7 +15614,15 @@ function initDownloadExplorer(){
 
 
 
+
+
+
+
       renderDownloads(DOWNLOADS);
+
+
+
+
 
 
 
@@ -8312,11 +15630,27 @@ function initDownloadExplorer(){
 
 
 
+
+
+
+
   }
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -8328,7 +15662,15 @@ if (document.readyState === 'loading') {
 
 
 
+
+
+
+
   document.addEventListener('DOMContentLoaded', initDownloadExplorer);
+
+
+
+
 
 
 
@@ -8336,7 +15678,15 @@ if (document.readyState === 'loading') {
 
 
 
+
+
+
+
   initDownloadExplorer();
+
+
+
+
 
 
 
@@ -8348,7 +15698,19 @@ if (document.readyState === 'loading') {
 
 
 
+
+
+
+
+
+
+
+
 (function(){var b=document.getElementById('backToTop');if(!b)return;var t=null;function onScroll(){if(t)return;t=setTimeout(function(){b.classList.toggle('show',window.scrollY>300);t=null;},80);}window.addEventListener('scroll',onScroll,{passive:true});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});onScroll();})();
+
+
+
+
 
 
 
@@ -8356,7 +15718,19 @@ if (document.readyState === 'loading') {
 
 
 
+
+
+
+
 </html>
+
+
+
+
+
+
+
+
 
 
 

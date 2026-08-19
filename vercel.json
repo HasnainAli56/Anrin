@@ -15,6 +15,10 @@
       "destination": "https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com/CACHE/:path*"
     },
     {
+      "source": "/static/:path*",
+      "destination": "https://www.anrin.com/static/:path*"
+    },
+    {
       "source": "/stainlessteam-files/:path*",
       "destination": "https://stainlessteam.se/wp-content/uploads/:path*"
     },

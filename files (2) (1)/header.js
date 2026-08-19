@@ -515,7 +515,7 @@ h.querySelectorAll('.lang-label').forEach(function(el) { el.textContent = lang.t
 
         // Normalize URL to keep on same domain
         var normalizedUrl = url;
-        var divioBase = 'https://anrinweb-live-fa1d6c11d583492a82fc40531-59ce514.divio-media.com';
+        var divioBase = '';
         var stainlessteamBase = 'https://stainlessteam.se';
         var hydrotecBase = 'https://www.hydrotec.se';
         var hydrotecNonWwwBase = 'https://hydrotec.se';

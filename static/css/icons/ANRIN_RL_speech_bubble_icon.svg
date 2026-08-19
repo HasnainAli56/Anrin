@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30.5" height="29.5" viewBox="0 0 30.5 29.5">
+  <g id="speech" transform="translate(-0.87 -1.99)">
+    <path id="Path_21" data-name="Path 21" d="M10.08,16.8h2v2h-2Z" transform="translate(-0.96 -1.56)" fill="#fff" stroke="#000" stroke-width="0.5"/>
+    <path id="Path_22" data-name="Path 22" d="M16.8,16.8h2v2h-2Z" transform="translate(-1.68 -1.56)" fill="#fff" stroke="#000" stroke-width="0.5"/>
+    <path id="Path_23" data-name="Path 23" d="M23.52,16.8h2v2h-2Z" transform="translate(-2.4 -1.56)" fill="#fff" stroke="#000" stroke-width="0.5"/>
+    <path id="Path_24" data-name="Path 24" d="M29.12,2.24h-26a2,2,0,0,0-2,2v18a2,2,0,0,0,2,2h4v7H9.034l7-7H29.12a2,2,0,0,0,2-2v-18a2,2,0,0,0-2-2Zm0,20H15.206L9.12,28.326V22.24h-6v-18h26Z" fill="#fff" stroke="#000" stroke-width="0.5"/>
+  </g>
+</svg>

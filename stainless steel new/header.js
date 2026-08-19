@@ -65,7 +65,7 @@
     return [
       '<div class="wrap">',
       '  <a href="' + p + 'index.html" class="logo">',
-      '    <img src="https://anrin.se/wp-content/uploads/2022/11/ANRIN_Logo_schwarz_2.svg" alt="ANRIN Nordic">',
+      '    <img src="/wp-content/uploads/2022/11/ANRIN_Logo_schwarz_2.svg" alt="ANRIN Nordic">',
       '  </a>',
       '  <nav class="main-nav">',
       '    <span class="has-mega" id="productsMegaTrigger"><a href="' + p + 'produkter.html" data-i18n="nav_produkter">Products</a></span>',

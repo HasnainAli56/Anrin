@@ -22,7 +22,7 @@
         <div class="footer-col brand-col">
           <div class="footer-logo">
             <a href="${p}index.html">
-              <img src="https://anrin.se/wp-content/uploads/2022/11/ANRIN_Logo_schwarz_2.svg" alt="ANRIN Nordic">
+              <img src="/wp-content/uploads/2022/11/ANRIN_Logo_schwarz_2.svg" alt="ANRIN Nordic">
             </a>
           </div>
           <p class="footer-sub" data-i18n="footer_desc">Leading Water — complete surface-water solutions, delivered faster than anywhere else in the Nordics since 2017.</p>

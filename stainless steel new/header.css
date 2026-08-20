@@ -859,3 +859,144 @@ body.light-header #siteHeader:not(.scrolled) .burger span {
 }
 
 
+
+
+/* ==========================================================================
+   ANRIN UNIVERSAL MOBILE RESPONSIVENESS OVERRIDES FOR PRODUCT DETAIL PAGES
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .product-top-sec .top-cols {
+    flex-direction: column !important;
+  }
+  .product-top-sec .top-cols .left-col,
+  .product-top-sec .top-cols .right-col {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body:not(:has(.hero)):not(:has(section.hero)):not(:has(.page-hero)):not(:has(.htec-hero)):not(:has(.aint-hero-home)) {
+    padding-top: 70px !important;
+  }
+  
+  .vbig-container, .container, main, .main-content {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    overflow-x: hidden !important;
+  }
+
+  /* 1. Product Title & Breadcrumbs */
+  h1, .product-title, .product-heading {
+    font-size: 22px !important;
+    line-height: 1.25 !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    word-break: break-word !important;
+  }
+
+  /* 2. Product Specs Table Mobile Responsiveness */
+  .product-specs-table, table.product-specs-table {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border-collapse: collapse !important;
+  }
+  .product-specs-table tr {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 8px 0 !important;
+    border-bottom: 1px solid #eeeeee !important;
+  }
+  .product-specs-table td {
+    display: block !important;
+    width: 100% !important;
+    padding: 2px 0 !important;
+    font-size: 13.5px !important;
+  }
+  .product-specs-table td:first-child {
+    font-weight: 700 !important;
+    color: #111111 !important;
+  }
+
+  /* 3. Product Image Carousel & Thumbnails */
+  #productMainCarousel, .product-image-slider {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  #productMainCarousel img, .product-image {
+    max-height: 240px !important;
+    object-fit: contain !important;
+    width: auto !important;
+    margin: 0 auto !important;
+  }
+  .thumbnail-container, .thumbnail-slider {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: 8px !important;
+    padding: 8px 0 !important;
+  }
+  .thumbnail {
+    flex: 0 0 54px !important;
+    width: 54px !important;
+    height: 54px !important;
+  }
+
+  /* 4. Downloads Buttons inside Accordion */
+  .dowloads .col-12, .dowloads [class*="col-"] {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* 5. Accessories / Variant Product Grid Cards (2 per row on Mobile) */
+  .additional-products .row {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px 12px !important;
+    width: 100% !important;
+    margin: 16px 0 !important;
+  }
+  .additional-products .col {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+  }
+  .additional-product-image-container, .additional-product-image {
+    height: 140px !important;
+    min-height: 140px !important;
+    max-height: 150px !important;
+    background: #f8f9fa !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .additional-product-image img, .additional-product-image-container img {
+    max-height: 120px !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+  }
+  .additional-product-info {
+    padding: 8px 4px !important;
+  }
+  .additional-product-info .product-name {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    margin-bottom: 2px !important;
+    color: #111111 !important;
+  }
+  .additional-product-info .product-description {
+    font-size: 11.5px !important;
+    line-height: 1.3 !important;
+    color: #555555 !important;
+  }
+}

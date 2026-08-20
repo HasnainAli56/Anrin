@@ -3600,7 +3600,7 @@ const DOWNLOADS = [
 
 ];
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+pdfjsLib.GlobalWorkerOptions.workerSrc = ((typeof urlPrefix !== 'undefined') ? urlPrefix : '') + 'js/pdf.worker.min.js';
 
 function renderPdfThumbnail(pdfUrl, canvasElement) {
 
@@ -3640,7 +3640,7 @@ function renderPdfThumbnail(pdfUrl, canvasElement) {
 
 }
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+pdfjsLib.GlobalWorkerOptions.workerSrc = ((typeof urlPrefix !== 'undefined') ? urlPrefix : '') + 'js/pdf.worker.min.js';
 
 function renderPdfThumbnail(pdfUrl, canvasElement) {
   pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {

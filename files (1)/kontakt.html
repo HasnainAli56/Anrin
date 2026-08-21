@@ -2973,136 +2973,278 @@ div[class*="sticky-action"] {
   </div>
 
 <section class="team-section" style="padding:80px 0;background:#fafafa;border-top:1px solid #e5e5e5;">
-
   <div class="wrap" style="max-width:1320px;margin:0 auto;padding:0 24px;">
-
     <div style="text-align:center;margin-bottom:48px;">
-
-      <h2 style="font-family:'Manrope',sans-serif;font-size:clamp(28px,3.8vw,44px);font-weight:800;color:#111;margin-bottom:12px;">Meet the team</h2>
-
-      <p style="font-size:16px;color:#666;max-width:600px;margin:0 auto;">Our dedicated experts are ready to assist you with technical calculations, quotes, and project support.</p>
-
+      <h2 style="font-family:'Manrope',sans-serif;font-size:clamp(28px,3.8vw,44px);font-weight:800;color:#111;margin-bottom:12px;" data-i18n="meet_team">Meet the team</h2>
+      <p style="font-size:16px;color:#666;max-width:600px;margin:0 auto;" data-i18n="team_desc">Our dedicated experts are ready to assist you with technical calculations, quotes, and project support.</p>
+    </div>
+    
+    <!-- Country switcher tabs -->
+    <style>
+    .team-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .team-tab {
+      background: #ffffff;
+      color: #111111;
+      border: 1px solid #e5e5e5;
+      padding: 10px 24px;
+      border-radius: 100px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+    .team-tab:hover {
+      background: #f3f4f6;
+      border-color: #d1d5db;
+    }
+    .team-tab.active {
+      background: #000000;
+      color: #ffffff;
+      border-color: #000000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    </style>
+    <div class="team-tabs">
+      <button class="team-tab active" data-country="sweden" data-i18n="tab_sweden">Sverige</button>
+      <button class="team-tab" data-country="finland" data-i18n="tab_finland">Finland</button>
+      <button class="team-tab" data-country="norway" data-i18n="tab_norway">Norge</button>
+      <button class="team-tab" data-country="denmark" data-i18n="tab_denmark">Danmark</button>
+      <button class="team-tab" data-country="iceland" data-i18n="tab_iceland">Island</button>
     </div>
 
     <div class="team-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;">
-
-      <!-- Magnus Zander -->
-
-      <div class="team-card" style="background:#fff;border-radius:16px;overflow:hidden;border:1px solid #eaeaea;box-shadow:0 6px 20px rgba(0,0,0,0.04);text-align:center;padding:32px 24px;">
-
-        <div style="width:110px;height:110px;border-radius:50%;margin:0 auto 20px;overflow:hidden;background:#e5e5e5;display:flex;align-items:center;justify-content:center;">
-
-          <img src="/wp-content/uploads/elementor/thumbs/00001-rilsj9lv8plozsrdunberieiejchh1em40wziobs5m.webp" alt="Magnus Zander" style="width:100%;height:100%;object-fit:cover;">
-
-        </div>
-
-        <h3 style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;color:#111;margin-bottom:6px;">Magnus Zander</h3>
-
-        <p style="font-size:13px;font-weight:700;color:#777;text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;min-height:38px;" data-i18n="role_magnus">Sales Manager — Southern Sweden & Denmark</p>
-
-        <p style="font-size:14px;color:#333;margin-bottom:6px;"><a href="mailto:magnus.zander@anrin.se" style="color:#111;font-weight:600;">magnus.zander@anrin.se</a></p>
-
-        <p style="font-size:14px;color:#555;margin-bottom:12px;"><a href="tel:+46768692525" style="color:#555;">+46 (0)768-69 25 25</a></p>
-
-        <p style="font-size:13.5px;margin:0;"><a href="https://myanrin.se/@magnus.zander" target="_blank" rel="noopener" style="color:#00a86b;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:4px;" data-i18n="lbl_visitcard">Visitkort</a></p>
-
-      </div>
-
-      <!-- Patric Asp -->
-
-      <div class="team-card" style="background:#fff;border-radius:16px;overflow:hidden;border:1px solid #eaeaea;box-shadow:0 6px 20px rgba(0,0,0,0.04);text-align:center;padding:32px 24px;">
-
-        <div style="width:110px;height:110px;border-radius:50%;margin:0 auto 20px;overflow:hidden;background:#e5e5e5;display:flex;align-items:center;justify-content:center;">
-
-          <img src="/wp-content/uploads/elementor/thumbs/00007-rilsj9lv8plozsrdunberieiejchh1em40wziobs5m.webp" alt="Patric Asp" style="width:100%;height:100%;object-fit:cover;">
-
-        </div>
-
-        <h3 style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;color:#111;margin-bottom:6px;">Patric Asp</h3>
-
-        <p style="font-size:13px;font-weight:700;color:#777;text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;min-height:38px;" data-i18n="role_patric">Sales — Region West & Norway</p>
-
-        <p style="font-size:14px;color:#333;margin-bottom:6px;"><a href="mailto:patric.asp@anrin.se" style="color:#111;font-weight:600;">patric.asp@anrin.se</a></p>
-
-        <p style="font-size:14px;color:#555;margin-bottom:12px;"><a href="tel:+46768694545" style="color:#555;">+46 (0)768-69 45 45</a></p>
-
-        <p style="font-size:13.5px;margin:0;"><a href="https://myanrin.se/@patric.asp" target="_blank" rel="noopener" style="color:#00a86b;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:4px;" data-i18n="lbl_visitcard">Visitkort</a></p>
-
-      </div>
-
-      <!-- Peter Stålström -->
-
-      <div class="team-card" style="background:#fff;border-radius:16px;overflow:hidden;border:1px solid #eaeaea;box-shadow:0 6px 20px rgba(0,0,0,0.04);text-align:center;padding:32px 24px;">
-
-        <div style="width:110px;height:110px;border-radius:50%;margin:0 auto 20px;overflow:hidden;background:#e5e5e5;display:flex;align-items:center;justify-content:center;">
-
-          <img src="/wp-content/uploads/elementor/thumbs/1676383832581-rilrznp2o4rcsn8rco6l8yjca5ztwck72yzc3vefyi.jpg" alt="Peter Stålström" style="width:100%;height:100%;object-fit:cover;">
-
-        </div>
-
-        <h3 style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;color:#111;margin-bottom:6px;">Peter Stålström</h3>
-
-        <p style="font-size:13px;font-weight:700;color:#777;text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;min-height:38px;" data-i18n="role_peter">Sales — Finland</p>
-
-        <p style="font-size:14px;color:#333;margin-bottom:6px;"><a href="mailto:peter.stalstrom@anrin.fi" style="color:#111;font-weight:600;">peter.stalstrom@anrin.fi</a></p>
-
-        <p style="font-size:14px;color:#555;margin-bottom:12px;"><a href="tel:+358451855020" style="color:#555;">+358 45 185 5020</a></p>
-
-        <p style="font-size:13.5px;margin:0;"><a href="https://myanrin.se/@peter.stalstrom" target="_blank" rel="noopener" style="color:#00a86b;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:4px;" data-i18n="lbl_visitcard">Visitkort</a></p>
-
-      </div>
-
-      <!-- Joakim Nilsson -->
-
-      <div class="team-card" style="background:#fff;border-radius:16px;overflow:hidden;border:1px solid #eaeaea;box-shadow:0 6px 20px rgba(0,0,0,0.04);text-align:center;padding:32px 24px;">
-
-        <div style="width:110px;height:110px;border-radius:50%;margin:0 auto 20px;overflow:hidden;background:#e5e5e5;display:flex;align-items:center;justify-content:center;">
-
-          <img src="/wp-content/uploads/elementor/thumbs/00005-rilsji2ey7x9waf3h8z1vy9nr06sebc756scu5z8lm.webp" alt="Joakim Nilsson" style="width:100%;height:100%;object-fit:cover;">
-
-        </div>
-
-        <h3 style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;color:#111;margin-bottom:6px;">Joakim Nilsson</h3>
-
-        <p style="font-size:13px;font-weight:700;color:#777;text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;min-height:38px;" data-i18n="role_joakim">Logistics — Nordics</p>
-
-        <p style="font-size:14px;color:#333;margin-bottom:6px;"><a href="mailto:joakim.nilsson@anrin.se" style="color:#111;font-weight:600;">joakim.nilsson@anrin.se</a></p>
-
-        <p style="font-size:14px;color:#555;margin-bottom:12px;"><a href="tel:+46768691200" style="color:#555;">+46 (0)768-69 12 00</a></p>
-
-        <p style="font-size:13.5px;margin:0;"><a href="https://myanrin.se/@joakim.nilsson" target="_blank" rel="noopener" style="color:#00a86b;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:4px;" data-i18n="lbl_visitcard">Visitkort</a></p>
-
-      </div>
-
-      <!-- Mikael Holmberg -->
-
-      <div class="team-card" style="background:#fff;border-radius:16px;overflow:hidden;border:1px solid #eaeaea;box-shadow:0 6px 20px rgba(0,0,0,0.04);text-align:center;padding:32px 24px;">
-
-        <div style="width:110px;height:110px;border-radius:50%;margin:0 auto 20px;overflow:hidden;background:#e5e5e5;display:flex;align-items:center;justify-content:center;">
-
-          <img src="/wp-content/uploads/elementor/thumbs/00002-rilsiviae72e5nbv4z8083ylhr9z9kun234pbiwoqy.webp" alt="Mikael Holmberg" style="width:100%;height:100%;object-fit:cover;">
-
-        </div>
-
-        <h3 style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;color:#111;margin-bottom:6px;">Mikael Holmberg</h3>
-
-        <p style="font-size:13px;font-weight:700;color:#777;text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;min-height:38px;" data-i18n="role_mikael">CEO / Marketing — Nordics</p>
-
-        <p style="font-size:14px;color:#333;margin-bottom:6px;"><a href="mailto:mikael.holmberg@anrin.se" style="color:#111;font-weight:600;">mikael.holmberg@anrin.se</a></p>
-
-        <p style="font-size:14px;color:#555;margin-bottom:12px;"><a href="tel:+46768693535" style="color:#555;">+46 (0)768-69 35 35</a></p>
-
-        <p style="font-size:13.5px;margin:0;"><a href="https://myanrin.se/@mikael.holmberg" target="_blank" rel="noopener" style="color:#00a86b;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:4px;" data-i18n="lbl_visitcard">Visitkort</a></p>
-
-      </div>
-
+      <!-- Team members will be rendered dynamically here -->
     </div>
-
-    </div>
-
   </div>
-
 </section>
+
+<script>
+(function() {
+  const TEAM_MEMBERS = {
+    sweden: [
+      {
+        name: "Magnus Zander",
+        roleKey: "role_magnus_se",
+        defaultRole: "Sales Manager — Southern Sweden",
+        email: "magnus.zander@anrin.se",
+        tel: "+46 (0)768-69 25 25",
+        telLink: "+46768692525",
+        visitcard: "https://myanrin.se/@magnus.zander",
+        image: "images/magnus_zander.webp"
+      },
+      {
+        name: "Patric Asp",
+        roleKey: "role_patric_se",
+        defaultRole: "Sales — Region West",
+        email: "patric.asp@anrin.se",
+        tel: "+46 (0)768-69 45 45",
+        telLink: "+46768694545",
+        visitcard: "https://myanrin.se/@patric.asp",
+        image: "images/patric_asp.webp"
+      },
+      {
+        name: "Joakim Nilsson",
+        roleKey: "role_joakim",
+        defaultRole: "Logistics — Nordics",
+        email: "joakim.nilsson@anrin.se",
+        tel: "+46 (0)768-69 12 00",
+        telLink: "+46768691200",
+        visitcard: "https://myanrin.se/@joakim.nilsson",
+        image: "images/joakim_nilsson.webp"
+      },
+      {
+        name: "Mikael Holmberg",
+        roleKey: "role_mikael",
+        defaultRole: "CEO / Marketing — Nordics",
+        email: "mikael.holmberg@anrin.se",
+        tel: "+46 (0)768-69 35 35",
+        telLink: "+46768693535",
+        visitcard: "https://myanrin.se/@mikael.holmberg",
+        image: "images/mikael_holmberg.webp"
+      }
+    ],
+    finland: [
+      {
+        name: "Peter Stålström",
+        roleKey: "role_peter",
+        defaultRole: "Sales — Finland",
+        email: "peter.stalstrom@anrin.fi",
+        tel: "+358 45 185 5020",
+        telLink: "+358451855020",
+        visitcard: "https://myanrin.se/@peter.stalstrom",
+        image: "images/peter_stalstrom.jpg"
+      },
+      {
+        name: "Joakim Nilsson",
+        roleKey: "role_joakim",
+        defaultRole: "Logistics — Nordics",
+        email: "joakim.nilsson@anrin.se",
+        tel: "+46 (0)768-69 12 00",
+        telLink: "+46768691200",
+        visitcard: "https://myanrin.se/@joakim.nilsson",
+        image: "images/joakim_nilsson.webp"
+      },
+      {
+        name: "Mikael Holmberg",
+        roleKey: "role_mikael",
+        defaultRole: "CEO / Marketing — Nordics",
+        email: "mikael.holmberg@anrin.se",
+        tel: "+46 (0)768-69 35 35",
+        telLink: "+46768693535",
+        visitcard: "https://myanrin.se/@mikael.holmberg",
+        image: "images/mikael_holmberg.webp"
+      }
+    ],
+    norway: [
+      {
+        name: "Patric Asp",
+        roleKey: "role_patric_no",
+        defaultRole: "Sales — Norway",
+        email: "patric.asp@anrin.se",
+        tel: "+46 (0)768-69 45 45",
+        telLink: "+46768694545",
+        visitcard: "https://myanrin.se/@patric.asp",
+        image: "images/patric_asp.webp"
+      },
+      {
+        name: "Joakim Nilsson",
+        roleKey: "role_joakim",
+        defaultRole: "Logistics — Nordics",
+        email: "joakim.nilsson@anrin.se",
+        tel: "+46 (0)768-69 12 00",
+        telLink: "+46768691200",
+        visitcard: "https://myanrin.se/@joakim.nilsson",
+        image: "images/joakim_nilsson.webp"
+      },
+      {
+        name: "Mikael Holmberg",
+        roleKey: "role_mikael",
+        defaultRole: "CEO / Marketing — Nordics",
+        email: "mikael.holmberg@anrin.se",
+        tel: "+46 (0)768-69 35 35",
+        telLink: "+46768693535",
+        visitcard: "https://myanrin.se/@mikael.holmberg",
+        image: "images/mikael_holmberg.webp"
+      }
+    ],
+    denmark: [
+      {
+        name: "Magnus Zander",
+        roleKey: "role_magnus_dk",
+        defaultRole: "Sales Manager — Denmark",
+        email: "magnus.zander@anrin.se",
+        tel: "+46 (0)768-69 25 25",
+        telLink: "+46768692525",
+        visitcard: "https://myanrin.se/@magnus.zander",
+        image: "images/magnus_zander.webp"
+      },
+      {
+        name: "Joakim Nilsson",
+        roleKey: "role_joakim",
+        defaultRole: "Logistics — Nordics",
+        email: "joakim.nilsson@anrin.se",
+        tel: "+46 (0)768-69 12 00",
+        telLink: "+46768691200",
+        visitcard: "https://myanrin.se/@joakim.nilsson",
+        image: "images/joakim_nilsson.webp"
+      },
+      {
+        name: "Mikael Holmberg",
+        roleKey: "role_mikael",
+        defaultRole: "CEO / Marketing — Nordics",
+        email: "mikael.holmberg@anrin.se",
+        tel: "+46 (0)768-69 35 35",
+        telLink: "+46768693535",
+        visitcard: "https://myanrin.se/@mikael.holmberg",
+        image: "images/mikael_holmberg.webp"
+      }
+    ],
+    iceland: [
+      {
+        name: "Mikael Holmberg",
+        roleKey: "role_mikael",
+        defaultRole: "CEO / Marketing — Nordics",
+        email: "mikael.holmberg@anrin.se",
+        tel: "+46 (0)768-69 35 35",
+        telLink: "+46768693535",
+        visitcard: "https://myanrin.se/@mikael.holmberg",
+        image: "images/mikael_holmberg.webp"
+      },
+      {
+        name: "Joakim Nilsson",
+        roleKey: "role_joakim",
+        defaultRole: "Logistics — Nordics",
+        email: "joakim.nilsson@anrin.se",
+        tel: "+46 (0)768-69 12 00",
+        telLink: "+46768691200",
+        visitcard: "https://myanrin.se/@joakim.nilsson",
+        image: "images/joakim_nilsson.webp"
+      }
+    ]
+  };
+
+  function getPathPrefix() {
+    return (window.location.pathname.includes('/files') || window.location.pathname.includes('/stainless')) ? '../' : '';
+  }
+
+  function renderTeam(country) {
+    const grid = document.querySelector('.team-grid');
+    if (!grid) return;
+
+    const prefix = getPathPrefix();
+    const members = TEAM_MEMBERS[country] || [];
+
+    grid.innerHTML = members.map(m => `
+      <div class="team-card" style="background:#fff;border-radius:16px;overflow:hidden;border:1px solid #eaeaea;box-shadow:0 6px 20px rgba(0,0,0,0.04);text-align:center;padding:32px 24px;">
+        <div style="width:110px;height:110px;border-radius:50%;margin:0 auto 20px;overflow:hidden;background:#e5e5e5;display:flex;align-items:center;justify-content:center;">
+          <img src="${prefix + m.image}" alt="${m.name}" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;color:#111;margin-bottom:6px;">${m.name}</h3>
+        <p style="font-size:13px;font-weight:700;color:#777;text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;min-height:38px;" data-i18n="${m.roleKey}">${m.defaultRole}</p>
+        <p style="font-size:14px;color:#333;margin-bottom:6px;"><a href="mailto:${m.email}" style="color:#111;font-weight:600;">${m.email}</a></p>
+        <p style="font-size:14px;color:#555;margin-bottom:12px;"><a href="tel:${m.telLink}" style="color:#555;">${m.tel}</a></p>
+        <p style="font-size:13.5px;margin:0;"><a href="${m.visitcard}" target="_blank" rel="noopener" style="color:#00a86b;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:4px;" data-i18n="lbl_visitcard">Visitkort</a></p>
+      </div>
+    `).join('');
+
+    // Re-apply translation to dynamically rendered cards
+    if (typeof window.applyLanguage === 'function') {
+      let lang = 'sv';
+      try { lang = localStorage.getItem('anrin_lang') || 'sv'; } catch(e) {}
+      window.applyLanguage(lang);
+    }
+  }
+
+  // Setup tab click listeners
+  function initSwitcher() {
+    const tabs = document.querySelectorAll('.team-tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        renderTeam(tab.dataset.country);
+      });
+    });
+
+    // Default load Sweden
+    renderTeam('sweden');
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSwitcher);
+  } else {
+    initSwitcher();
+  }
+})();
+</script>
 
 </main>
 

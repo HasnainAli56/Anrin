@@ -372,7 +372,6 @@ h.querySelectorAll('.lang-label').forEach(function(el) { el.textContent = lang.t
   window.addEventListener('load', injectLateMobileFixes);
 })();
 
-
 /* Global PDF Viewer Modal — Keep PDFs on anrin.vercel.app */
 (function() {
   function initPdfModal() {
@@ -562,7 +561,6 @@ h.querySelectorAll('.lang-label').forEach(function(el) { el.textContent = lang.t
   }
 })();
 
-
 /* Global Product & Document Router — Keep ALL Navigation on anrin.vercel.app */
 (function() {
   var PRODUCT_MAP = {
@@ -621,7 +619,6 @@ h.querySelectorAll('.lang-label').forEach(function(el) { el.textContent = lang.t
     }
   }, true);
 })();
-
 
 /* Dedicated Grate Specification Modal — Opens Grate Details cleanly on anrin.vercel.app */
 (function() {
@@ -710,7 +707,6 @@ h.querySelectorAll('.lang-label').forEach(function(el) { el.textContent = lang.t
   }
 })();
 
-
 /* Remove right-side floating sidebar elements from DOM */
 (function() {
   function removeFloaters() {
@@ -724,7 +720,6 @@ h.querySelectorAll('.lang-label').forEach(function(el) { el.textContent = lang.t
   }
   window.addEventListener('load', removeFloaters);
 })();
-
 
 /* Direct Navigation to Full Grate Detail Page (anrin-grate-detail.html) instead of small modal popup */
 (function() {

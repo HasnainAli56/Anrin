@@ -2,7 +2,6 @@
 <html lang="sv">
 <head>
 
-
 <script src="header.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -126,8 +125,6 @@ h1.hero-title span:nth-child(2) em{animation-delay:.18s;color:var(--gray-500);}
 .btn-ghost-line{font-size:14px;display:flex;align-items:center;gap:10px;color:var(--white);position:relative;}
 .btn-ghost-line::after{content:'';position:absolute;left:0;bottom:-4px;width:100%;height:1px;background:var(--white);transform:scaleX(.3);transform-origin:left;transition:transform .4s var(--ease);}
 .btn-ghost-line:hover::after{transform:scaleX(1);}
-
-
 
 @media(max-width:768px){.hero-content{padding-top:150px;padding-bottom:60px;} .page-hero{padding:170px 0 60px;}}
 
@@ -371,7 +368,6 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
   .legal-modal-close{top:8px;right:8px;}
 }
 
-
 /* Back to top */
 #backToTop{position:fixed;right:28px;bottom:28px;width:54px;height:54px;border-radius:50%;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 32px rgba(0,0,0,.28);z-index:520;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(16px);transition:opacity .4s var(--ease),visibility .4s,transform .4s var(--ease),background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease);}
 #backToTop:hover{background:var(--white);color:var(--black);border:1px solid var(--gray-300);}
@@ -384,13 +380,8 @@ footer{background:var(--gray-50);border-top:1px solid var(--gray-150);padding-to
   color: #d8d8d8 !important;
 }
 
-
 /* ANRIN & HYDROTEC Hero Fit & No-Overflow Padding Fix — Exact Screen Fit */
 .hero, .htec-hero, .page-hero, 
-
-
-
-
 
 .hero-title, .htec-hero h1, .page-hero h1 {
   margin-top: 8px !important;
@@ -477,14 +468,7 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
   border: none !important;
 }
 
-
-
-
 .hero, .htec-hero, .page-hero, 
-
-
-
-
 
 .eyebrow {
   font-size: 11.5px !important;
@@ -589,7 +573,6 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 }
 </style>
 
-
 <style id="hero-font-size-wordmark-override">
 /* Increase Hero Heading & Paragraph Text Size */
 .hero-title, .htec-hero h1, .page-hero h1, h1.hero-title {
@@ -605,17 +588,10 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
   max-width: 740px !important;
 }
 
-
-
-
 </style>
-
 
 <style id="perfect-hero-fit-override">
 /* Pull Hero Wordmark Higher Up & Make It Larger */
-
-
-
 
 .eyebrow {
   margin-top: 6px !important;
@@ -656,10 +632,6 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 
 </style>
 
-
-
-
-
 <style id="hide-all-breadcrumbs-globally">
 /* Hide Breadcrumb Routes (.crumb) Site-wide Across All Pages */
 .crumb, div.crumb, p.crumb, nav.crumb, [class*="crumb"] {
@@ -675,17 +647,8 @@ header.aint-subnav, header.htec-subnav, .aint-subnav, .htec-subnav {
 }
 </style>
 
-
-
-
-
-
-
 <link rel="stylesheet" href="header.css">
 <link rel="stylesheet" href="hero.css">
-
-
-
 
 <style id="force-hero-horizontal-stats">
 /* ANRIN Nordic Hero Stats (Desktop 4-col, Mobile 2x2 grid) */
@@ -891,8 +854,6 @@ div.wrap.hero-meta > div b,
 }
 </style>
 
-
-
 <style id="round-tabs-and-view-product-buttons">
 /* 4 Separate Small Tab Buttons in 1 Horizontal Row */
 .tabs-header, .tab-headers {
@@ -911,7 +872,7 @@ div.wrap.hero-meta > div b,
   box-sizing: border-box !important;
 }
 
-.tab-btn, .tab-header, .tabs-header > div, .tab-headers > div {
+.tab-btn, .tab-header, .tabs-header > div:not(.tab-item), .tab-headers > div:not(.tab-item) {
   all: unset !important;
   background: #2a2a2a !important;
   color: #ffffff !important;
@@ -933,13 +894,13 @@ div.wrap.hero-meta > div b,
   border: 1px solid #444444 !important;
 }
 
-.tab-btn *, .tab-header *, .tabs-header > div *, .tab-headers > div * {
+.tab-btn *, .tab-header *, .tabs-header > div:not(.tab-item) *, .tab-headers > div:not(.tab-item) * {
   color: #ffffff !important;
   fill: #ffffff !important;
   font-size: 11px !important;
 }
 
-.tab-btn:hover, .tab-header:hover, .tab-btn.active, .tab-header.active, .tabs-header > div.active {
+.tab-btn:hover, .tab-header:hover, .tab-btn.active, .tab-header.active, .tabs-header > div:not(.tab-item).active {
   background: #000000 !important;
   color: #ffffff !important;
   border-color: #ffffff !important;
@@ -979,8 +940,6 @@ div.wrap.hero-meta > div b,
 }
 </style>
 
-
-
 <style id="round-tab-headers-fix">
 /* Single Clean Pill Tab Headers — No Extra Inner Rounds */
 .tab-headers, .tabs-header {
@@ -991,8 +950,8 @@ div.wrap.hero-meta > div b,
   margin-top: 16px !important;
 }
 
-.tab-headers > div,
-.tabs-header > div,
+.tab-headers > div:not(.tab-item),
+.tabs-header > div:not(.tab-item),
 .tab-header,
 .tab-btn {
   all: unset !important;
@@ -1016,8 +975,8 @@ div.wrap.hero-meta > div b,
   white-space: nowrap !important;
 }
 
-.tab-headers > div:hover,
-.tabs-header > div:hover,
+.tab-headers > div:not(.tab-item):hover,
+.tabs-header > div:not(.tab-item):hover,
 .tab-header:hover,
 .tab-btn:hover {
   background: #333333 !important;
@@ -1025,8 +984,8 @@ div.wrap.hero-meta > div b,
   transform: translateY(-2px) !important;
 }
 
-.tab-headers > div.active,
-.tabs-header > div.active,
+.tab-headers > div:not(.tab-item).active,
+.tabs-header > div:not(.tab-item).active,
 .tab-header.active,
 .tab-btn.active {
   background: #000000 !important;
@@ -1037,8 +996,8 @@ div.wrap.hero-meta > div b,
 }
 
 /* Completely strip all inner children so there are NO nested extra rounds */
-.tab-headers > div *,
-.tabs-header > div *,
+.tab-headers > div:not(.tab-item) *,
+.tabs-header > div:not(.tab-item) *,
 .tab-header *,
 .tab-btn * {
   all: unset !important;
@@ -1060,12 +1019,6 @@ div.wrap.hero-meta > div b,
   display: inline !important;
 }
 </style>
-
-
-
-
-
-
 
 <style id="remove-floating-actions">
 /* Completely Remove Floating Right-Side Action Sidebar Everywhere */
@@ -1272,14 +1225,11 @@ div[class*="sticky-action"] {
 }
 </style>
 
-
 </head>
 <body>
 <div id="header-root"></div>
 <div id="preloader"><svg viewBox="0 0 200 60"><path d="M0,45 C 40,45 40,15 80,15 C 120,15 120,45 160,45 C 180,45 190,45 200,45"/></svg></div>
 <div id="flowline"><div class="fill"></div><div class="drop"></div></div>
-
-
 
 <div id="mobile-menu">
   <button class="close-btn" id="closeMenu"><svg viewBox="0 0 24 24" stroke="white" fill="none" stroke-width="1.4"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></button>
@@ -1557,5 +1507,203 @@ if (document.readyState === 'loading') {
 }
 </script>
 
+<style id="mobile-responsive-tabs-override">
+@media (max-width: 991.98px) {
+  /* Ensure the container of the tabs behaves like a full-width vertical stack */
+  .responsive-tabs-component {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .tab-headers, 
+  .tabs-header {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 16px !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 20px 0 !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Reset the accordion panels (tab items) to stack vertically at 100% width */
+  .tab-item {
+    display: block !important;
+    width: 100% !important;
+    background: transparent !important;
+    border: none !important;
+    margin-bottom: 12px !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Ensure the accordion header buttons stack as full-width rounded pill buttons */
+  .tab-headers > div:not(.tab-item),
+  .tabs-header > div:not(.tab-item),
+  .tab-header,
+  .tab-btn {
+    all: unset !important;
+    display: flex !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: #222222 !important;
+    color: #ffffff !important;
+    border-radius: 100px !important;
+    padding: 14px 24px !important;
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    justify-content: center !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    margin-bottom: 8px !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+  }
+  
+  /* Handle active state for the accordion buttons */
+  .tab-headers > div:not(.tab-item).active,
+  .tabs-header > div:not(.tab-item).active,
+  .tab-header.active,
+  .tab-btn.active {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-color: #000000 !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25) !important;
+  }
+  
+  /* Ensure header text displays correctly */
+  .tab-headers > div:not(.tab-item) *,
+  .tabs-header > div:not(.tab-item) *,
+  .tab-header *,
+  .tab-btn * {
+    all: unset !important;
+    color: #ffffff !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    letter-spacing: inherit !important;
+    text-transform: inherit !important;
+    display: inline !important;
+  }
+
+  /* CRITICAL: Ensure the tab content (cards) stacks vertically under the header,
+     occupies 100% width, and is on a white background with correct text colors! */
+  .tab-content {
+    all: unset !important;
+    display: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    padding: 20px 16px !important;
+    margin-top: 8px !important;
+    margin-bottom: 20px !important;
+    border: 1px solid #eef0f2 !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04) !important;
+  }
+
+  .tab-content.active {
+    display: block !important;
+  }
+
+  /* Make sure all children of the content container display normally (not inline, not white text) */
+  .tab-content * {
+    all: revert !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Re-apply correct typography and colors for the cards inside tab-content on mobile */
+  .tab-content .additional-products,
+  .tab-content .content-inner {
+    background: transparent !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
+  .tab-content .row {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 16px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .tab-content .col {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 16px 0 !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .tab-content .additional-product-image-container {
+    background: #f8f9fa !important;
+    border-radius: 12px !important;
+    padding: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 220px !important;
+    width: 100% !important;
+  }
+
+  .tab-content .additional-product-image-container img {
+    max-height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  .tab-content .product-name,
+  .tab-content .card-info .product-name {
+    color: #000000 !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    margin-top: 10px !important;
+    margin-bottom: 4px !important;
+    display: block !important;
+    text-align: center !important;
+  }
+
+  .tab-content .product-sku,
+  .tab-content .card-info .product-sku {
+    color: #666666 !important;
+    font-size: 12px !important;
+    display: block !important;
+    text-align: center !important;
+    margin-bottom: 12px !important;
+  }
+
+  .tab-content .rl-btn,
+  .tab-content .view-product-btn {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-radius: 100px !important;
+    padding: 12px 20px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    margin: 8px 0 0 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
+</style>
 </body>
 </html>

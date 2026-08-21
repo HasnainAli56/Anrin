@@ -2274,7 +2274,7 @@ div.wrap.hero-meta > div b,
 
 }
 
-.tab-btn, .tab-header, .tabs-header > div, .tab-headers > div {
+.tab-btn, .tab-header, .tabs-header > div:not(.tab-item), .tab-headers > div:not(.tab-item) {
 
   all: unset !important;
 
@@ -2316,7 +2316,7 @@ div.wrap.hero-meta > div b,
 
 }
 
-.tab-btn *, .tab-header *, .tabs-header > div *, .tab-headers > div * {
+.tab-btn *, .tab-header *, .tabs-header > div:not(.tab-item) *, .tab-headers > div:not(.tab-item) * {
 
   color: #ffffff !important;
 
@@ -2326,7 +2326,7 @@ div.wrap.hero-meta > div b,
 
 }
 
-.tab-btn:hover, .tab-header:hover, .tab-btn.active, .tab-header.active, .tabs-header > div.active {
+.tab-btn:hover, .tab-header:hover, .tab-btn.active, .tab-header.active, .tabs-header > div:not(.tab-item).active {
 
   background: #000000 !important;
 
@@ -2416,9 +2416,9 @@ div.wrap.hero-meta > div b,
 
 }
 
-.tab-headers > div,
+.tab-headers > div:not(.tab-item),
 
-.tabs-header > div,
+.tabs-header > div:not(.tab-item),
 
 .tab-header,
 
@@ -2464,9 +2464,9 @@ div.wrap.hero-meta > div b,
 
 }
 
-.tab-headers > div:hover,
+.tab-headers > div:not(.tab-item):hover,
 
-.tabs-header > div:hover,
+.tabs-header > div:not(.tab-item):hover,
 
 .tab-header:hover,
 
@@ -2480,9 +2480,9 @@ div.wrap.hero-meta > div b,
 
 }
 
-.tab-headers > div.active,
+.tab-headers > div:not(.tab-item).active,
 
-.tabs-header > div.active,
+.tabs-header > div:not(.tab-item).active,
 
 .tab-header.active,
 
@@ -2502,9 +2502,9 @@ div.wrap.hero-meta > div b,
 
 /* Completely strip all inner children so there are NO nested extra rounds */
 
-.tab-headers > div *,
+.tab-headers > div:not(.tab-item) *,
 
-.tabs-header > div *,
+.tabs-header > div:not(.tab-item) *,
 
 .tab-header *,
 
@@ -3810,7 +3810,206 @@ if (document.readyState === 'loading') {
 
 (function(){var b=document.getElementById('backToTop');if(!b)return;var t=null;function onScroll(){if(t)return;t=setTimeout(function(){b.classList.toggle('show',window.scrollY>300);t=null;},80);}window.addEventListener('scroll',onScroll,{passive:true});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});onScroll();})();
 
-</script></body>
+</script>
+<style id="mobile-responsive-tabs-override">
+@media (max-width: 991.98px) {
+  /* Ensure the container of the tabs behaves like a full-width vertical stack */
+  .responsive-tabs-component {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .tab-headers, 
+  .tabs-header {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 16px !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 20px 0 !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Reset the accordion panels (tab items) to stack vertically at 100% width */
+  .tab-item {
+    display: block !important;
+    width: 100% !important;
+    background: transparent !important;
+    border: none !important;
+    margin-bottom: 12px !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Ensure the accordion header buttons stack as full-width rounded pill buttons */
+  .tab-headers > div:not(.tab-item),
+  .tabs-header > div:not(.tab-item),
+  .tab-header,
+  .tab-btn {
+    all: unset !important;
+    display: flex !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: #222222 !important;
+    color: #ffffff !important;
+    border-radius: 100px !important;
+    padding: 14px 24px !important;
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    justify-content: center !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    margin-bottom: 8px !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+  }
+  
+  /* Handle active state for the accordion buttons */
+  .tab-headers > div:not(.tab-item).active,
+  .tabs-header > div:not(.tab-item).active,
+  .tab-header.active,
+  .tab-btn.active {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-color: #000000 !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25) !important;
+  }
+  
+  /* Ensure header text displays correctly */
+  .tab-headers > div:not(.tab-item) *,
+  .tabs-header > div:not(.tab-item) *,
+  .tab-header *,
+  .tab-btn * {
+    all: unset !important;
+    color: #ffffff !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    letter-spacing: inherit !important;
+    text-transform: inherit !important;
+    display: inline !important;
+  }
+
+  /* CRITICAL: Ensure the tab content (cards) stacks vertically under the header,
+     occupies 100% width, and is on a white background with correct text colors! */
+  .tab-content {
+    all: unset !important;
+    display: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    padding: 20px 16px !important;
+    margin-top: 8px !important;
+    margin-bottom: 20px !important;
+    border: 1px solid #eef0f2 !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04) !important;
+  }
+
+  .tab-content.active {
+    display: block !important;
+  }
+
+  /* Make sure all children of the content container display normally (not inline, not white text) */
+  .tab-content * {
+    all: revert !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Re-apply correct typography and colors for the cards inside tab-content on mobile */
+  .tab-content .additional-products,
+  .tab-content .content-inner {
+    background: transparent !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
+  .tab-content .row {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 16px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .tab-content .col {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 16px 0 !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .tab-content .additional-product-image-container {
+    background: #f8f9fa !important;
+    border-radius: 12px !important;
+    padding: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 220px !important;
+    width: 100% !important;
+  }
+
+  .tab-content .additional-product-image-container img {
+    max-height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  .tab-content .product-name,
+  .tab-content .card-info .product-name {
+    color: #000000 !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    margin-top: 10px !important;
+    margin-bottom: 4px !important;
+    display: block !important;
+    text-align: center !important;
+  }
+
+  .tab-content .product-sku,
+  .tab-content .card-info .product-sku {
+    color: #666666 !important;
+    font-size: 12px !important;
+    display: block !important;
+    text-align: center !important;
+    margin-bottom: 12px !important;
+  }
+
+  .tab-content .rl-btn,
+  .tab-content .view-product-btn {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-radius: 100px !important;
+    padding: 12px 20px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    margin: 8px 0 0 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
+</style>
+</body>
 
 </html>
 

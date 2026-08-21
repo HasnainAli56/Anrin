@@ -744,21 +744,21 @@ function applyLanguage(lang){
   const dict = I18N[lang] || I18N.en;
 
   document.querySelectorAll('[data-i18n]').forEach(el=>{
-
     const key = el.getAttribute('data-i18n');
-
-    if(dict[key] !== undefined) {
-
-      if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-
-        el.placeholder = dict[key];
-
-      } else {
-
-        el.textContent = dict[key];
-
+    if (!el.getAttribute('data-org-html')) {
+      el.setAttribute('data-org-html', el.innerHTML);
+    }
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+      if (!el.getAttribute('data-org-placeholder')) {
+        el.setAttribute('data-org-placeholder', el.placeholder || '');
       }
-
+    }
+    if(dict[key] !== undefined) {
+      if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = dict[key];
+      } else {
+        el.innerHTML = dict[key];
+      }
       if (lang === 'en') {
         el.classList.remove('notranslate');
         el.removeAttribute('translate');
@@ -766,9 +766,20 @@ function applyLanguage(lang){
         el.classList.add('notranslate');
         el.setAttribute('translate', 'no');
       }
-
+    } else if (lang === 'en') {
+      const orgHtml = el.getAttribute('data-org-html');
+      if (orgHtml) {
+        el.innerHTML = orgHtml;
+      }
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        const orgPlaceholder = el.getAttribute('data-org-placeholder');
+        if (orgPlaceholder !== null) {
+          el.placeholder = orgPlaceholder;
+        }
+      }
+      el.classList.remove('notranslate');
+      el.removeAttribute('translate');
     }
-
   });
 
   renderLangMenus(lang);
@@ -2838,6 +2849,22 @@ setInterval(function() {
 
 /* Native Dynamic DOM Translation Fallback for Product Details */
 function translateDynamicDOM(lang) {
+  if (lang === 'en') {
+    document.querySelectorAll('[data-org-text]').forEach(el => {
+      el.textContent = el.getAttribute('data-org-text');
+      el.classList.remove('notranslate');
+      el.removeAttribute('translate');
+      el.removeAttribute('data-org-text');
+    });
+    document.querySelectorAll('span.dynamic-translated').forEach(span => {
+      const orgText = span.getAttribute('data-org-text');
+      if (orgText) {
+        const textNode = document.createTextNode(orgText);
+        span.parentNode.replaceChild(textNode, span);
+      }
+    });
+    return;
+  }
   const translations = {
     sv: {
       "reinforced edge channel": "kantskyddskanal",
@@ -3008,21 +3035,26 @@ function translateDynamicDOM(lang) {
       if (text) {
         const trans = translateString(text);
         if (trans !== text) {
+          if (!el.getAttribute('data-org-text')) {
+            el.setAttribute('data-org-text', text);
+          }
           el.textContent = trans;
           el.classList.add('notranslate');
           el.setAttribute('translate', 'no');
         }
       }
     } else {
-      for (let child of el.childNodes) {
+      const childNodes = Array.from(el.childNodes);
+      for (let child of childNodes) {
         if (child.nodeType === 3) { // Node.TEXT_NODE
           const text = child.textContent;
           if (text && text.trim()) {
             const trans = translateString(text);
             if (trans !== text) {
               const span = document.createElement('span');
-              span.className = 'notranslate';
+              span.className = 'notranslate dynamic-translated';
               span.setAttribute('translate', 'no');
+              span.setAttribute('data-org-text', text);
               span.textContent = trans;
               child.parentNode.replaceChild(span, child);
             }

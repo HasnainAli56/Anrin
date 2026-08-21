@@ -702,11 +702,24 @@ function getCookie(name) {
   return null;
 }
 
-function triggerGoogleTranslate(lang) {
+function triggerGoogleTranslate(lang, prevLang) {
   if (lang === 'en') {
-    // Clear Google Translate cookie so English renders natively
+    // Clear Google Translate cookies across paths and subdomains
     document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + window.location.hostname + "; path=/;";
+    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + window.location.hostname;
+
+    const select = document.querySelector('.goog-te-combo');
+    if (select) {
+      select.value = '';
+      select.dispatchEvent(new Event('change'));
+    }
+
+    // Force reload to completely clean up active Google Translate translation state
+    if (prevLang && prevLang !== 'en') {
+      window.location.reload();
+    }
+    return;
   } else {
     // Translate from English (source language) to target language
     setCookie('googtrans', `/en/${lang}`, 7);
@@ -714,12 +727,14 @@ function triggerGoogleTranslate(lang) {
 
   const select = document.querySelector('.goog-te-combo');
   if (select) {
-    select.value = (lang === 'en') ? '' : lang;
+    select.value = lang;
     select.dispatchEvent(new Event('change'));
   }
 }
 
 function applyLanguage(lang){
+  var prevLang = 'en';
+  try { prevLang = localStorage.getItem('anrin_lang') || 'en'; } catch(e){}
 
   // Locale-conditional Finnish vs Swedish contact address
 
@@ -856,7 +871,7 @@ function applyLanguage(lang){
     console.error("DOM translation error:", e);
   }
 
-  triggerGoogleTranslate(lang);
+  triggerGoogleTranslate(lang, prevLang);
 
 }
 
@@ -2860,7 +2875,7 @@ function translateDynamicDOM(lang) {
       const orgText = span.getAttribute('data-org-text');
       if (orgText) {
         const textNode = document.createTextNode(orgText);
-        span.parentNode.replaceChild(textNode, span);
+        if (span.parentNode) { span.parentNode.replaceChild(textNode, span); }
       }
     });
     return;
